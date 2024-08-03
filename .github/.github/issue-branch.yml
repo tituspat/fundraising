@@ -1,0 +1,2 @@
+branchName: "issue-${issue.number}${issue.title}"
+commentMessage: "Branch ${branchName} created for issue: ${issue.title}"
