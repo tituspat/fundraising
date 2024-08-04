@@ -33,7 +33,7 @@
 
 </head>
 
-<body style="background: white">
+<body style="background: white" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
     <div class="font-sans" id="app">
         <!-- Navbar -->
         @include('layouts.navbar')
