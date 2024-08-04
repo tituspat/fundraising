@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <!-- Jumbotron -->
     <div class="relative w-full h-[500px] bg-cover bg-center flex flex-col items-center justify-center gap-10"

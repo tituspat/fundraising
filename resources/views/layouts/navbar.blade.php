@@ -1,5 +1,5 @@
 <nav id="navbar"
-    class="fixed top-0 w-full h-[90px] bg-white flex items-center justify-between px-10 py-8 z-10 transition-shadow duration-300 ease-in-out border border-green-300">
+    class="z-10 sticky top-0 w-full h-[90px] bg-white flex items-center justify-between px-10 py-8 transition-shadow duration-300 ease-in-out border border-green-300">
     <!-- Logo -->
     <div class="flex items-center gap-4 ml-10">
         <img src="https://democalon46.calon.id/template/calon-pancasila/assets/img/logo.png" alt="Logo" class="h-12">
@@ -30,7 +30,7 @@
     <!-- Authentication Buttons -->
     <div class="flex space-x-4 mr-10">
         <button
-            class="auth-button h-[50px] bg-customYellow border border-green-500 text-white px-4 py-1 transition duration-300 ease-in-out">
+            class="auth-button h-[50px] bg-customYellow border border-green-500 text-white px-4 py-1 transition duration-300 ease-in-out hover:bg-red-400">
             Login Relawan<i class="fas fa-user ml-2"></i>
         </button>
     </div>
