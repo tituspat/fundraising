@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crowdfunding</title>
+    <title>Sahabat Tabanan</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
@@ -26,11 +26,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-Fo3rlrZj/k7ujTnH1zN6T/2f+8ZbXfFgFhPzI7/qdoJ8DXz6e8x0rGJPcLlIPKpEPCvRYzS/DX+b5DlVwX+hfA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="{{ mix('resources/css/app.css') }}" rel="stylesheet">
     <script src="{{ mix('resources/js/app.js') }}" defer></script>
 
-
+   
 </head>
 
 <body style="background: white" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
