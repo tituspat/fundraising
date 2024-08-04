@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,19 +23,24 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnH1zN6T/2f+8ZbXfFgFhPzI7/qdoJ8DXz6e8x0rGJPcLlIPKpEPCvRYzS/DX+b5DlVwX+hfA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link href="{{ mix('resources/css/app.css') }}" rel="stylesheet">
     <script src="{{ mix('resources/js/app.js') }}" defer></script>
 
     <style>
         /* Ensure the content is below the fixed navbar */
         .content {
-            margin-top: 80px; /* Adjust this value to the height of your navbar */
+            margin-top: 80px;
+            /* Adjust this value to the height of your navbar */
         }
     </style>
 </head>
 
 <body style="background: white">
-    <div id="app">
+    <div class="font-sans" id="app">
         <!-- Navbar -->
         @include('layouts.navbar')
 
@@ -44,4 +50,5 @@
         </div>
     </div>
 </body>
+
 </html>
