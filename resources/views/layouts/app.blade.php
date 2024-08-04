@@ -30,16 +30,10 @@
     <link href="{{ mix('resources/css/app.css') }}" rel="stylesheet">
     <script src="{{ mix('resources/js/app.js') }}" defer></script>
 
-    <style>
-        /* Ensure the content is below the fixed navbar */
-        .content {
-            margin-top: 80px;
-            /* Adjust this value to the height of your navbar */
-        }
-    </style>
+
 </head>
 
-<body style="background: white">
+<body style="background: white" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
     <div class="font-sans" id="app">
         <!-- Navbar -->
         @include('layouts.navbar')
