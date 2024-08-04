@@ -10,10 +10,14 @@
         <button class="nav-button text-gray-500" onclick="activateButton(event)">Beranda</button>
         <button class="nav-button text-gray-500" onclick="activateButton(event)">Profile</button>
         <div class="relative">
-            <button id="gallery-button" class="nav-button text-gray-500 flex items-center" onclick="toggleDropdown(event)">Galeri <i class="fas fa-chevron-down ml-1"></i></button>
-            <div id="gallery-dropdown" class="absolute left-0 w-28 h-[80px] bg-white border border-gray-200 shadow-lg rounded-lg hidden flex flex-col justify-center gap-1">
-                <a href="#foto" id="foto-link" class="h-[30px] dropdown-link block px-2 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-700 hover:no-underline">Foto</a>
-                <a href="#video" id="video-link" class="h-[30px] dropdown-link block px-2 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-700 hover:no-underline">Video</a>
+            <button id="gallery-button" class="nav-button text-gray-500 flex items-center"
+                onclick="toggleDropdown(event)">Galeri <i class="fas fa-chevron-down ml-1"></i></button>
+            <div id="gallery-dropdown"
+                class="absolute left-0 w-28 h-[80px] bg-white border border-gray-200 shadow-lg rounded-lg hidden flex flex-col justify-center gap-1">
+                <a href="#foto" id="foto-link"
+                    class="h-[30px] dropdown-link block px-2 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-700 hover:no-underline">Foto</a>
+                <a href="#video" id="video-link"
+                    class="h-[30px] dropdown-link block px-2 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-700 hover:no-underline">Video</a>
             </div>
         </div>
         <button class="nav-button text-gray-500" onclick="activateButton(event)">Testimoni</button>
@@ -25,9 +29,10 @@
     </div>
     <!-- Authentication Buttons -->
     <div class="flex space-x-4 mr-10">
-        <button class="auth-button h-[50px] bg-customYellow border border-green-500 text-white px-4 py-1 transition duration-300 ease-in-out">
-        Login Relawan<i class="fas fa-user ml-2"></i>
-    </button>
+        <button
+            class="auth-button h-[50px] bg-customYellow border border-green-500 text-white px-4 py-1 transition duration-300 ease-in-out">
+            Login Relawan<i class="fas fa-user ml-2"></i>
+        </button>
     </div>
 </nav>
 <script>
@@ -81,7 +86,9 @@
             // Ensure dropdown is hidden when a link is clicked
             document.getElementById('gallery-dropdown').classList.add('hidden');
             // Mark "Galeri" button as active
-            activateButton({ target: document.getElementById('gallery-button') });
+            activateButton({
+                target: document.getElementById('gallery-button')
+            });
         });
     });
 </script>
