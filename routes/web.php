@@ -15,8 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landing');
-});
 
+});
+Route::get('/video', function () {
+    return view('video');
+});
+Route::get('/foto', function () {
+    return view('foto');
+});
 Route::get('/profile', function () {
     return view('profile');
+});
+Route::get('/testimoni', function () {
+    return view('testimoni');
 });
