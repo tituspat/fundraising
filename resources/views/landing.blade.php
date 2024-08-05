@@ -20,7 +20,7 @@
             <div class="relative flex flex-col mt-6 text-gray-700 bg-zinc-50 shadow-xl shadow-zinc-400 bg-clip-border rounded-xl">
                 <div class="flex justify-center items-center bg-gray-100">
                     <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                        <img src="{{ asset('img/profile-giri.png') }}" alt="Profile Picture" class="w-40 h-40 object-cover object-top">
+                        <img src="{{ asset('img/icons/profile.png') }}" alt="Profile Picture" class="w-full h-full object-cover object-top">
                     </div>
                 </div>
                 <div class="p-6">

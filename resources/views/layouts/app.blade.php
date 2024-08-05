@@ -33,8 +33,19 @@
     <!-- CDN Swipper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-    <link href="{{ mix('resources/css/app.css') }}" rel="stylesheet">
-    <script src="{{ mix('resources/js/app.js') }}" defer></script>
+    <link href="{{ mix('resources/assets/css/app.css') }}" rel="stylesheet">
+    <script src="{{ mix('resources/assets/js/app.js') }}" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="icon" href="{{mix('resources/assets/images/favicon.png')}}" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+    <!-- Swiper Slider -->
+    <link rel="stylesheet" href="{{mix('resources/assets/css/swiper-bundle.min.css')}}" />
+    <!-- AOS Animation CSS -->
+    <link href="{{mix('resources/assets/css/aos.css')}}" rel="stylesheet" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{{mix('resources/assets/css/style.css')}}" />
 
    
 </head>
@@ -50,7 +61,16 @@
         </div>
     </div>
 
+
     
+        <!-- Swiper Slider JS -->
+        <script src="{{mix('resources/assets/js/swiper-bundle.min.js')}}"></script>
+        <!-- Counter Js -->
+        <script src="{{mix('resources/assets/js/vanilla-counter.js')}}"></script>
+        <!-- AOS Animation JS -->
+        <script src="{{mix('resources/assets/js/aos.js')}}"></script>
+        <!-- Custom Js -->
+        <script src="{{mix('resources/assets/js/custom.js')}}"></script>
 </body>
 
 </html>

@@ -35,3 +35,9 @@ Route::get('/program', function () {
 Route::get('/program-beras', function () {
     return view('program-beras');
 });
+Route::get('/about', function () {
+    return view('about-us');
+});
+Route::get('/index', function () {
+    return view('index');
+});
