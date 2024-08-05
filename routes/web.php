@@ -29,3 +29,9 @@ Route::get('/profil', function () {
 Route::get('/testimoni', function () {
     return view('testimoni');
 });
+Route::get('/program', function () {
+    return view('program');
+});
+Route::get('/program-beras', function () {
+    return view('program-beras');
+});
