@@ -27,7 +27,12 @@
         integrity="sha512-Fo3rlrZj/k7ujTnH1zN6T/2f+8ZbXfFgFhPzI7/qdoJ8DXz6e8x0rGJPcLlIPKpEPCvRYzS/DX+b5DlVwX+hfA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+    
+    <!-- CDN Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CDN Swipper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
     <link href="{{ mix('resources/css/app.css') }}" rel="stylesheet">
     <script src="{{ mix('resources/js/app.js') }}" defer></script>
 
@@ -44,6 +49,8 @@
             @yield('content')
         </div>
     </div>
+
+    
 </body>
 
 </html>
