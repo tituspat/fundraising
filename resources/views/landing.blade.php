@@ -15,7 +15,7 @@
         </div>
     </section>
     <!-- Navigation -->
-    <section class="grid grid-cols-3 gap-4 justify-between py-10 px-20">
+    <section class="grid grid-flow-row md:grid-cols-3 gap-4 justify-between py-10 px-20">
         <a href="#" style="text-decoration:none">
             <div class="relative flex flex-col mt-6 text-gray-700 bg-zinc-50 shadow-xl shadow-zinc-400 bg-clip-border rounded-xl">
                 <div class="flex justify-center items-center bg-gray-100">
@@ -72,12 +72,14 @@
     <!-- Section Profile -->
     <section >
         <div class="relative w-full h-screen bg-cover bg-center flex flex-col items-center justify-center" style="background-image: url('img/assets/pura_tanahlot.jpg');">
-            <div class="flex lg:flex-row flex-col px-40" >
-                <div class="lg:hidden flex flex-shrink px-4 basis-1/2 justify-center"><img class="w-60 h-60" src="{{ asset('img/calon.png') }}"></div>
+            <div class="flex lg:flex-row flex-col px-10 lg:px-40" >
+                <div class="lg:hidden flex flex-shrink px-4 basis-1/2 justify-center">
+                    <img class="w-28 md:w-60 h-28 md:h-60" src="{{ asset('img/calon.png') }}">
+                </div>
                 <div class="basis-1/2 w-auto my-auto text-zinc-950">
-                    <h5 class="text-3xl font-bold my-4">Profile</h5>
-                    <h5 class="text-5xl font-bold my-4">Calon</h5>
-                    <p class="text font-semibold bg-blend-difference">
+                    <h5 class="text-xl md:text-3xl font-bold my-4">Profile</h5>
+                    <h5 class="text-lg md:text-5xl font-bold my-4">Giri</h5>
+                    <p class="md:block text font-semibold bg-blend-difference">
                         Salam sejahtera, saya Demo Calon. Kandidat calon Bupati Jawa Timur. Saya memiliki latar belakang sebagai pengusaha dan juga aktif dalam berbagai kegiatan sosial di masyarakat. Melalui pengalaman hidup dan kerja saya, saya ingin berkontribusi lebih dalam dalam memajukan Indonesia dan juga meningkatkan kesejahteraan masyarakat di wilayah Jawa Timur. 
                         <br> <br>
                         Saya ingin mengabdikan diri dalam ranah politik karena saya percaya bahwa dengan menjadi bagian dari pemerintahan, saya dapat berkontribusi dalam mewujudkan perubahan positif untuk masyarakat. 
@@ -85,21 +87,24 @@
                         Saat ini, saya sangat tertarik untuk memperjuangkan hak-hak rakyat. Saya memiliki beberapa program kerja yang akan saya jalankan apabila terpilih menjadi Bupati, seperti meningkatkan kualitas pendidikan dan kesehatan masyarakat, mengembangkan potensi kaum muda, serta memberikan dukungan kepada UMKM agar dapat berkembang lebih baik lagi.
                     </p>
                 </div>
-                <div class="hidden lg:flex flex-shrink px-4 basis-3/5 translate-x-1/2 translate-y-1/3"><img class="h-3/4" src="{{ asset('img/calon.png') }}"></div>
+                <div class="hidden lg:flex flex-shrink px-4 basis-3/5 translate-x-1/2 translate-y-1/3">
+                    <img class="h-3/4" src="{{ asset('img/calon.png') }}">
+                </div>
                 
             </div>
         </div>
     </section>
     <!-- Section Program -->
-    <section>
-        <div class="flex flex-col justify-center mx-24 my-9 gap-6">
+    <section class=" md:block ">
+        <div class="flex flex-col justify-center mx-4 my-9 gap-6">
             <div class="text-center flex flex-col gap-3">
-                <h3 class="text-3xl font-bold">Program</h3>
-                <h2 class="text-4xl">Untuk Indonesia Yang Lebih Sejahtera</h2>
+                <h3 class="text-lg md:text-2xl lg:text-3xl font-bold">Program</h3>
+                <h2 class="text-xl md:text-3xl lg:text-4xl">Untuk Indonesia Yang Lebih Sejahtera</h2>
             </div>
-            <div class="grid grid-cols-2 gap-8">
+            <div class="grid grid-flow-row gap-8">
                 <div class="grid grid-rows-3 grid-flow-col gap-4 border-2 border-black">
-                    <div class="row-span-3"><img src="https://democalon46.calon.id/dirmember/00000001/democalon46/program-32-4.jpg" alt=""></div>
+                    <div class="row-span-3 items-center">
+                        <img src="https://democalon46.calon.id/dirmember/00000001/democalon46/program-32-4.jpg" alt=""></div>
                     <div class="col-span-2"><h3 class="font-bold">PENINGKATAN PRODUKSI BERAS MERAH</h3></div>
                     <div class="row-span-2 col-span-2"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nesciunt officia dolores neque, officiis corrupti?</p></div>
                 </div>

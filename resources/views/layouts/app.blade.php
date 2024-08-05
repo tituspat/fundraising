@@ -35,7 +35,7 @@
 </head>
 
 <body style="background: white" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-    <div class="font-sans" id="app">
+    <div class="font-sans overflow-hidden" id="app">
         <!-- Navbar -->
         @include('layouts.navbar')
 

@@ -23,7 +23,7 @@ Route::get('/video', function () {
 Route::get('/foto', function () {
     return view('foto');
 });
-Route::get('/profile', function () {
+Route::get('/profil', function () {
     return view('profile');
 });
 Route::get('/testimoni', function () {

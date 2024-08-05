@@ -14,31 +14,31 @@
 			</button>
 		</div>
 		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 xl:flex xl:mx-auto xl:flex xl:items-center xl:w-auto xl:space-x-6">
-			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Beranda</a></li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="/">Beranda</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-sm text-blue-600 font-bold" href="#">Profile</a></li>
+			<li><a class="text-sm text-blue-600 font-bold" href="/profil">Profile</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Galeri</a></li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="/foto">Galeri</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Dukungan</a></li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="/dukungan">Dukungan</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li>
-			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Update</a></li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="/update">Update</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
@@ -50,7 +50,7 @@
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li> -->
-			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Program</a></li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="/program">Program</a></li>
 			<li class="text-gray-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
@@ -62,7 +62,7 @@
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 				</svg>
 			</li> -->
-			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Contact</a></li>
+			<li><a class="text-sm text-gray-400 hover:text-gray-500" href="/contact">Contact</a></li>
 		</ul>
 		<!-- <a class="hidden xl:inline-block xl:ml-auto xl:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="#">Login Relawan</a> -->
 		<a class="hidden xl:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="#">Login Relawan</a>
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Navigation Buttons -->
     <div class="flex space-x-4">
         <button class="nav-button text-gray-500" onclick="activateButton(event)"><a href="/">Beranda</a></button>
-        <button class="nav-button text-gray-500" onclick="activateButton(event)"><a href="/profile">Profile</a></button>
+        <button class="nav-button text-gray-500" onclick="activateButton(event)"><a href="/profil">Profile</a></button>
         <div class="relative">
             <button id="gallery-button" class="nav-button text-gray-500 flex items-center"
                 onclick="toggleDropdown(event)">Galeri <i class="fas fa-chevron-down ml-1"></i></button>
