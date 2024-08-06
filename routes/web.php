@@ -14,30 +14,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('landing');
+    return view('index');
 
 });
-Route::get('/video', function () {
-    return view('video');
+
+// Auth
+Route::get('/login', function () {
+    return view('pages.auth.login');
 });
-Route::get('/foto', function () {
-    return view('foto');
+
+// Admin
+Route::get('/dashboard', function () {
+    return view('pages.admin.dashboard');
 });
+
+
+// Relawan
+
 Route::get('/profil', function () {
     return view('profile');
 });
-Route::get('/testimoni', function () {
-    return view('testimoni');
-});
-Route::get('/program', function () {
-    return view('program');
-});
-Route::get('/program-beras', function () {
-    return view('program-beras');
-});
+
+
 Route::get('/about', function () {
     return view('about-us');
 });
+
 Route::get('/index', function () {
     return view('index');
 });
+
