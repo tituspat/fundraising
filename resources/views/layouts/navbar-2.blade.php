@@ -20,7 +20,7 @@
                         </button>
                     </div>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/index">Home</a></li>
                         <li class="group relative">
                             <a href="javascript:;">
                                 Landing
