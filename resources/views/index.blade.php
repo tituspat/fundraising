@@ -53,8 +53,9 @@
                     </div>
 
                     <div class="grid grid-rows-2 gap-10">
-
+                        
                         <div class="grid row-span-1">
+                            @foreach($programUtama as $p)
                             {{-- <div class="grid gap-6 sm:grid-cols-6 lg:grid-cols-6"> --}}
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div
@@ -66,10 +67,10 @@
 
                                     <div class="col-span-1 w-full">
                                     <a href="services-detail.html"
-                                        class="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black">PENINGKATAN PRODUKSI BERAS MERAH</a>
+                                        class="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black">{{$p->title}}</a>
                                     <p
                                         class="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
-                                        Tanaman padi merah adalah padi lokal Kabupaten Tabanan, Provinsi Bali. Tanaman ini tumbuh baik di kawasan dengan ketinggian tempat > 500 mdpl, seperti di Kecamatan Penebel. Saat ini di Kecamatan Penebel terdapat areal tanam padi merah sekitar 227 ha. ...
+                                        {{$p->description}}
                                     </p>
                                     <a href="services-detail.html"
                                         class="flex h-11 w-11 items-center justify-center rounded-full bg-[#F3F4F6] transition group-hover:bg-black rtl:rotate-180 dark:bg-gray-dark">
@@ -84,11 +85,13 @@
                                 </div>
                                 </div>
                             </div>
+                            @endforeach
                             </div>
                             {{-- </div> --}}
                         </div>
 
                         <div class="row-span-1 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            @foreach($program as $p)
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div
                                     class="group rounded-3xl border-2 border-white bg-white p-6 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary">
@@ -105,10 +108,10 @@
                                         </svg>
                                     </div>
                                     <a href="services-detail.html"
-                                        class="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black">PETERNAKAN SAPI</a>
+                                        class="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black">{{$p->title}}</a>
                                     <p
                                         class="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
-                                        Untuk menunjang ketersediaan pupuk organik, populasi sapi perah di kawasan pengembangan padi merah ditambah sekitar 200 ekor sapi Bali, yang dikelola oleh 10 kelomok ternak (20 ekor per kelompok ternak).
+                                        {{$p->description}}
 
                                     </p>
                                     <a href="services-detail.html"
@@ -123,7 +126,8 @@
                                     </a>
                                 </div>
                             </div>
-                            <div data-aos="fade-up" data-aos-duration="1000">
+                            @endforeach
+                            {{-- <div data-aos="fade-up" data-aos-duration="1000">
                                 <div
                                     class="group rounded-3xl border-2 border-white bg-white p-6 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary">
                                     <div
@@ -188,7 +192,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

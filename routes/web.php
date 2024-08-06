@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::controller(MainController::class)->group(function () {
+    // view
+    Route::get('/', 'index');
+});
 
+Route::controller(PhotoController::class)->group(function () {
+    // view
+    Route::get('/photo', 'index');
 });
 
 // Auth
