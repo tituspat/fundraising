@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,25 +15,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
+Route::controller(MainController::class)->group(function () {
+    // view
+    Route::get('/', 'index');
+});
 
+Route::controller(PhotoController::class)->group(function () {
+    // view
+    Route::get('/photo', 'index');
 });
-Route::get('/video', function () {
-    return view('video');
+
+// Auth
+Route::get('/login', function () {
+    return view('pages.auth.login');
 });
-Route::get('/foto', function () {
-    return view('foto');
+
+// Admin
+Route::get('/dashboard', function () {
+    return view('pages.admin.dashboard');
 });
+
+
+// Relawan
+
 Route::get('/profil', function () {
     return view('profile');
 });
-Route::get('/testimoni', function () {
-    return view('testimoni');
+
+
+Route::get('/about', function () {
+    return view('about-us');
 });
-Route::get('/program', function () {
-    return view('program');
+
+Route::get('/index', function () {
+    return view('index');
 });
-Route::get('/program-beras', function () {
-    return view('program-beras');
-});
+
