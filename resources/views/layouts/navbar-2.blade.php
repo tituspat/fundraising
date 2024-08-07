@@ -20,7 +20,10 @@
                         </button>
                     </div>
                     <ul>
-                        <li><a href="/index">Home</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li>
+                            <a href="#">Profile</a>
+                        </li>
                         <li class="group relative">
                             <a href="javascript:;">
                                 Landing
@@ -36,7 +39,7 @@
                                     </svg>
                                 </div>
                             </a>
-                            <div class="submenu">
+                            {{--<div class="submenu">
                                 <a href="crypto.html">Crypto Currency</a>
                                 <a href="modern-saas.html">Modern Saas </a>
                                 <a href="real-estate.html">Real Estate </a>
@@ -101,69 +104,33 @@
                                         New
                                     </span>
                                 </a>
-                            </div>
+                            </div>--}}
+                        </li>
+
+                        <li>
+                            <a href="#">Portfolio</a>
                         </li>
                         <li>
-                            <a href="portfolio.html">Portfolio</a>
+                            <a href="#">Program</a>
                         </li>
                         <li>
-                            <a href="services.html">Service</a>
+                            <a href="#">Team</a>
                         </li>
+
                         <li>
-                            <a href="team.html">Team</a>
-                        </li>
-                        <li>
-                            <a href="about-us.html" class="active">About Us</a>
-                        </li>
-                        <li>
-                            <a href="career.html">Career</a>
+                            <a href="#">Career</a>
                         </li>
                         <li
                             class="relative hidden items-center before:absolute before:top-1/2 before:h-[30px] before:w-[2px] before:-translate-y-1/2 before:bg-gray/30 ltr:pl-9 ltr:before:-left-[2px] rtl:pr-9 rtl:before:-right-[2px] lg:inline-flex"
                         >
-                            <!-- <button type="button" onclick="search()" class="text-white hover:text-primary">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M18.7363 17.4637L14.6512 13.3785C15.6799 12.0753 16.3 10.4347 16.3 8.65C16.3 4.4317 12.8683 1 8.65 1C4.4317 1 1 4.4317 1 8.65C1 12.8683 4.4317 16.3 8.65 16.3C10.4356 16.3 12.0754 15.6808 13.3786 14.6512L17.4637 18.7363C17.6392 18.9118 17.8696 19 18.1 19C18.3304 19 18.5608 18.9118 18.7363 18.7363C19.0882 18.3844 19.0882 17.8156 18.7363 17.4637ZM2.8 8.65C2.8 5.4244 5.4244 2.8 8.65 2.8C11.8756 2.8 14.5 5.4244 14.5 8.65C14.5 11.8756 11.8756 14.5 8.65 14.5C5.4244 14.5 2.8 11.8756 2.8 8.65Z"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                            </button> -->
-                        </li>
-                        <li
-                            class="search-bar absolute hidden w-0 overflow-hidden bg-black transition-all duration-500 ltr:right-0 rtl:left-0 lg:block"
-                        >
-                            <form action="" class="relative">
-                                <input
-                                    type="text"
-                                    placeholder="Search"
-                                    class="w-full border-b border-white bg-transparent py-1 outline-none ltr:pl-2 ltr:pr-8 rtl:pr-2 rtl:pl-8"
-                                />
-                                <button
-                                    type="button"
-                                    class="absolute top-1/2 -translate-y-1/2 hover:text-primary ltr:right-0 rtl:left-0"
-                                    onclick="search()"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke-width="1.5"
-                                        stroke="currentColor"
-                                        class="h-6 w-6"
-                                    >
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </form>
                         </li>
                     </ul>
                 </div>
                 <ul class="flex items-center gap-5 ltr:pr-5 rtl:pl-5 ltr:lg:pl-5 ltr:lg:pr-0 rtl:lg:pr-5 rtl:lg:pl-0">
                     <li>
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="handleLogin()">
-                        Login
-                    </button>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="handleLogin()">
+                            Login
+                        </button>
                     </li>
                     <!-- <li>
                         <button

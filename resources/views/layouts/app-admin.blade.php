@@ -14,13 +14,13 @@
    <title>Dashboard</title>
 
    <!-- inject:css-->
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/apexcharts.min.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/datepicker.min.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/line-awesome.min.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/nouislider.min.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/quill.snow.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/svgMap.min.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/tailwind.css')}}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/apexcharts.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/datepicker.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/line-awesome.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/nouislider.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/quill.snow.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/svgMap.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/tailwind.css')}}">
    <!-- endinject -->
 
    <!-- Fonts -->
@@ -34,13 +34,13 @@
     @yield('content')
 
     <!-- Swiper Slider JS -->
-    <script src="{{mix('resources/assets/js/swiper-bundle.min.js')}}"></script>
+    <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
     <!-- Counter Js -->
-    <script src="{{mix('resources/assets/js/vanilla-counter.js')}}"></script>
+    <script src="{{asset('js/vanilla-counter.js')}}"></script>
     <!-- AOS Animation JS -->
-    <script src="{{mix('resources/assets/js/aos.js')}}"></script>
+    <script src="{{asset('js/aos.js')}}"></script>
     <!-- Custom Js -->
-    <script src="{{mix('resources/assets/js/custom.js')}}"></script>
+    <script src="{{asset('js/custom.js')}}"></script>
 
 </body>
 </html>

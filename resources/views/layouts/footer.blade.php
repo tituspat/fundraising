@@ -2,7 +2,7 @@
                 <div class="container">
                     <div class="grid gap-y-10 gap-x-4 py-14 sm:grid-cols-3 lg:grid-cols-5 lg:py-[100px]">
                         <div class="relative">
-                            <img src="{{ mix('resources/assets/images/logo.png') }}" alt="plurk" class="h-7" />
+                            <img src="{{ asset('img/logo-sahabat.png') }}" alt="plurk" class="h-7" />
                             <ul class="mt-12 flex items-center gap-8">
                                 <li>
                                     <a href="javascript:">
@@ -65,9 +65,9 @@
                                     </a>
                                 </li>
                             </ul>
-                            <img src="{{ mix('resources/assets/images/footer-shape.png') }}" alt="footer-shape" class="absolute bottom-0 right-0 sm:left-0" />
+                            <img src="{{ asset('images/footer-shape.png') }}" alt="footer-shape" class="absolute bottom-0 right-0 sm:left-0" />
                             <img
-                                src="{{ mix('resources/assets/images/footer-shape-dark.png') }}"
+                                src="{{ asset('images/footer-shape-dark.png') }}"
                                 alt="footer-shape-dark"
                                 class="absolute bottom-0 right-0 hidden dark:block sm:left-0"
                             />

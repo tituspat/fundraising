@@ -838,7 +838,7 @@
                         </div>
                     </div>
                     <div class="bottom-0 ltr:right-0 rtl:left-0 lg:absolute" data-aos="fade-left" data-aos-duration="1000">
-                        <img src="{{mix('resources/assets/images/about-bg.png')}}" alt="about-who-bg" class="rtl:rotate-y-180" />
+                        <img src="{{asset('images/about-bg.png')}}" alt="about-who-bg" class="rtl:rotate-y-180" />
                     </div>
                 </section>
 
@@ -973,42 +973,42 @@
                         <div class="grid gap-4 pt-5 sm:grid-cols-3 md:gap-[30px] lg:grid-cols-4 lg:pt-0">
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div class="rounded-[32px] border border-transparent bg-white py-9 px-4 transition hover:border-secondary">
-                                    <img src="{{mix('resources/assets/images/award1.png')}}" alt="award" class="mx-auto h-[100px]" />
+                                    <img src="{{asset('images/award1.png')}}" alt="award" class="mx-auto h-[100px]" />
                                 </div>
                             </div>
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div class="rounded-[32px] border border-transparent bg-white py-9 px-4 transition hover:border-secondary">
-                                    <img src="{{mix('resources/assets/images/award2.png')}}" alt="award" class="mx-auto h-[100px]" />
+                                    <img src="{{asset('images/award2.png')}}" alt="award" class="mx-auto h-[100px]" />
                                 </div>
                             </div>
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div class="rounded-[32px] border border-transparent bg-white py-9 px-4 transition hover:border-secondary">
-                                    <img src="{{mix('resources/assets/images/award3.png')}}" alt="award" class="mx-auto h-[100px]" />
+                                    <img src="{{asset('images/award3.png')}}" alt="award" class="mx-auto h-[100px]" />
                                 </div>
                             </div>
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div class="rounded-[32px] border border-transparent bg-white py-9 px-4 transition hover:border-secondary">
-                                    <img src="{{mix('resources/assets/images/award4.png')}}" alt="award" class="mx-auto h-[100px]" />
+                                    <img src="{{asset('images/award4.png')}}" alt="award" class="mx-auto h-[100px]" />
                                 </div>
                             </div>
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div class="rounded-[32px] border border-transparent bg-white py-9 px-4 transition hover:border-secondary">
-                                    <img src="{{mix('resources/assets/images/award5.png')}}" alt="award" class="mx-auto h-[100px]" />
+                                    <img src="{{asset('images/award5.png')}}" alt="award" class="mx-auto h-[100px]" />
                                 </div>
                             </div>
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div class="rounded-[32px] border border-transparent bg-white py-9 px-4 transition hover:border-secondary">
-                                    <img src="{{mix('resources/assets/images/award6.png')}}" alt="award" class="mx-auto h-[100px]" />
+                                    <img src="{{asset('images/award6.png')}}" alt="award" class="mx-auto h-[100px]" />
                                 </div>
                             </div>
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div class="rounded-[32px] border border-transparent bg-white py-9 px-4 transition hover:border-secondary">
-                                    <img src="{{mix('resources/assets/images/award7.png')}}" alt="award" class="mx-auto h-[100px]" />
+                                    <img src="{{asset('images/award7.png')}}" alt="award" class="mx-auto h-[100px]" />
                                 </div>
                             </div>
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div class="rounded-[32px] border border-transparent bg-white py-9 px-4 transition hover:border-secondary">
-                                    <img src="{{mix('resources/assets/images/award8.png')}}" alt="award" class="mx-auto h-[100px]" />
+                                    <img src="{{asset('images/award8.png')}}" alt="award" class="mx-auto h-[100px]" />
                                 </div>
                             </div>
                         </div>
@@ -1024,7 +1024,7 @@
                         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                             <div class="group cursor-pointer text-center">
                                 <div class="relative h-[280px] rounded-3xl transition-all duration-500 group-hover:shadow-[0_0_25px_#979797]">
-                                    <img src="{{mix('resources/assets/images/team-member-1.png')}}" alt="team-member-1" class="h-full w-full rounded-3xl object-cover object-top" />
+                                    <img src="{{asset('images/team-member-1.png')}}" alt="team-member-1" class="h-full w-full rounded-3xl object-cover object-top" />
                                 </div>
                                 <h4 class="pt-5 pb-2 text-xl font-extrabold text-black transition duration-500 group-hover:text-secondary dark:text-white">
                                     Aditya Patel
@@ -1033,7 +1033,7 @@
                             </div>
                             <div class="group cursor-pointer text-center">
                                 <div class="relative h-[280px] rounded-3xl transition-all duration-500 group-hover:shadow-[0_0_25px_#979797]">
-                                    <img src="{{mix('resources/assets/images/team-member-2.png')}}" alt="team-member-2" class="h-full w-full rounded-3xl object-cover object-top" />
+                                    <img src="{{asset('images/team-member-2.png')}}" alt="team-member-2" class="h-full w-full rounded-3xl object-cover object-top" />
                                 </div>
                                 <h4 class="pt-5 pb-2 text-xl font-extrabold text-black transition duration-500 group-hover:text-secondary dark:text-white">
                                     Audrey Ramirez
@@ -1042,7 +1042,7 @@
                             </div>
                             <div class="group cursor-pointer text-center">
                                 <div class="relative h-[280px] rounded-3xl transition-all duration-500 group-hover:shadow-[0_0_25px_#979797]">
-                                    <img src="{{mix('resources/assets/images/team-member-3.png')}}" alt="team-member-3" class="h-full w-full rounded-3xl object-cover object-top" />
+                                    <img src="{{asset('images/team-member-3.png')}}" alt="team-member-3" class="h-full w-full rounded-3xl object-cover object-top" />
                                 </div>
                                 <h4 class="pt-5 pb-2 text-xl font-extrabold text-black transition duration-500 group-hover:text-secondary dark:text-white">
                                     James Robinson
@@ -1051,7 +1051,7 @@
                             </div>
                             <div class="group cursor-pointer text-center">
                                 <div class="relative h-[280px] rounded-3xl transition-all duration-500 group-hover:shadow-[0_0_25px_#979797]">
-                                    <img src="{{mix('resources/assets/images/team-member-4.png')}}" alt="team-member-4" class="h-full w-full rounded-3xl object-cover object-top" />
+                                    <img src="{{asset('images/team-member-4.png')}}" alt="team-member-4" class="h-full w-full rounded-3xl object-cover object-top" />
                                 </div>
                                 <h4 class="pt-5 pb-2 text-xl font-extrabold text-black transition duration-500 group-hover:text-secondary dark:text-white">
                                     Daniel Allen
@@ -1124,7 +1124,7 @@
                                         class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark"
                                     >
                                         <a href="blog-details.html" class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
-                                        <img src="{{mix('resources/assets/images/blog1.png')}}" alt="blog" class="h-52 w-full rounded-t-3xl object-cover" />
+                                        <img src="{{asset('images/blog1.png')}}" alt="blog" class="h-52 w-full rounded-t-3xl object-cover" />
                                         <div class="p-5 text-sm font-bold">
                                             <h6 class="font-extrabold text-secondary dark:text-secondary">UI/UX Design</h6>
                                             <h5 class="my-[10px] block text-lg font-extrabold leading-[23px] text-black line-clamp-2 dark:text-white">
@@ -1142,7 +1142,7 @@
                                         class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark"
                                     >
                                         <a href="blog-details.html" class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
-                                        <img src="{{mix('resources/assets/images/blog2.png')}}" alt="blog" class="h-52 w-full rounded-t-3xl object-cover" />
+                                        <img src="{{asset('images/blog2.png')}}" alt="blog" class="h-52 w-full rounded-t-3xl object-cover" />
                                         <div class="p-5 text-sm font-bold">
                                             <h6 class="font-extrabold text-secondary dark:text-secondary">Project Management</h6>
                                             <h5 class="my-[10px] block text-lg font-extrabold leading-[23px] text-black line-clamp-2 dark:text-white">
@@ -1160,7 +1160,7 @@
                                         class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark"
                                     >
                                         <a href="blog-details.html" class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
-                                        <img src="{{mix('resources/assets/images/blog3.png')}}" alt="blog" class="h-52 w-full rounded-t-3xl object-cover" />
+                                        <img src="{{asset('images/blog3.png')}}" alt="blog" class="h-52 w-full rounded-t-3xl object-cover" />
                                         <div class="p-5 text-sm font-bold">
                                             <h6 class="font-extrabold text-secondary dark:text-secondary">SEO Marketing</h6>
                                             <h5 class="my-[10px] block text-lg font-extrabold leading-[23px] text-black line-clamp-2 dark:text-white">
@@ -1304,7 +1304,7 @@
                                             <div class="col-span-2">
                                                 <div class="relative rounded-3xl bg-white/[0.02] p-6">
                                                     <img
-                                                        src="{{mix('resources/assets/images/blue-quote.png')}}"
+                                                        src="{{asset('images/blue-quote.png')}}"
                                                         alt="blue-quote"
                                                         class="absolute top-0 ltr:right-0 rtl:left-0 sm:-top-6 ltr:sm:-right-6 rtl:sm:-left-6"
                                                     />
@@ -1360,7 +1360,7 @@
                                             <div
                                                 class="mx-auto mt-4 h-20 w-20 max-w-[255px] overflow-hidden rounded-full bg-white ltr:ml-auto rtl:mr-auto dark:bg-gray-dark sm:mt-0 sm:h-auto sm:w-auto sm:rounded-[150px] ltr:sm:mr-0 rtl:sm:ml-0"
                                             >
-                                                <img src="{{mix('resources/assets/images/testimonial.png')}}" alt="testimonial" class="h-full w-full object-cover object-top" />
+                                                <img src="{{asset('images/testimonial.png')}}" alt="testimonial" class="h-full w-full object-cover object-top" />
                                             </div>
                                         </div>
                                     </div>
@@ -1369,7 +1369,7 @@
                                             <div class="col-span-2">
                                                 <div class="relative rounded-3xl bg-white/[0.02] p-6">
                                                     <img
-                                                        src="{{mix('resources/assets/images/blue-quote.png')}}"
+                                                        src="{{asset('images/blue-quote.png')}}"
                                                         alt="blue-quote"
                                                         class="absolute top-0 ltr:right-0 rtl:left-0 sm:-top-6 ltr:sm:-right-6 rtl:sm:-left-6"
                                                     />
@@ -1430,7 +1430,7 @@
                                             <div
                                                 class="mx-auto mt-4 h-20 w-20 max-w-[255px] overflow-hidden rounded-full bg-white ltr:ml-auto rtl:mr-auto dark:bg-gray-dark sm:mt-0 sm:h-auto sm:w-auto sm:rounded-[150px] ltr:sm:mr-0 rtl:sm:ml-0"
                                             >
-                                                <img src="{{mix('resources/assets/images/testimonial.png')}}" alt="testimonial" class="h-full w-full object-cover object-top" />
+                                                <img src="{{asset('images/testimonial.png')}}" alt="testimonial" class="h-full w-full object-cover object-top" />
                                             </div>
                                         </div>
                                     </div>
@@ -1477,8 +1477,8 @@
                     <div class="container">
                         <div class="relative">
                             <div class="relative xl:inline-block" data-aos="fade-down" data-aos-duration="1000">
-                                <img src="{{mix('resources/assets/images/stay-text.png')}}" alt="stay-text" class="left-1/2 mx-auto sm:absolute sm:-translate-x-1/2" />
-                                <img src="{{mix('resources/assets/images/updated-text.png')}}" alt="updated-text" class="mx-auto sm:pt-4 xl:mx-0" />
+                                <img src="{{asset('images/stay-text.png')}}" alt="stay-text" class="left-1/2 mx-auto sm:absolute sm:-translate-x-1/2" />
+                                <img src="{{asset('images/updated-text.png')}}" alt="updated-text" class="mx-auto sm:pt-4 xl:mx-0" />
                                 <div class="top-20 ltr:left-[105%] rtl:right-[105%] xl:absolute">
                                     <svg
                                         width="320"
@@ -1794,7 +1794,7 @@
                 <div class="container">
                     <div class="grid gap-y-10 gap-x-4 py-14 sm:grid-cols-3 lg:grid-cols-5 lg:py-[100px]">
                         <div class="relative">
-                            <img src="{{mix('resources/assets/images/logo.png')}}" alt="plurk" class="h-7" />
+                            <img src="{{asset('images/logo.png')}}" alt="plurk" class="h-7" />
                             <ul class="mt-12 flex items-center gap-8">
                                 <li>
                                     <a href="javascript:">
@@ -1857,9 +1857,9 @@
                                     </a>
                                 </li>
                             </ul>
-                            <img src="{{mix('resources/assets/images/footer-shape.png')}}" alt="footer-shape" class="absolute bottom-0 right-0 sm:left-0" />
+                            <img src="{{asset('images/footer-shape.png')}}" alt="footer-shape" class="absolute bottom-0 right-0 sm:left-0" />
                             <img
-                                src="{{mix('resources/assets/images/footer-shape-dark.png')}}"
+                                src="{{asset('images/footer-shape-dark.png')}}"
                                 alt="footer-shape-dark"
                                 class="absolute bottom-0 right-0 hidden dark:block sm:left-0"
                             />
@@ -1932,13 +1932,13 @@
         </div>
 
         <!-- Swiper Slider JS -->
-        <script src="{{mix('resources/assets/js/swiper-bundle.min.js')}}"></script>
+        <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
         <!-- Counter Js -->
-        <script src="{{mix('resources/assets/js/vanilla-counter.js')}}"></script>
+        <script src="{{asset('js/vanilla-counter.js')}}"></script>
         <!-- AOS Animation JS -->
-        <script src="{{mix('resources/assets/js/aos.js')}}"></script>
+        <script src="{{asset('js/aos.js')}}"></script>
         <!-- Custom Js -->
-        <script src="{{mix('resources/assets/js/custom.js')}}"></script>
+        <script src="{{asset('js/custom.js')}}"></script>
 
         <script>
             // Testimonial Slider

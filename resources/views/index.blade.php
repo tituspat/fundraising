@@ -9,9 +9,9 @@
             <div class="overflow-hidden pt-[82px] sm:-mx-[250px] sm:rounded-b-[50%] lg:-mx-[150px] lg:pt-[106px]"
                 style="background-image: url('img/pura.jpg'); background-repeat: no-repeat; background-size: cover;">
                 <div class="relative">
-                    <img src="{{ mix('resources/assets/vendor/plurk/images/banner-lefticon.png') }}" alt="banner-lefticon"
+                    <img src="{{ asset('vendor/plurk/images/banner-lefticon.png') }}" alt="banner-lefticon"
                         class="absolute left-0 top-20 sm:left-[250px] lg:left-[150px]" />
-                    <img src="{{ mix('resources/assets/vendor/plurk/images/banner-rightIcon.png') }}" alt="banner-rightIcon"
+                    <img src="{{ asset('vendor/plurk/images/banner-rightIcon.png') }}" alt="banner-rightIcon"
                         class="absolute right-0 -top-4 sm:right-[250px] lg:right-[150px]" />
                     <div class="container">
                         <div
@@ -33,10 +33,10 @@
                             </div>
                             <div class="bottom-0 mx-auto w-auto ltr:right-0 rtl:left-0 md:w-[540px] lg:absolute xl:w-[650px]"
                                 data-aos="fade-left" data-aos-duration="1000">
-                                <!-- <img src="{{ mix('resources/assets/vendor/plurk/images/home-banner-icon.svg') }}" alt="home-banner-icon" class="rtl:rotate-y-180" /> -->
-                                <img src="{{ asset('img/profile-giri.png') }}" alt="home-banner-icon"
-                                    class="rtl:rotate-y-180 rounded-full "
-                                    style="transform: translate(150px, 20px) scale(1.50);" />
+                                <!-- <img src="{{ asset('vendor/plurk/images/home-banner-icon.svg') }}" alt="home-banner-icon" class="rtl:rotate-y-180" /> -->
+                                <img src="{{ asset('img/calon.png') }}" alt="home-banner-icon"
+                                    class="rtl:rotate-y-180"
+                                    />
 
                             </div>
                         </div>
@@ -197,6 +197,7 @@
                     </div>
                 </div>
             </section>
+            {{--
             <section class="py-14 dark:!bg-none lg:py-[100px]"
                 style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 54.69%)">
                 <div class="container">
@@ -334,7 +335,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--}}
                 {{-- <div
                     class="relative my-14 mx-auto border-[10px] border-transparent bg-black py-14 dark:border-black dark:bg-gray-dark lg:my-[100px] lg:py-[100px] xl:max-w-[1440px] xl:rounded-3xl">
                     <div class="container">
@@ -488,7 +489,7 @@
                             </div>
                             <div
                                 class="top-1/2 mx-auto mt-10 ltr:right-5 rtl:left-5 md:w-[45%] lg:mt-0 xl:absolute xl:-translate-y-1/2">
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/box-img.png') }}" alt="box-img"
+                                <img src="{{ asset('vendor/plurk/images/box-img.png') }}" alt="box-img"
                                     class="w-full rtl:rotate-y-180" />
                             </div>
                         </div>
@@ -522,7 +523,7 @@
                             <div
                                 class="relative rounded-3xl border border-transparent bg-white drop-shadow-[5px_10px_80px_rgba(119,128,161,0.15)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark dark:drop-shadow-none">
                                 <a href="portfolio-detail.html" class="absolute top-0 left-0 h-full w-full"></a>
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/project-1.png') }}" alt="project-1"
+                                <img src="{{ asset('vendor/plurk/images/project-1.png') }}" alt="project-1"
                                     class="h-52 w-full rounded-t-3xl object-cover" />
                                 <div class="p-5 text-sm font-bold">
                                     <h6 class="mb-1 text-black dark:text-white">Space Landing page</h6>
@@ -534,7 +535,7 @@
                             <div
                                 class="relative rounded-3xl border border-transparent bg-white drop-shadow-[5px_10px_80px_rgba(119,128,161,0.15)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark dark:drop-shadow-none">
                                 <a href="portfolio-detail.html" class="absolute top-0 left-0 h-full w-full"></a>
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/project-2.png') }}" alt="project-2"
+                                <img src="{{ asset('vendor/plurk/images/project-2.png') }}" alt="project-2"
                                     class="h-52 w-full rounded-t-3xl object-cover" />
                                 <div class="p-5 text-sm font-bold">
                                     <h6 class="mb-1 text-black dark:text-white">Crypto Game - UX Interface</h6>
@@ -546,7 +547,7 @@
                             <div
                                 class="relative rounded-3xl border border-transparent bg-white drop-shadow-[5px_10px_80px_rgba(119,128,161,0.15)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark dark:drop-shadow-none">
                                 <a href="portfolio-detail.html" class="absolute top-0 left-0 h-full w-full"></a>
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/project-3.png') }}" alt="project-3"
+                                <img src="{{ asset('vendor/plurk/images/project-3.png') }}" alt="project-3"
                                     class="h-52 w-full rounded-t-3xl object-cover" />
                                 <div class="p-5 text-sm font-bold">
                                     <h6 class="mb-1 text-black dark:text-white">Looking for a quiet place</h6>
@@ -558,7 +559,7 @@
                             <div
                                 class="relative rounded-3xl border border-transparent bg-white drop-shadow-[5px_10px_80px_rgba(119,128,161,0.15)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark dark:drop-shadow-none">
                                 <a href="portfolio-detail.html" class="absolute top-0 left-0 h-full w-full"></a>
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/project-4.png') }}" alt="project-4"
+                                <img src="{{ asset('vendor/plurk/images/project-4.png') }}" alt="project-4"
                                     class="h-52 w-full rounded-t-3xl object-cover" />
                                 <div class="p-5 text-sm font-bold">
                                     <h6 class="mb-1 text-black dark:text-white">WeTour - Travel Hero Illustration</h6>
@@ -570,7 +571,7 @@
                             <div
                                 class="relative rounded-3xl border border-transparent bg-white drop-shadow-[5px_10px_80px_rgba(119,128,161,0.15)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark dark:drop-shadow-none">
                                 <a href="portfolio-detail.html" class="absolute top-0 left-0 h-full w-full"></a>
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/project-5.png') }}" alt="project-5"
+                                <img src="{{ asset('vendor/plurk/images/project-5.png') }}" alt="project-5"
                                     class="h-52 w-full rounded-t-3xl object-cover" />
                                 <div class="p-5 text-sm font-bold">
                                     <h6 class="mb-1 text-black dark:text-white">Digital Art Guide</h6>
@@ -582,7 +583,7 @@
                             <div
                                 class="relative rounded-3xl border border-transparent bg-white drop-shadow-[5px_10px_80px_rgba(119,128,161,0.15)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark dark:drop-shadow-none">
                                 <a href="portfolio-detail.html" class="absolute top-0 left-0 h-full w-full"></a>
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/project-6.png') }}" alt="project-6"
+                                <img src="{{ asset('vendor/plurk/images/project-6.png') }}" alt="project-6"
                                     class="h-52 w-full rounded-t-3xl object-cover" />
                                 <div class="p-5 text-sm font-bold">
                                     <h6 class="mb-1 text-black dark:text-white">Frozeverse - 3D and motion design</h6>
@@ -605,7 +606,7 @@
                         <div class="group cursor-pointer text-center">
                             <div
                                 class="relative h-[280px] rounded-3xl transition-all duration-500 group-hover:shadow-[0_0_25px_#979797]">
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/team-member-1.png') }}" alt="team-member-1"
+                                <img src="{{ asset('vendor/plurk/images/team-member-1.png') }}" alt="team-member-1"
                                     class="h-full w-full rounded-3xl object-cover object-top" />
                             </div>
                             <h4
@@ -617,7 +618,7 @@
                         <div class="group cursor-pointer text-center">
                             <div
                                 class="relative h-[280px] rounded-3xl transition-all duration-500 group-hover:shadow-[0_0_25px_#979797]">
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/team-member-2.png') }}" alt="team-member-2"
+                                <img src="{{ asset('vendor/plurk/images/team-member-2.png') }}" alt="team-member-2"
                                     class="h-full w-full rounded-3xl object-cover object-top" />
                             </div>
                             <h4
@@ -629,7 +630,7 @@
                         <div class="group cursor-pointer text-center">
                             <div
                                 class="relative h-[280px] rounded-3xl transition-all duration-500 group-hover:shadow-[0_0_25px_#979797]">
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/team-member-3.png') }}" alt="team-member-3"
+                                <img src="{{ asset('vendor/plurk/images/team-member-3.png') }}" alt="team-member-3"
                                     class="h-full w-full rounded-3xl object-cover object-top" />
                             </div>
                             <h4
@@ -641,7 +642,7 @@
                         <div class="group cursor-pointer text-center">
                             <div
                                 class="relative h-[280px] rounded-3xl transition-all duration-500 group-hover:shadow-[0_0_25px_#979797]">
-                                <img src="{{ mix('resources/assets/vendor/plurk/images/team-member-4.png') }}" alt="team-member-4"
+                                <img src="{{ asset('vendor/plurk/images/team-member-4.png') }}" alt="team-member-4"
                                     class="h-full w-full rounded-3xl object-cover object-top" />
                             </div>
                             <h4
@@ -971,6 +972,7 @@
                     </div>
                 </div>
             </section> --}}
+            {{--
             <section class="relative bg-black mt-10 py-14 dark:bg-transparent lg:py-[100px]">
                 <div class="absolute top-0 ltr:right-0 rtl:left-0 rtl:-rotate-180">
                     <svg width="758" height="741" viewBox="0 0 758 741" fill="none"
@@ -1027,7 +1029,7 @@
                                     <div class="items-center gap-4 sm:grid sm:grid-cols-3">
                                         <div class="col-span-2">
                                             <div class="relative rounded-3xl bg-white/[0.02] p-6">
-                                                <img src="{{ mix('resources/assets/vendor/plurk/images/blue-quote.png') }}"
+                                                <img src="{{ asset('vendor/plurk/images/blue-quote.png') }}"
                                                     alt="blue-quote"
                                                     class="absolute top-0 ltr:right-0 rtl:left-0 sm:-top-6 ltr:sm:-right-6 rtl:sm:-left-6" />
                                                 <div class="pb-8">
@@ -1077,13 +1079,13 @@
                                             </div>
                                         </div>
                                         <!-- <img
-                                                    src="{{ mix('resources/assets/vendor/plurk/images/testimonial.png') }}"
+                                                    src="{{ asset('vendor/plurk/images/testimonial.png') }}"
                                                     alt="testimonial"
                                                     class="mx-auto mt-4 h-20 w-20 rounded-full object-cover object-top ltr:ml-auto rtl:mr-auto sm:mt-0 sm:h-auto sm:w-auto sm:rounded-[150px] sm:object-scale-down ltr:sm:mr-0 rtl:sm:ml-0"
                                                 /> -->
                                         <div
                                             class="mx-auto mt-4 h-20 w-20 max-w-[255px] overflow-hidden rounded-full bg-white ltr:ml-auto rtl:mr-auto dark:bg-gray-dark sm:mt-0 sm:h-auto sm:w-auto sm:rounded-[150px] ltr:sm:mr-0 rtl:sm:ml-0">
-                                            <img src="{{ mix('resources/assets/vendor/plurk/images/testimonial.png') }}"
+                                            <img src="{{ asset('vendor/plurk/images/testimonial.png') }}"
                                                 alt="testimonial" class="h-full w-full object-cover object-top" />
                                         </div>
                                     </div>
@@ -1092,7 +1094,7 @@
                                     <div class="items-center gap-4 sm:grid sm:grid-cols-3">
                                         <div class="col-span-2">
                                             <div class="relative rounded-3xl bg-white/[0.02] p-6">
-                                                <img src="{{ mix('resources/assets/vendor/plurk/images/blue-quote.png') }}"
+                                                <img src="{{ asset('vendor/plurk/images/blue-quote.png') }}"
                                                     alt="blue-quote"
                                                     class="absolute top-0 ltr:right-0 rtl:left-0 sm:-top-6 ltr:sm:-right-6 rtl:sm:-left-6" />
                                                 <div class="pb-8">
@@ -1141,7 +1143,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ mix('resources/assets/vendor/plurk/images/testimonial.png') }}" alt="testimonial"
+                                        <img src="{{ asset('vendor/plurk/images/testimonial.png') }}" alt="testimonial"
                                             class="mx-auto ml-auto mt-4 h-20 w-20 rounded-full object-cover object-top rtl:mr-auto sm:mt-0 sm:h-auto sm:w-auto sm:rounded-[150px] sm:object-scale-down ltr:sm:mr-0 rtl:sm:ml-0" />
                                     </div>
                                 </div>
@@ -1181,7 +1183,7 @@
                             class="heading text-center lg:mb-0 lg:w-1/3 ltr:lg:pr-10 ltr:lg:text-left rtl:lg:pl-10 rtl:lg:text-right">
                             <h6>Get In Touch.</h6>
                             <h4 class="sm:!leading-[50px]">Ready to Get Started?</h4>
-                            <img src="{{ mix('resources/assets/vendor/plurk/images/form-img.png') }}" alt="form-img" class="mx-auto"
+                            <img src="{{ asset('vendor/plurk/images/form-img.png') }}" alt="form-img" class="mx-auto"
                                 data-aos="fade-right" data-aos-duration="1000" />
                         </div>
                         <form action="" class="rounded-3xl bg-white px-4 py-12 dark:bg-[#101626] lg:w-2/3 lg:px-8">
@@ -1278,19 +1280,20 @@
                     </div>
                 </div>
             </section>
+            --}}
         </div>
-
-        @include('layouts.footer')
+{{--
+        @include('layouts.footer')--}}
     </div>
 
     <!-- Swiper Slider JS -->
-    <script src="{{ mix('resources/assets/vendor/plurk/js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/plurk/js/swiper-bundle.min.js') }}"></script>
     <!-- Counter Js -->
-    <script src="{{ mix('resources/assets/vendor/plurk/js/vanilla-counter.js') }}"></script>
+    <script src="{{ asset('vendor/plurk/js/vanilla-counter.js') }}"></script>
     <!-- AOS Animation JS -->
-    <script src="{{ mix('resources/assets/vendor/plurk/js/aos.js') }}"></script>
+    <script src="{{ asset('vendor/plurk/js/aos.js') }}"></script>
     <!-- Custom Js -->
-    <script src="{{ mix('resources/assets/vendor/plurk/js/custom.js') }}"></script>
+    <script src="{{ asset('vendor/plurk/js/custom.js') }}"></script>
 
     <script>
         // Testimonial Slider

@@ -14,13 +14,13 @@
    <title>Dashboard</title>
 
    <!-- inject:css-->
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/apexcharts.min.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/datepicker.min.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/line-awesome.min.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/nouislider.min.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/quill.snow.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/svgMap.min.css') }}">
-   <link rel="stylesheet" href="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/css/tailwind.css')}}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/apexcharts.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/datepicker.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/line-awesome.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/nouislider.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/quill.snow.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/svgMap.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/tailwind.css')}}">
    <!-- endinject -->
 
    <!-- Fonts -->
@@ -36,11 +36,11 @@
       <div class="flex w-[280px] border-e border-[#edf2f9] dark:border-box-dark-up logo-wrapper items-center h-[71px] dark:bg-box-dark-up max-xl:hidden">
          <a href="index.html" class="block text-center">
             <div class="logo-full">
-               <img class="ps-[27px] dark:hidden" src="{{ mix('resources/assets/vendor/hexadash/images/logos/logo-dark.png') }}" alt="Logo">
-               <img class="ps-[27px] hidden dark:block" src="{{ mix('resources/assets/vendor/hexadash/images/logos/logo-white.png') }}" alt="Logo">
+               <img class="ps-[27px] dark:hidden" src="{{ asset('vendor/hexadash/images/logos/logo-dark.png') }}" alt="Logo">
+               <img class="ps-[27px] hidden dark:block" src="{{ asset('vendor/hexadash/images/logos/logo-white.png') }}" alt="Logo">
             </div>
             <div class="hidden logo-fold">
-               <img class="p-[27px] max-w-[80px]" src="{{ mix('resources/assets/vendor/hexadash/images/logos/logo-fold.png') }}" alt="Logo">
+               <img class="p-[27px] max-w-[80px]" src="{{ asset('vendor/hexadash/images/logos/logo-fold.png') }}" alt="Logo">
             </div>
          </a>
       </div>
@@ -737,8 +737,8 @@
                   <div class="flex md:w-[190px] xs:w-[170px] max-xs:w-[100px] max-md:pe-[30px] max-xs:pe-[15px] border-e border-[#edf2f9] dark:border-box-dark-up logo-wrapper items-center h-[71px] dark:bg-box-dark-up">
                      <a href="index.html" class="block text-center">
                         <div class="logo-full">
-                           <img class="md:ps-[15px] dark:hidden" src="{{ mix('resources/assets/vendor/hexadash/images/logos/logo-dark.png') }}" alt="Logo">
-                           <img class="md:ps-[15px] hidden dark:block" src="{{ mix('resources/assets/vendor/hexadash/images/logos/logo-white.png') }}" alt="Logo">
+                           <img class="md:ps-[15px] dark:hidden" src="{{ asset('vendor/hexadash/images/logos/logo-dark.png') }}" alt="Logo">
+                           <img class="md:ps-[15px] hidden dark:block" src="{{ asset('vendor/hexadash/images/logos/logo-white.png') }}" alt="Logo">
                         </div>
                      </a>
                   </div>
@@ -1124,7 +1124,7 @@
                                        <figure class="inline-flex w-full mb-0 align-top sm:gap-x-[16px] gap-y-[8px] max-sm:flex-wrap">
                                           <div class="text-light w-[40px] min-w-[40px] h-[40px] rounded-full relative">
                                              <span class="bg-current absolute content-[''] w-[12px] h-[12px] rounded-full border-2 border-white right-0 bottom-0" *ngif="!messages.isRead"></span>
-                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ mix('resources/assets/vendor/hexadash/images/messages/app-developer.png') }}">
+                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ asset('vendor/hexadash/images/messages/app-developer.png') }}">
                                           </div>
                                           <figcaption class="w-full -mt-1 text-start">
                                              <h1 class="flex items-center justify-between mb-0.5 text-sm text-current font-semibold">
@@ -1145,7 +1145,7 @@
                                        <figure class="inline-flex w-full mb-0 align-top sm:gap-x-[16px] gap-y-[8px] max-sm:flex-wrap">
                                           <div class="text-success w-[40px] min-w-[40px] h-[40px] rounded-full relative">
                                              <span class="bg-current absolute content-[''] w-[12px] h-[12px] rounded-full border-2 border-white right-0 bottom-0" *ngif="!messages.isRead"></span>
-                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ mix('resources/assets/vendor/hexadash/images/messages/product.png') }}">
+                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ asset('vendor/hexadash/images/messages/product.png') }}">
                                           </div>
                                           <figcaption class="w-full -mt-1 text-start">
                                              <h1 class="flex items-center justify-between mb-0.5 text-sm text-current font-semibold">
@@ -1166,7 +1166,7 @@
                                        <figure class="inline-flex w-full mb-0 align-top sm:gap-x-[16px] gap-y-[8px] max-sm:flex-wrap">
                                           <div class="text-success w-[40px] min-w-[40px] h-[40px] rounded-full relative">
                                              <span class="bg-current absolute content-[''] w-[12px] h-[12px] rounded-full border-2 border-white right-0 bottom-0" *ngif="!messages.isRead"></span>
-                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ mix('resources/assets/vendor/hexadash/images/messages/ui-ux-design.png') }}">
+                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ asset('vendor/hexadash/images/messages/ui-ux-design.png') }}">
                                           </div>
                                           <figcaption class="w-full -mt-1 text-start">
                                              <h1 class="flex items-center justify-between mb-0.5 text-sm text-current font-semibold">
@@ -1187,7 +1187,7 @@
                                        <figure class="inline-flex w-full mb-0 align-top sm:gap-x-[16px] gap-y-[8px] max-sm:flex-wrap">
                                           <div class="text-warning w-[40px] min-w-[40px] h-[40px] rounded-full relative">
                                              <span class="bg-current absolute content-[''] w-[12px] h-[12px] rounded-full border-2 border-white right-0 bottom-0" *ngif="!messages.isRead"></span>
-                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ mix('resources/assets/vendor/hexadash/images/messages/web-design-software-engineering.png') }}">
+                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ asset('vendor/hexadash/images/messages/web-design-software-engineering.png') }}">
                                           </div>
                                           <figcaption class="w-full -mt-1 text-start">
                                              <h1 class="flex items-center justify-between mb-0.5 text-sm text-current font-semibold">
@@ -1208,7 +1208,7 @@
                                        <figure class="inline-flex w-full mb-0 align-top sm:gap-x-[16px] gap-y-[8px] max-sm:flex-wrap">
                                           <div class="text-success w-[40px] min-w-[40px] h-[40px] rounded-full relative">
                                              <span class="bg-current absolute content-[''] w-[12px] h-[12px] rounded-full border-2 border-white right-0 bottom-0" *ngif="!messages.isRead"></span>
-                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ mix('resources/assets/vendor/hexadash/images/messages/firecircle-icon-graphic-branding-graphic-design-large-white.png') }}">
+                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ asset('vendor/hexadash/images/messages/firecircle-icon-graphic-branding-graphic-design-large-white.png') }}">
                                           </div>
                                           <figcaption class="w-full -mt-1 text-start">
                                              <h1 class="flex items-center justify-between mb-0.5 text-sm text-current font-semibold">
@@ -1229,7 +1229,7 @@
                                        <figure class="inline-flex w-full mb-0 align-top sm:gap-x-[16px] gap-y-[8px] max-sm:flex-wrap">
                                           <div class="text-warning w-[40px] min-w-[40px] h-[40px] rounded-full relative">
                                              <span class="bg-current absolute content-[''] w-[12px] h-[12px] rounded-full border-2 border-white right-0 bottom-0" *ngif="!messages.isRead"></span>
-                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ mix('resources/assets/vendor/hexadash/images/messages/app.png') }}">
+                                             <img class="object-cover w-[40px] h-[40px] bg-light-extra rounded-full" src="{{ asset('vendor/hexadash/images/messages/app.png') }}">
                                           </div>
                                           <figcaption class="w-full -mt-1 text-start">
                                              <h1 class="flex items-center justify-between mb-0.5 text-sm text-current font-semibold">
@@ -1399,7 +1399,7 @@
 
                                  <li class="w-full">
                                     <figure class="flex items-start px-4 py-3 mb-0 hover:shadow-action dark:hover:shadow-[0_5px_30px_rgba(1,4,19,.60)]">
-                                       <img class="h-fit me-4" src="{{ mix('resources/assets/vendor/hexadash/images/settings/audio.png') }}" alt="audio">
+                                       <img class="h-fit me-4" src="{{ asset('vendor/hexadash/images/settings/audio.png') }}" alt="audio">
                                        <figcaption>
                                           <h1 class="mb-0.5 -mt-1 text-[15px] font-medium capitalize text-dark dark:text-title-dark text-start">
                                              Diagram Maker</h1>
@@ -1409,7 +1409,7 @@
                                  </li>
                                  <li class="w-full">
                                     <figure class="flex items-start px-4 py-3 mb-0 hover:shadow-action dark:hover:shadow-[0_5px_30px_rgba(1,4,19,.60)]">
-                                       <img class="h-fit me-4" src="{{ mix('resources/assets/vendor/hexadash/images/settings/payment.png') }}" alt="payment">
+                                       <img class="h-fit me-4" src="{{ asset('vendor/hexadash/images/settings/payment.png') }}" alt="payment">
                                        <figcaption>
                                           <h1 class="mb-0.5 -mt-1 text-[15px] font-medium capitalize text-dark dark:text-title-dark text-start">
                                              payments</h1>
@@ -1419,7 +1419,7 @@
                                  </li>
                                  <li class="w-full">
                                     <figure class="flex items-start px-4 py-3 mb-0 hover:shadow-action dark:hover:shadow-[0_5px_30px_rgba(1,4,19,.60)]">
-                                       <img class="h-fit me-4" src="{{ mix('resources/assets/vendor/hexadash/images/settings/feature.png') }}" alt="feature">
+                                       <img class="h-fit me-4" src="{{ asset('vendor/hexadash/images/settings/feature.png') }}" alt="feature">
                                        <figcaption>
                                           <h1 class="mb-0.5 -mt-1 text-[15px] font-medium capitalize text-dark dark:text-title-dark text-start">
                                              All Features</h1>
@@ -1429,7 +1429,7 @@
                                  </li>
                                  <li class="w-full">
                                     <figure class="flex items-start px-4 py-3 mb-0 hover:shadow-action dark:hover:shadow-[0_5px_30px_rgba(1,4,19,.60)]">
-                                       <img class="h-fit me-4" src="{{ mix('resources/assets/vendor/hexadash/images/settings/theme.png') }}" alt="theme">
+                                       <img class="h-fit me-4" src="{{ asset('vendor/hexadash/images/settings/theme.png') }}" alt="theme">
                                        <figcaption>
                                           <h1 class="mb-0.5 -mt-1 text-[15px] font-medium capitalize text-dark dark:text-title-dark text-start">
                                              Themes</h1>
@@ -1440,7 +1440,7 @@
                                  </li>
                                  <li class="w-full">
                                     <figure class="flex items-start px-4 py-3 mb-0 hover:shadow-action dark:hover:shadow-[0_5px_30px_rgba(1,4,19,.60)]">
-                                       <img class="h-fit me-4" src="{{ mix('resources/assets/vendor/hexadash/images/settings/payment.png') }}" alt="payment">
+                                       <img class="h-fit me-4" src="{{ asset('vendor/hexadash/images/settings/payment.png') }}" alt="payment">
                                        <figcaption>
                                           <h1 class="mb-0.5 -mt-1 text-[15px] font-medium capitalize text-dark dark:text-title-dark text-start">
                                              payments</h1>
@@ -1450,7 +1450,7 @@
                                  </li>
                                  <li class="w-full">
                                     <figure class="flex items-start px-4 py-3 mb-0 hover:shadow-action dark:hover:shadow-[0_5px_30px_rgba(1,4,19,.60)]">
-                                       <img class="h-fit me-4" src="{{ mix('resources/assets/vendor/hexadash/images/settings/design.png') }}" alt="design">
+                                       <img class="h-fit me-4" src="{{ asset('vendor/hexadash/images/settings/design.png') }}" alt="design">
                                        <figcaption>
                                           <h1 class="mb-0.5 -mt-1 text-[15px] font-medium capitalize text-dark dark:text-title-dark text-start">
                                              Design Mockups</h1>
@@ -1460,7 +1460,7 @@
                                  </li>
                                  <li class="w-full">
                                     <figure class="flex items-start px-4 py-3 mb-0 hover:shadow-action dark:hover:shadow-[0_5px_30px_rgba(1,4,19,.60)]">
-                                       <img class="h-fit me-4" src="{{ mix('resources/assets/vendor/hexadash/images/settings/file.png') }}" alt="file">
+                                       <img class="h-fit me-4" src="{{ asset('vendor/hexadash/images/settings/file.png') }}" alt="file">
                                        <figcaption>
                                           <h1 class="mb-0.5 -mt-1 text-[15px] font-medium capitalize text-dark dark:text-title-dark text-start">
                                              Content Planner</h1>
@@ -1471,7 +1471,7 @@
                                  </li>
                                  <li class="w-full">
                                     <figure class="flex items-start px-4 py-3 mb-0 hover:shadow-action dark:hover:shadow-[0_5px_30px_rgba(1,4,19,.60)]">
-                                       <img class="h-fit me-4" src="{{ mix('resources/assets/vendor/hexadash/images/settings/audio.png') }}" alt="audio">
+                                       <img class="h-fit me-4" src="{{ asset('vendor/hexadash/images/settings/audio.png') }}" alt="audio">
                                        <figcaption>
                                           <h1 class="mb-0.5 -mt-1 text-[15px] font-medium capitalize text-dark dark:text-title-dark text-start">
                                              Diagram Maker</h1>
@@ -1489,25 +1489,25 @@
 
                      <div class="relative" data-te-dropdown-ref>
                         <button id="flags" data-te-dropdown-toggle-ref aria-expanded="false" type="button" class="flex items-center">
-                           <img class="min-w-[20px] min-h-[20px]" src="{{ mix('resources/assets/vendor/hexadash/images/flags/english.png') }}" alt="flags">
+                           <img class="min-w-[20px] min-h-[20px]" src="{{ asset('vendor/hexadash/images/flags/english.png') }}" alt="flags">
                         </button>
                         <div class="absolute z-[1000] ltr:float-left rtl:float-right m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:shadow-boxLargeDark dark:bg-box-dark-down  [&[data-te-dropdown-show]]:block" aria-labelledby="flags" data-te-dropdown-menu-ref>
                            <ul class="block bg-white dark:bg-box-dark-down w-[100px] shadow-[0_2px_8px_rgba(0,0,0,.15)] dark:shadow-[0_5px_30px_rgba(1,4,19,.60)] rounded-4 overflow-hidden">
                               <li class="bg-white dark:bg-box-dark-down hover:bg-primary/10 dark:hover:bg-primary/10">
                                  <button class="flex items-center px-3 py-1.5 text-sm text-dark dark:text-subtitle-dark">
-                                    <img class="w-3.5 h-3.5 me-2" src="{{ mix('resources/assets/vendor/hexadash/images/flags/english.png') }}" alt="english">
+                                    <img class="w-3.5 h-3.5 me-2" src="{{ asset('vendor/hexadash/images/flags/english.png') }}" alt="english">
                                     <span>English</span>
                                  </button>
                               </li>
                               <li class="bg-white dark:bg-box-dark-down hover:bg-primary/10 dark:hover:bg-primary/10">
                                  <button class="flex items-center px-3 py-1.5 text-sm text-dark dark:text-subtitle-dark">
-                                    <img class="w-3.5 h-3.5 me-2" src="{{ mix('resources/assets/vendor/hexadash/images/flags/spanish.png') }}" alt="spanish">
+                                    <img class="w-3.5 h-3.5 me-2" src="{{ asset('vendor/hexadash/images/flags/spanish.png') }}" alt="spanish">
                                     <span>Spanish</span>
                                  </button>
                               </li>
                               <li class="bg-white dark:bg-box-dark-down hover:bg-primary/10 dark:hover:bg-primary/10">
                                  <button class="flex items-center px-3 py-1.5 text-sm text-dark dark:text-subtitle-dark">
-                                    <img class="w-3.5 h-3.5 me-2" src="{{ mix('resources/assets/vendor/hexadash/images/flags/arabic.png') }}" alt="arabic">
+                                    <img class="w-3.5 h-3.5 me-2" src="{{ asset('vendor/hexadash/images/flags/arabic.png') }}" alt="arabic">
                                     <span>Arabic</span>
                                  </button>
                               </li>
@@ -1521,7 +1521,7 @@
                      <div class="relative" data-te-dropdown-ref>
                         <button type="button" id="author-dropdown" data-te-dropdown-toggle-ref aria-expanded="false" class="flex items-center me-1.5 text-body dark:text-subtitle-dark text-sm font-medium capitalize rounded-full md:me-0 group whitespace-nowrap">
                            <span class="sr-only">Open user menu</span>
-                           <img class="min-w-[32px] w-8 h-8 rounded-full xl:me-2" src="{{ mix('resources/assets/vendor/hexadash/images/avatars/thumbs.png') }}" alt="user photo">
+                           <img class="min-w-[32px] w-8 h-8 rounded-full xl:me-2" src="{{ asset('vendor/hexadash/images/avatars/thumbs.png') }}" alt="user photo">
                            <span class="hidden xl:block">Shamim Ahmed</span>
                            <i class="uil uil-angle-down text-light dark:text-subtitle-dark text-[18px] hidden xl:block"></i>
                         </button>
@@ -1530,7 +1530,7 @@
                         <div class="absolute z-[1000] ltr:float-left rtl:float-right m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:shadow-boxLargeDark dark:bg-box-dark-down  [&[data-te-dropdown-show]]:block" aria-labelledby="author-dropdown" data-te-dropdown-menu-ref>
                            <div class="min-w-[310px] max-sm:min-w-full pt-4 px-[15px] py-[12px] bg-white dark:bg-box-dark shadow-[0_2px_8px_rgba(0,0,0,.15)] dark:shadow-[0_5px_30px_rgba(1,4,19,.60)] rounded-4">
                               <figure class="flex items-center text-sm rounded-[8px] bg-section dark:bg-box-dark-up py-[20px] px-[25px] mb-[12px] gap-[15px]">
-                                 <img class="w-8 h-8 rounded-full bg-regular" src="{{ mix('resources/assets/vendor/hexadash/images/avatars/thumbs.png') }}" alt="user">
+                                 <img class="w-8 h-8 rounded-full bg-regular" src="{{ asset('vendor/hexadash/images/avatars/thumbs.png') }}" alt="user">
                                  <figcaption>
                                     <div class="text-dark dark:text-title-dark mb-0.5 text-sm">Shamim Ahmed</div>
                                     <div class="mb-0 text-xs text-body dark:text-subtitle-dark">Software Engineer</div>
@@ -2323,7 +2323,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/1.png') }}" alt="Samsung Galaxy S8 256GB"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/1.png') }}" alt="Samsung Galaxy S8 256GB"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">Samsung
                                                 Galaxy S8 256GB</span>
                                           </div>
@@ -2338,7 +2338,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/2.png') }}" alt="Half Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Half
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/2.png') }}" alt="Half Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Half
                                                 Sleeve Shirt</span>
                                           </div>
                                        </td>
@@ -2352,7 +2352,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/3.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/3.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -2366,7 +2366,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/5.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/5.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -2380,7 +2380,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">15"
                                                 MackBook Pro</span>
                                           </div>
@@ -2413,7 +2413,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/1.png') }}" alt="Samsung Note 10 256GB"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Samsung
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/1.png') }}" alt="Samsung Note 10 256GB"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Samsung
                                                 Note
                                                 10 256GB</span>
                                           </div>
@@ -2428,7 +2428,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/2.png') }}" alt="Full Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Full
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/2.png') }}" alt="Full Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Full
                                                 Sleeve
                                                 Shirt</span>
                                           </div>
@@ -2443,7 +2443,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/3.png') }}" alt="Nike Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Nike
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/3.png') }}" alt="Nike Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Nike
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -2457,7 +2457,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/5.png') }}" alt="Bata Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Bata
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/5.png') }}" alt="Bata Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Bata
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -2471,7 +2471,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">15"
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">15"
                                                 MackBook
                                                 Pro</span>
                                           </div>
@@ -2504,7 +2504,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/1.png') }}" alt="Samsung Galaxy Premio 256GB">
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/1.png') }}" alt="Samsung Galaxy Premio 256GB">
                                              </div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Samsung
                                                 Galaxy Premio 256GB</span>
                                           </div>
@@ -2519,7 +2519,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/2.png') }}" alt="Half Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Half
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/2.png') }}" alt="Half Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Half
                                                 Sleeve Shirt</span>
                                           </div>
                                        </td>
@@ -2533,7 +2533,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/3.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/3.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -2547,7 +2547,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/5.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/5.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -2561,7 +2561,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">15"
                                                 MackBook Pro</span>
                                           </div>
@@ -2629,7 +2629,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2645,7 +2645,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2661,7 +2661,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
@@ -2678,7 +2678,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2694,7 +2694,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2730,7 +2730,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2746,7 +2746,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2762,7 +2762,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
@@ -2779,7 +2779,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2795,7 +2795,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2832,7 +2832,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2848,7 +2848,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2864,7 +2864,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
@@ -2881,7 +2881,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2897,7 +2897,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ mix('resources/assets/vendor/hexadash/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -2962,23 +2962,23 @@
    <!-- End: Preloader -->
 
    <!-- inject:js-->
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/apexcharts.min.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/datepicker-full.min.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/fslightbox.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/index.global.min.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/mixitup.min.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/moment.min.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/nouislider.min.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/quill.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/svg-pan-zoom.min.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/svgMap.min.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/tw-elements.umd.min.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/vendor_assets/js/yscountdown.min.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/theme_assets/js/apex-custom.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/theme_assets/js/full-calendar.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/theme_assets/js/googlemap-init.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/theme_assets/js/main.js') }}"></script>
-   <script src="{{ mix('resources/assets/vendor/hexadash/assets/theme_assets/js/svgMapData.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/apexcharts.min.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/datepicker-full.min.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/fslightbox.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/index.global.min.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/mixitup.min.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/moment.min.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/nouislider.min.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/quill.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/svg-pan-zoom.min.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/svgMap.min.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/tw-elements.umd.min.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/yscountdown.min.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/apex-custom.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/full-calendar.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/googlemap-init.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/main.js') }}"></script>
+   <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/svgMapData.js') }}"></script>
    <!-- endinject-->
 </body>
 

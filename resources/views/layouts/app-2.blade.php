@@ -10,11 +10,11 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
     <!-- Swiper Slider -->
-    <link rel="stylesheet" href="{{ mix('resources/assets/vendor/plurk/css/swiper-bundle.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('vendor/plurk/css/swiper-bundle.min.css') }}" />
     <!-- AOS Animation CSS -->
-    <link href="{{ mix('resources/assets/vendor/plurk/css/aos.css') }}" rel="stylesheet" />
+    <link href="{{ asset('vendor/plurk/css/aos.css') }}" rel="stylesheet" />
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ mix('resources/assets/vendor/plurk/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('vendor/plurk/css/style.css') }}" />
 
    
 </head>
@@ -97,13 +97,13 @@
         </div>
     </button>
     <!-- Swiper Slider JS -->
-    <script src="{{ mix('resources/assets/vendor/plurk/js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/plurk/js/swiper-bundle.min.js') }}"></script>
     <!-- Counter Js -->
-    <script src="{{ mix('resources/assets/vendor/plurk/js/vanilla-counter.js') }}"></script>
+    <script src="{{ asset('vendor/plurk/js/vanilla-counter.js') }}"></script>
     <!-- AOS Animation JS -->
-    <script src="{{ mix('resources/assets/vendor/plurk/js/aos.js') }}"></script>
+    <script src="{{ asset('vendor/plurk/js/aos.js') }}"></script>
     <!-- Custom Js -->
-    <script src="{{ mix('resources/assets/vendor/plurk/js/custom.js') }}"></script>
+    <script src="{{ asset('vendor/plurk/js/custom.js') }}"></script>
 </body>
 
 </html>
