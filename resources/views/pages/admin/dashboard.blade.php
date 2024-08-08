@@ -932,8 +932,11 @@
                                     </div>
                                  </li>
                               </ul>
-                              <a class="flex items-center justify-center text-sm font-medium bg-normalBG dark:bg-box-dark-up h-[50px] text-light hover:text-primary dark:hover:text-subtitle-dark dark:text-title-dark mx-[-15px] mb-[-15px] rounded-b-6 gap-[6px]" href="log-in.html">
-                                 <i class="uil uil-sign-out-alt"></i> Sign Out</a>
+                              <form method="POST" action="{{ route('logout') }}">
+                              @csrf
+                              <button type="submit" class="flex items-center justify-center text-sm font-medium bg-normalBG dark:bg-box-dark-up h-[50px] text-light hover:text-primary dark:hover:text-subtitle-dark dark:text-title-dark w-full rounded-b-6 gap-[6px]" href="logout">
+                                 <i class="uil uil-sign-out-alt"></i> Sign Out </button>
+                              </form>
                            </div>
                         </div>
                      </div>
