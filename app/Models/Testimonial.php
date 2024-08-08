@@ -5,12 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Photo extends Model
+class Testimonial extends Model
 {
-       
     use HasFactory;
-
-    // protected $table = "photos";
 
     /**
      * fillable
@@ -18,8 +15,8 @@ class Photo extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
-        'description',
-        'path_image',
+        'name',
+        'rating',
+        'testimonial'
     ];
 }

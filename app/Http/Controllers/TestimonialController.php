@@ -2,27 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Testimonial;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreTestimonialRequest;
+use App\Http\Requests\UpdateTestimonialRequest;
 
-use Illuminate\Support\Facades\DB;
-
-
-class MainController extends Controller
+class TestimonialController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // mengambil data dari table program
-    	$programUtama = DB::table('programs')->where('id',  1)->get();
-    	$program = DB::table('programs')->where('id', '>', 1)->get();
-
-        // mengambil data dari table testimonial
-    	$testimonial = DB::table('testimonials')->get();
-
-        return view('index', ['program' => $program, 'programUtama'=>$programUtama, 'testimonials' => $testimonial ]);
+        //
     }
 
     /**
@@ -36,7 +28,7 @@ class MainController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTestimonialRequest $request)
     {
         //
     }
@@ -44,7 +36,7 @@ class MainController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(photo $photo)
+    public function show(Testimonial $testimonial)
     {
         //
     }
@@ -52,7 +44,7 @@ class MainController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(photo $photo)
+    public function edit(Testimonial $testimonial)
     {
         //
     }
@@ -60,7 +52,7 @@ class MainController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, photo $photo)
+    public function update(UpdateTestimonialRequest $request, Testimonial $testimonial)
     {
         //
     }
@@ -68,7 +60,7 @@ class MainController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(photo $photo)
+    public function destroy(Testimonial $testimonial)
     {
         //
     }
