@@ -128,69 +128,11 @@
                 </div>
                 <ul class="flex items-center gap-5 ltr:pr-5 rtl:pl-5 ltr:lg:pl-5 ltr:lg:pr-0 rtl:lg:pr-5 rtl:lg:pl-0">
                     <li>
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="handleLogin()">
+                        <a class="transition duration-500 hover:bg-secondary text-white font-bold py-2 px-4 rounded" href="/login">
                             Login
-                        </button>
+                        </a>
                     </li>
-                    <!-- <li>
-                        <button
-                            type="button"
-                            class="flex h-5 w-5 items-center text-white hover:text-primary rtl:text-primary"
-                            onclick="toggleDirection()"
-                        >
-                            <svg width="17" height="22" viewBox="0 0 17 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16 18.9439H7.72074"
-                                    stroke="currentColor"
-                                    stroke-width="1.4"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M13.8571 21L16 18.9439L13.8571 16.8879"
-                                    stroke="currentColor"
-                                    stroke-width="1.4"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M1 16.4206H9.27926"
-                                    stroke="currentColor"
-                                    stroke-width="1.4"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M3.14287 18.4766L1 16.4206L3.14287 14.3645"
-                                    stroke="currentColor"
-                                    stroke-width="1.4"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M12.7855 1H5.82118C4.82662 1 3.87279 1.37909 3.16952 2.05387C2.46626 2.72865 2.07117 3.64385 2.07117 4.59813C2.07117 5.55242 2.46626 6.46761 3.16952 7.14239C3.87279 7.81717 4.82662 8.19626 5.82118 8.19626H6.3569"
-                                    stroke="currentColor"
-                                    stroke-width="1.4"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M10.6426 12.3084V1"
-                                    stroke="currentColor"
-                                    stroke-width="1.4"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M6.3573 12.3084V1"
-                                    stroke="currentColor"
-                                    stroke-width="1.4"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </button>
-                    </li> -->
+                    
                     <li>
                         <button
                             type="button"
