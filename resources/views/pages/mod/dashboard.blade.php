@@ -33,7 +33,7 @@
 
 
    <!-- Aside -->
-   @include('layouts.dashboard.aside')
+   @include('layouts.mod.aside')
    <!-- End: Aside -->
 
    <!-- Wrapping Content -->
