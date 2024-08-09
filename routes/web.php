@@ -7,6 +7,17 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PhotoController;
 
+// Admin
+use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminUsersController;
+
+// Mod
+use App\Http\Controllers\Mod\ModDashboardController;
+
+// Media
+use App\Http\Controllers\Media\MediaDashboardController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +43,42 @@ Route::get('/admin/users', function () {
     return view('pages.admin.users-datatable');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    // admin
+    Route::name('admin')
+    ->prefix('admin')
+    // ->middleware(['permission:admin'])
+    ->group(function () {
+      Route::get('/', [AdminDashboardController::class, 'index'])->name('');
+      Route::get('/users', [AdminUsersController::class, 'index'])->name('');
+    });
+    
+    // mod
+    Route::name('mod')
+    ->prefix('mod')
+    // ->middleware(['permission:mod'])
+    ->group(function () {
+    //   Route::get('/', ModDashboardController::class)->name('');
+    //   Route::get('/users', ModUsersController::class)->name('');
+    });
+
+    // media
+    Route::name('media')
+    ->prefix('media')
+    // ->middleware(['permission:media'])
+    ->group(function () {
+    //   Route::get('/', ModDashboardController::class)->name('');
+    });
+
+
+
+});
+
+
+
+
+// Auth
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

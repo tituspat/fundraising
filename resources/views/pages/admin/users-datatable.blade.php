@@ -88,7 +88,7 @@
                         <div>
                            <h4 class="mb-0 text-3xl max-lg:text-[26px] max-sm:text-2xl font-semibold leading-normal text-dark dark:text-white/[.87]">
                               <span>
-                                 23,825
+                                 {{$admincount}}
                               </span>
                            </h4>
                            <span class="font-normal text-body dark:text-white/60 text-15">Admin</span>
@@ -107,7 +107,7 @@
                         <div>
                            <h4 class="mb-0 text-3xl max-lg:text-[26px] max-sm:text-2xl font-semibold leading-normal text-dark dark:text-white/[.87]">
                               <span>
-                                 825
+                                 {{$modcount}}
                               </span>
                            </h4>
                            <span class="font-normal text-body dark:text-white/60 text-15">Moderator</span>
@@ -126,7 +126,7 @@
                         <div>
                            <h4 class="mb-0 text-3xl max-lg:text-[26px] max-sm:text-2xl font-semibold leading-normal text-dark dark:text-white/[.87]">
                               <span>
-                                 350
+                                 {{$mediacount}}
                               </span>
                            </h4>
                            <span class="font-normal text-body dark:text-white/60 text-15">Media</span>
@@ -145,7 +145,7 @@
                         <div>
                            <h4 class="mb-0 text-3xl max-lg:text-[26px] max-sm:text-2xl font-semibold leading-normal text-dark dark:text-white/[.87]">
                               <span>
-                                 30,825
+                                 {{$membercount}}
                               </span>
                            </h4>
                            <span class="font-normal text-body dark:text-white/60 text-15">Member</span>
@@ -157,11 +157,11 @@
                <div class="col-span-12">
                   <div class="bg-white dark:bg-box-dark-up m-0 p-0 text-theme-gray dark:text-subtitle-dark text-[15px] rounded-10 relative mb-[25px] w-full py-[30px] px-[25px] flex flex-col gap-x-[15px] lg:gap-y-[25px] gap-y-[15px]">
                      <div class="text-dark dark:text-title-dark font-medium text-[17px] flex items-center justify-between max-sm:flex-col max-sm:gap-[15px]">
-                        <h4 class="mb-0 text-[20px] leading-6 font-medium text-dark dark:text-title-dark">All Support Ticket
+                        <h4 class="mb-0 text-[20px] leading-6 font-medium text-dark dark:text-title-dark">All User
                         </h4>
                         <button type="button" class="flex items-center px-[14px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px]">
                            <i class="uil uil-plus"></i>
-                           <span class="m-0">Add Ticket</span>
+                           <span class="m-0">Add User</span>
                         </button>
                      </div>
                      <div class="flex items-center flex-wrap justify-between gap-x-[30px] gap-y-[10px] max-lg:flex-col max-lg:justify-center">
@@ -196,48 +196,48 @@
                                  <th class="bg-regularBG dark:bg-box-dark-up px-[25px] py-[17px] text-start text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden rounded-s-[10px] sticky top-0">
                                     ID</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
-                                    Requested By</th>
+                                    Name</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
-                                    Subject</th>
+                                    Email</th>
+                                 <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0 max-w-sm overflow-hidden">
+                                    Password</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
-                                    Priority</th>
+                                    Role</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
-                                    Status</th>
-                                 <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
-                                    Created Date</th>
+                                    Updated Date</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-[25px] py-[17px] text-end text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden rounded-e-[10px] sticky top-0">
                                     Actions</th>
                               </tr>
                            </thead>
                            <tbody>
-
+                              @foreach($users as $u)
                               <tr class="group">
                                  <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #1
+                                    {{$u->id}}
                                  </td>
                                  <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
                                     <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
+                                       {{-- <div class="me-2.5 w-[34px] h-[34px]">
                                           <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t1.jpg') }}" alt="John Doe">
-                                       </div>
+                                       </div>--}}
                                        <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          John Doe</span>
+                                          {{$u -> name}}</span>
                                     </div>
                                  </td>
                                  <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Assistance with bug fixing
+                                    {{$u->email}}
                                  </td>
                                  <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Medium</td>
+                                    {{$u->password}}</td>
                                  <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
 
-                                    <span class="bg-danger/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-danger text-xs">
-                                       close
+                                    <span class="capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-xs">
+                                       {{$u->role}}
                                     </span>
 
                                  </td>
                                  <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-08-05
+                                    {{$u->updated_at}}
                                  </td>
                                  <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
                                     <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
@@ -247,462 +247,7 @@
                                     </div>
                                  </td>
                               </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #2
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t2.jpg') }}" alt="Alice Smith">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Alice Smith</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Feature enhancement request
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    High</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-success/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-success text-xs">
-                                       open
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-07-22
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #3
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t3.jpg') }}" alt="Bob Johnson">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Bob Johnson</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    UI design improvement
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Low</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-warning/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-warning text-xs">
-                                       pending
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-08-12
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #4
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t4.jpg') }}" alt="Eva Davis">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Eva Davis</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Performance optimization
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    High</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-warning/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-warning text-xs">
-                                       pending
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-07-31
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #5
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t5.png') }}" alt="Mike Brown">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Mike Brown</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Login issues investigation
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Critical</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-success/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-success text-xs">
-                                       open
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-07-18
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #6
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t6.png') }}" alt="Sara Miller">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Sara Miller</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    New feature implementation
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Medium</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-warning/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-warning text-xs">
-                                       pending
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-08-02
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #7
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t7.png') }}" alt="Chris Wilson">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Chris Wilson</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Compatibility testing
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Low</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-danger/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-danger text-xs">
-                                       close
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-07-25
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #8
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t8.png') }}" alt="Linda Clark">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Linda Clark</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Documentation update
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Medium</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-success/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-success text-xs">
-                                       open
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-08-08
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #9
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t9.png') }}" alt="Mark Taylor">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Mark Taylor</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Security audit
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    High</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-warning/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-warning text-xs">
-                                       pending
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-07-29
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #10
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t10.png') }}" alt="Emma Turner">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Emma Turner</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Mobile responsiveness
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Low</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-danger/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-danger text-xs">
-                                       close
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-08-15
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #11
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t4.jpg') }}" alt="Eva Davis">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Eva Davis</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Performance optimization
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    High</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-warning/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-warning text-xs">
-                                       pending
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-07-31
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #12
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t5.png') }}" alt="Mike Brown">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Mike Brown</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Login issues investigation
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Critical</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-success/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-success text-xs">
-                                       open
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-07-18
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
-
-
-                              <tr class="group">
-                                 <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                    #13
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    <div class="flex items-center">
-                                       <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t6.png') }}" alt="Sara Miller">
-                                       </div>
-                                       <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                          Sara Miller</span>
-                                    </div>
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    New feature implementation
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    Medium</td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="bg-warning/10 capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-warning text-xs">
-                                       pending
-                                    </span>
-
-                                 </td>
-                                 <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                    2023-08-02
-                                 </td>
-                                 <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
-                                    <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
-                                    </div>
-                                 </td>
-                              </tr>
+                              @endforeach
 
                            </tbody>
                         </table>

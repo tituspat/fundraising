@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
 
-class DashboardController extends Controller
+class AdminDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
