@@ -1021,7 +1021,7 @@
                 <div class="container">
                     <div class="heading text-center ltr:lg:text-left rtl:lg:text-right">
                         <h6>Testimonial</h6>
-                        <h4 class="!text-white">Feedback from our clients</h4>
+                        <h4 class="!text-white">Apa Kata Mereka?</h4>
                     </div>
                     <div class="mx-auto lg:w-11/12">
                         <div class="swiper mySwiper relative sm:py-12 md:py-0">
