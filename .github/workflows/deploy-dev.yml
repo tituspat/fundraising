@@ -1,5 +1,8 @@
 name: Deploy to Development
 on:
+  pull_request:
+      branches:
+      - Development
   push:
     branches:
       - Development
