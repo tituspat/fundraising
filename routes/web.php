@@ -36,6 +36,8 @@ Route::controller(MainController::class)->group(function () {
 });
 
 
+
+
 Route::middleware(['auth', 'verified'])->group(function () {
     // admin
     Route::name('admin')
@@ -45,7 +47,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('');
       Route::get('/users', [AdminUsersController::class, 'index'])->name('');
     });
-    
+
     // mod
     Route::name('mod')
     ->prefix('mod')
@@ -75,6 +77,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::get('/profile', function () {
+    return view('pages.about-us');
 });
 
 require __DIR__.'/auth.php';
