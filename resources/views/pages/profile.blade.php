@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-2')
 
 @section('content')
 <section class="xl:px-24 md:px-10 lg:px-16">
