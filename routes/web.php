@@ -36,7 +36,6 @@ Route::controller(MainController::class)->group(function () {
 });
 
 
-
 Route::middleware(['auth', 'verified'])->group(function () {
     // admin
     Route::name('admin')

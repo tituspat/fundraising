@@ -21,12 +21,12 @@
                                 class="relative z-[1] text-center text-white lg:w-3/5 ltr:lg:text-left rtl:lg:text-right xl:w-1/2">
                                 <h2
                                     class="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
-                                    Bersama <span class="italic text-primary">Giri</span> <br><span class="text-5xl">Tabanan
-                                        Makin Maju</span>
+                                    Bersama <span class="italic text-primary">Giri</span> <br><span class="text-5xl">Memajukan
+                                        Tabanan</span>
                                 </h2>
                                 <p class="my-8 text-lg lg:w-[90%]">
-                                    Dari tangan pemimpin yang amanah dan jujur, saya yakin Tabanan akan lebih makmur dan
-                                    bermartabat
+                                    Bersama-sama mewujudkan masyarakat Tabanan yang SAHABAT
+
                                 </p>
                                 <a href="/profil"
                                     class="btn mx-auto mt-2 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">Kenali Lebih
@@ -1021,7 +1021,7 @@
                 <div class="container">
                     <div class="heading text-center ltr:lg:text-left rtl:lg:text-right">
                         <h6>Testimonial</h6>
-                        <h4 class="!text-white">Feedback from our clients</h4>
+                        <h4 class="!text-white">Apa Kata Mereka?</h4>
                     </div>
                     <div class="mx-auto lg:w-11/12">
                         <div class="swiper mySwiper relative sm:py-12 md:py-0">
@@ -1218,8 +1218,8 @@
             </section>
             
         </div>
-{{--
-        @include('layouts.footer')--}}
+
+        @include('layouts.footer')
     </div>
 
     <!-- Swiper Slider JS -->
