@@ -20,209 +20,7 @@
     </div>
     <div
         class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent">
-        <header id="top-header" class="sticky top-0 z-50 bg-black/10 transition duration-300">
-            <div class="container">
-                <div class="relative flex items-center justify-between py-5 lg:py-0">
-                    <a href="index.html"><img src="{{ asset('vendor/images/logo.png') }}" alt="logo"
-                            class="h-10" /></a>
-                    <div class="flex items-center">
-                        <div onclick="toggleMenu()" class="overlay fixed inset-0 z-[51] hidden bg-black/60 lg:hidden"></div>
-                        <div class="menus">
-                            <div class="border-b border-gray/10 ltr:text-right rtl:text-left lg:hidden">
-                                <button onclick="toggleMenu()" type="button" class="p-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-black dark:text-white">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li class="group relative">
-                                    <a href="javascript:;">
-                                        Landing
-                                        <div class="group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M19 9L12 15L10.25 13.5M5 9L7.33333 11" stroke="currentColor"
-                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </div>
-                                    </a>
-                                    <div class="submenu">
-                                        <a href="crypto.html">Crypto Currency</a>
-                                        <a href="modern-saas.html">Modern Saas </a>
-                                        <a href="real-estate.html">Real Estate </a>
-                                        <a href="healthcare.html">Health Care </a>
-                                        <a href="marketing.html">Sales Marketing </a>
-                                        <a href="application.html">Application </a>
-                                        <a href="hotel-resort.html">Hotel & Resort </a>
-                                        <a href="nft.html">NFT Marketplace </a>
-                                        <a href="online-courses.html"> Online Courses </a>
-                                        <a href="restaurant.html"> Restaurant </a>
-                                        <a href="consulting.html"> Consulting </a>
-                                        <a href="creative-agency.html"> Creative Agency </a>
-                                        <a href="insurance.html"> Insurance </a>
-                                        <a href="photography.html"> Photography </a>
-                                        <a href="construction.html"> Construction </a>
-                                        <a href="blog-landing.html"> Blog </a>
-                                        <a href="event-concert.html">
-                                            Event Concert
-                                            <span
-                                                class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
-                                                New
-                                            </span>
-                                        </a>
-                                        <a href="gym.html">
-                                            GYM
-                                            <span
-                                                class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
-                                                New
-                                            </span>
-                                        </a>
-                                        <a href="job-placement.html">
-                                            Job Placement
-                                            <span
-                                                class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
-                                                New
-                                            </span>
-                                        </a>
-                                        <a href="online-payments.html">
-                                            Online Payments
-                                            <span
-                                                class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
-                                                New
-                                            </span>
-                                        </a>
-                                        <a href="personal-portfolio.html">
-                                            Personal Portfolio
-                                            <span
-                                                class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
-                                                New
-                                            </span>
-                                        </a>
-                                        <a href="portfolio-landing.html">
-                                            Portfolio
-                                            <span
-                                                class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
-                                                New
-                                            </span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="portfolio.html">Portfolio</a>
-                                </li>
-                                <li>
-                                    <a href="services.html">Service</a>
-                                </li>
-                                <li>
-                                    <a href="team.html">Team</a>
-                                </li>
-                                <li>
-                                    <a href="about-us.html" class="active">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="career.html">Career</a>
-                                </li>
-                                <li
-                                    class="relative hidden items-center before:absolute before:top-1/2 before:h-[30px] before:w-[2px] before:-translate-y-1/2 before:bg-gray/30 ltr:pl-9 ltr:before:-left-[2px] rtl:pr-9 rtl:before:-right-[2px] lg:inline-flex">
-                                    <button type="button" onclick="search()" class="text-white hover:text-primary">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M18.7363 17.4637L14.6512 13.3785C15.6799 12.0753 16.3 10.4347 16.3 8.65C16.3 4.4317 12.8683 1 8.65 1C4.4317 1 1 4.4317 1 8.65C1 12.8683 4.4317 16.3 8.65 16.3C10.4356 16.3 12.0754 15.6808 13.3786 14.6512L17.4637 18.7363C17.6392 18.9118 17.8696 19 18.1 19C18.3304 19 18.5608 18.9118 18.7363 18.7363C19.0882 18.3844 19.0882 17.8156 18.7363 17.4637ZM2.8 8.65C2.8 5.4244 5.4244 2.8 8.65 2.8C11.8756 2.8 14.5 5.4244 14.5 8.65C14.5 11.8756 11.8756 14.5 8.65 14.5C5.4244 14.5 2.8 11.8756 2.8 8.65Z"
-                                                fill="currentColor" />
-                                        </svg>
-                                    </button>
-                                </li>
-                                <li
-                                    class="search-bar absolute hidden w-0 overflow-hidden bg-black transition-all duration-500 ltr:right-0 rtl:left-0 lg:block">
-                                    <form action="" class="relative">
-                                        <input type="text" placeholder="Search"
-                                            class="w-full border-b border-white bg-transparent py-1 outline-none ltr:pl-2 ltr:pr-8 rtl:pr-2 rtl:pl-8" />
-                                        <button type="button"
-                                            class="absolute top-1/2 -translate-y-1/2 hover:text-primary ltr:right-0 rtl:left-0"
-                                            onclick="search()">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M6 18L18 6M6 6l12 12" />
-                                            </svg>
-                                        </button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
-                        <ul
-                            class="flex items-center gap-5 ltr:pr-5 rtl:pl-5 ltr:lg:pl-5 ltr:lg:pr-0 rtl:lg:pr-5 rtl:lg:pl-0">
-                            <li>
-                                <button type="button"
-                                    class="flex h-5 w-5 items-center text-white hover:text-primary rtl:text-primary"
-                                    onclick="toggleDirection()">
-                                    <svg width="17" height="22" viewBox="0 0 17 22" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 18.9439H7.72074" stroke="currentColor" stroke-width="1.4"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M13.8571 21L16 18.9439L13.8571 16.8879" stroke="currentColor"
-                                            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M1 16.4206H9.27926" stroke="currentColor" stroke-width="1.4"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M3.14287 18.4766L1 16.4206L3.14287 14.3645" stroke="currentColor"
-                                            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path
-                                            d="M12.7855 1H5.82118C4.82662 1 3.87279 1.37909 3.16952 2.05387C2.46626 2.72865 2.07117 3.64385 2.07117 4.59813C2.07117 5.55242 2.46626 6.46761 3.16952 7.14239C3.87279 7.81717 4.82662 8.19626 5.82118 8.19626H6.3569"
-                                            stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M10.6426 12.3084V1" stroke="currentColor" stroke-width="1.4"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M6.3573 12.3084V1" stroke="currentColor" stroke-width="1.4"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-dark text-white hover:text-primary"
-                                    onclick="toggleTheme()">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" class="dark-mode-btn">
-                                        <path
-                                            d="M8 4C8 8.4 11.6 12 16 12C17.4 12 18.8 11.6 20 11C19.5 16.1 15.2 20 10 20C4.5 20 0 15.5 0 10C0 4.8 4 0.5 9 0C8.4 1.2 8 2.6 8 4ZM2 10C2 14.4 5.6 18 10 18C12.9 18 15.5 16.5 17 14C16.7 14 16.4 14 16 14C10.5 14 6 9.5 6 4C6 3.7 6 3.4 6 3C3.6 4.4 2 7.1 2 10Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" class="light-mode-btn hidden">
-                                        <path
-                                            d="M10 15C8.67392 15 7.40215 14.4732 6.46447 13.5355C5.52678 12.5979 5 11.3261 5 10C5 8.67392 5.52678 7.40215 6.46447 6.46447C7.40215 5.52678 8.67392 5 10 5C11.3261 5 12.5979 5.52678 13.5355 6.46447C14.4732 7.40215 15 8.67392 15 10C15 11.3261 14.4732 12.5979 13.5355 13.5355C12.5979 14.4732 11.3261 15 10 15ZM10 13.3333C10.8841 13.3333 11.7319 12.9821 12.357 12.357C12.9821 11.7319 13.3333 10.8841 13.3333 10C13.3333 9.11595 12.9821 8.2681 12.357 7.64298C11.7319 7.01786 10.8841 6.66667 10 6.66667C9.11595 6.66667 8.2681 7.01786 7.64298 7.64298C7.01786 8.2681 6.66667 9.11595 6.66667 10C6.66667 10.8841 7.01786 11.7319 7.64298 12.357C8.2681 12.9821 9.11595 13.3333 10 13.3333Z"
-                                            fill="currentColor" />
-                                        <path
-                                            d="M9.09091 0.909092C9.09091 0.407014 9.49792 0 10 0C10.5021 0 10.9091 0.407014 10.9091 0.909092V1.81818C10.9091 2.32026 10.5021 2.72727 10 2.72727C9.49792 2.72727 9.09091 2.32026 9.09091 1.81818V0.909092ZM9.09091 18.1818C9.09091 17.6797 9.49792 17.2727 10 17.2727C10.5021 17.2727 10.9091 17.6797 10.9091 18.1818V19.0909C10.9091 19.593 10.5021 20 10 20C9.49792 20 9.09091 19.593 9.09091 19.0909V18.1818ZM2.92909 4.21455C2.57412 3.85958 2.57412 3.28406 2.92909 2.92909C3.28406 2.57412 3.85958 2.57412 4.21455 2.92909L4.85727 3.57182C5.21224 3.92679 5.21224 4.5023 4.85727 4.85727C4.5023 5.21224 3.92679 5.21224 3.57182 4.85727L2.92909 4.21455ZM15.1427 16.4282C14.7878 16.0732 14.7878 15.4977 15.1427 15.1427C15.4977 14.7878 16.0732 14.7878 16.4282 15.1427L17.0709 15.7855C17.4259 16.1404 17.4259 16.7159 17.0709 17.0709C16.7159 17.4259 16.1404 17.4259 15.7855 17.0709L15.1427 16.4282ZM15.7851 2.92886C16.1402 2.57358 16.7161 2.57361 17.0712 2.92894C17.4261 3.28403 17.4259 3.85951 17.071 4.21447L16.4283 4.8572C16.0732 5.21221 15.4977 5.21221 15.1427 4.8572C14.7877 4.50225 14.7876 3.92678 15.1425 3.57174L15.7851 2.92886ZM3.57182 15.1427C3.92679 14.7878 4.5023 14.7878 4.85727 15.1427C5.21224 15.4977 5.21224 16.0732 4.85727 16.4282L4.21455 17.0709C3.85958 17.4259 3.28406 17.4259 2.92909 17.0709C2.57412 16.7159 2.57412 16.1404 2.92909 15.7855L3.57182 15.1427ZM19.0909 9.09091C19.593 9.09091 20 9.49792 20 10C20 10.5021 19.593 10.9091 19.0909 10.9091H18.1818C17.6797 10.9091 17.2727 10.5021 17.2727 10C17.2727 9.49792 17.6797 9.09091 18.1818 9.09091H19.0909ZM1.81818 9.09091C2.32026 9.09091 2.72727 9.49792 2.72727 10C2.72727 10.5021 2.32026 10.9091 1.81818 10.9091H0.909092C0.407014 10.9091 0 10.5021 0 10C0 9.49792 0.407014 9.09091 0.909092 9.09091H1.81818Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </button>
-                            </li>
-                        </ul>
-                        <button type="button"
-                            class="flex h-10 w-10 items-center justify-center rounded-full bg-primary lg:hidden"
-                            onclick="toggleMenu()">
-                            <svg width="22" height="18" viewBox="0 0 22 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" class="text-white">
-                                <path
-                                    d="M2 15H11C11.552 15 12 15.447 12 16C12 16.553 11.552 17 11 17H2C1.448 17 1 16.553 1 16C1 15.447 1.448 15 2 15Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M2 8H20C20.552 8 21 8.447 21 9C21 9.553 20.552 10 20 10H2C1.448 10 1 9.553 1 9C1 8.447 1.448 8 2 8Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M21 2C21 1.447 20.552 1 20 1H7C6.448 1 6 1.447 6 2C6 2.553 6.448 3 7 3H20C20.552 3 21 2.553 21 2Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
+        @include('layouts.navbar-2')
 
         <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
             <div
@@ -235,8 +33,8 @@
                                 <h4 class="!text-white">I Gede Putu Atma Giri</h4>
                             </div>
                             <div class="h-[400px]" data-aos="fade-left" data-aos-duration="1000">
-                                {{-- <img class="h-[300px] p-2 bg-slate rounded-full w-full" src="img/calon.png" alt=""> --}}
-                                {{-- <svg width="374" height="282" viewBox="0 0 374 282" fill="none"
+                                <!-- <img class="h-[300px] p-2 bg-slate rounded-full w-full" src="img/calon.png" alt=""> -->
+                                <!-- <svg width="374" height="282" viewBox="0 0 374 282" fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                     class="mx-auto w-[90%] rtl:rotate-y-180 sm:w-auto md:mx-auto">
                                     <path
@@ -581,8 +379,8 @@
                                         stroke="white" stroke-width="0.75" stroke-linejoin="round" />
                                     <path
                                         d="M183.669 13.3256C183.669 12.9203 183.341 12.5918 182.936 12.5918C182.53 12.5918 182.202 12.9203 182.202 13.3256H183.669ZM182.202 25.4329C182.202 25.8381 182.53 26.1667 182.936 26.1667C183.341 26.1667 183.669 25.8381 183.669 25.4329H182.202ZM182.202 13.3256V25.4329H183.669V13.3256H182.202Z"
-                                        fill="white" /> --}}
-                                </svg>
+                                        fill="white" /> 
+                                </svg> -->
                             </div>
                         </div>
                     </div>
@@ -595,7 +393,7 @@
                         <img class="h-[400px] p-2 bg-slate-500 rounded-full" src="img/calon.png" alt="">
 
                         <br><br>
-                        <p class=" text-black xl:text-2xl">
+                        <p class="dark:text-white text-black xl:text-2xl">
                             Salam sejahtera, Om Swastiastu, Namo Buddhaya, Salam Kebajikan, saya Giri.
                              Berdasarkan pengalaman hidup dan kerja saya, saya ingin
                             berkontribusi lebih dalam memajukan dan meningkatkan kesejahteraan masyarakat di wilayah
@@ -620,263 +418,103 @@
                         </p>
                     </div>
 
-                    {{-- <div class="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-4">
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div
-                                class="group flex cursor-pointer items-baseline rounded-3xl border border-white bg-white py-8 px-6 transition duration-500 hover:border-secondary hover:bg-secondary/10 dark:border-transparent dark:bg-gray-dark dark:hover:bg-secondary">
-                                <div>
-                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="text-secondary transition dark:group-hover:text-black">
-                                        <g clip-path="url(#clip0_6_2530)">
-                                            <path opacity="0.3"
-                                                d="M9.26505 23.1907C8.867 22.5979 9.34238 21.8701 10.0565 21.8701H15.3123C16.0264 21.8701 16.5018 22.5979 16.1038 23.1907C15.3466 24.3185 14.3 25.2316 13.0656 25.8283C12.8248 25.9448 12.544 25.9448 12.3032 25.8283C11.0688 25.2316 10.0222 24.3185 9.26505 23.1907Z"
-                                                fill="currentColor" />
-                                            <path
-                                                d="M19.7602 15.3657C19.7602 15.6093 19.8491 15.8444 20.0102 16.0271L21.8688 18.1348C22.0299 18.3175 22.1188 18.5527 22.1188 18.7962V19.6908C22.1188 20.2431 21.6711 20.6908 21.1188 20.6908H4.25C3.69772 20.6908 3.25 20.2431 3.25 19.6908V18.7962C3.25 18.5527 3.33888 18.3175 3.49997 18.1348L5.35863 16.0271C5.51971 15.8444 5.6086 15.6093 5.6086 15.3657V8.89781C5.6086 4.89015 8.41975 1.46516 12.3859 0.0983C12.5792 0.0316815 12.7896 0.0316814 12.9829 0.0982998C16.949 1.46516 19.7602 4.89015 19.7602 8.89781V15.3657ZM12.6844 11.2564C13.3099 11.2564 13.9098 11.0079 14.3522 10.5656C14.7945 10.1233 15.043 9.52335 15.043 8.89781C15.043 8.27227 14.7945 7.67235 14.3522 7.23003C13.9098 6.78771 13.3099 6.53921 12.6844 6.53921C12.0589 6.53921 11.4589 6.78771 11.0166 7.23003C10.5743 7.67235 10.3258 8.27227 10.3258 8.89781C10.3258 9.52335 10.5743 10.1233 11.0166 10.5656C11.4589 11.0079 12.0589 11.2564 12.6844 11.2564Z"
-                                                fill="currentColor" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_6_2530">
-                                                <rect width="26" height="26" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <div class="ltr:pl-4 rtl:pr-4">
-                                    <h4 class="pb-2.5 text-4xl font-black leading-none transition dark:text-white dark:group-hover:text-black"
-                                        data-vanilla-counter data-start-at="0" data-end-at="10" data-time="4000"
-                                        data-delay="0" data-format="{}+"></h4>
-                                    <span
-                                        class="font-bold text-black transition dark:text-gray dark:group-hover:text-black">Year
-                                        in Business</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div
-                                class="group flex cursor-pointer items-baseline rounded-3xl border border-white bg-white py-8 px-6 transition duration-500 hover:border-secondary hover:bg-secondary/10 dark:border-transparent dark:bg-gray-dark dark:hover:bg-secondary">
-                                <div>
-                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="text-secondary transition dark:group-hover:text-black">
-                                        <g clip-path="url(#clip0_6_2631)">
-                                            <path opacity="0.3"
-                                                d="M4.2757 15.6078C4.27493 15.6078 4.27425 15.6084 4.27403 15.6091C4.06737 16.3065 3.94528 17.0263 3.9104 17.7528L3.9 18.2V25C3.9 25.5523 3.45228 26 2.9 26H1C0.447715 26 1.18712e-07 25.5523 1.18712e-07 25V20.15C-0.000255849 19.0289 0.413437 17.9471 1.16173 17.1122C1.91001 16.2773 2.94021 15.7481 4.0547 15.626L4.2757 15.6078ZM22.0225 17.0047C21.9324 16.3161 22.4694 15.6613 23.1157 15.9157C23.7351 16.1595 24.299 16.5384 24.7632 17.0317C25.5575 17.8757 25.9998 18.991 26 20.15V25.0001C26 25.5523 25.5523 26 25 26H23.1C22.5477 26 22.1 25.5523 22.1 25V18.2C22.1 17.7948 22.0737 17.3958 22.0225 17.0047ZM4.55 7.80005C5.41195 7.80005 6.2386 8.14246 6.8481 8.75195C7.45759 9.36145 7.8 10.1881 7.8 11.05C7.8 11.912 7.45759 12.7387 6.8481 13.3481C6.2386 13.9576 5.41195 14.3 4.55 14.3C3.68805 14.3 2.8614 13.9576 2.2519 13.3481C1.64241 12.7387 1.3 11.912 1.3 11.05C1.3 10.1881 1.64241 9.36145 2.2519 8.75195C2.8614 8.14246 3.68805 7.80005 4.55 7.80005ZM21.45 7.80005C22.312 7.80005 23.1386 8.14246 23.7481 8.75195C24.3576 9.36145 24.7 10.1881 24.7 11.05C24.7 11.912 24.3576 12.7387 23.7481 13.3481C23.1386 13.9576 22.312 14.3 21.45 14.3C20.588 14.3 19.7614 13.9576 19.1519 13.3481C18.5424 12.7387 18.2 11.912 18.2 11.05C18.2 10.1881 18.5424 9.36145 19.1519 8.75195C19.7614 8.14246 20.588 7.80005 21.45 7.80005Z"
-                                                fill="currentColor" />
-                                            <path
-                                                d="M13 11.7C14.7239 11.7 16.3772 12.3848 17.5962 13.6038C18.8152 14.8228 19.5 16.4761 19.5 18.2V25C19.5 25.5523 19.0523 26 18.5 26H7.5C6.94772 26 6.5 25.5523 6.5 25V18.2C6.5 16.4761 7.18482 14.8228 8.40381 13.6038C9.62279 12.3848 11.2761 11.7 13 11.7ZM13 0C14.3791 0 15.7018 0.547856 16.677 1.52304C17.6521 2.49823 18.2 3.82087 18.2 5.2C18.2 6.57913 17.6521 7.90177 16.677 8.87696C15.7018 9.85214 14.3791 10.4 13 10.4C11.6209 10.4 10.2982 9.85214 9.32304 8.87696C8.34786 7.90177 7.8 6.57913 7.8 5.2C7.8 3.82087 8.34786 2.49823 9.32304 1.52304C10.2982 0.547856 11.6209 0 13 0Z"
-                                                fill="currentColor" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_6_2631">
-                                                <rect width="26" height="26" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <div class="ltr:pl-4 rtl:pr-4">
-                                    <h4 class="pb-2.5 text-4xl font-black leading-none transition dark:text-white dark:group-hover:text-black"
-                                        data-vanilla-counter data-start-at="0" data-end-at="120" data-time="4000"
-                                        data-delay="0" data-format="{}+"></h4>
-                                    <span
-                                        class="font-bold text-black transition dark:text-gray dark:group-hover:text-black">Team
-                                        Members</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div
-                                class="group flex cursor-pointer items-baseline rounded-3xl border border-white bg-white py-8 px-6 transition duration-500 hover:border-secondary hover:bg-secondary/10 dark:border-transparent dark:bg-gray-dark dark:hover:bg-secondary">
-                                <div>
-                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="text-secondary transition dark:group-hover:text-black">
-                                        <g clip-path="url(#clip0_6_2641)">
-                                            <path opacity="0.3"
-                                                d="M13 26C5.8201 26 0 20.1799 0 13C0 5.8201 5.8201 0 13 0C20.1799 0 26 5.8201 26 13C26 20.1799 20.1799 26 13 26Z"
-                                                fill="currentColor" />
-                                            <path
-                                                d="M6.49998 14.3C6.49998 16.024 7.18479 17.6773 8.40378 18.8962C9.62277 20.1152 11.2761 20.8 13 20.8C14.7239 20.8 16.3772 20.1152 17.5962 18.8962C18.8152 17.6773 19.5 16.024 19.5 14.3H16.9C16.9 15.3344 16.4891 16.3264 15.7577 17.0578C15.0263 17.7892 14.0343 18.2 13 18.2C11.9656 18.2 10.9736 17.7892 10.2423 17.0578C9.51087 16.3264 9.09998 15.3344 9.09998 14.3H6.49998ZM7.79998 11.7C8.31715 11.7 8.81314 11.4946 9.17883 11.1289C9.54453 10.7632 9.74998 10.2672 9.74998 9.75005C9.74998 9.23288 9.54453 8.73689 9.17883 8.37119C8.81314 8.00549 8.31715 7.80005 7.79998 7.80005C7.2828 7.80005 6.78681 8.00549 6.42112 8.37119C6.05542 8.73689 5.84998 9.23288 5.84998 9.75005C5.84998 10.2672 6.05542 10.7632 6.42112 11.1289C6.78681 11.4946 7.2828 11.7 7.79998 11.7ZM18.2 11.7C18.7171 11.7 19.2131 11.4946 19.5788 11.1289C19.9445 10.7632 20.15 10.2672 20.15 9.75005C20.15 9.23288 19.9445 8.73689 19.5788 8.37119C19.2131 8.00549 18.7171 7.80005 18.2 7.80005C17.6828 7.80005 17.1868 8.00549 16.8211 8.37119C16.4554 8.73689 16.25 9.23288 16.25 9.75005C16.25 10.2672 16.4554 10.7632 16.8211 11.1289C17.1868 11.4946 17.6828 11.7 18.2 11.7Z"
-                                                fill="currentColor" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_6_2641">
-                                                <rect width="26" height="26" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <div class="ltr:pl-4 rtl:pr-4">
-                                    <h4 class="pb-2.5 text-4xl font-black leading-none transition dark:text-white dark:group-hover:text-black"
-                                        data-vanilla-counter data-start-at="0" data-end-at="350" data-time="4000"
-                                        data-delay="0" data-format="{}+"></h4>
-                                    <span
-                                        class="font-bold text-black transition dark:text-gray dark:group-hover:text-black">Happy
-                                        Clients</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div
-                                class="group flex cursor-pointer items-baseline rounded-3xl border border-white bg-white py-8 px-6 transition duration-500 hover:border-secondary hover:bg-secondary/10 dark:border-transparent dark:bg-gray-dark dark:hover:bg-secondary">
-                                <div>
-                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="text-secondary transition dark:group-hover:text-black">
-                                        <g clip-path="url(#clip0_6_2651)">
-                                            <path
-                                                d="M1.31194 8.73474H24.6881C24.8695 8.73466 25.049 8.77223 25.2151 8.84507C25.3813 8.91791 25.5305 9.02444 25.6534 9.15792C25.7763 9.29141 25.8702 9.44894 25.929 9.62055C25.9879 9.79216 26.0105 9.97413 25.9955 10.1549L24.9018 23.2684C24.8745 23.5961 24.7251 23.9016 24.4832 24.1243C24.2413 24.347 23.9245 24.4708 23.5957 24.4709H2.40429C2.07547 24.4708 1.75871 24.347 1.5168 24.1243C1.27489 23.9016 1.12548 23.5961 1.09819 23.2684L0.00452488 10.1549C-0.010534 9.97413 0.0120899 9.79216 0.0709658 9.62055C0.129842 9.44894 0.223688 9.29141 0.346571 9.15792C0.469454 9.02444 0.618698 8.91791 0.784866 8.84507C0.951034 8.77223 1.13051 8.73466 1.31194 8.73474Z"
-                                                fill="currentColor" />
-                                            <path opacity="0.3"
-                                                d="M14.5614 3.1965C14.7489 3.38404 15.0033 3.4894 15.2685 3.4894H23.4908C23.8386 3.4894 24.1722 3.62756 24.4181 3.87348C24.664 4.11941 24.8022 4.45296 24.8022 4.80075V5.1121C24.8022 5.66438 24.3545 6.1121 23.8022 6.1121H2.19788C1.64559 6.1121 1.19788 5.66438 1.19788 5.1121V2.17805C1.19788 1.83026 1.33604 1.49671 1.58196 1.25078C1.82789 1.00486 2.16143 0.866699 2.50923 0.866699H11.8174C12.0826 0.866699 12.3369 0.972056 12.5245 1.15959L14.5614 3.1965Z"
-                                                fill="currentColor" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_6_2651">
-                                                <rect width="26" height="26" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <div class="ltr:pl-4 rtl:pr-4">
-                                    <h4 class="pb-2.5 text-4xl font-black leading-none transition dark:text-white dark:group-hover:text-black"
-                                        data-vanilla-counter data-start-at="0" data-end-at="1254" data-time="4000"
-                                        data-delay="0" data-format="{}+"></h4>
-                                    <span
-                                        class="font-bold text-black transition dark:text-gray dark:group-hover:text-black">Project
-                                        Done</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
-            <section class="relative pt-14 lg:pb-48 lg:pt-[100px]">
-                <div class="container relative z-[1]">
-                    <div class="text-center lg:w-1/2 ltr:lg:text-left rtl:lg:text-right">
-                        <div class="heading mb-5 text-center ltr:lg:text-left rtl:lg:text-right xl:w-[95%]">
-                            <h6>Who are we?</h6>
-                            <h4>We thrive to help our clients have global impact</h4>
+
+            <section class="relative mt-20 py-5 lg:py-[50px] xl:-mt-[50px] mb-10">
+                <div
+                    class="absolute hidden h-full w-full rounded-r-[32px] rounded-l-[32px] bg-white/50 dark:bg-gray-dark xl:inline-block xl:w-[100%]">
+                </div>
+                <div class="flex flex-col px-4 justify-center items-center relative z-[2]">
+                    <div class="lg:w-2/3">
+                        <div class="heading my-10 text-center">
+                            <h4>Visi & Misi</h4>
+
                         </div>
-                        <p class="pb-10 text-lg font-semibold leading-[30px]">
-                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                            the visual form of a document
-                            or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder
-                            before final copy is available.
-                        </p>
-                        <a href="career.html" class="btn capitalize text-white">Join Our Team</a>
+                        <div class="heading text-center">
+                            <h6>Visi</h6>
+                            <p
+                                class="dark:text-white text-black text-center text-lg font-semibold leading-[30px] ">
+                                Terwujudnya masyarakat Tabanan yang SAHABAT <br>(Sinergi, Andal, Humanis,
+                                Antikorupsi,
+                                Amanah, dan Terpercaya)
+                            </p>
+                            <h6 class="mt-10">Misi</h6>
+                        </div>
                     </div>
-                </div>
-                <div class="bottom-0 ltr:right-0 rtl:left-0 lg:absolute" data-aos="fade-left" data-aos-duration="1000">
-                    <img src="{{ asset('vendor/images/about-bg.png') }}" alt="about-who-bg" class="rtl:rotate-y-180" />
-                </div>
-            </section>
- --}}
-                    <section class="relative mt-20 py-5 lg:py-[50px] xl:-mt-[50px]">
-                        {{-- <div
-                            class="absolute top-0 z-[1] h-full w-full bg-white ltr:left-0 rtl:right-0 dark:bg-black xl:w-[85%] xl:rounded-r-[32px]">
-                        </div> --}}
-                        {{-- <div
-                            class="absolute -top-3 hidden h-full w-full rounded-r-[32px] bg-white/50 ltr:left-3 rtl:right-3 dark:bg-gray-dark xl:inline-block xl:w-[85%]">
-                        </div> --}}
-                        <div
-                            class="absolute py-5 top-0 h-full w-full bg-white dark:bg-black xl:w-[100%] rounded-r-[32px] rounded-l-[32px]">
-                        </div>
-
-                        <div
-                            class="absolute hidden h-full w-full rounded-r-[32px] rounded-l-[32px] bg-white/50 ltr:left-3 rtl:right-3 dark:bg-gray-dark xl:inline-block xl:w-[100%]">
-                        </div>
-                        <div class="flex flex-col px-4 justify-center items-center relative z-[2]">
-                            <div class="lg:w-2/3">
-                                <div class="heading mb-10 text-center">
-                                    <h4>Visi & Misi</h4>
-
-                                </div>
-                                <div class="heading text-center">
-                                    <h6>Visi</h6>
-                                    <p
-                                        class="text-black text-center text-lg font-semibold leading-[30px] ">
-                                        Terwujudnya masyarakat Tabanan yang SAHABAT <br>(Sinergi, Andal, Humanis,
-                                        Antikorupsi,
-                                        Amanah, dan Terpercaya)
+                    <div class="grid justify-center items-top gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
+                        <div data-aos="fade-up" data-aos-duration="1000">
+                            <div
+                                class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
+                                <span
+                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">01</span>
+                                <div>
+                                    {{-- <h6 class="mb-1 font-bold text-secondary">Collect Ideas</h6> --}}
+                                    <p class="text-sm font-semibold text-black dark:text-gray">
+                                        Memaksimalkan setiap potensi perekonomian masyarakat Tabanan menjadi lebih
+                                        produktif dan berdaya saing
                                     </p>
-                                    <h6 class="mt-10">Misi</h6>
-                                </div>
-                            </div>
-                            <div class="grid justify-center items-top gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
-                                <div data-aos="fade-up" data-aos-duration="1000">
-                                    <div
-                                        class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
-                                        <span
-                                            class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">01</span>
-                                        <div>
-                                            {{-- <h6 class="mb-1 font-bold text-secondary">Collect Ideas</h6> --}}
-                                            <p class="text-sm font-semibold text-black dark:text-gray">
-                                                Memaksimalkan setiap potensi perekonomian masyarakat Tabanan menjadi lebih
-                                                produktif dan berdaya saing
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div data-aos="fade-up" data-aos-duration="1000">
-                                    <div
-                                        class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
-                                        <span
-                                            class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">02</span>
-                                        <div>
-                                            {{-- <h6 class="mb-1 font-bold text-secondary">Collect Ideas</h6> --}}
-                                            <p class="text-sm font-semibold text-black dark:text-gray">
-                                                Meningkatkan sarana dan prasarana umum
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div data-aos="fade-up" data-aos-duration="1000">
-                                    <div
-                                        class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
-                                        <span
-                                            class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">03</span>
-                                        <div>
-                                            {{-- <h6 class="mb-1 font-bold text-secondary">Collect Ideas</h6> --}}
-                                            <p class="text-sm font-semibold text-black dark:text-gray">
-                                                Mendukung kegiatan prestasi masyarakat Tabanan
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div data-aos="fade-up" data-aos-duration="1000">
-                                    <div
-                                        class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
-                                        <span
-                                            class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">04</span>
-                                        <div>
-                                            {{-- <h6 class="mb-1 font-bold text-secondary">Data Analysis</h6> --}}
-                                            <p class="text-sm font-semibold text-black dark:text-gray">
-                                                Meningkatkan dukungan terhadap kegiatan keagamaan
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div data-aos="fade-up" data-aos-duration="1000">
-                                    <div
-                                        class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
-                                        <span
-                                            class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">05</span>
-                                        <div>
-                                            {{-- <h6 class="mb-1 font-bold text-secondary">Finalize Product</h6> --}}
-                                            <p class="text-sm font-semibold text-black dark:text-gray">
-                                                Memberikan pelayanan yang berkualitas
-                                            </p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                        <div data-aos="fade-up" data-aos-duration="1000">
+                            <div
+                                class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
+                                <span
+                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">02</span>
+                                <div>
+                                    {{-- <h6 class="mb-1 font-bold text-secondary">Collect Ideas</h6> --}}
+                                    <p class="text-sm font-semibold text-black dark:text-gray">
+                                        Meningkatkan sarana dan prasarana umum
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-aos="fade-up" data-aos-duration="1000">
+                            <div
+                                class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
+                                <span
+                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">03</span>
+                                <div>
+                                    {{-- <h6 class="mb-1 font-bold text-secondary">Collect Ideas</h6> --}}
+                                    <p class="text-sm font-semibold text-black dark:text-gray">
+                                        Mendukung kegiatan prestasi masyarakat Tabanan
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-aos="fade-up" data-aos-duration="1000">
+                            <div
+                                class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
+                                <span
+                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">04</span>
+                                <div>
+                                    {{-- <h6 class="mb-1 font-bold text-secondary">Data Analysis</h6> --}}
+                                    <p class="text-sm font-semibold text-black dark:text-gray">
+                                        Meningkatkan dukungan terhadap kegiatan keagamaan
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-aos="fade-up" data-aos-duration="1000">
+                            <div
+                                class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
+                                <span
+                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">05</span>
+                                <div>
+                                    {{-- <h6 class="mb-1 font-bold text-secondary">Finalize Product</h6> --}}
+                                    <p class="text-sm font-semibold text-black dark:text-gray">
+                                        Memberikan pelayanan yang berkualitas
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                    {{-- <section class="py-14 lg:py-[100px]">
+            {{--<section class="py-14 lg:py-[100px]">
                 <div class="container">
                     <div class="heading text-center ltr:lg:text-left rtl:lg:text-right">
                         <h6>Growth</h6>
@@ -930,9 +568,9 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>--}}
 
-            <section class="py-14 lg:py-[100px]">
+            {{--<section class="py-14 lg:py-[100px]">
                 <div class="container">
                     <div class="heading text-center lg:w-2/3 ltr:lg:text-left rtl:lg:text-right">
                         <h4 class="mb-5">Our Awards</h4>
@@ -1002,9 +640,9 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>--}}
 
-            <section class="py-14 lg:py-[100px]">
+            {{--<section class="py-14 lg:py-[100px]">
                 <div class="container">
                     <div class="heading text-center">
                         <h6>Meet Our Team</h6>
@@ -1061,651 +699,11 @@
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="py-14 lg:py-[100px]">
-                <div class="container">
-                    <div class="flex flex-col items-center justify-center lg:flex-row lg:justify-between">
-                        <div class="heading text-center ltr:lg:text-left rtl:lg:text-right">
-                            <h6>Blog</h6>
-                            <h4>Unlock the latest trends/news</h4>
-                        </div>
-                        <div class="mb-8 flex items-center justify-end gap-4 lg:mb-0">
-                            <a href="blog.html"
-                                class="text-sm font-extrabold text-black transition hover:text-secondary dark:text-white dark:hover:text-secondary">View
-                                All</a>
-                            <button type="button"
-                                class="blog-slider-button-prev flex h-10 w-10 items-center justify-center rounded-full bg-black/5 transition hover:bg-secondary dark:bg-white/5 dark:hover:bg-secondary">
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" class="text-black rtl:rotate-180 dark:text-white">
-                                    <path
-                                        d="M5.95007 1.2002L1.48924 5.3424C1.06317 5.73803 1.06317 6.41236 1.48924 6.80799L5.95007 10.9502"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-                                </svg>
-                            </button>
-                            <button type="button"
-                                class="blog-slider-button-next text-p flex h-10 w-10 items-center justify-center rounded-full bg-black/5 transition hover:bg-secondary dark:bg-white/5 dark:hover:bg-secondary">
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" class="text-black rtl:rotate-180 dark:text-white">
-                                    <path
-                                        d="M1.05005 10.7998L5.51089 6.6576C5.93695 6.26197 5.93695 5.58764 5.51089 5.19201L1.05005 1.0498"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="swiper blog-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div
-                                    class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                                    <a href="blog-details.html"
-                                        class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
-                                    <img src="{{ asset('vendor/images/blog1.png') }}" alt="blog"
-                                        class="h-52 w-full rounded-t-3xl object-cover" />
-                                    <div class="p-5 text-sm font-bold">
-                                        <h6 class="font-extrabold text-secondary dark:text-secondary">UI/UX Design</h6>
-                                        <h5
-                                            class="my-[10px] block text-lg font-extrabold leading-[23px] text-black line-clamp-2 dark:text-white">
-                                            Simple & constructive methods to improve your visual/UI design
-                                        </h5>
-                                        <p class="line-clamp-4">
-                                            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-                                            in a piece of classical Latin
-                                            literature from 45 BC, making it over 2000 years old.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                                    <a href="blog-details.html"
-                                        class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
-                                    <img src="{{ asset('vendor/images/blog2.png') }}" alt="blog"
-                                        class="h-52 w-full rounded-t-3xl object-cover" />
-                                    <div class="p-5 text-sm font-bold">
-                                        <h6 class="font-extrabold text-secondary dark:text-secondary">Project Management
-                                        </h6>
-                                        <h5
-                                            class="my-[10px] block text-lg font-extrabold leading-[23px] text-black line-clamp-2 dark:text-white">
-                                            Why is JIRA important for managing projects?
-                                        </h5>
-                                        <p class="line-clamp-4">
-                                            Jira works well for Agile development projects for many reasons, including the
-                                            ability to create Kanban and
-                                            Scrum boards with sprint planning and issue time estimation capabilities.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                                    <a href="blog-details.html"
-                                        class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
-                                    <img src="{{ asset('vendor/images/blog3.png') }}" alt="blog"
-                                        class="h-52 w-full rounded-t-3xl object-cover" />
-                                    <div class="p-5 text-sm font-bold">
-                                        <h6 class="font-extrabold text-secondary dark:text-secondary">SEO Marketing</h6>
-                                        <h5
-                                            class="my-[10px] block text-lg font-extrabold leading-[23px] text-black line-clamp-2 dark:text-white">
-                                            What is SEO (Search Engine Optimization)?
-                                        </h5>
-                                        <p class="line-clamp-4">
-                                            Search engine optimization is the process of improving the quality and quantity
-                                            of website traffic to a website
-                                            or a web page from search engines.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="relative bg-black pb-[100px] pt-14 dark:bg-transparent lg:pb-[250px] lg:pt-20">
-                <div class="absolute top-0 ltr:right-0 rtl:left-0 rtl:-rotate-180">
-                    <svg width="758" height="741" viewBox="0 0 758 741" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g opacity="0.03">
-                            <ellipse opacity="0.1" cx="752" cy="370.646" rx="750" ry="749.646"
-                                stroke="white" stroke-width="3" stroke-miterlimit="4.62023" stroke-linecap="round"
-                                stroke-dasharray="35 50 15 15" />
-                            <path opacity="0.1"
-                                d="M1443.13 370.646C1443.13 752.153 1133.7 1061.43 752 1061.43C370.296 1061.43 60.8655 752.153 60.8655 370.646C60.8655 -10.8606 370.296 -320.134 752 -320.134C1133.7 -320.134 1443.13 -10.8606 1443.13 370.646Z"
-                                stroke="white" stroke-width="3" />
-                            <ellipse opacity="0.2" cx="752" cy="370.646" rx="634.561" ry="634.207"
-                                stroke="white" stroke-width="3" stroke-miterlimit="4.62023" stroke-linecap="round"
-                                stroke-dasharray="35 50 15 15" />
-                            <path opacity="0.3"
-                                d="M1328.4 370.646C1328.4 688.789 1070.34 946.696 752 946.696C433.66 946.696 175.596 688.789 175.596 370.646C175.596 52.5037 433.66 -205.403 752 -205.403C1070.34 -205.403 1328.4 52.5037 1328.4 370.646Z"
-                                stroke="white" stroke-width="3" />
-                            <ellipse opacity="0.4" cx="752" cy="370.646" rx="519.83" ry="519.476"
-                                stroke="white" stroke-width="3" stroke-miterlimit="4.62023" stroke-linecap="round"
-                                stroke-dasharray="35 50 15 15" />
-                            <path opacity="0.5"
-                                d="M1211.55 370.646C1211.55 624.251 1005.8 829.84 752 829.84C498.197 829.84 292.452 624.251 292.452 370.646C292.452 117.041 498.197 -88.5479 752 -88.5479C1005.8 -88.5479 1211.55 117.041 1211.55 370.646Z"
-                                stroke="white" stroke-width="3" />
-                            <path opacity="0.6"
-                                d="M1155.6 370.646C1155.6 593.351 974.903 773.891 752 773.891C529.097 773.891 348.401 593.351 348.401 370.646C348.401 147.942 529.097 -32.5986 752 -32.5986C974.903 -32.5986 1155.6 147.942 1155.6 370.646Z"
-                                stroke="white" stroke-width="3" />
-                            <ellipse opacity="0.7" cx="752" cy="370.646" rx="350.567" ry="350.212"
-                                stroke="white" stroke-width="3" stroke-miterlimit="4.62023" stroke-linecap="round"
-                                stroke-dasharray="35 50 15 15" />
-                            <path opacity="0.8"
-                                d="M1040.16 370.647C1040.16 529.596 911.148 658.453 752 658.453C592.852 658.453 463.84 529.596 463.84 370.647C463.84 211.698 592.852 82.8408 752 82.8408C911.148 82.8408 1040.16 211.698 1040.16 370.647Z"
-                                stroke="white" stroke-width="3" />
-                            <ellipse opacity="0.9" cx="752" cy="370.646" rx="223.088" ry="222.734"
-                                stroke="white" stroke-width="3" stroke-miterlimit="4.62023" stroke-linecap="round"
-                                stroke-dasharray="35 50 15 15" />
-                            <path
-                                d="M909.848 370.646C909.848 457.624 839.18 528.14 752 528.14C664.82 528.14 594.152 457.624 594.152 370.646C594.152 283.667 664.82 213.151 752 213.151C839.18 213.151 909.848 283.667 909.848 370.646Z"
-                                stroke="white" stroke-width="3" />
-                            <ellipse cx="752" cy="370.646" rx="106.941" ry="106.586" stroke="white"
-                                stroke-width="3" stroke-miterlimit="4.62023" stroke-linecap="round"
-                                stroke-dasharray="35 50 15 15" />
-                        </g>
-                    </svg>
-                </div>
-                <div class="container">
-                    <div class="heading text-center ltr:lg:text-left rtl:lg:text-right">
-                        <h6>Testimonial</h6>
-                        <h4 class="!text-white">Feedback from our clients</h4>
-                    </div>
-                    <div class="mx-auto lg:w-11/12">
-                        <div class="swiper mySwiper relative sm:py-12 md:py-0">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="items-center gap-4 sm:grid sm:grid-cols-3">
-                                        <div class="col-span-2">
-                                            <div class="relative rounded-3xl bg-white/[0.02] p-6">
-                                                <img src="{{ asset('vendor/images/blue-quote.png') }}" alt="blue-quote"
-                                                    class="absolute top-0 ltr:right-0 rtl:left-0 sm:-top-6 ltr:sm:-right-6 rtl:sm:-left-6" />
-                                                <div class="pb-8">
-                                                    <svg width="96" height="16" viewBox="0 0 96 16"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M86.2864 2.84744C87.0637 1.5558 88.9363 1.5558 89.7136 2.84744L90.1964 3.64962C90.4756 4.11365 90.9311 4.44459 91.4587 4.56678L92.3708 4.77803C93.8395 5.11816 94.4181 6.8991 93.4299 8.03752L92.8162 8.74454C92.4612 9.15352 92.2872 9.68898 92.334 10.2285L92.4149 11.1613C92.5453 12.6631 91.0303 13.7638 89.6423 13.1757L88.7802 12.8105C88.2815 12.5993 87.7185 12.5993 87.2198 12.8105L86.3577 13.1757C84.9697 13.7638 83.4547 12.6631 83.5851 11.1613L83.666 10.2285C83.7128 9.68899 83.5388 9.15352 83.1838 8.74454L82.5701 8.03752C81.5819 6.89911 82.1605 5.11816 83.6292 4.77803L84.5413 4.56678C85.0689 4.44459 85.5244 4.11365 85.8036 3.64962L86.2864 2.84744Z"
-                                                            fill="#7780A1" />
-                                                        <path
-                                                            d="M66.2864 2.84744C67.0637 1.5558 68.9363 1.5558 69.7136 2.84744L70.1964 3.64962C70.4756 4.11365 70.9311 4.44459 71.4587 4.56678L72.3708 4.77803C73.8395 5.11816 74.4181 6.8991 73.4299 8.03752L72.8162 8.74454C72.4612 9.15352 72.2872 9.68898 72.334 10.2285L72.4149 11.1613C72.5453 12.6631 71.0303 13.7638 69.6423 13.1757L68.7802 12.8105C68.2815 12.5993 67.7185 12.5993 67.2198 12.8105L66.3577 13.1757C64.9697 13.7638 63.4547 12.6631 63.5851 11.1613L63.666 10.2285C63.7128 9.68899 63.5388 9.15352 63.1838 8.74454L62.5701 8.03752C61.5819 6.89911 62.1605 5.11816 63.6292 4.77803L64.5413 4.56678C65.0689 4.44459 65.5244 4.11365 65.8036 3.64962L66.2864 2.84744Z"
-                                                            fill="#FFBD11" />
-                                                        <path
-                                                            d="M46.2864 2.84744C47.0637 1.5558 48.9363 1.5558 49.7136 2.84744L50.1964 3.64962C50.4756 4.11365 50.9311 4.44459 51.4587 4.56678L52.3708 4.77803C53.8395 5.11816 54.4181 6.8991 53.4299 8.03752L52.8162 8.74454C52.4612 9.15352 52.2872 9.68898 52.334 10.2285L52.4149 11.1613C52.5453 12.6631 51.0303 13.7638 49.6423 13.1757L48.7802 12.8105C48.2815 12.5993 47.7185 12.5993 47.2198 12.8105L46.3577 13.1757C44.9697 13.7638 43.4547 12.6631 43.5851 11.1613L43.666 10.2285C43.7128 9.68899 43.5388 9.15352 43.1838 8.74454L42.5701 8.03752C41.5819 6.89911 42.1605 5.11816 43.6292 4.77803L44.5413 4.56678C45.0689 4.44459 45.5244 4.11365 45.8036 3.64962L46.2864 2.84744Z"
-                                                            fill="#FFBD11" />
-                                                        <path
-                                                            d="M26.2864 2.84744C27.0637 1.5558 28.9363 1.5558 29.7136 2.84744L30.1964 3.64962C30.4756 4.11365 30.9311 4.44459 31.4587 4.56678L32.3708 4.77803C33.8395 5.11816 34.4181 6.8991 33.4299 8.03752L32.8162 8.74454C32.4612 9.15352 32.2872 9.68898 32.334 10.2285L32.4149 11.1613C32.5453 12.6631 31.0303 13.7638 29.6423 13.1757L28.7802 12.8105C28.2815 12.5993 27.7185 12.5993 27.2198 12.8105L26.3577 13.1757C24.9697 13.7638 23.4547 12.6631 23.5851 11.1613L23.666 10.2285C23.7128 9.68899 23.5388 9.15352 23.1838 8.74454L22.5701 8.03752C21.5819 6.89911 22.1605 5.11816 23.6292 4.77803L24.5413 4.56678C25.0689 4.44459 25.5244 4.11365 25.8036 3.64962L26.2864 2.84744Z"
-                                                            fill="#FFBD11" />
-                                                        <path
-                                                            d="M6.28638 2.84744C7.0637 1.5558 8.9363 1.5558 9.71362 2.84744L10.1964 3.64962C10.4756 4.11365 10.9311 4.44459 11.4587 4.56678L12.3708 4.77803C13.8395 5.11816 14.4181 6.8991 13.4299 8.03752L12.8162 8.74454C12.4612 9.15352 12.2872 9.68898 12.334 10.2285L12.4149 11.1613C12.5453 12.6631 11.0303 13.7638 9.64225 13.1757L8.78018 12.8105C8.28151 12.5993 7.71849 12.5993 7.21982 12.8105L6.35775 13.1757C4.96968 13.7638 3.45472 12.6631 3.58506 11.1613L3.66601 10.2285C3.71283 9.68899 3.53885 9.15352 3.18383 8.74454L2.57009 8.03752C1.58187 6.89911 2.16054 5.11816 3.62916 4.77803L4.54126 4.56678C5.06887 4.44459 5.52437 4.11365 5.80362 3.64962L6.28638 2.84744Z"
-                                                            fill="#FFBD11" />
-                                                    </svg>
-                                                </div>
-                                                <p class="relative font-medium italic text-white">
-                                                    There are many variations of passages of Lorem Ipsum available, but the
-                                                    majority have suffered
-                                                    alteration in some form, by injected humour, or randomised words which
-                                                    don't look even slightly
-                                                    believable.
-                                                    <span class="absolute -top-2 ltr:-left-2 rtl:-right-2">
-                                                        <svg width="100" height="73" viewBox="0 0 100 73"
-                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <g opacity="0.05">
-                                                                <path
-                                                                    d="M79.5222 0C85.1084 0 89.8948 2.12795 93.8833 6.1167C98.1392 10.1054 100 14.8935 100 20.2128C100 25.2666 98.4045 29.7875 94.9462 33.7764C91.4881 38.0323 85.9039 38.8302 81.3825 39.0952C82.1803 45.7443 85.9037 52.6589 89.3619 57.4472C89.8944 58.245 90.425 59.0427 91.2246 59.5752C92.2876 60.6382 92.2876 62.2356 91.2246 63.2986L83.5126 71.543C82.4495 72.8732 80.3216 72.606 79.2567 71.543C76.0657 68.0849 72.8731 63.831 70.2144 59.5751C62.7675 47.6072 59.044 35.6393 59.044 23.669C59.044 16.7544 61.1719 10.9032 65.1606 6.64734C69.1493 2.39334 74.2029 0.000144939 79.5217 0.000144939L79.5222 0Z"
-                                                                    fill="#93A2B2" />
-                                                                <path
-                                                                    d="M20.4783 0C26.0645 0 30.8509 2.12795 34.8394 6.1167C39.0952 10.1054 40.9561 14.8935 40.9561 20.2128C40.9561 25.2666 39.3606 29.7875 35.9023 33.7764C32.4442 38.0323 26.86 38.8302 22.3386 39.0952C23.1363 45.7443 26.8597 52.6589 30.318 57.4472C30.8504 58.245 31.381 59.0427 32.1806 59.5752C33.2437 60.6382 33.2437 62.2356 32.1806 63.2986L24.4686 71.543C23.4056 72.8732 21.2776 72.606 20.2128 71.543C17.0218 68.0849 13.8292 63.831 11.1705 59.5751C3.72351 47.6072 7.62939e-06 35.6393 7.62939e-06 23.669C7.62939e-06 16.7544 2.12797 10.9032 6.11671 6.64734C10.1054 2.39334 14.8921 0.000144939 20.4778 0.000144939L20.4783 0Z"
-                                                                    fill="#93A2B2" />
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                </p>
-                                                <div class="mt-12">
-                                                    <h5 class="font-extrabold text-primary">Allan Branch</h5>
-                                                    <h6 class="text-sm font-bold italic">CEO of Lifted</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="mx-auto mt-4 h-20 w-20 max-w-[255px] overflow-hidden rounded-full bg-white ltr:ml-auto rtl:mr-auto dark:bg-gray-dark sm:mt-0 sm:h-auto sm:w-auto sm:rounded-[150px] ltr:sm:mr-0 rtl:sm:ml-0">
-                                            <img src="{{ asset('vendor/images/testimonial.png') }}" alt="testimonial"
-                                                class="h-full w-full object-cover object-top" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="items-center gap-4 sm:grid sm:grid-cols-3">
-                                        <div class="col-span-2">
-                                            <div class="relative rounded-3xl bg-white/[0.02] p-6">
-                                                <img src="{{ asset('vendor/images/blue-quote.png') }}" alt="blue-quote"
-                                                    class="absolute top-0 ltr:right-0 rtl:left-0 sm:-top-6 ltr:sm:-right-6 rtl:sm:-left-6" />
-                                                <div class="pb-8">
-                                                    <svg width="96" height="16" viewBox="0 0 96 16"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M86.2864 2.84744C87.0637 1.5558 88.9363 1.5558 89.7136 2.84744L90.1964 3.64962C90.4756 4.11365 90.9311 4.44459 91.4587 4.56678L92.3708 4.77803C93.8395 5.11816 94.4181 6.8991 93.4299 8.03752L92.8162 8.74454C92.4612 9.15352 92.2872 9.68898 92.334 10.2285L92.4149 11.1613C92.5453 12.6631 91.0303 13.7638 89.6423 13.1757L88.7802 12.8105C88.2815 12.5993 87.7185 12.5993 87.2198 12.8105L86.3577 13.1757C84.9697 13.7638 83.4547 12.6631 83.5851 11.1613L83.666 10.2285C83.7128 9.68899 83.5388 9.15352 83.1838 8.74454L82.5701 8.03752C81.5819 6.89911 82.1605 5.11816 83.6292 4.77803L84.5413 4.56678C85.0689 4.44459 85.5244 4.11365 85.8036 3.64962L86.2864 2.84744Z"
-                                                            fill="#7780A1" />
-                                                        <path
-                                                            d="M66.2864 2.84744C67.0637 1.5558 68.9363 1.5558 69.7136 2.84744L70.1964 3.64962C70.4756 4.11365 70.9311 4.44459 71.4587 4.56678L72.3708 4.77803C73.8395 5.11816 74.4181 6.8991 73.4299 8.03752L72.8162 8.74454C72.4612 9.15352 72.2872 9.68898 72.334 10.2285L72.4149 11.1613C72.5453 12.6631 71.0303 13.7638 69.6423 13.1757L68.7802 12.8105C68.2815 12.5993 67.7185 12.5993 67.2198 12.8105L66.3577 13.1757C64.9697 13.7638 63.4547 12.6631 63.5851 11.1613L63.666 10.2285C63.7128 9.68899 63.5388 9.15352 63.1838 8.74454L62.5701 8.03752C61.5819 6.89911 62.1605 5.11816 63.6292 4.77803L64.5413 4.56678C65.0689 4.44459 65.5244 4.11365 65.8036 3.64962L66.2864 2.84744Z"
-                                                            fill="#FFBD11" />
-                                                        <path
-                                                            d="M46.2864 2.84744C47.0637 1.5558 48.9363 1.5558 49.7136 2.84744L50.1964 3.64962C50.4756 4.11365 50.9311 4.44459 51.4587 4.56678L52.3708 4.77803C53.8395 5.11816 54.4181 6.8991 53.4299 8.03752L52.8162 8.74454C52.4612 9.15352 52.2872 9.68898 52.334 10.2285L52.4149 11.1613C52.5453 12.6631 51.0303 13.7638 49.6423 13.1757L48.7802 12.8105C48.2815 12.5993 47.7185 12.5993 47.2198 12.8105L46.3577 13.1757C44.9697 13.7638 43.4547 12.6631 43.5851 11.1613L43.666 10.2285C43.7128 9.68899 43.5388 9.15352 43.1838 8.74454L42.5701 8.03752C41.5819 6.89911 42.1605 5.11816 43.6292 4.77803L44.5413 4.56678C45.0689 4.44459 45.5244 4.11365 45.8036 3.64962L46.2864 2.84744Z"
-                                                            fill="#FFBD11" />
-                                                        <path
-                                                            d="M26.2864 2.84744C27.0637 1.5558 28.9363 1.5558 29.7136 2.84744L30.1964 3.64962C30.4756 4.11365 30.9311 4.44459 31.4587 4.56678L32.3708 4.77803C33.8395 5.11816 34.4181 6.8991 33.4299 8.03752L32.8162 8.74454C32.4612 9.15352 32.2872 9.68898 32.334 10.2285L32.4149 11.1613C32.5453 12.6631 31.0303 13.7638 29.6423 13.1757L28.7802 12.8105C28.2815 12.5993 27.7185 12.5993 27.2198 12.8105L26.3577 13.1757C24.9697 13.7638 23.4547 12.6631 23.5851 11.1613L23.666 10.2285C23.7128 9.68899 23.5388 9.15352 23.1838 8.74454L22.5701 8.03752C21.5819 6.89911 22.1605 5.11816 23.6292 4.77803L24.5413 4.56678C25.0689 4.44459 25.5244 4.11365 25.8036 3.64962L26.2864 2.84744Z"
-                                                            fill="#FFBD11" />
-                                                        <path
-                                                            d="M6.28638 2.84744C7.0637 1.5558 8.9363 1.5558 9.71362 2.84744L10.1964 3.64962C10.4756 4.11365 10.9311 4.44459 11.4587 4.56678L12.3708 4.77803C13.8395 5.11816 14.4181 6.8991 13.4299 8.03752L12.8162 8.74454C12.4612 9.15352 12.2872 9.68898 12.334 10.2285L12.4149 11.1613C12.5453 12.6631 11.0303 13.7638 9.64225 13.1757L8.78018 12.8105C8.28151 12.5993 7.71849 12.5993 7.21982 12.8105L6.35775 13.1757C4.96968 13.7638 3.45472 12.6631 3.58506 11.1613L3.66601 10.2285C3.71283 9.68899 3.53885 9.15352 3.18383 8.74454L2.57009 8.03752C1.58187 6.89911 2.16054 5.11816 3.62916 4.77803L4.54126 4.56678C5.06887 4.44459 5.52437 4.11365 5.80362 3.64962L6.28638 2.84744Z"
-                                                            fill="#FFBD11" />
-                                                    </svg>
-                                                </div>
-                                                <p class="relative font-medium italic text-white">
-                                                    There are many variations of passages of Lorem Ipsum available, but the
-                                                    majority have suffered
-                                                    alteration in some form, by injected humour, or randomised words which
-                                                    don't look even slightly
-                                                    believable.
-                                                    <span class="absolute -top-2 ltr:-left-2 rtl:-right-2">
-                                                        <svg width="100" height="73" viewBox="0 0 100 73"
-                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <g opacity="0.05">
-                                                                <path
-                                                                    d="M79.5222 0C85.1084 0 89.8948 2.12795 93.8833 6.1167C98.1392 10.1054 100 14.8935 100 20.2128C100 25.2666 98.4045 29.7875 94.9462 33.7764C91.4881 38.0323 85.9039 38.8302 81.3825 39.0952C82.1803 45.7443 85.9037 52.6589 89.3619 57.4472C89.8944 58.245 90.425 59.0427 91.2246 59.5752C92.2876 60.6382 92.2876 62.2356 91.2246 63.2986L83.5126 71.543C82.4495 72.8732 80.3216 72.606 79.2567 71.543C76.0657 68.0849 72.8731 63.831 70.2144 59.5751C62.7675 47.6072 59.044 35.6393 59.044 23.669C59.044 16.7544 61.1719 10.9032 65.1606 6.64734C69.1493 2.39334 74.2029 0.000144939 79.5217 0.000144939L79.5222 0Z"
-                                                                    fill="#93A2B2" />
-                                                                <path
-                                                                    d="M20.4783 0C26.0645 0 30.8509 2.12795 34.8394 6.1167C39.0952 10.1054 40.9561 14.8935 40.9561 20.2128C40.9561 25.2666 39.3606 29.7875 35.9023 33.7764C32.4442 38.0323 26.86 38.8302 22.3386 39.0952C23.1363 45.7443 26.8597 52.6589 30.318 57.4472C30.8504 58.245 31.381 59.0427 32.1806 59.5752C33.2437 60.6382 33.2437 62.2356 32.1806 63.2986L24.4686 71.543C23.4056 72.8732 21.2776 72.606 20.2128 71.543C17.0218 68.0849 13.8292 63.831 11.1705 59.5751C3.72351 47.6072 7.62939e-06 35.6393 7.62939e-06 23.669C7.62939e-06 16.7544 2.12797 10.9032 6.11671 6.64734C10.1054 2.39334 14.8921 0.000144939 20.4778 0.000144939L20.4783 0Z"
-                                                                    fill="#93A2B2" />
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                </p>
-                                                <div class="mt-12">
-                                                    <h5 class="font-extrabold text-primary">Allan Branch</h5>
-                                                    <h6 class="text-sm font-bold italic">CEO of Lifted</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- <img
-                                                        src="{{ asset('vendor/images/testimonial.png') }}"
-                                                        alt="testimonial"
-                                                        class="mx-auto mt-4 h-20 w-20 rounded-full object-cover object-top ltr:ml-auto rtl:mr-auto sm:mt-0 sm:h-auto sm:w-auto sm:rounded-[150px] sm:object-scale-down ltr:sm:mr-0 rtl:sm:ml-0"
-                                                    /> -->
-                                        <div
-                                            class="mx-auto mt-4 h-20 w-20 max-w-[255px] overflow-hidden rounded-full bg-white ltr:ml-auto rtl:mr-auto dark:bg-gray-dark sm:mt-0 sm:h-auto sm:w-auto sm:rounded-[150px] ltr:sm:mr-0 rtl:sm:ml-0">
-                                            <img src="{{ asset('vendor/images/testimonial.png') }}" alt="testimonial"
-                                                class="h-full w-full object-cover object-top" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="bottom-0 z-[1] mt-5 flex items-center justify-center gap-4 ltr:right-1/3 rtl:left-1/3 sm:absolute sm:mt-0 sm:justify-end">
-                                <a href="javascript:"
-                                    class="text-sm font-extrabold text-white transition hover:text-secondary dark:hover:text-secondary">View
-                                    All</a>
-                                <button type="button"
-                                    class="testimonial-swiper-button-prev static mt-0 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition after:text-[0px] hover:bg-secondary rtl:rotate-180">
-                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.95007 1.2002L1.48924 5.3424C1.06317 5.73803 1.06317 6.41236 1.48924 6.80799L5.95007 10.9502"
-                                            stroke="white" stroke-width="2" stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                                <button type="button"
-                                    class="testimonial-swiper-button-next static mt-0 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition after:text-[0px] hover:bg-secondary rtl:rotate-180">
-                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M1.05005 10.7998L5.51089 6.6576C5.93695 6.26197 5.93695 5.58764 5.51089 5.19201L1.05005 1.0498"
-                                            stroke="white" stroke-width="2" stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section
-                class="relative overflow-x-hidden border-t-2 border-transparent py-14 dark:border-gray/20 lg:py-[100px]">
-                <div class="container">
-                    <div class="relative">
-                        <div class="relative xl:inline-block" data-aos="fade-down" data-aos-duration="1000">
-                            <img src="{{ asset('vendor/images/stay-text.png') }}" alt="stay-text"
-                                class="left-1/2 mx-auto sm:absolute sm:-translate-x-1/2" />
-                            <img src="{{ asset('vendor/images/updated-text.png') }}" alt="updated-text"
-                                class="mx-auto sm:pt-4 xl:mx-0" />
-                            <div class="top-20 ltr:left-[105%] rtl:right-[105%] xl:absolute">
-                                <svg width="320" height="282" viewBox="0 0 320 282" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" class="mx-auto my-8 w-[90%] sm:w-auto">
-                                    <path
-                                        d="M254.182 123.52L203.127 119.709C198.183 119.334 193.219 120.151 188.656 122.091L175.076 127.872C173.249 131.184 171.005 134.248 168.397 136.989C161.845 143.977 136.719 156.969 123.457 159.701C120.332 160.256 117.111 159.694 114.361 158.113C108.352 162.928 102.056 167.373 95.5072 171.426C95.5072 171.426 107.911 206.717 154.095 186.768L190.829 170.854L182.782 190.136C183.005 201.158 183.069 215.611 182.337 225.245C190.961 227.868 200.16 227.956 208.832 225.497C212.297 201.991 214.937 164.889 205.968 150.88L249.86 150.467C255.391 140.518 254.904 134.861 254.182 123.52Z"
-                                        fill="#B476E5" />
-                                    <path
-                                        d="M172.633 109.862L177.977 86.3878C178.096 85.8739 178.003 85.3342 177.724 84.8875C177.443 84.4406 176.996 84.1235 176.482 84.0054C175.968 83.8876 175.427 83.9785 174.98 84.2585C174.532 84.5386 174.215 84.9845 174.097 85.4984L167.799 113.166"
-                                        fill="#B476E5" />
-                                    <path
-                                        d="M172.633 109.862L177.977 86.3878C178.096 85.8739 178.003 85.3342 177.724 84.8875C177.443 84.4406 176.996 84.1235 176.482 84.0054C175.968 83.8876 175.427 83.9785 174.98 84.2585C174.532 84.5386 174.215 84.9845 174.097 85.4984L167.799 113.166C168.591 116.084 170.719 119.996 172.633 109.862Z"
-                                        fill="#B476E5" />
-                                    <path
-                                        d="M168.499 20.9169C168.499 24.8561 167.329 28.7067 165.138 31.982C162.946 35.2574 159.832 37.8102 156.189 39.3177C152.545 40.8252 148.535 41.2196 144.667 40.451C140.799 39.6826 137.245 37.7857 134.457 35.0003C131.668 32.2148 129.768 28.6659 128.999 24.8024C128.23 20.9389 128.625 16.9343 130.134 13.295C131.643 9.65572 134.199 6.54505 137.478 4.35659C140.758 2.16813 144.613 1 148.557 1C153.845 1.00318 158.916 3.10253 162.655 6.83696C166.393 10.5714 168.495 15.6356 168.499 20.9169Z"
-                                        fill="#B476E5" />
-                                    <path
-                                        d="M272.632 126.031C268.973 134.696 263.804 142.644 257.366 149.506C260.896 150.046 264.427 150.843 267.448 151.316C270.595 149.945 273.546 148.163 276.223 146.015C284.593 139.281 301.834 130.926 305.61 126.161C298.772 125.173 282.043 125.84 272.632 126.031Z"
-                                        fill="#47BDFF" />
-                                    <path
-                                        d="M207.937 244.834C199.124 241.511 190.97 236.649 183.861 230.475C183.447 234.002 182.811 237.56 182.43 240.609C183.921 243.702 185.814 246.586 188.059 249.186C195.089 257.254 204.09 274.154 208.983 277.775C209.75 270.914 208.479 254.237 207.937 244.834Z"
-                                        fill="#47BDFF" />
-                                    <path
-                                        d="M98.7515 144.136C98.1154 144.454 97.4475 144.739 96.7796 145.025C93.6602 141.364 90.7292 137.548 87.9982 133.59C88.2844 134.259 97.0625 153.221 111.629 160.368C112.583 159.606 113.505 158.875 114.364 158.144C108.922 155.19 103.268 149.472 98.7515 144.136Z"
-                                        fill="#47BDFF" />
-                                    <path
-                                        d="M182.398 174.472C182.398 174.472 182.684 181.174 182.843 190.1L190.826 170.851L182.398 174.472Z"
-                                        fill="#47BDFF" />
-                                    <path
-                                        d="M96.7478 60.7848C96.7478 60.7848 91.1787 50.3641 78.0785 56.7189C64.9784 63.0736 67.5194 88.6112 67.5194 88.6112C67.5194 88.6112 55.8772 94.1702 49.6753 103.541C40.0703 118.058 44.9063 139.976 74.7742 139.976C73.3503 133.718 72.8574 127.286 73.3112 120.885C74.1063 109.608 78.2091 99.2844 81.8348 88.7065C86.4582 75.0324 85.4656 76.1258 87.0826 71.1085C83.2325 67.4555 87.8141 63.0719 89.8814 66.628C90.7569 68.0658 90.9661 68.1226 91.6658 68.3416C95.4556 69.527 102.332 70.8494 106.062 69.6156C106.067 69.5186 106.385 60.7848 96.7478 60.7848Z"
-                                        fill="#47BDFF" />
-                                    <path
-                                        d="M89.6872 93.1215L86.2843 84.6084C87.4194 86.1276 88.757 87.4848 90.2599 88.6426C89.9802 90.1228 89.789 91.6185 89.6872 93.1215Z"
-                                        fill="#47BDFF" />
-                                    <path
-                                        d="M134.69 237.37C134.911 238.445 134.807 239.56 134.392 240.575C133.978 241.59 133.271 242.459 132.362 243.074C131.452 243.688 130.381 244.019 129.283 244.025C128.185 244.03 127.11 243.711 126.194 243.108C125.278 242.504 124.562 241.641 124.136 240.632C123.71 239.62 123.594 238.507 123.802 237.43C124.01 236.353 124.534 235.362 125.305 234.583C126.077 233.804 127.063 233.27 128.139 233.05C128.853 232.899 129.59 232.893 130.307 233.03C131.025 233.167 131.708 233.443 132.317 233.846C132.926 234.247 133.45 234.765 133.857 235.37C134.264 235.976 134.548 236.654 134.69 237.37Z"
-                                        fill="#47BDFF" />
-                                    <path
-                                        d="M168.499 20.9169C168.499 24.8561 167.329 28.7067 165.137 31.9821C162.946 35.2574 159.832 37.8101 156.188 39.3177C152.545 40.8252 148.535 41.2196 144.667 40.451C140.799 39.6826 137.245 37.7857 134.457 35.0003C131.668 32.2148 129.768 28.6659 128.999 24.8024C128.229 20.9389 128.624 16.9343 130.134 13.295C131.643 9.65572 134.199 6.54505 137.478 4.35659C140.758 2.16813 144.613 1 148.557 1C153.845 1.00318 158.915 3.10253 162.655 6.83696C166.393 10.5714 168.495 15.6356 168.499 20.9169Z"
-                                        stroke="#7780A1" stroke-width="0.75" />
-                                    <path
-                                        d="M212.103 186.067L228.546 194.357C231.921 196.054 235.833 196.345 239.421 195.167C243.012 193.988 245.987 191.435 247.694 188.068L266.522 150.839"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M278.449 127.269L290.058 104.335C291.757 100.964 292.048 97.0577 290.868 93.4729C289.688 89.8879 287.132 86.917 283.76 85.2119L167.571 26.584M101.709 102.88L135.419 36.1878"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M290.599 92.5821L193.561 108.211L157.692 38.6367" stroke="#7780A1"
-                                        stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path
-                                        d="M140.392 191.371C133.153 199.321 124.384 205.732 114.61 210.223C104.836 214.715 94.2565 217.194 83.5022 217.514C72.7479 217.833 62.0394 215.986 52.0153 212.082C41.9913 208.178 32.8572 202.298 25.1578 194.793C17.4584 187.287 11.3514 178.31 7.20105 168.396C3.05076 158.482 0.942231 147.834 1.0012 137.089C1.06018 126.343 3.28546 115.72 7.54432 105.852C11.8032 95.9836 18.0084 87.0734 25.7897 79.6523"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M89.6867 95.7573C89.5973 93.3497 89.802 90.94 90.296 88.5817C94.1728 91.1714 97.3767 89.5614 99.7286 86.211C102.745 81.3349 104.294 75.6948 104.19 69.9639"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M87.998 133.591C90.728 137.549 93.6577 141.365 96.7761 145.026C101.788 142.928 106.405 139.991 110.429 136.343C113.409 133.64 116.083 130.619 118.403 127.333C112.915 120.166 107.83 112.7 103.17 104.97C100.901 101.2 97.4947 98.2448 93.4399 96.5273C91.7007 95.8524 89.8227 95.6125 87.9695 95.8285C86.5932 96.1891 85.1515 96.221 83.7604 95.9219C82.3696 95.6228 81.0688 95.0009 79.9631 94.1064"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M254.436 125.998C258.762 126.157 267.349 126.125 272.597 126.03C268.948 134.692 263.79 142.64 257.364 149.504C255.742 149.25 252.307 148.901 250.749 148.806"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M305.608 126.157C307.421 126.411 308.586 126.826 308.725 127.396C309.606 131.004 290.701 139.768 282.2 146.614C279.728 148.63 276.963 150.259 273.998 151.442C271.835 151.839 269.616 151.797 267.47 151.315C270.622 149.948 273.576 148.166 276.255 146.014C284.601 139.293 301.825 130.954 305.608 126.157Z"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M272.632 126.03C282.047 125.839 298.776 125.172 305.609 126.157C301.824 130.922 284.593 139.284 276.221 146.01C273.545 148.162 270.593 149.946 267.443 151.315C264.422 150.839 260.891 150.044 257.361 149.504C263.801 142.643 268.971 134.695 272.632 126.03Z"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M207.555 225.869C207.269 230.634 207.555 237.654 207.937 244.865C199.135 241.535 190.995 236.673 183.892 230.507C184.083 228.887 184.21 227.267 184.242 225.742"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M208.986 277.775C208.795 279.614 208.449 280.768 207.873 280.952C204.326 282.08 194.828 263.389 187.677 255.158C185.558 252.759 183.82 250.049 182.524 247.122C182.059 244.977 182.026 242.76 182.429 240.602C183.915 243.698 185.809 246.582 188.058 249.178C195.089 257.282 204.088 274.154 208.986 277.775Z"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M207.936 244.833C208.477 254.236 209.749 270.914 208.986 277.769C204.088 274.148 195.066 257.267 188.062 249.18C185.814 246.582 183.92 243.698 182.432 240.604C182.814 237.554 183.45 233.995 183.864 230.469C190.971 236.645 199.123 241.508 207.936 244.833Z"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M111.632 160.368C97.0654 153.221 88.2873 134.257 87.9977 133.59"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M98.7515 144.136C103.271 149.472 108.932 155.217 114.368 158.179C117.125 159.741 120.343 160.291 123.464 159.736C136.738 157.061 161.852 144.012 168.403 137.024C180.268 124.368 179.294 114.726 178.263 98.6194C177.844 92.0757 177.021 92.2329 176.037 95.2756C174.572 99.8164 172.724 110.824 171.202 115.161C171.06 115.597 170.767 115.969 170.375 116.209C169.204 116.878 168.465 115.415 167.864 113.35C167.227 111.158 166.771 108.239 166.179 106.495C165.139 103.421 163.018 100.619 162.68 109.64C162.483 114.945 162.469 124.082 156.701 127.429C152.212 129.984 147.533 132.193 142.707 134.036C137.715 135.989 132.485 137.271 127.155 137.848C124.26 138.002 120.38 134.703 116.691 129.589"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M172.633 109.861L177.976 86.3868C178.095 85.8729 178.003 85.3332 177.724 84.8865C177.442 84.4396 176.996 84.1225 176.482 84.0045C175.968 83.8866 175.427 83.9775 174.98 84.2576C174.531 84.5376 174.215 84.9835 174.096 85.4974L167.799 113.165"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M182.407 174.502C187.369 172.374 190.834 170.851 190.834 170.851L182.843 190.1"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M114.367 158.176C108.359 162.976 102.061 167.401 95.5071 171.426C84.8217 163.977 77.4015 152.721 74.7738 139.975"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M175.051 127.872L189.967 121.551C193.661 119.992 197.672 119.328 201.671 119.613L254.182 123.52C255.364 134.496 255.223 140.809 249.857 150.457L206.028 150.87"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M96.7477 60.7838C96.7477 60.7838 91.1786 50.3631 78.0784 56.7179C64.9782 63.0726 67.5193 88.6103 67.5193 88.6103C67.5193 88.6103 55.8771 94.1692 49.6752 103.54C40.0702 118.057 44.9062 139.975 74.7741 139.975C73.3502 133.718 72.8573 127.285 73.3111 120.884C74.1062 109.607 78.209 99.2834 81.8347 88.7056C82.6616 86.2596 84.6335 80.2877 85.3014 77.8084C85.9057 75.4912 86.1919 73.8695 87.0825 71.1076C83.2324 67.4546 87.814 63.0709 89.8813 66.627C90.7936 68.1317 90.971 68.0447 91.9703 68.3741C94.4444 69.1866 101.11 71.0307 106.07 69.5444C106.066 69.5494 106.385 60.7838 96.7477 60.7838Z"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M33.9636 66.246C22.6885 71.6778 12.08 78.3937 2.34976 86.2598C2.07591 86.43 1.84746 86.6639 1.68402 86.9416C1.52058 87.2193 1.42704 87.5324 1.41141 87.8541C1.39575 88.1757 1.45851 88.4966 1.59425 88.7886C1.72999 89.0809 1.93468 89.3359 2.19074 89.5316L9.44224 95.2811C13.8363 89.5249 19.7938 84.6598 25.7798 79.6342C21.1723 85.5872 17.1371 91.9607 13.7275 98.67L21.5297 104.843C21.7814 105.042 22.0776 105.178 22.3931 105.24C22.7086 105.301 23.0342 105.286 23.3427 105.196C23.6512 105.106 23.9336 104.943 24.1659 104.721C24.3983 104.499 24.5741 104.225 24.6783 103.921L36.9533 68.6066C37.0965 68.2107 37.1116 67.7797 36.9963 67.3748C36.8808 66.9699 36.6407 66.6114 36.3101 66.3505C35.9794 66.0893 35.5748 65.9387 35.1536 65.92C34.7326 65.9012 34.3161 66.0153 33.9636 66.246Z"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M249.602 5.70256C243.273 2.55613 236.181 7.04005 237.199 13.6439L234.241 16.374L238.312 16.6917C241.906 22.7589 251.034 23.0147 254.023 17.0411C254.937 14.9513 254.984 12.5853 254.156 10.4605C253.327 8.33574 251.69 6.6251 249.602 5.70256Z"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M287.259 189.242C286.298 188.746 285.248 188.443 284.172 188.351C283.094 188.259 282.008 188.38 280.977 188.707C279.947 189.035 278.99 189.562 278.164 190.259C277.337 190.956 276.656 191.809 276.159 192.768C276.159 192.768 270.784 203.252 266.268 202.933L288.722 214.527C285.828 211.033 290.789 200.33 290.789 200.33C291.286 199.37 291.591 198.322 291.681 197.245C291.773 196.169 291.653 195.085 291.325 194.056C290.997 193.026 290.469 192.071 289.771 191.245C289.073 190.419 288.22 189.739 287.259 189.242Z"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M281.184 210.653C280.679 211.631 279.803 212.366 278.754 212.701C277.704 213.033 276.566 212.936 275.587 212.432C274.608 211.927 273.871 211.052 273.536 210.004C273.203 208.956 273.3 207.819 273.806 206.841"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M311.749 67.8984L305.801 88.3553" stroke="#7780A1" stroke-width="0.75"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M319 81.0817L298.518 75.1416" stroke="#7780A1" stroke-width="0.75"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M182.875 214.75C191.909 216.235 201.112 216.403 210.195 215.252"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M242.033 122.694C243.466 132.224 241.922 141.963 237.612 150.584"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M134.691 237.37C134.911 238.445 134.807 239.56 134.392 240.575C133.978 241.59 133.271 242.459 132.362 243.074C131.452 243.688 130.381 244.019 129.283 244.025C128.185 244.03 127.111 243.711 126.194 243.108C125.278 242.504 124.562 241.641 124.136 240.632C123.71 239.62 123.595 238.507 123.803 237.43C124.011 236.353 124.534 235.362 125.306 234.583C126.078 233.804 127.064 233.27 128.139 233.05C128.853 232.899 129.591 232.893 130.308 233.03C131.025 233.167 131.708 233.443 132.317 233.846C132.926 234.247 133.45 234.765 133.857 235.37C134.265 235.976 134.548 236.654 134.691 237.37Z"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M132.178 219.993C134.31 218.002 136.986 216.686 139.867 216.215C142.748 215.742 145.704 216.133 148.362 217.338C151.02 218.544 153.261 220.51 154.8 222.988C156.34 225.464 157.11 228.342 157.012 231.257C156.914 234.171 155.953 236.989 154.251 239.358C152.548 241.727 150.181 243.538 147.448 244.563C144.715 245.588 141.739 245.78 138.896 245.116C136.054 244.452 133.472 242.961 131.478 240.831C128.806 237.974 127.378 234.176 127.51 230.267C127.641 226.36 129.32 222.665 132.178 219.993Z"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M95.5071 171.426C95.5071 171.426 107.911 206.717 154.095 186.769L182.407 174.502C182.759 187.847 183.499 210.432 182.374 225.235C190.998 227.858 200.195 227.946 208.867 225.489C212.334 201.981 215.014 164.874 206.037 150.87C194.406 132.726 158.648 144.358 158.648 144.358"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M90.2964 88.5822C88.7639 87.4911 87.4176 86.1605 86.3091 84.6416L89.6871 93.1213"
-                                        stroke="#7780A1" stroke-width="0.75" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </div>
-                        <p
-                            class="pt-2 text-center text-lg font-bold text-gray-dark dark:text-white ltr:xl:text-left rtl:xl:text-right">
-                            Enter your email address to register to our newsletter subscription delivered on a regular
-                            basis!
-                        </p>
-                        <form action=""
-                            class="relative z-[1] pt-[50px] text-center ltr:xl:text-left rtl:xl:text-right"
-                            data-aos="fade-up" data-aos-duration="1000">
-                            <div class="relative inline-block w-full sm:w-auto">
-                                <input type="email" placeholder="Email Address"
-                                    class="w-full rounded-3xl py-4 font-bold leading-5 outline-none ltr:pl-4 ltr:pr-[110px] rtl:pr-4 rtl:pl-[110px] dark:bg-gray-dark sm:w-[540px] sm:py-6 ltr:sm:pl-[30px] ltr:sm:pr-[140px] rtl:sm:pr-[30px] rtl:sm:pl-[140px]" />
-                                <button type="submit"
-                                    class="absolute top-0 h-full bg-secondary px-4 font-extrabold uppercase text-white ltr:right-0 ltr:rounded-r-3xl rtl:left-0 rtl:rounded-l-3xl sm:px-7">
-                                    submit
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="absolute bottom-20 ltr:left-0 rtl:right-0">
-                    <svg width="171" height="216" viewBox="0 0 171 216" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.06" d="M160.487 10.9038L47.9038 205.904L-64.6795 10.9038L160.487 10.9038Z"
-                            stroke="#7780A1" stroke-width="20" />
-                    </svg>
-                </div>
-            </section>
+            </section>--}}
         </div>
 
-        <footer
-            class="mt-auto bg-white dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.03] dark:to-transparent">
-            <div class="container">
-                <div class="grid gap-y-10 gap-x-4 py-14 sm:grid-cols-3 lg:grid-cols-5 lg:py-[100px]">
-                    <div class="relative">
-                        <img src="{{ asset('vendor/images/logo.png') }}" alt="plurk" class="h-7" />
-                        <ul class="mt-12 flex items-center gap-8">
-                            <li>
-                                <a href="javascript:">
-                                    <svg width="10" height="20" viewBox="0 0 10 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="transition hover:scale-110 hover:text-secondary">
-                                        <path
-                                            d="M8.0733 3.29509H9.88498V0.139742C9.57242 0.0967442 8.49748 0 7.2456 0C4.6335 0 2.84415 1.643 2.84415 4.66274V7.44186H-0.0383301V10.9693H2.84415V19.845H6.37821V10.9701H9.1441L9.58317 7.44269H6.37738V5.01251C6.37821 3.99297 6.65273 3.29509 8.0733 3.29509Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:">
-                                    <svg width="23" height="18" viewBox="0 0 23 18" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="transition hover:scale-110 hover:text-secondary">
-                                        <path
-                                            d="M22.8849 2.11613C22.0668 2.475 21.1951 2.71288 20.2862 2.82838C21.2212 2.27013 21.9348 1.39287 22.2703 0.3355C21.3986 0.85525 20.4361 1.22238 19.4103 1.42725C18.5826 0.545875 17.4028 0 16.1158 0C13.6188 0 11.6086 2.02675 11.6086 4.51137C11.6086 4.86888 11.6388 5.21263 11.7131 5.53988C7.96345 5.357 4.64557 3.55988 2.4167 0.82225C2.02757 1.49738 1.79932 2.27012 1.79932 3.102C1.79932 4.664 2.6037 6.04862 3.8027 6.85025C3.07807 6.8365 2.3672 6.62613 1.76495 6.29475C1.76495 6.3085 1.76495 6.32638 1.76495 6.34425C1.76495 8.536 3.32832 10.3565 5.37845 10.7759C5.01132 10.8763 4.6112 10.9244 4.19595 10.9244C3.9072 10.9244 3.6157 10.9079 3.34207 10.8474C3.92645 12.6335 5.5847 13.9466 7.55645 13.9893C6.02195 15.1896 4.07357 15.9129 1.96432 15.9129C1.59445 15.9129 1.2397 15.8964 0.884949 15.851C2.88282 17.1394 5.25057 17.875 7.80395 17.875C16.1034 17.875 20.6409 11 20.6409 5.04075C20.6409 4.84137 20.6341 4.64887 20.6244 4.45775C21.5196 3.8225 22.2717 3.02913 22.8849 2.11613Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:">
-                                    <svg width="23" height="22" viewBox="0 0 23 22" fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="transition hover:scale-110 hover:text-secondary">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M7.75995 0H16.0099C19.8063 0 22.8849 3.07862 22.8849 6.875V15.125C22.8849 18.9214 19.8063 22 16.0099 22H7.75995C3.96357 22 0.884949 18.9214 0.884949 15.125V6.875C0.884949 3.07862 3.96357 0 7.75995 0ZM16.0099 19.9375C18.6637 19.9375 20.8224 17.7787 20.8224 15.125V6.875C20.8224 4.22125 18.6637 2.0625 16.0099 2.0625H7.75995C5.1062 2.0625 2.94745 4.22125 2.94745 6.875V15.125C2.94745 17.7787 5.1062 19.9375 7.75995 19.9375H16.0099Z"
-                                            fill="currentColor" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M6.38495 11C6.38495 7.96263 8.84757 5.5 11.8849 5.5C14.9223 5.5 17.3849 7.96263 17.3849 11C17.3849 14.0374 14.9223 16.5 11.8849 16.5C8.84757 16.5 6.38495 14.0374 6.38495 11ZM8.44745 11C8.44745 12.8948 9.9902 14.4375 11.8849 14.4375C13.7797 14.4375 15.3224 12.8948 15.3224 11C15.3224 9.10388 13.7797 7.5625 11.8849 7.5625C9.9902 7.5625 8.44745 9.10388 8.44745 11Z"
-                                            fill="currentColor" />
-                                        <circle cx="17.7975" cy="5.08737" r="0.732875" fill="currentColor" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                        <img src="{{ asset('vendor/images/footer-shape.png') }}" alt="footer-shape"
-                            class="absolute bottom-0 right-0 sm:left-0" />
-                        <img src="{{ asset('vendor/images/footer-shape-dark.png') }}" alt="footer-shape-dark"
-                            class="absolute bottom-0 right-0 hidden dark:block sm:left-0" />
-                    </div>
-                    <div>
-                        <ul class="flex flex-col gap-3 font-bold">
-                            <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Quick Menu</li>
-                            <li><a href="index.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">Home</a></li>
-                            <li><a href="portfolio.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">Portfolio</a>
-                            </li>
-                            <li><a href="services.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">Service</a></li>
-                            <li><a href="team.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">Team</a></li>
-                            <li><a href="about-us.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">About Us</a></li>
-                            <li><a href="career.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">Career</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="flex flex-col gap-3 font-bold">
-                            <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Services</li>
-                            <li>
-                                <a href="services-detail.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">UI/UX Design</a>
-                            </li>
-                            <li>
-                                <a href="services-detail.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">Web
-                                    Development</a>
-                            </li>
-                            <li>
-                                <a href="services-detail.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">Digital
-                                    Marketing</a>
-                            </li>
-                            <li>
-                                <a href="services-detail.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">App
-                                    Development</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="flex flex-col gap-3 font-bold">
-                            <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Legal</li>
-                            <li>
-                                <a href="terms-conditions.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">Terms &
-                                    Conditions</a>
-                            </li>
-                            <li>
-                                <a href="privacy-policy.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">Privacy
-                                    Policy</a>
-                            </li>
-                            <li><a href="faq.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">FAQs</a></li>
-                            <li><a href="blog.html"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">Blog</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="flex flex-col gap-3 font-bold">
-                            <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Information</li>
-                            <li>164 Brighton Ave, Allston, Maine, U.S. - 02134</li>
-                            <li>
-                                <a href="tel:+(617) 254-2333"
-                                    class="inline-block transition hover:scale-110 hover:text-secondary">+(617)
-                                    254-2333</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] py-5 dark:border-t-2 dark:border-white/5 dark:bg-none">
-                <div class="container">
-                    <div
-                        class="flex flex-col items-center justify-between text-center font-bold dark:text-white md:flex-row">
-                        <div>
-                            Copyright© <span class="curr-year">2022</span>
-                            <a href="javascript:" class="text-primary transition hover:text-secondary">Plurk
-                                Technologies Pvt. Ltd.</a>
-                        </div>
-                        <div>Need help? Visit the <a href="contact-us.html"
-                                class="text-secondary transition hover:text-primary">Contact Us</a></div>
-                    </div>
-                </div>
-            </div>
-        </footer> --}}
-                </div>
+        @include('layouts.footer')
+    </div>
 
                 <!-- Return to Top -->
                 <button type="button" id="scrollToTopBtn"
