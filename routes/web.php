@@ -35,13 +35,6 @@ Route::controller(MainController::class)->group(function () {
     Route::get('/', 'index');
 });
 
-Route::get('/dashboard', function () {
-    return view('pages.admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/admin/users', function () {
-    return view('pages.admin.users-datatable');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -50,7 +43,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->prefix('admin')
     // ->middleware(['permission:admin'])
     ->group(function () {
-      Route::get('/', [AdminDashboardController::class, 'index'])->name('');
+      Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('');
       Route::get('/users', [AdminUsersController::class, 'index'])->name('');
     });
     
@@ -59,7 +52,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->prefix('mod')
     // ->middleware(['permission:mod'])
     ->group(function () {
-    //   Route::get('/', ModDashboardController::class)->name('');
+      Route::get('/dashboard', [ModDashboardController::class, 'index'])->name('');
     //   Route::get('/users', ModUsersController::class)->name('');
     });
 
@@ -68,7 +61,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->prefix('media')
     // ->middleware(['permission:media'])
     ->group(function () {
-    //   Route::get('/', ModDashboardController::class)->name('');
+      Route::get('/dashboard', [MediaDashboardController::class, 'index'])->name('');
     });
 
 

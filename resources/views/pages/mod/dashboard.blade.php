@@ -76,6 +76,7 @@
 
                </div>
             </div>
+            {{--
             <div class="grid grid-cols-12 gap-[25px]">
                <div class="col-span-12 lg:col-span-3 sm:col-span-6">
 
@@ -1367,7 +1368,7 @@
 
 
                </div>
-            </div>
+            </div>--}}
 
          </div>
 
