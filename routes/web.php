@@ -25,7 +25,7 @@ Route::controller(MainController::class)->group(function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('pages.admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/admin/users', function () {
