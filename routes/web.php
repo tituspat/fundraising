@@ -35,14 +35,6 @@ Route::controller(MainController::class)->group(function () {
     Route::get('/', 'index');
 });
 
-Route::get('/dashboard', function () {
-    return view('pages.admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/admin/users', function () {
-    return view('pages.admin.users-datatable');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 
 Route::middleware(['auth', 'verified'])->group(function () {
     // admin
@@ -50,7 +42,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->prefix('admin')
     // ->middleware(['permission:admin'])
     ->group(function () {
-      Route::get('/', [AdminDashboardController::class, 'index'])->name('');
+      Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('');
       Route::get('/users', [AdminUsersController::class, 'index'])->name('');
     });
     
