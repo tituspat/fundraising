@@ -16,7 +16,9 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/plurk/css/style.css') }}" />
 
-   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
 </head>
 <body>
 

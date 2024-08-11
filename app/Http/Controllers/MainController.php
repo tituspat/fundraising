@@ -22,7 +22,7 @@ class MainController extends Controller
         // mengambil data dari table testimonial
     	$testimonial = DB::table('testimonials')->get();
 
-        return view('index', ['program' => $program, 'programUtama'=>$programUtama, 'testimonials' => $testimonial ]);
+        return view('personal-portfolio', ['program' => $program, 'programUtama'=>$programUtama, 'testimonials' => $testimonial ]);
     }
 
     /**
