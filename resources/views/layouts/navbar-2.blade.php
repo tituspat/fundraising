@@ -1,7 +1,7 @@
 <header id="top-header" class="sticky top-0 z-50 bg-black/10 transition duration-300">
     <div class="container">
         <div class="relative flex items-center justify-between py-5 lg:py-0">
-            <a href="index.html"><img src="{{asset('img/logo-sahabat.png')}}" alt="logo" class="h-10" /></a>
+            <a href="#"><img src="{{asset('img/logo-sahabat.png')}}" alt="logo" class="h-20" /></a>
             <div class="flex items-center">
                 <div onclick="toggleMenu()" class="overlay fixed inset-0 z-[51] hidden bg-black/60 lg:hidden"></div>
                 <div class="menus">
@@ -21,12 +21,12 @@
                     </div>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li>
+                        {{-- <li>
                             <a href="#">Profile</a>
-                        </li>
+                        </li> --}}
                         <li class="group relative">
                             <a href="javascript:;">
-                                Landing
+                                Feeds
                                 <div class="group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -39,11 +39,11 @@
                                     </svg>
                                 </div>
                             </a>
-                            {{--<div class="submenu">
-                                <a href="crypto.html">Crypto Currency</a>
-                                <a href="modern-saas.html">Modern Saas </a>
-                                <a href="real-estate.html">Real Estate </a>
-                                <a href="healthcare.html">Health Care </a>
+                            <div class="submenu">
+                                <a href="crypto.html">Foto</a>
+                                <a href="modern-saas.html">Video</a>
+                                <a href="real-estate.html">Blog</a>
+                                {{-- <a href="healthcare.html">Health Care </a>
                                 <a href="marketing.html">Sales Marketing </a>
                                 <a href="application.html">Application </a>
                                 <a href="hotel-resort.html">Hotel & Resort </a>
@@ -103,22 +103,26 @@
                                     >
                                         New
                                     </span>
-                                </a>
-                            </div>--}}
+                                </a> --}}
+                            </div>
                         </li>
 
-                        <li>
-                            <a href="#">Portfolio</a>
-                        </li>
                         <li>
                             <a href="#">Program</a>
                         </li>
                         <li>
-                            <a href="#">Team</a>
+                            <a href="#">Berita</a>
+                        </li>
+                        <li>
+                            <a href="#">Dukungan</a>
                         </li>
 
                         <li>
-                            <a href="#">Career</a>
+                            <a href="#">Testimoni</a>
+                        </li>
+
+                        <li>
+                            <a href="#">FAQ</a>
                         </li>
                         <li
                             class="relative hidden items-center before:absolute before:top-1/2 before:h-[30px] before:w-[2px] before:-translate-y-1/2 before:bg-gray/30 ltr:pl-9 ltr:before:-left-[2px] rtl:pr-9 rtl:before:-right-[2px] lg:inline-flex"
@@ -140,7 +144,7 @@
                         </a>
                     </li>
                     @endif
-                    
+
                     <li>
                         <button
                             type="button"
