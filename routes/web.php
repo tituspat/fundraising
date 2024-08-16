@@ -46,6 +46,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->group(function () {
       Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('');
       Route::get('/users', [AdminUsersController::class, 'index'])->name('');
+      Route::get('/users/delete/{id}', [AdminUsersController::class, 'destroy'])->name('');
+      Route::post('/users/update', [AdminUsersController::class, 'update'])->name('');
+      Route::post('/users/add', [AdminUsersController::class, 'store'])->name('');
     });
 
     // mod

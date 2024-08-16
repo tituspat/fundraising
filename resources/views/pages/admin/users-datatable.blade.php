@@ -31,7 +31,7 @@
 
 <body class=" bg-white [&.dark]:bg-main-dark font-jost relative text-[15px] font-normal leading-[1.5] m-0 p-0">
    <!-- Aside -->
-   @include('layouts.dashboard.aside')
+   @include('layouts.admin.aside')
    <!-- End: Aside -->
 
    <!-- Wrapping Content -->
@@ -159,34 +159,74 @@
                      <div class="text-dark dark:text-title-dark font-medium text-[17px] flex items-center justify-between max-sm:flex-col max-sm:gap-[15px]">
                         <h4 class="mb-0 text-[20px] leading-6 font-medium text-dark dark:text-title-dark">All User
                         </h4>
-                        <button type="button" class="flex items-center px-[14px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px]">
+                        <!-- Modal -->
+                        <form action="users/add" method="post">
+                           {{ csrf_field() }}
+                              <div data-te-modal-init class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+                                 <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]">
+                                    <div class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+                                       <div class="flex items-center justify-between flex-shrink-0 p-4 border-b border-opacity-100 rounded-t-md border-regular dark:border-box-dark-up">
+                                          <!--Modal title-->
+                                          <h5 class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200" id="addModalLabel">
+                                             Basic title
+                                          </h5>
+                                          <!--Close button-->
+                                          <button type="button" class="box-content border-none rounded-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none" data-te-modal-dismiss aria-label="Close">
+                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-dark dark:text-title-dark">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                             </svg>
+                                          </button>
+                                       </div>
+
+                                       <!--Modal body-->
+                                       <div class="relative flex-auto  p-4" data-te-modal-body-ref>
+                                          <div class="mb-4"><input type="text" name="name" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" placeholder="name" autocomplete="name"></div>
+                                          <div class="mb-4"><input type="password" name="password" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" placeholder="name" autocomplete="name"></div>
+                                          <div class="mb-4"><input type="email" name="email" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" placeholder="email" autocomplete="email"></div>
+                                          <div class="mb-4">
+                                             <select name="role" data-te-select-init data-te-class-select-input="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] capitalize py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" data-te-class-notch-leading="!border-0 !shadow-none group-data-[te-input-focused]:shadow-none group-data-[te-input-focused]:border-none" data-te-class-notch-middle="!border-0 !shadow-none !outline-none" data-te-class-notch-trailing="!border-0 !shadow-none !outline-none">
+                                                <option value="mod">Mod</option>
+                                                <option value="media">Media</option>
+                                                <option value="member">Member</option>
+                                             </select>
+                                          </div>
+                                       </div>
+                                                   
+
+                                       <!--Modal footer-->
+                                       <div class="flex flex-wrap items-center justify-end flex-shrink-0 gap-2 p-4 border-t-2 border-b border-opacity-100 rounded-b-md border-regular dark:border-box-dark-up">
+                                          <button type="submit" class="ml-1 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-14 font-medium capitalize leading-normal text-white  transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                             Save changes
+                                          </button>
+                                          <button type="button" class="ml-1 inline-block rounded bg-secondary px-6 pb-2 pt-2.5 text-14 font-medium capitalize leading-normal text-white  transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                                             Cancel
+                                          </button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="flex items-center px-[14px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px]" data-te-toggle="modal" data-te-target="#addModal" data-te-ripple-init data-te-ripple-color="light">
                            <i class="uil uil-plus"></i>
                            <span class="m-0">Add User</span>
-                        </button>
+                        </button>   
                      </div>
+                     
                      <div class="flex items-center flex-wrap justify-between gap-x-[30px] gap-y-[10px] max-lg:flex-col max-lg:justify-center">
                         <div class="flex items-center max-md:flex-wrap max-sm:justify-center gap-[10px]">
                            <div class="inline-flex items-center">
-                              <span class="me-2 dark:text-subtitle-dark">Id:</span>
-                              <input type="search" placeholder="Search with Id" class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark search-close-icon:appearance-none search-close-icon:w-[20px] search-close-icon:h-[23px] search-close-icon:bg-[url(images/svg/x.svg)] search-close-icon:cursor-pointer" autocomplete="off">
+                              <span class="me-2 dark:text-subtitle-dark">Name:</span>
+                              <input type="search" placeholder="Search nama" class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark search-close-icon:appearance-none search-close-icon:w-[20px] search-close-icon:h-[23px] search-close-icon:bg-[url(images/svg/x.svg)] search-close-icon:cursor-pointer" autocomplete="off">
                            </div>
                            <div class="inline-flex items-center">
-                              <span class="me-2 dark:text-subtitle-dark">Status</span>
+                              <span class="me-2 dark:text-subtitle-dark">Role</span>
                               <select data-te-select-init data-te-class-select-input="py-[7px] px-[20px] w-full capitalize [&~span]:top-[14px] [&~span]:w-[15px] [&~span]:h-[15px] [&~span]:text-body dark:[&~span]:text-white text-light dark:text-subtitle-dark border-normal dark:border-box-dark-up border-1 rounded-6 dark:bg-box-dark-up outline-none ltr:[&~span]:right-[0.75rem] rtl:[&~span]:left-[0.75rem] rtl:[&~span]:right-auto" data-te-class-notch-leading="!border-0 !shadow-none group-data-[te-input-focused]:shadow-none group-data-[te-input-focused]:border-none" data-te-class-notch-middle="!border-0 !shadow-none !outline-none" data-te-class-notch-trailing="!border-0 !shadow-none !outline-none">
-                                 <option value="1">1</option>
-                                 <option value="2">2</option>
-                                 <option value="3">3</option>
-                                 <option value="4">4</option>
-                                 <option value="5">5</option>
-                                 <option value="6">6</option>
+                                 <option value="member">Member</option>
+                                 <option value="media">Media</option>
+                                 <option value="mod">Moderator</option>
                               </select>
                            </div>
-                        </div>
-                        <div class="sm:w-[280px] relative w-full">
-                           <span class="start-5 absolute -translate-y-2/4 leading-[0] top-2/4 text-light dark:text-subtitle-dark text-[14px]">
-                              <i class="uil uil-search"></i>
-                           </span>
-                           <input type="search" class="ps-[50px] h-[40px] rounded-6 border border-normal dark:border-box-dark-up bg-white dark:bg-box-dark-up font-normal shadow-none px-[15px] py-[5px] text-[15px] text-dark dark:text-title-dark outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark w-full search-close-icon:appearance-none search-close-icon:w-[20px] search-close-icon:h-[23px] search-close-icon:bg-[url(images/svg/x.svg)] search-close-icon:cursor-pointer" placeholder="Search contact" autocomplete="off">
                         </div>
                      </div>
                      <div class="max-h-[455px] pb-[15px] scrollbar overflow-y-auto">
@@ -218,7 +258,7 @@
                                  <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
                                     <div class="flex items-center">
                                        {{-- <div class="me-2.5 w-[34px] h-[34px]">
-                                          <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t1.jpg') }}" alt="John Doe">
+                                          <!-- <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t1.jpg') }}" alt="John Doe"> -->
                                        </div>--}}
                                        <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
                                           {{$u -> name}}</span>
@@ -230,53 +270,73 @@
                                  <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
                                     {{$u->password}}</td>
                                  <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-
-                                    <span class="capitalize font-medium inline-flex items-center justify-center min-h-[24px] px-3 rounded-[15px] text-xs">
-                                       {{$u->role}}
-                                    </span>
-
-                                 </td>
+                                    {{$u->role}}</td>
                                  <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
                                     {{$u->updated_at}}
                                  </td>
                                  <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
                                     <div class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-setting hover:text-primary"></button>
-                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info"></button>
-                                       <button type="button" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></button>
+                                       <!-- Button trigger modal -->
+                                       <button type="button" class="cursor-pointer edit-task-title uil uil-edit-alt hover:text-info" data-te-toggle="modal" data-te-target="#exampleModal{{ $u->id }}" data-te-ripple-init data-te-ripple-color="light"></button>
+                                       <!-- Modal -->
+                                       <form action="users/update" method="post">
+                                       {{ csrf_field() }}
+                                          <div data-te-modal-init class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="exampleModal{{ $u->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $u->id }}" aria-hidden="true">
+                                             <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]">
+                                                <div class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+                                                   <div class="flex items-center justify-between flex-shrink-0 p-4 border-b border-opacity-100 rounded-t-md border-regular dark:border-box-dark-up">
+                                                      <!--Modal title-->
+                                                      <h5 class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200" id="exampleModalLabel">
+                                                         Basic title
+                                                      </h5>
+                                                      <!--Close button-->
+                                                      <button type="button" class="box-content border-none rounded-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none" data-te-modal-dismiss aria-label="Close">
+                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-dark dark:text-title-dark">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                                         </svg>
+                                                      </button>
+                                                   </div>
+
+                                                   <!--Modal body-->
+                                                   <div class="relative flex-auto  p-4" data-te-modal-body-ref>
+                                                      <div class="mb-4"><input type="hidden" name="id" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] capitalize py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" placeholder="name" autocomplete="name" value="{{ $u->id }}"></div>
+                                                      <div class="mb-4"><input type="text" name="name" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] capitalize py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" placeholder="name" autocomplete="name" value="{{ $u->name }}"></div>
+                                                      <div class="mb-4"><input type="password" name="password" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] capitalize py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" placeholder="name" autocomplete="name" value="{{ $u->password }}"></div>
+                                                      <div class="mb-4"><input type="email" name="email" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] capitalize py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" placeholder="email" autocomplete="email" value="{{ $u->email }}"></div>
+                                                      <div class="mb-4">
+                                                         <select name="role" data-te-select-init data-te-class-select-input="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] capitalize py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" data-te-class-notch-leading="!border-0 !shadow-none group-data-[te-input-focused]:shadow-none group-data-[te-input-focused]:border-none" data-te-class-notch-middle="!border-0 !shadow-none !outline-none" data-te-class-notch-trailing="!border-0 !shadow-none !outline-none">
+                                                            <option value="mod" <?php if ($u->role == 'mod') echo "selected"; ?> >Mod</option>
+                                                            <option value="media" <?php if ($u->role == 'media') echo "selected"; ?> >Media</option>
+                                                            <option value="member" <?php if ($u->role == 'member') echo "selected"; ?> >Member</option>
+                                                         </select>
+                                                      </div>
+
+
+                                                   </div>
+                                                   
+
+                                                   <!--Modal footer-->
+                                                   <div class="flex flex-wrap items-center justify-end flex-shrink-0 gap-2 p-4 border-t-2 border-b border-opacity-100 rounded-b-md border-regular dark:border-box-dark-up">
+                                                      <button type="submit" class="ml-1 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-14 font-medium capitalize leading-normal text-white  transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                                         Save changes
+                                                      </button>
+                                                      <button type="button" class="ml-1 inline-block rounded bg-secondary px-6 pb-2 pt-2.5 text-14 font-medium capitalize leading-normal text-white  transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                                                         Cancel
+                                                      </button>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </form>
+                                       <a href="users/delete/{{ $u->id }}" class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></a>
                                     </div>
                                  </td>
                               </tr>
                               @endforeach
-
                            </tbody>
                         </table>
                      </div>
-                     <div class="flex items-center pt-[30px] justify-center border-t border-normal dark:border-box-dark-up">
-                        <nav aria-label="Page navigation example">
-                           <ul class="flex items-center justify-center gap-2 list-style-none listItemActive">
-                              <li>
-                                 <a class="relative flex justify-center items-center rounded bg-transparent h-[30px] w-[30px]  text-light transition-all duration-300 dark:text-white dark:hover:bg-box-dark-up dark:hover:text-white  border border-regular dark:border-box-dark-up  text-[13px] font-normal capitalize text-[rgb(64_64_64_/_var(--tw-text-opacity))] duration ease-in-out border-solid hover:bg-primary hover:text-white" href="#" aria-label="Previous">
-                                    <i class="uil uil-angle-left text-[16px]"></i>
-                                 </a>
-                              </li>
-                              <li>
-                                 <a class="relative flex justify-center items-center border border-regular dark:border-box-dark-up rounded bg-white text-dark h-[30px] w-[30px] text-sm transition-all duration-300 hover:bg-primary hover:text-white dark:text-white dark:bg-box-dark-up dark:hover:text-white [&.active]:bg-primary [&.active]:text-white active" href="#">1</a>
-                              </li>
-                              <li aria-current="page">
-                                 <a class="relative flex justify-center items-center border border-regular dark:border-box-dark-up rounded bg-white text-dark h-[30px] w-[30px] text-sm transition-all duration-300 hover:bg-primary hover:text-white dark:text-white dark:bg-box-dark-up dark:hover:text-white [&.active]:bg-primary [&.active]:text-white" href="#">2</a>
-                              </li>
-                              <li>
-                                 <a class="relative flex justify-center items-center border border-regular dark:border-box-dark-up rounded  bg-white text-dark h-[30px] w-[30px] text-sm transition-all duration-300 hover:bg-primary hover:text-white dark:text-white dark:bg-box-dark-up dark:hover:text-white [&.active]:bg-primary [&.active]:text-white" href="#">3</a>
-                              </li>
-                              <li>
-                                 <a class="relative flex justify-center items-center rounded bg-transparent h-[30px] w-[30px]  text-light transition-all duration-300 dark:text-white dark:hover:bg-box-dark-up dark:hover:text-white  border border-regular dark:border-box-dark-up text-[13px] font-normal capitalize text-[rgb(64_64_64_/_var(--tw-text-opacity))] duration ease-in-out border-solid hover:bg-primary hover:text-white cursor-pointer" href="#" aria-label="Next">
-                                    <i class="uil uil-angle-right text-[16px]"></i>
-                                 </a>
-                              </li>
-                           </ul>
-                        </nav>
-                     </div>
+                     
                   </div>
                </div>
             </div>
