@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -28,5 +29,53 @@ class AdminUsersController extends Controller
         'mediacount' =>$mediacount,
         'membercount' =>$membercount,
         ]);
+    }
+
+
+    /**
+     * Show the form for update user resource.
+     */
+    public function update(Request $request)
+    {
+        	// update data user
+	        DB::table('users')->where('id',$request->id)->update([
+		    'name' => $request->name,
+		    'email' => $request->email,
+		    'password' => $request->password,
+		    'role' => $request->role,
+		    'updated_at' => now()
+	    ]);
+	        
+            // kembalikan halaman
+            return redirect()->back();
+    }
+
+    public function destroy($id)
+    {
+        //get user by ID
+        DB::table('users')->where('id', $id)->delete();
+
+
+        //redirect to 
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus!');
+    }
+
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        // insert data ke table pegawai
+	    DB::table('users')->insert([
+	    	'name' => $request->name,
+	    	'email' => $request->email,
+	    	'password' => $request->password,
+	    	'role' => $request->role,
+	    	'created_at' => now(),
+	    	'updated_at' => now()
+	    ]);
+	    // alihkan halaman ke halaman pegawai
+    	return redirect()->back();
     }
 }

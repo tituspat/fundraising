@@ -10,6 +10,7 @@ use App\Http\Controllers\PhotoController;
 // Admin
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminUsersController;
+use App\Http\Controllers\Admin\AdminBlogController;
 
 // Mod
 use App\Http\Controllers\Mod\ModDashboardController;
@@ -29,14 +30,17 @@ use App\Http\Controllers\Media\MediaDashboardController;
 |
 */
 
+Route::get('/blog', function () {
+  return view('blog');
+});
+Route::get('/blog/details', function () {
+  return view('blog-details');
+});
 
 Route::controller(MainController::class)->group(function () {
     // view
     Route::get('/', 'index');
 });
-
-
-
 
 Route::middleware(['auth', 'verified'])->group(function () {
     // admin
@@ -46,6 +50,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->group(function () {
       Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('');
       Route::get('/users', [AdminUsersController::class, 'index'])->name('');
+      Route::get('/users/delete/{id}', [AdminUsersController::class, 'destroy'])->name('');
+      Route::post('/users/update', [AdminUsersController::class, 'update'])->name('');
+      Route::post('/users/add', [AdminUsersController::class, 'store'])->name('');
+      Route::get('/berita', [AdminBlogController::class, 'index'])->name('');
     });
 
     // mod
@@ -64,12 +72,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->group(function () {
       Route::get('/dashboard', [MediaDashboardController::class, 'index'])->name('');
     });
-
-
-
 });
-
-
 
 
 // Auth
