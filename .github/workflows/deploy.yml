@@ -27,7 +27,7 @@ jobs:
 
       - name: Deploy to Niagahoster
         run: |
-          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@153.92.9.232 "
+          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -p 65002 ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@153.92.9.232 "
           cd /home/username/public_html &&
           git pull origin main &&
           composer install --no-interaction --prefer-dist --optimize-autoloader &&
