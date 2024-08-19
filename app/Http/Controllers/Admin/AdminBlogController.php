@@ -1,28 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\DB;
-
-
-class MainController extends Controller
+class AdminBlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // mengambil data dari table program
-    	$programUtama = DB::table('programs')->where('id',  1)->get();
-    	$program = DB::table('programs')->where('id', '>', 1)->get();
+        //
 
-        // mengambil data dari table testimonial
-    	$testimonial = DB::table('testimonials')->get();
-
-        return view('index', ['program' => $program, 'programUtama'=>$programUtama, 'testimonials' => $testimonial ]);
+        return view('pages.admin.blog');
     }
 
     /**
@@ -44,7 +36,7 @@ class MainController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(photo $photo)
+    public function show(string $id)
     {
         //
     }
@@ -52,7 +44,7 @@ class MainController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(photo $photo)
+    public function edit(string $id)
     {
         //
     }
@@ -60,7 +52,7 @@ class MainController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, photo $photo)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -68,7 +60,7 @@ class MainController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(photo $photo)
+    public function destroy(string $id)
     {
         //
     }

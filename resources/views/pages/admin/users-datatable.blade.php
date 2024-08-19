@@ -9,7 +9,7 @@
    <meta name="description" content="This is a page about support ticket.">
    <meta name="keywords" content="hexadash, web development, UI components">
    <meta name="author" content="dashboardmarket.com">
-   <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('vendor/hexadash/images/favicon.ico') }}">
+   <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/logo-sahabat.png')}}">
    <!-- Title -->
    <title>Support ticket</title>
 
