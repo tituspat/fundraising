@@ -23,7 +23,7 @@
                         <li><a href="/">Home</a></li>
                         {{-- <li>
                             <a href="#">Profile</a>
-                        </li> --}}
+                        </li>
                         <li class="group relative">
                             <a href="javascript:;">
                                 Feeds
@@ -43,67 +43,6 @@
                                 <a href="crypto.html">Foto</a>
                                 <a href="modern-saas.html">Video</a>
                                 <a href="real-estate.html">Blog</a>
-                                {{-- <a href="healthcare.html">Health Care </a>
-                                <a href="marketing.html">Sales Marketing </a>
-                                <a href="application.html">Application </a>
-                                <a href="hotel-resort.html">Hotel & Resort </a>
-                                <a href="nft.html">NFT Marketplace </a>
-                                <a href="online-courses.html"> Online Courses </a>
-                                <a href="restaurant.html"> Restaurant </a>
-                                <a href="consulting.html"> Consulting </a>
-                                <a href="creative-agency.html"> Creative Agency </a>
-                                <a href="insurance.html"> Insurance </a>
-                                <a href="photography.html"> Photography </a>
-                                <a href="construction.html"> Construction </a>
-                                <a href="blog-landing.html"> Blog </a>
-                                <a href="event-concert.html">
-                                    Event Concert
-                                    <span
-                                        class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
-                                    >
-                                        New
-                                    </span>
-                                </a>
-                                <a href="gym.html">
-                                    GYM
-                                    <span
-                                        class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
-                                    >
-                                        New
-                                    </span>
-                                </a>
-                                <a href="job-placement.html">
-                                    Job Placement
-                                    <span
-                                        class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
-                                    >
-                                        New
-                                    </span>
-                                </a>
-                                <a href="online-payments.html">
-                                    Online Payments
-                                    <span
-                                        class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
-                                    >
-                                        New
-                                    </span>
-                                </a>
-                                <a href="personal-portfolio.html">
-                                    Personal Portfolio
-                                    <span
-                                        class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
-                                    >
-                                        New
-                                    </span>
-                                </a>
-                                <a href="portfolio-landing.html">
-                                    Portfolio
-                                    <span
-                                        class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
-                                    >
-                                        New
-                                    </span>
-                                </a> --}}
                             </div>
                         </li>
 
@@ -123,7 +62,7 @@
 
                         <li>
                             <a href="#">FAQ</a>
-                        </li>
+                        </li>--}}
                         <li
                             class="relative hidden items-center before:absolute before:top-1/2 before:h-[30px] before:w-[2px] before:-translate-y-1/2 before:bg-gray/30 ltr:pl-9 ltr:before:-left-[2px] rtl:pr-9 rtl:before:-right-[2px] lg:inline-flex"
                         >
@@ -131,7 +70,7 @@
                     </ul>
                 </div>
                 <ul class="flex items-center gap-5 ltr:pr-5 rtl:pl-5 ltr:lg:pl-5 ltr:lg:pr-0 rtl:lg:pr-5 rtl:lg:pl-0">
-                    @if(Auth::check())
+                    {{--@if(Auth::check())
                     <li>
                         <a class="transition duration-500 hover:bg-secondary text-white font-bold py-2 px-4 rounded" href="/{{ Auth::user()->role }}/dashboard">
                             Dashboard
@@ -143,7 +82,7 @@
                             Login
                         </a>
                     </li>
-                    @endif
+                    @endif--}}
 
                     <li>
                         <button

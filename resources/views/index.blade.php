@@ -1,48 +1,6 @@
+@extends('layouts.app-2')
 
-{{-- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="UTF-8" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Plurk – Tailwind CSS Multipurpose Landing Templates</title>
-        <!-- Favicon -->
-        <link rel="icon" type="icon" href="{{ asset('vendor/plurk/images/favicon.png') }}" />
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
-        <!-- Swiper Slider -->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-        <!-- AOS Animation CSS -->
-        <link href="assets/css/aos.css" rel="stylesheet" />
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="assets/css/style.css" />
-
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahabat Tabanan</title>
-    <!-- Favicon -->
-    <link rel="icon" type="icon" href="{{asset('img/logo-sahabat.png')}}" />
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
-    <!-- Swiper Slider -->
-    <link rel="stylesheet" href="{{ asset('vendor/plurk/css/swiper-bundle.min.css') }}" />
-    <!-- AOS Animation CSS -->
-    <link href="{{ asset('vendor/plurk/css/aos.css') }}" rel="stylesheet" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ asset('vendor/plurk/css/style.css') }}" />
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    </head>
-
-
-    <body class="overflow-x-hidden">
-        --}}
-
-        @extends('layouts.app-2')
-
-        @section('content')
+@section('content')
         <!-- screen loader -->
         <div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]">
             <svg
@@ -429,7 +387,7 @@
                                     </button>
                                 </div> --}}
                                 <div class="grid gap-y-10 gap-x-6 py-14 text-sm font-extrabold sm:grid-cols-3 lg:max-w-[490px] lg:py-24">
-                                    <div class="text-center">
+                                    {{--<div class="text-center">
                                         <img src="{{ asset('vendor/plurk/images/personal-portfolio/logo-1.svg')}}" alt="" class="mx-auto mb-4" />
                                         <p>Awarded as Best Design & Creative</p>
                                     </div>
@@ -440,7 +398,7 @@
                                     <div class="text-center">
                                         <img src="{{ asset('vendor/plurk/images/personal-portfolio/logo-3.svg')}}" alt="" class="mx-auto mb-4" />
                                         <p>Top User Experience Agency</p>
-                                    </div>
+                                    </div>--}}
                                 </div>
                                 <div class="absolute bottom-0 hidden w-7/12 ltr:-right-40 rtl:-left-40 rtl:rotate-y-180 lg:block">
                                     <img
@@ -1010,7 +968,7 @@
                     </div>
                 </section> --}}
 
-                <section class="bg-gradient-to-t from-white/50 to-transparent py-14 dark:from-white/[0.02] md:py-20">
+                {{--<section class="bg-gradient-to-t from-white/50 to-transparent py-14 dark:from-white/[0.02] md:py-20">
                     <div class="container">
                         <div class="relative">
                             <div class="grid-cols-2 items-center justify-between gap-8 lg:grid lg:flex-row">
@@ -1127,7 +1085,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section>--}}
 
                 {{-- <section class="bg-black py-10 md:py-0">
                     <div class="container">
@@ -1150,6 +1108,7 @@
                     </div>
                 </section>
             </div> --}}
+            {{--
             <section class="py-14 dark:bg-gray-dark lg:py-[100px]">
                 <div class="container">
                     <div class="relative z-10 lg:flex">
@@ -1251,7 +1210,7 @@
                     </div>
                 </div>
             </section>
-
+            --}}
             @include('layouts.footer')
     </div>
 
@@ -1381,5 +1340,4 @@
                 },
             });
         </script>
-    </body>
-</html>
+@endsection
