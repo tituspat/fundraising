@@ -408,14 +408,14 @@
                                         data-aos="fade-up"
                                         data-aos-duration="1000"
                                     />
-                                    <div class="absolute top-[32%] left4">
+                                    <div class="absolute top-[32%] left-4">
                                         <img
 
                                             src="{{ asset('img/logo-sahabat.png')}}"
                                             alt=""
-                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                                            class="rounded-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                                         />
-                                        <img src="{{ asset('vendor/plurk/images/personal-portfolio/enterpreneurship-text.png')}}" alt="" class="animate-spin-slow" />
+                                        <img src="{{ asset('img/sahabat-text-bg.png')}}" alt="" class="h-[100px] opacity-50 animate-spin-slow" />
                                     </div>
                                 </div>
                             </div>
