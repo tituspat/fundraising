@@ -42,22 +42,24 @@ Route::controller(MainController::class)->group(function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     // admin
-    Route::name('admin')
+    Route::name('admin.')
     ->prefix('admin')
     // ->middleware(['permission:admin'])
     ->group(function () {
-      Route::get('/dashboard', [DashboardController::class, 'index'])->name('');
-      Route::get('/users', [UsersController::class, 'index'])->name('');
-      Route::get('/users/delete/{id}', [UsersController::class, 'destroy'])->name('');
-      Route::post('/users/update', [UsersController::class, 'update'])->name('');
-      Route::post('/users/add', [UsersController::class, 'store'])->name('');
-      Route::get('/berita', [BlogController::class, 'index'])->name('');
-      Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('');
-      Route::get('/gallery', [GalleryController::class, 'index'])->name('');
+      Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+      Route::get('/users', [UsersController::class, 'index'])->name('users');
+      Route::get('/users/delete/{id}', [UsersController::class, 'destroy'])->name('users.delete');
+      Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');
+      Route::post('/users/add', [UsersController::class, 'store'])->name('users.add');
+      Route::get('/berita', [BlogController::class, 'index'])->name('berita');
+      Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('profile-calon');
+      Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+      Route::get('/gallery/tambah', [GalleryController::class, 'create'])->name('gallery.create');
+      Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
     });
 
     // mod
-    Route::name('mod')
+    Route::name('mod.')
     ->prefix('mod')
     // ->middleware(['permission:mod'])
     ->group(function () {
@@ -66,7 +68,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
     // media
-    Route::name('media')
+    Route::name('media.')
     ->prefix('media')
     // ->middleware(['permission:media'])
     ->group(function () {

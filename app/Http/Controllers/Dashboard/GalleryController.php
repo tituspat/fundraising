@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\Gallery;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,9 @@ class GalleryController extends Controller
     public function index()
     {
         //
+        $galleries = Gallery::all();
 
-        return view('pages.dashboard.gallery');
+        return view('pages.dashboard.gallery',  compact('galleries'));
     }
 
     /**
@@ -23,6 +25,8 @@ class GalleryController extends Controller
     public function create()
     {
         //
+
+        return view('pages.dashboard.form-gallery');
     }
 
     /**
@@ -31,6 +35,25 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         //
+
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'image' => 'required|string|max:255',
+        ]);
+
+        // Handle the image upload
+        $imagePath = $request->file('image')->store('gallery_images', 'public');
+
+        // Store the gallery information in the database
+        Gallery::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'url' => $imagePath,
+        ]);
+
+        return redirect()->back()
+                         ->with('success', 'Gallery created successfully.');
     }
 
     /**
