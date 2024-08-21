@@ -14,12 +14,6 @@ use App\Http\Controllers\Dashboard\UsersController;
 use App\Http\Controllers\Dashboard\BlogController;
 use App\Http\Controllers\Dashboard\ProfileCalonController;
 
-// Mod
-use App\Http\Controllers\Mod\ModDashboardController;
-
-// Media
-use App\Http\Controllers\Media\MediaDashboardController;
-
 
 /*
 |--------------------------------------------------------------------------
