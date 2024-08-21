@@ -1,38 +1,11 @@
-<!doctype html>
-<html lang="en" dir="ltr" class="scroll-smooth focus:scroll-auto">
+@extends('layouts.dashboard.app')
 
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <!-- Meta Tags -->
-   <meta name="description" content="This is a page about blog.">
-   <meta name="keywords" content="hexadash, web development, UI components">
-   <meta name="author" content="dashboardmarket.com">
-   <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/logo-sahabat.png')}}">
-   <!-- Title -->
-   <title>Blog</title>
 
-   <!-- inject:css-->
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/apexcharts.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/datepicker.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/line-awesome.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/nouislider.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/quill.snow.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/svgMap.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/tailwind.css')}}">
-   <!-- endinject -->
+@section('content')
 
-   <!-- Fonts -->
-   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
-   <!-- Icons -->
-   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-</head>
-
-<body class=" bg-white [&.dark]:bg-main-dark font-jost relative text-[15px] font-normal leading-[1.5] m-0 p-0">
    <!-- Aside -->
 
-   @include('layouts.admin.aside')
+   @include('layouts.dashboard.aside')
 
    <!-- End: Aside -->
 
@@ -77,8 +50,21 @@
                      </div>
                   </div>
 
+                  
                </div>
             </div>
+
+            <div class="flex items-center ssm:justify-between justify-center max-sm:flex-wrap gap-x-[30px] gap-y-[15px] ssm:mb-[33px] mb-[18px]">
+               <div class="inline-flex items-center">
+                        
+               </div>
+                  
+               <button type="button" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
+                  <i class="uil uil-plus"></i>
+                  <span class="m-0">Buat Blog</span>
+               </button>
+            </div>
+
             <div class="grid grid-cols-12 md:gap-x-[25px] gap-y-[25px]">
 
 
@@ -89,7 +75,7 @@
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/assets/images/blogs/1.png') }}">
+                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/1.png') }}">
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">
@@ -113,7 +99,7 @@
                         <div class="flex justify-between">
                            <!-- Author Information -->
                            <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/assets/images/avatars/t1.jpg') }}">
+                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t1.jpg') }}">
                               <span class="text-light dark:text-subtitle-dark text-15">Machel Bold</span>
                            </div>
                            <!-- Engagement Metrics -->
@@ -146,7 +132,7 @@
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/assets/images/blogs/2.png') }}">
+                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/2.png') }}">
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">
@@ -170,7 +156,7 @@
                         <div class="flex justify-between">
                            <!-- Author Information -->
                            <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/assets/images/avatars/t2.jpg') }}">
+                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t2.jpg') }}">
                               <span class="text-light dark:text-subtitle-dark text-15">John Doe</span>
                            </div>
                            <!-- Engagement Metrics -->
@@ -203,7 +189,7 @@
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/assets/images/blogs/3.png') }}">
+                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/3.png') }}">
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">
@@ -227,7 +213,7 @@
                         <div class="flex justify-between">
                            <!-- Author Information -->
                            <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/assets/images/avatars/t3.jpg') }}">
+                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t3.jpg') }}">
                               <span class="text-light dark:text-subtitle-dark text-15">Jane Smith</span>
                            </div>
                            <!-- Engagement Metrics -->
@@ -260,7 +246,7 @@
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/assets/images/blogs/1.png') }}">
+                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/1.png') }}">
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">
@@ -284,7 +270,7 @@
                         <div class="flex justify-between">
                            <!-- Author Information -->
                            <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/assets/images/avatars/t4.jpg') }}">
+                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t4.jpg') }}">
                               <span class="text-light dark:text-subtitle-dark text-15">Sarah Johnson</span>
                            </div>
                            <!-- Engagement Metrics -->
@@ -317,7 +303,7 @@
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/assets/images/blogs/2.png') }}">
+                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/2.png') }}">
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">
@@ -341,7 +327,7 @@
                         <div class="flex justify-between">
                            <!-- Author Information -->
                            <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/assets/images/avatars/t5.png') }}">
+                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t5.png') }}">
                               <span class="text-light dark:text-subtitle-dark text-15">David Brown</span>
                            </div>
                            <!-- Engagement Metrics -->
@@ -374,7 +360,7 @@
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/assets/images/blogs/3.png') }}">
+                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/3.png') }}">
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">
@@ -398,7 +384,7 @@
                         <div class="flex justify-between">
                            <!-- Author Information -->
                            <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/assets/images/avatars/t6.png') }}">
+                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t6.png') }}">
                               <span class="text-light dark:text-subtitle-dark text-15">Alex Turner</span>
                            </div>
                            <!-- Engagement Metrics -->
@@ -429,22 +415,7 @@
          </div>
 
          <!-- Footer -->
-         <footer class="px-[25px] bg-white dark:bg-box-dark">
-
-            <!-- Footer content -->
-            <div class="flex justify-between flex-wrap py-[22px] gap-x-[30px] gap-y-[15px] max-ssm:gap-y-[8px] items-center max-md:flex-col">
-               <!-- Copyright information -->
-               <div class="flex items-center gap-[4px] text-[14px] font-medium max-md:text-center text-body dark:text-subtitle-dark">© <span class="current-year">2022</span> <a href="#" class="text-primary">SovWare</a></div>
-
-               <!-- Footer navigation links -->
-               <div class="justify-end md:justify-center items-center flex gap-[15px]">
-                  <a href="#" class="text-body dark:text-subtitle-dark text-[14px] hover:text-primary dark:hover:text-title-dark">About</a>
-                  <a href="#" class="text-body dark:text-subtitle-dark text-[14px] hover:text-primary dark:hover:text-title-dark">Team</a>
-                  <a href="#" class="text-body dark:text-subtitle-dark text-[14px] hover:text-primary dark:hover:text-title-dark">Contact</a>
-               </div>
-            </div>
-
-         </footer>
+         @include('layouts.dashboard.footer')
          <!-- end: Footer -->
       </main>
       <!-- End: Main Content -->
@@ -485,6 +456,4 @@
    <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/svgMapData.js') }}"></script>
    
    <!-- endinject-->
-</body>
-
-</html>
+   @endsection

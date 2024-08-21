@@ -1,39 +1,11 @@
-<!doctype html>
-<html lang="en" dir="ltr" class="scroll-smooth focus:scroll-auto">
+@extends('layouts.dashboard.app')
 
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <!-- Meta Tags -->
-   <meta name="description" content="This is a page about demo six.">
-   <meta name="keywords" content="hexadash, web development, UI components">
-   <meta name="author" content="dashboardmarket.com">
-   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
-   <!-- Title -->
-   <title>Dashboard</title>
 
-   <!-- inject:css-->
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/apexcharts.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/datepicker.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/line-awesome.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/nouislider.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/quill.snow.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/svgMap.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/tailwind.css')}}">
-   <!-- endinject -->
-
-   <!-- Fonts -->
-   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
-   <!-- Icons -->
-   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-</head>
-
-<body class=" bg-white [&.dark]:bg-main-dark font-jost relative text-[15px] font-normal leading-[1.5] m-0 p-0">
+@section('content')
 
 
    <!-- Aside -->
-   @include('layouts.mod.aside')
+   @include('layouts.dashboard.aside')
    <!-- End: Aside -->
 
    <!-- Wrapping Content -->
@@ -1373,22 +1345,7 @@
          </div>
 
          <!-- Footer -->
-         <footer class="px-[25px] bg-white dark:bg-box-dark">
-
-            <!-- Footer content -->
-            <div class="flex justify-between flex-wrap py-[22px] gap-x-[30px] gap-y-[15px] max-ssm:gap-y-[8px] items-center max-md:flex-col">
-               <!-- Copyright information -->
-               <div class="flex items-center gap-[4px] text-[14px] font-medium max-md:text-center text-body dark:text-subtitle-dark">© <span class="current-year">2024</span> <a href="#" class="text-primary">Sahabat Tabanan</a></div>
-
-               <!-- Footer navigation links -->
-               <div class="justify-end md:justify-center items-center flex gap-[15px]">
-                  <!-- <a href="#" class="text-body dark:text-subtitle-dark text-[14px] hover:text-primary dark:hover:text-title-dark">About</a>
-                  <a href="#" class="text-body dark:text-subtitle-dark text-[14px] hover:text-primary dark:hover:text-title-dark">Team</a>
-                  <a href="#" class="text-body dark:text-subtitle-dark text-[14px] hover:text-primary dark:hover:text-title-dark">Contact</a> -->
-               </div>
-            </div>
-
-         </footer>
+         @include('layouts.dashboard.footer')
          <!-- end: Footer -->
       </main>
       <!-- End: Main Content -->
@@ -1428,6 +1385,4 @@
    <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/main.js') }}"></script>
    <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/svgMapData.js') }}"></script>
    <!-- endinject-->
-</body>
-
-</html>
+@endsection

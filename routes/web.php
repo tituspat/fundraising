@@ -2,15 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 
-
+// Landing
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PhotoController;
 
-// Admin
-use App\Http\Controllers\Admin\AdminDashboardController;
-use App\Http\Controllers\Admin\AdminUsersController;
-use App\Http\Controllers\Admin\AdminBlogController;
+// Dashboard
+use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\GalleryController;
+use App\Http\Controllers\Dashboard\UsersController;
+use App\Http\Controllers\Dashboard\BlogController;
+use App\Http\Controllers\Dashboard\ProfileCalonController;
 
 // Mod
 use App\Http\Controllers\Mod\ModDashboardController;
@@ -30,9 +32,11 @@ use App\Http\Controllers\Media\MediaDashboardController;
 |
 */
 
+
 Route::get('/blog', function () {
   return view('blog');
 });
+
 Route::get('/blog/details', function () {
   return view('blog-details');
 });
@@ -48,12 +52,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->prefix('admin')
     // ->middleware(['permission:admin'])
     ->group(function () {
-      Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('');
-      Route::get('/users', [AdminUsersController::class, 'index'])->name('');
-      Route::get('/users/delete/{id}', [AdminUsersController::class, 'destroy'])->name('');
-      Route::post('/users/update', [AdminUsersController::class, 'update'])->name('');
-      Route::post('/users/add', [AdminUsersController::class, 'store'])->name('');
-      Route::get('/berita', [AdminBlogController::class, 'index'])->name('');
+      Route::get('/dashboard', [DashboardController::class, 'index'])->name('');
+      Route::get('/users', [UsersController::class, 'index'])->name('');
+      Route::get('/users/delete/{id}', [UsersController::class, 'destroy'])->name('');
+      Route::post('/users/update', [UsersController::class, 'update'])->name('');
+      Route::post('/users/add', [UsersController::class, 'store'])->name('');
+      Route::get('/berita', [BlogController::class, 'index'])->name('');
+      Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('');
+      Route::get('/gallery', [GalleryController::class, 'index'])->name('');
     });
 
     // mod
@@ -61,7 +67,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->prefix('mod')
     // ->middleware(['permission:mod'])
     ->group(function () {
-      Route::get('/dashboard', [ModDashboardController::class, 'index'])->name('');
+      Route::get('/dashboard', [DashboardController::class, 'index'])->name('');
     //   Route::get('/users', ModUsersController::class)->name('');
     });
 
@@ -70,7 +76,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->prefix('media')
     // ->middleware(['permission:media'])
     ->group(function () {
-      Route::get('/dashboard', [MediaDashboardController::class, 'index'])->name('');
+      Route::get('/dashboard', [DashboardController::class, 'index'])->name('');
     });
 });
 

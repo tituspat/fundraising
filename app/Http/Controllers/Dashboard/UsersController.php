@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
 
-class AdminUsersController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,7 +22,7 @@ class AdminUsersController extends Controller
     	$mediacount = DB::table('users')->where('role', 'media')->count();
     	$membercount = DB::table('users')->where('role', 'member')->count();
 
-        return view('pages.admin.users-datatable', [
+        return view('pages.dashboard.users-datatable', [
         'users' => $users,
         'admincount' => $admincount,
         'modcount' =>$modcount,

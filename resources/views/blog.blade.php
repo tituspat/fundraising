@@ -32,7 +32,7 @@
 <body class=" bg-white [&.dark]:bg-main-dark font-jost relative text-[15px] font-normal leading-[1.5] m-0 p-0">
    <!-- Aside -->
 
-   {{--@include('layouts.admin.aside')--}}
+   {{--@include('layouts.dashboard.aside')--}}
 
    <!-- End: Aside -->
 
