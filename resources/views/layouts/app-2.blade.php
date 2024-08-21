@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sahabat Tabanan</title>
     <!-- Favicon -->
-    <link rel="icon" type="icon" href="{{asset('img/logo-sahabat.png')}}" />
+    <link rel="icon" type="icon" href="{{asset('img/logo-sahabat-tabanan.png')}}" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
     <!-- Swiper Slider -->

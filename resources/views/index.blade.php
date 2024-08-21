@@ -411,7 +411,7 @@
                                     <div class="absolute top-[32%] left-4">
                                         <img
 
-                                            src="{{ asset('img/logo-sahabat.png')}}"
+                                            src="{{ asset('img/logo-sahabat-tabanan.png')}}"
                                             alt=""
                                             class="rounded-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                                         />
@@ -482,7 +482,7 @@
                                 />
                                 <img src="{{ asset('img/calon.png')}}" alt="" class="h-full w-full object-cover" style="background-color: burlywood" />
                                 {{-- <img
-                                    src="{{ asset('img/logo-sahabat.png')}}"
+                                    src="{{ asset('img/logo-sahabat-tabanan.png')}}"
                                     alt=""
                                     class="absolute h-[100px] w-[100px] -bottom-10 ltr:-left-10 rtl:-right-10 "
                                     data-aos="fade-up"

@@ -1,7 +1,7 @@
 <header id="top-header" class="sticky top-0 z-50 bg-black/10 transition duration-300">
     <div class="container">
         <div class="relative flex items-center justify-between py-5 lg:py-0">
-            <a href="#"><img src="{{asset('img/logo-sahabat.png')}}" alt="logo" class="h-20" /></a>
+            <a href="#"><img src="{{asset('img/logo-sahabat-tabanan.png')}}" alt="logo" class="h-20" /></a>
             <div class="flex items-center">
                 <div onclick="toggleMenu()" class="overlay fixed inset-0 z-[51] hidden bg-black/60 lg:hidden"></div>
                 <div class="menus">
