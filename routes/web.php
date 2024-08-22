@@ -25,7 +25,7 @@ use App\Http\Controllers\Dashboard\ProfileCalonController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// comment
 
 Route::get('/blog', function () {
   return view('blog');
