@@ -56,6 +56,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
       Route::get('/gallery/tambah', [GalleryController::class, 'create'])->name('gallery.create');
       Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
+
+      Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
     });
 
     // mod
