@@ -58,7 +58,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
       Route::get('/gallery/{id}/detail', [GalleryController::class, 'show'])->name('gallery.detail');
       Route::get('/gallery/{id}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
-      Route::post('/gallery/{id}/update', [GalleryController::class, 'update'])->name('gallery.update');
+      Route::post('/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
 
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
     });
