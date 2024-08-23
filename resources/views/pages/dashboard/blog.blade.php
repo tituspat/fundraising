@@ -46,7 +46,7 @@
                         
                </div>
                   
-               <button type="button" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
+               <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/blog/tambah') }}'" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
                   <i class="uil uil-plus"></i>
                   <span class="m-0">Buat Blog</span>
                </button>

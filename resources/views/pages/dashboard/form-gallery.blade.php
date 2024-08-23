@@ -3,7 +3,7 @@
 
 @section('content')
     <!-- Main Content -->
-    <main class="bg-normalBG dark:bg-main-dark">
+      <main class="bg-normalBG dark:bg-main-dark">
          <div class=" mx-[30px] min-h-[calc(100vh-195px)] mb-[30px] ssm:mt-[30px] mt-[15px]">
 
 
@@ -70,7 +70,7 @@
                                     <img id="preview" src="" alt="Image Preview" class="w-8 h-8 object-cover rounded-md mr-4">
                                     <!-- File Information -->
                                     <div class="flex-1">
-                                        <p id="file-name" class="text-sm font-medium text-gray-700 truncate"></p>
+                                        <p id="file-name" class="text-sm font-medium text-gray-700 truncate overflow-hidden"></p>
                                         <p id="file-size" class="text-xs text-gray-500"></p>
                                     </div>
                                     <!-- Remove Button -->
@@ -96,7 +96,7 @@
                            <div class="flex items-center gap-[15px] mt-[14px]">
                               <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery') }}'">Cancel</button>
                               <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">save</button>
-                           </div>
+                           </div>s
                         </form>
                      </div>
                   </div>

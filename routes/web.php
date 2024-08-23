@@ -25,7 +25,7 @@ use App\Http\Controllers\Dashboard\ProfileCalonController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// comment
 
 Route::get('/blog', function () {
   return view('blog');
@@ -51,11 +51,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/users/delete/{id}', [UsersController::class, 'destroy'])->name('users.delete');
       Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');
       Route::post('/users/add', [UsersController::class, 'store'])->name('users.add');
-      Route::get('/berita', [BlogController::class, 'index'])->name('berita');
+      Route::get('/blog', [BlogController::class, 'index'])->name('berita');
       Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('profile-calon');
       Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
       Route::get('/gallery/tambah', [GalleryController::class, 'create'])->name('gallery.create');
       Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
+      Route::get('/gallery/{id}/detail', [GalleryController::class, 'show'])->name('gallery.detail');
+      Route::get('/gallery/{id}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
+      Route::post('/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
 
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
     });

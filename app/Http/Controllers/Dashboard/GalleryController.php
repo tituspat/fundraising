@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Gallery;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+ 
 
 class GalleryController extends Controller
 {
@@ -39,7 +42,7 @@ class GalleryController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
         // Handle the image upload
@@ -52,7 +55,7 @@ class GalleryController extends Controller
             'url' => $imagePath,
         ]);
 
-        return redirect()->back()
+        return redirect(Auth::user()->role. '/gallery')
                          ->with('success', 'Gallery created successfully.');
     }
 
@@ -62,6 +65,9 @@ class GalleryController extends Controller
     public function show(string $id)
     {
         //
+        $gallery = Gallery::findOrFail($id);
+        $isEditing = false; // Set $isEditing to true
+        return view('pages.dashboard.gallery-detail',  compact('gallery', 'isEditing'));
     }
 
     /**
@@ -70,14 +76,39 @@ class GalleryController extends Controller
     public function edit(string $id)
     {
         //
+
+        $gallery = Gallery::findOrFail($id);
+        $isEditing = true; // Set $isEditing to true
+        return view('pages.dashboard.gallery-detail',  compact('gallery', 'isEditing'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $gallery = Gallery::findOrFail($request->id);
+
+        // $request->validate([
+        //     'title' => 'required|string|max:255',
+        //     'description' => 'nullable|string',
+        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // ]);
+        
+        $fileToDelete = 'file.txt'; // Tentukan file yang ingin dihapus
+
+        // Handle the image upload
+        $imagePath = $request->file('image')->store('gallery_images', 'public');
+    
+        // Update the other gallery information
+        $gallery->update([
+        'title' => $request->title,
+        'description' => $request->description,
+        'url' => $imagePath
+    ]);
+    
+        return redirect(Auth::user()->role. '/gallery')
+                         ->with('success', 'Gallery created successfully.');
     }
 
     /**
