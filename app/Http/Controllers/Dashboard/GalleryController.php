@@ -55,8 +55,7 @@ class GalleryController extends Controller
             'url' => $imagePath,
         ]);
 
-        return redirect(Auth::user()->role. '/gallery')
-                         ->with('success', 'Gallery created successfully.');
+        return redirect(Auth::user()->role. '/gallery')->with('success', 'Gallery created successfully.');
     }
 
     /**
