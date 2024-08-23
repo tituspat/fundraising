@@ -39,7 +39,7 @@ class GalleryController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
         // Handle the image upload
@@ -62,6 +62,9 @@ class GalleryController extends Controller
     public function show(string $id)
     {
         //
+        $gallery = Gallery::findOrFail($id);
+
+        return view('pages.dashboard.gallery-detail',  compact('gallery'));
     }
 
     /**

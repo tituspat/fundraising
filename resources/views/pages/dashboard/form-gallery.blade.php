@@ -3,7 +3,7 @@
 
 @section('content')
     <!-- Main Content -->
-    <main class="bg-normalBG dark:bg-main-dark">
+      <main class="bg-normalBG dark:bg-main-dark">
          <div class=" mx-[30px] min-h-[calc(100vh-195px)] mb-[30px] ssm:mt-[30px] mt-[15px]">
 
 
@@ -70,7 +70,7 @@
                                     <img id="preview" src="" alt="Image Preview" class="w-8 h-8 object-cover rounded-md mr-4">
                                     <!-- File Information -->
                                     <div class="flex-1">
-                                        <p id="file-name" class="text-sm font-medium text-gray-700 truncate"></p>
+                                        <p id="file-name" class="text-sm font-medium text-gray-700 truncate overflow-hidden"></p>
                                         <p id="file-size" class="text-xs text-gray-500"></p>
                                     </div>
                                     <!-- Remove Button -->

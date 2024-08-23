@@ -3,8 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		<title>CKEditor 5 Sample</title>
-		<link rel="stylesheet" href="./style.css">
-		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.css">
 	</head>
 	<body>
 		<div>
@@ -14,14 +12,6 @@
 				</div>
 			</div>
 		</div>
-		<script type="importmap">
-		{
-			"imports": {
-				"ckeditor5": "https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.js",
-				"ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/43.0.0/"
-			}
-		}
-		</script>
-		<script type="module" src="{{ asset('assets/vendor/ckeditor5.js') }}"></script>
+		<script type="module" src="./main.js"></script>
 	</body>
 </html>
