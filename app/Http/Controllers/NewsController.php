@@ -10,11 +10,6 @@ class NewsController extends Controller
     public function index()
     {
         $berita = Berita::all();
-        return view('pages.dashboard.berita', compact('berita'));
-    }
-    public function create()
-    {
-        $berita = Berita::all();
-        return view('pages.dashboard.berita');
+        return view('berita', compact('berita'));
     }
 }

@@ -36,10 +36,6 @@ Route::get('/blog', function () {
 
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
 
-Route::get('/berita/insert', function () {
-    return view('pages.dashboard.berita');
-  });
-
 Route::get('/blog/details', function () {
   return view('blog-details');
 });
@@ -69,6 +65,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/gallery/{id}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
       Route::post('/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
       Route::get('/berita', [NewsCrawlerController::class, 'index'])->name('berita');
+      Route::get('/berita/tambah', [NewsCrawlerController::class, 'create'])->name('berita.create');
+      Route::post('/berita/preview', [NewsCrawlerController::class, 'preview'])->name('berita.preview');
+      Route::post('/berita/store', [NewsCrawlerController::class, 'store'])->name('berita.store');
+
 
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
 
