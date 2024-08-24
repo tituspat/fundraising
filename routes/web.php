@@ -34,6 +34,10 @@ Route::get('/blog', function () {
   return view('blog');
 });
 
+Route::get('/testimoni', function () {
+    return view('testimoni');
+});
+
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
 
 Route::get('/blog/details', function () {

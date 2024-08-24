@@ -29,6 +29,16 @@ class NewsCrawlerController extends Controller
         ]);
 
         $url = $request->input('url');
+
+        // Check if the URL already exists in the database
+        $existingBerita = Berita::where('url', $url)->first();
+
+        if ($existingBerita) {
+            // Return to the form with an error message if URL already exists
+            return redirect()->back()->withErrors(['url' => 'Berita dengan URL ini sudah ada di database.']);
+        }
+
+        // Continue with crawling if the URL does not exist
         $client = HttpClient::create();
         $response = $client->request('GET', $url);
         $content = $response->getContent();
@@ -42,6 +52,7 @@ class NewsCrawlerController extends Controller
         // Return the view with the crawled data
         return view('pages.dashboard.form-berita', compact('title', 'description', 'thumbnail', 'url'));
     }
+
 
     public function store(Request $request)
     {
