@@ -64,6 +64,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/users/add', [UsersController::class, 'store'])->name('users.add');
       Route::get('/blog', [BlogController::class, 'index'])->name('blog');
       Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('profile-calon');
+      Route::put('/profile-calon/update', [ProfileCalonController::class, 'update'])->name('calon.update');
       Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
       Route::get('/gallery/tambah', [GalleryController::class, 'create'])->name('gallery.create');
       Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');

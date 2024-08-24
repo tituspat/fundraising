@@ -5,55 +5,59 @@
 
       <!-- Main Content -->
       <main class="bg-normalBG dark:bg-main-dark">
-         <div class=" mx-[30px] min-h-[calc(100vh-195px)] mb-[30px] ssm:mt-[30px] mt-[15px]">
-
-
+         <div class="mx-[30px] min-h-[calc(100vh-195px)] mb-[30px] ssm:mt-[30px] mt-[15px]">
             <div class="grid grid-cols-12 gap-5">
                <div class="col-span-12">
-
-                  <!-- Breadcrumb Section -->
-                  <div class="leading-[1.8571428571] flex flex-wrap sm:justify-between justify-center items-center ssm:mb-[33px] mb-[18px] max-sm:flex-col gap-x-[15px] gap-y-[5px]">
-                     <!-- Title -->
-                     <h4 class="capitalize text-[20px] text-dark dark:text-title-dark font-semibold">Profile Calon</h4>
-                     <!-- Breadcrumb Navigation -->
-                     <div class="flex flex-wrap justify-center">
-                        <nav>
-                           <ol class="flex flex-wrap p-0 mb-0 list-none gap-[8px] max-sm:justify-center">
-                              <!-- Parent Link -->
-                              <li class="inline-flex items-center">
-                                 <a class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 hover:text-primary group" href="index.html">
-                                    <i class="uil uil-estate text-light dark:text-white/50 me-[8px] text-[16px] group-hover:text-current"></i>Dashboard</a>
-                              </li>
-                              <!-- Middle (Conditional) -->
-
-                              <!-- Child (Current Page) -->
-                              <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]" aria-current="page">
-                                 <span class="text-[14px] font-normal leading-[20px] flex items-center capitalize text-light dark:text-subtitle-dark">Profile Calon</span>
-                              </li>
-                           </ol>
-                        </nav>
-                     </div>
-                  </div>
-
+                  <h4 class="capitalize text-[20px] text-dark dark:text-title-dark font-semibold">Profile Calon</h4>
                </div>
             </div>
-            
-            <div class="grid grid-cols-12">
-               <div class="col-span-12 mb-[30px]">
-                  <div class="relative p-0 m-0 bg-white dark:bg-box-dark rounded-10 pb-[40px]">
-                     <div class="relative [&>.tox]:border-0 [&>.tox~.tox-menubar]:bg-transparen [&>.ql-toolbar]:py-[15px] mx-[25px] mt-0 border-b border-regular dark:border-box-dark-up">
-                        <div class="editorMessage h-[200px]"></div>
-                     </div>
+         <div class="grid grid-cols-12 gap-[25px] items-center">
+            <div class="col-span-12 xl:col-start-4 xl:col-span-6">
+               <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
+                  <div class="p-[25px]">
+                     @if($errors->any())
+                        <div class="alert alert-danger">
+                              <p>{{ $errors->first('url') }}</p>
+                        </div>
+                     @endif
+
+                     <form action="{{ route(Auth::user()->role . '.calon.update') }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <div class="pb-4">
+                           <input name="id" value="{{$calon->id}}" hidden>
+                           <div>
+                              <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Nama Calon</label>
+                              <div class="flex flex-col flex-1 md:flex-row">
+                                 <input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="nama" value="{{ old('nama_calon', $calon->nama_calon) }}" required>
+                              </div>
+                           </div>
+                           <div>
+                              <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Visi</label>
+                              <div class="flex flex-col flex-1 md:flex-row">
+                                 <textarea type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="visi" required>{{$calon->visi}}</textarea>
+                              </div>
+                           <div>
+                              <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Misi</label>
+                              <div class="flex flex-col flex-1 md:flex-row">
+                                 <textarea type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="misi" required>{{$calon->misi}}</textarea>
+                              </div>
+                           </div>
+                           <div>
+                              <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Profile</label>
+                              <div class="flex flex-col flex-1 md:flex-row">
+                                 <textarea type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="profile" required>{{$calon->profile}}</textarea>
+                              </div>
+                           </div>
+                           <div class="flex items-center gap-[15px] mt-[14px]">
+                              <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear">Update Profile</button>
+                           </div>
+                        </div>
+                     </form>
                   </div>
                </div>
-               
             </div>
-
-        </div>
-
-         <!-- Footer -->
-         @include('layouts.dashboard.footer')
-         <!-- end: Footer -->
+         </div>
       </main>
       <!-- End: Main Content -->
 
