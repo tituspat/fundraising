@@ -14,8 +14,9 @@ class ProfileCalonController extends Controller
     public function index()
     {
         //
+        $calon =  ProfileCalon::first();
 
-        return view('pages.dashboard.profile-calon');
+        return view('pages.dashboard.profile-calon', compact('calon'));
     }
 
     /**
@@ -53,9 +54,31 @@ class ProfileCalonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ProfileCalon $profileCalon)
+    public function update(Request $request)
     {
+        $profileCalon = ProfileCalon::findOrFail($request->id);
+
         //
+        $request->validate([
+            'nama_calon' => 'required',
+            'visi' => 'required',
+            'misi' => 'required', 
+            'profile' => 'required', 
+        ]);
+
+        // Handle the image upload
+        // $imagePath = $request->file('image')->store('gallery_images', 'public');
+
+        // Store the gallery information in the database
+
+        $profileCalon::update([
+            'nama_calon' => $request->input('nama'),
+            'visi' => $request->input('visi'),
+            'misi' => $request->input('misi'),
+            'profile' => $request->input('profile'),
+        ]);
+
+        return redirect()->back()->with('success', 'profile update successfully.');
     }
 
     /**

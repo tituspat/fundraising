@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
+            $table->bigInteger('profile_calon_id')->default(1);
             $table->timestamps();
         });
     }

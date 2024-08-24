@@ -43,7 +43,7 @@
                                         <span class="inline-block text-light dark:text-subtitle-dark text-15">{{ now() }}</span>
                                     </div>
                                     <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
-                                        <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="{{ $url }}">{{ $title }}</a>
+                                        <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" target="_blank" href="{{ $url }}">{{ $title }}</a>
                                     </h2>
                                     <p class="mb-4 text-base text-dark dark:text-title-dark">{{ $description }}</p>
                                     <form action="{{ route(Auth::user()->role . '.berita.store') }}" method="POST">
