@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\TestimonialController;
 
 
 // Dashboard
@@ -32,10 +33,6 @@ use App\Http\Controllers\Dashboard\NewsCrawlerController;
 
 Route::get('/blog', function () {
   return view('blog');
-});
-
-Route::get('/testimoni', function () {
-    return view('testimoni');
 });
 
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
@@ -72,7 +69,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/berita/tambah', [NewsCrawlerController::class, 'create'])->name('berita.create');
       Route::post('/berita/preview', [NewsCrawlerController::class, 'preview'])->name('berita.preview');
       Route::post('/berita/store', [NewsCrawlerController::class, 'store'])->name('berita.store');
-
+      Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimoni');
+      Route::post('/testimoni/store', [TestimonialController::class, 'store'])->name('testimoni.store');
+      Route::get('/testimoni/edit', [TestimonialController::class, 'edit'])->name('testimoni.edit');
+      Route::put('/testimoni/upadate/{id}', [TestimonialController::class, 'update'])->name('testimoni.update');
 
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
 
