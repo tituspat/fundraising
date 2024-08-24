@@ -63,6 +63,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');
       Route::post('/users/add', [UsersController::class, 'store'])->name('users.add');
       Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+      Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
       Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('profile-calon');
       Route::put('/profile-calon/update', [ProfileCalonController::class, 'update'])->name('calon.update');
       Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
@@ -79,9 +80,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/testimoni/store', [TestimonialController::class, 'store'])->name('testimoni.store');
       Route::get('/testimoni/edit', [TestimonialController::class, 'edit'])->name('testimoni.edit');
       Route::put('/testimoni/upadate/{id}', [TestimonialController::class, 'update'])->name('testimoni.update');
-
-      Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
-
     });
 
     // mod
@@ -99,6 +97,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // ->middleware(['permission:media'])
     ->group(function () {
       Route::get('/dashboard', [DashboardController::class, 'index'])->name('');
+      Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+      Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
+      Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+      Route::get('/gallery/tambah', [GalleryController::class, 'create'])->name('gallery.create');
+      Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
+      Route::get('/gallery/{id}/detail', [GalleryController::class, 'show'])->name('gallery.detail');
+      Route::get('/gallery/{id}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
+      Route::post('/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
+      Route::get('/berita', [NewsCrawlerController::class, 'index'])->name('berita');
+      Route::get('/berita/tambah', [NewsCrawlerController::class, 'create'])->name('berita.create');
+      Route::post('/berita/preview', [NewsCrawlerController::class, 'preview'])->name('berita.preview');
+      Route::post('/berita/store', [NewsCrawlerController::class, 'store'])->name('berita.store');
     });
 });
 
