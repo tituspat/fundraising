@@ -8,6 +8,8 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\QuestionController;
+
 
 
 // Dashboard
@@ -17,7 +19,7 @@ use App\Http\Controllers\Dashboard\UsersController;
 use App\Http\Controllers\Dashboard\BlogController;
 use App\Http\Controllers\Dashboard\ProfileCalonController;
 use App\Http\Controllers\Dashboard\NewsCrawlerController;
-
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +37,9 @@ Route::get('/blog', function () {
   return view('blog');
 });
 
+Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
+Route::post('questions', [QuestionController::class, 'store'])->name('questions.store');
 
 Route::get('/blog/details', function () {
   return view('blog-details');
@@ -45,6 +49,7 @@ Route::controller(MainController::class)->group(function () {
     // view
     Route::get('/', 'index');
 });
+Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimoni');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     // admin
