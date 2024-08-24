@@ -43,9 +43,9 @@
 
             <div class="flex items-center ssm:justify-between justify-center max-sm:flex-wrap gap-x-[30px] gap-y-[15px] ssm:mb-[33px] mb-[18px]">
                <div class="inline-flex items-center">
-                        
+
                </div>
-                  
+
                <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
                   <i class="uil uil-pen"></i>
                   <span class="m-0">Edit</span>
@@ -70,7 +70,7 @@
                                         <input id="dropzone-file" type="file" name="image" class="hidden" accept="image/*" onchange="previewImage(event)" required />
                                     </label>
                                 </div>
-                
+
                                 <!-- Image Preview -->
                                 <div id="image-preview" class="mt-4 hidden flex items-center border rounded-md px-4 py-2 bg-gray-50">
                                     <!-- Image Thumbnail -->
@@ -99,7 +99,7 @@
                                  <textarea  id="emailVertical" class="w-full rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark  focus:ring-primary focus:border-primary" name="description" placeholder="{{$gallery->description}}" required></textarea>
                               </div>
                            </div>
-                           
+
                            <div class="flex items-center gap-[15px] mt-[14px]">
                               <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery') }}'">Cancel</button>
                               <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">save</button>
@@ -133,7 +133,7 @@
                                     {{$gallery->description}}
                                 </p>
                             </ul>
-                           
+
                             {{--<ul class="flex flex-wrap items-center mt-12 -mx-1 -mb-1">
                                 <li class="m-1 font-medium pe-4 text-dark dark:text-title-dark text-[16px]">Share this article:</li>
                                 <li class="m-1">
@@ -209,7 +209,7 @@
          <!-- Footer -->
          @include('layouts.dashboard.footer')
          <!-- end: Footer -->
-      </main>      
+      </main>
     <!-- End: Main Content -->
 
     <!-- End: Wrapping Content -->
@@ -225,12 +225,12 @@
     function previewImage(event) {
         const reader = new FileReader();
         const file = event.target.files[0];
-        
+
         reader.onload = function() {
             const preview = document.getElementById('preview');
             const fileName = document.getElementById('file-name');
             const fileSize = document.getElementById('file-size');
-            
+
             preview.src = reader.result;
             fileName.textContent = file.name;
             fileSize.textContent = `${(file.size / 1024).toFixed(2)} KB`;
