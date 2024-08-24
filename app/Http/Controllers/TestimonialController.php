@@ -2,66 +2,95 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Testimonial;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreTestimonialRequest;
-use App\Http\Requests\UpdateTestimonialRequest;
 
 class TestimonialController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        // Ambil semua testimonial dengan relasi user
+        $testimonials = Testimonial::with('user')->get();
+
+        // Ambil testimonial pengguna yang sedang login
+        $userTestimonial = Testimonial::where('user_id', Auth::id())->first();
+
+        // Flag untuk mengatur mode edit
+        $isEditing = false;
+
+        // Kirim data ke view
+        return view('testimoni', compact('testimonials', 'userTestimonial', 'isEditing'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function edit()
     {
-        //
+        // Ambil semua testimonial dengan relasi user
+        $testimonials = Testimonial::with('user')->get();
+
+        // Ambil testimonial pengguna yang sedang login
+        $userTestimonial = Testimonial::where('user_id', Auth::id())->first();
+
+        // Flag untuk mengatur mode edit
+        $isEditing = true;
+
+        // Kirim data ke view dengan mode edit
+        return view('testimoni', compact('testimonials', 'userTestimonial', 'isEditing'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreTestimonialRequest $request)
+    public function update(Request $request, $id)
     {
-        //
+        // Validasi input
+        $request->validate([
+            'testimonial' => 'required|string|max:500',
+        ]);
+
+        // Temukan testimonial yang akan diperbarui
+        $testimonial = Testimonial::findOrFail($id);
+
+        // Perbarui testimonial
+        $testimonial->update([
+            'testimonial' => $request->input('testimonial'),
+            'is_previewed' => false,
+        ]);
+
+        // Redirect kembali ke halaman testimoni
+        return redirect()->route('admin.testimoni')->with('success', 'Testimonial updated successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Testimonial $testimonial)
+    public function store(Request $request)
     {
-        //
-    }
+        // Validasi input
+        $request->validate([
+            'testimonial' => 'required|string|max:500',
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Testimonial $testimonial)
-    {
-        //
-    }
+        // Ambil ID pengguna yang sedang login
+        $userId = Auth::id();
+        $userName = Auth::user()->name;
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateTestimonialRequest $request, Testimonial $testimonial)
-    {
-        //
-    }
+        // Check if user already has a testimonial
+        $existingTestimonial = Testimonial::where('user_id', $userId)->first();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Testimonial $testimonial)
-    {
-        //
+        if ($existingTestimonial) {
+            // Update existing testimonial
+            $existingTestimonial->update([
+                'testimonial' => $request->input('testimonial'),
+                'is_previewed' => false,
+            ]);
+
+            return redirect()->route('testimoni')->with('success', 'Testimonial updated successfully.');
+        }
+
+        // Create new testimonial
+        Testimonial::create([
+            'user_id' => $userId,
+            'name' => $userName,
+            'testimonial' => $request->input('testimonial'),
+            'is_previewed' => false,
+        ]);
+
+        // Redirect kembali ke halaman testimoni
+        return redirect()->route('admin.testimoni')->with('success', 'Testimonial added successfully.');
     }
 }

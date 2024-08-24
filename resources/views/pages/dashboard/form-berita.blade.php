@@ -12,7 +12,13 @@
             <div class="col-span-12 xl:col-start-4 xl:col-span-6">
                 <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
                     <div class="p-[25px]">
-                        <form action="{{ route(Auth::user()->role . '.berita.preview') }}" method="POST" enctype="multipart/form-data">
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <p>{{ $errors->first('url') }}</p>
+                            </div>
+                        @endif
+
+                        <form action="{{ route(Auth::user()->role . '.berita.preview') }}" method="POST">
                             @csrf
                             <div class="pb-4">
                                 <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">URL Berita</label>
