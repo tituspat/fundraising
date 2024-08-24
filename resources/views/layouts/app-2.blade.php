@@ -41,7 +41,7 @@
             </svg>
         </div>
     </button>
-    
+
     <!-- Swiper Slider JS -->
     <script src="{{ asset('vendor/plurk/js/swiper-bundle.min.js') }}"></script>
     <!-- Counter Js -->
