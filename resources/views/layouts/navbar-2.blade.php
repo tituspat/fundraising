@@ -70,7 +70,7 @@
                     </ul>
                 </div>
                 <ul class="flex items-center gap-5 ltr:pr-5 rtl:pl-5 ltr:lg:pl-5 ltr:lg:pr-0 rtl:lg:pr-5 rtl:lg:pl-0">
-                    {{--@if(Auth::check())
+                    @if(Auth::check())
                     <li>
                         <a class="transition duration-500 hover:bg-secondary text-white font-bold py-2 px-4 rounded" href="/{{ Auth::user()->role }}/dashboard">
                             Dashboard
@@ -82,7 +82,7 @@
                             Login
                         </a>
                     </li>
-                    @endif--}}
+                    @endif
 
                     <li>
                         <button
