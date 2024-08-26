@@ -3,10 +3,10 @@ name: Deploy Laravel Application
 on:
   push:
     branches:
-      - main # Atau branch lain yang Anda tentukan
+      - dev # Atau branch lain yang Anda tentukan
   pull_request:
     branches:
-      - main # Akan berjalan ketika ada PR ke branch `main`
+      - dev # Akan berjalan ketika ada PR ke branch `main`
 
 jobs:
   build-and-deploy:

@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('profile_calons', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_calon');
+            // $table->string('foto_calon');
+            $table->text('visi');
+            $table->text('misi');
+            $table->text('profile');
+            // $table->string('program'); // menggunakan tabel lain
             $table->timestamps();
         });
     }
