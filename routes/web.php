@@ -21,6 +21,7 @@ use App\Http\Controllers\Dashboard\ProfileCalonController;
 use App\Http\Controllers\Dashboard\NewsCrawlerController;
 use App\Http\Controllers\Dashboard\ManageTestimoniController;
 use App\Http\Controllers\Dashboard\ManageFAQController;
+use App\Http\Controllers\Dashboard\ManageQuestionController;
 use App\Http\Controllers\FaqController;
 
 /*
@@ -93,6 +94,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/faqs/delete/{id}', [ManageFAQController::class, 'destroy'])->name('faqs.delete');
       Route::put('/faqs/update', [ManageFAQController::class, 'update'])->name('faqs.update');
       Route::post('/faqs/add', [ManageFAQController::class, 'store'])->name('faqs.add');
+      Route::get('/question', [ManageQuestionController::class, 'index'])->name('question');
 
 
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
