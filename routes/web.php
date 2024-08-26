@@ -74,6 +74,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/gallery/{id}/detail', [GalleryController::class, 'show'])->name('gallery.detail');
       Route::get('/gallery/{id}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
       Route::post('/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
+      Route::post('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
+      Route::post('/video/store', [GalleryController::class, 'vidStore'])->name('video.store');
       Route::get('/berita', [NewsCrawlerController::class, 'index'])->name('berita');
       Route::get('/berita/tambah', [NewsCrawlerController::class, 'create'])->name('berita.create');
       Route::post('/berita/preview', [NewsCrawlerController::class, 'preview'])->name('berita.preview');
