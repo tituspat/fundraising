@@ -424,8 +424,8 @@
                             <img src="{{ asset('vendor/plurk/images/personal-portfolio/about-block.pn') }}" alt=""
                                 class="absolute top-8 hidden ltr:-left-16 rtl:-right-16 dark:hidden md:block"
                                 data-aos="fade-right" data-aos-duration="1000" />
-                            <img src="{{ asset('img/calon.png') }}" alt="" class="h-full w-full object-cover"
-                                style="background-color: burlywood" />
+                                <img src="{{ asset('img/' . $foto_calon) }}" alt="" class="h-full w-full object-cover" style="background-color: burlywood" />
+
                             {{-- <img
                                     src="{{ asset('img/logo-sahabat-tabanan.png')}}"
                                     alt=""

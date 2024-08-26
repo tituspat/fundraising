@@ -34,6 +34,7 @@ class MainController extends Controller
             'visi' => $calon->visi,
             'misi' => $misiArray,
             'profile' => $calon->profile,
+            'foto_calon' => $calon->foto_calon,
         ]);
 
         // return view('index', ['programs'=>$programs, 'testimonials' => $testimonial ]);

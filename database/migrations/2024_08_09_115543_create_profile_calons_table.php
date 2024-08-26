@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('misi');
             $table->text('profile');
             // $table->string('program'); // menggunakan tabel lain
+            $table->string('foto_calon')->nullable();
             $table->timestamps();
         });
     }
