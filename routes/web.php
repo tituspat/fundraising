@@ -46,6 +46,8 @@ Route::get('/foto', function () {
 Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
 Route::post('questions', [QuestionController::class, 'store'])->name('questions.store');
+Route::get('/foto', [GalleryController::class, 'showPhoto'])->name('foto.index');
+Route::get('/video', [GalleryController::class, 'showVideo'])->name('video.index');
 
 Route::get('/blog/details', function () {
   return view('blog-details');
