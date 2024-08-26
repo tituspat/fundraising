@@ -54,32 +54,55 @@ class ProfileCalonController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    // public function update(Request $request)
+    // {
+    //     $profileCalon = ProfileCalon::findOrFail($request->id);
+
+    //     //
+    //     $request->validate([
+    //         'nama_calon' => 'required',
+    //         'visi' => 'required',
+    //         'misi' => 'required',
+    //         'profile' => 'required',
+    //     ]);
+
+    //     // Handle the image upload
+    //     // $imagePath = $request->file('image')->store('gallery_images', 'public');
+
+    //     // Store the gallery information in the database
+
+    //     $profileCalon::update([
+    //         'nama_calon' => $request->input('nama'),
+    //         'visi' => $request->input('visi'),
+    //         'misi' => $request->input('misi'),
+    //         'profile' => $request->input('profile'),
+    //     ]);
+
+    //     return redirect()->back()->with('success', 'profile update successfully.');
+    // }
+
     public function update(Request $request)
-    {
-        $profileCalon = ProfileCalon::findOrFail($request->id);
+{
+    $profileCalon = ProfileCalon::findOrFail($request->id);
 
-        //
-        $request->validate([
-            'nama_calon' => 'required',
-            'visi' => 'required',
-            'misi' => 'required', 
-            'profile' => 'required', 
-        ]);
+    $request->validate([
+        'nama_calon' => 'required',
+        'visi' => 'required',
+        'misi' => 'required',
+        'profile' => 'required',
+    ]);
 
-        // Handle the image upload
-        // $imagePath = $request->file('image')->store('gallery_images', 'public');
+    // Use the model instance to update the fields
+    $profileCalon->update([
+        'nama_calon' => $request->input('nama_calon'), // Make sure the input name matches
+        'visi' => $request->input('visi'),
+        'misi' => $request->input('misi'),
+        'profile' => $request->input('profile'),
+    ]);
 
-        // Store the gallery information in the database
+    return redirect()->back()->with('success', 'Profile updated successfully.');
+}
 
-        $profileCalon::update([
-            'nama_calon' => $request->input('nama'),
-            'visi' => $request->input('visi'),
-            'misi' => $request->input('misi'),
-            'profile' => $request->input('profile'),
-        ]);
-
-        return redirect()->back()->with('success', 'profile update successfully.');
-    }
 
     /**
      * Remove the specified resource from storage.
