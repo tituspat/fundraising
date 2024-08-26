@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use Illuminate\Support\Facades\Storage;
+
 use App\Models\ProfileCalon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -51,35 +53,49 @@ class ProfileCalonController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request)
     {
-        $profileCalon = ProfileCalon::findOrFail($request->id);
-
-        //
+        // Validate the input data
         $request->validate([
-            'nama_calon' => 'required',
-            'visi' => 'required',
-            'misi' => 'required', 
-            'profile' => 'required', 
+            'nama_calon' => 'required|string|max:255',
+            'visi' => 'required|string',
+            'misi' => 'required|string',
+            'profile' => 'required|string',
+            'foto_calon' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
-        // Handle the image upload
-        // $imagePath = $request->file('image')->store('gallery_images', 'public');
+        // Find the calon record by ID
+        $calon = ProfileCalon::findOrFail($request->id);
 
-        // Store the gallery information in the database
+        // Update the calon record
+        $calon->nama_calon = $request->input('nama_calon');
+        $calon->visi = $request->input('visi');
+        $calon->misi = $request->input('misi');
+        $calon->profile = $request->input('profile');
 
-        $profileCalon::update([
-            'nama_calon' => $request->input('nama'),
-            'visi' => $request->input('visi'),
-            'misi' => $request->input('misi'),
-            'profile' => $request->input('profile'),
-        ]);
+        // Handle file upload if a new file is provided
+        if ($request->hasFile('foto_calon')) {
+            // Delete old file if it exists
+            if ($calon->foto_calon && Storage::exists('img/' . $calon->foto_calon)) {
+                Storage::delete('img/' . $calon->foto_calon);
+            }
 
-        return redirect()->back()->with('success', 'profile update successfully.');
+            // Store new file
+            $file = $request->file('foto_calon');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('img', $filename);
+
+            // Update file name in the database
+            $calon->foto_calon = $filename;
+        }
+
+        // Save changes to the database
+        $calon->save();
+
+        // Redirect with success message
+        return redirect()->back()->with('success', 'Profile calon berhasil diperbarui.');
     }
+
 
     /**
      * Remove the specified resource from storage.

@@ -424,8 +424,8 @@
                             <img src="{{ asset('vendor/plurk/images/personal-portfolio/about-block.pn') }}" alt=""
                                 class="absolute top-8 hidden ltr:-left-16 rtl:-right-16 dark:hidden md:block"
                                 data-aos="fade-right" data-aos-duration="1000" />
-                            <img src="{{ asset('img/calon.png') }}" alt="" class="h-full w-full object-cover"
-                                style="background-color: burlywood" />
+                                <img src="{{ asset('img/' . $foto_calon) }}" alt="" class="h-full w-full object-cover" style="background-color: burlywood" />
+
                             {{-- <img
                                     src="{{ asset('img/logo-sahabat-tabanan.png')}}"
                                     alt=""
@@ -439,13 +439,11 @@
                                 <h6 class="mb-4 text-lg font-extrabold uppercase text-secondary"><span
                                         class="text-primary">/</span> Salam Sahabat Tabanan</h6>
                                 <h2 class="text-3xl font-black leading-normal text-black dark:text-white md:text-[40px]">
-                                    I Gede Putu Atma Giri
+                                    {{ $nama_calon }}
                                 </h2>
                             </div>
                             <p class="text-lg font-medium">
-                                Salam sejahtera, Om Swastiastu, Namo Buddhaya, Salam Kebajikan, saya Giri. Berdasarkan
-                                pengalaman hidup dan kerja saya, saya ingin berkontribusi lebih dalam memajukan dan
-                                meningkatkan kesejahteraan masyarakat di wilayah Kabupaten Tabanan, Bali.
+                                {{ $profile }}
                             </p>
                             {{-- <div class="my-6 grid gap-4 text-lg font-bold text-black dark:text-white sm:mt-12 sm:mb-8 sm:grid-cols-2">
                                     <div class="flex items-center gap-3">
@@ -457,12 +455,12 @@
                                         <p>Successful projects</p>
                                     </div>
                                 </div> --}}
-                            <p class="text-lg font-medium">
+                            {{-- <p class="text-lg font-medium">
                                 Saya percaya bahwa dengan kerja keras, ketulusan hati, dan komitmen yang kuat, saya dapat
                                 membawa perubahan yang positif bagi masyarakat di Kabupaten Tabanan. Saya sangat
                                 mengharapkan dukungan dan doa dari seluruh masyarakat agar saya dapat terpilih dan
                                 mewujudkan visi dan misi yang telah saya tetapkan.
-                            </p>
+                            </p> --}}
                         </div>
                     </div>
                 </div>
@@ -488,80 +486,27 @@
                         <div class="heading text-center">
                             <h6>Visi</h6>
                             <p class="text-black dark:text-white text-center text-lg font-semibold leading-[30px] ">
-                                Terwujudnya masyarakat Tabanan yang SAHABAT <br>(Sinergi, Andal, Humanis,
-                                Antikorupsi,
-                                Amanah, dan Terpercaya)
+                                {{ $visi }}
                             </p>
                             <h6 class="mt-10">Misi</h6>
                         </div>
                     </div>
                     <div class="flex flex-wrap justify-center items-start gap-[30px]">
+                        @foreach($misi as $index => $misiItem)
                         <div data-aos="fade-up" data-aos-duration="1000">
                             <div
                                 class="flex flex-col w-[200px] h-[200px] items-center justify-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
                                 <span
-                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">01</span>
+                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                                 <div>
-                                    {{-- <h6 class="mb-1 font-bold text-secondary">Collect Ideas</h6> --}}
                                     <p class="text-sm text-center dark:text-white font-semibold text-black">
-                                        Memaksimalkan setiap potensi perekonomian masyarakat Tabanan menjadi lebih
-                                        produktif dan berdaya saing
+                                        {{ trim($misiItem) }}
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div
-                                class="flex flex-col w-[200px] h-[200px] items-center justify-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
-                                <span
-                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">02</span>
-                                <div>
-                                    {{-- <h6 class="mb-1 font-bold text-secondary">Collect Ideas</h6> --}}
-                                    <p class="text-sm text-center font-semibold text-black dark:text-white">
-                                        Meningkatkan sarana dan prasarana umum
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div
-                                class="flex flex-col w-[200px] h-[200px] items-center justify-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
-                                <span
-                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">03</span>
-                                <div>
-                                    {{-- <h6 class="mb-1 font-bold text-secondary">Collect Ideas</h6> --}}
-                                    <p class="text-sm text-center font-semibold text-black dark:text-white">
-                                        Mendukung kegiatan prestasi masyarakat Tabanan
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div
-                                class="flex flex-col w-[200px] h-[200px] items-center justify-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
-                                <span
-                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">04</span>
-                                <div>
-                                    {{-- <h6 class="mb-1 font-bold text-secondary">Data Analysis</h6> --}}
-                                    <p class="text-sm text-center font-semibold text-black dark:text-white">
-                                        Meningkatkan dukungan terhadap kegiatan keagamaan
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div
-                                class="flex flex-col w-[200px] h-[200px] items-center justify-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent">
-                                <span
-                                    class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white">05</span>
-                                <div>
-                                    {{-- <h6 class="mb-1 font-bold text-secondary">Finalize Product</h6> --}}
-                                    <p class="text-sm text-center font-semibold text-black dark:text-white">
-                                        Memberikan pelayanan yang berkualitas
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </section>
@@ -812,7 +757,7 @@
                     </div>
                 </div>
             </section>
-             
+
 
             <section id="contact-us" class="py-14 dark:bg-gray-dark lg:py-[100px]">
                 <div class="container">

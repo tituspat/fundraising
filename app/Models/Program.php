@@ -18,7 +18,7 @@ class Program extends Model
         'title',
         'description',
     ];
-   
+
     public function post()
     {
         return $this->belongsTo(Post::class);

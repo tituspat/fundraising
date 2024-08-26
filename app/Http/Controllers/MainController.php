@@ -15,13 +15,29 @@ class MainController extends Controller
      */
     public function index()
     {
+        // Mengambil data calon
+        $calon = DB::table('profile_calons')->first();
+
+        // Pisahkan misi menjadi array berdasarkan tanda ";"
+        $misiArray = explode(';', $calon->misi);
+
         // mengambil data dari table program
     	$programs = DB::table('programs')->where('profile_calon_id', '=', 1)->get();
 
         // mengambil data dari table testimonial
     	$testimonial = DB::table('testimonials')->get();
 
-        return view('index', ['programs'=>$programs, 'testimonials' => $testimonial ]);
+        return view('index', [
+            'programs' => $programs,
+            'testimonials' => $testimonial,
+            'nama_calon' => $calon->nama_calon,
+            'visi' => $calon->visi,
+            'misi' => $misiArray,
+            'profile' => $calon->profile,
+            'foto_calon' => $calon->foto_calon,
+        ]);
+
+        // return view('index', ['programs'=>$programs, 'testimonials' => $testimonial ]);
     }
 
     /**
