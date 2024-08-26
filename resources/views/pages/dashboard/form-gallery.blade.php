@@ -41,7 +41,7 @@
                </div>
             </div>
             <div class="grid grid-cols-12 gap-[25px] items-center">
-               <div class="col-span-12 xl:col-start-4 xl:col-span-6">
+               <div class="col-span-12 xl:col-span-6">
                   <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
                      <div class="px-[25px] text-dark dark:text-title-dark font-medium text-[17px] flex flex-wrap items-center justify-between max-sm:flex-col max-sm:h-auto border-b border-regular dark:border-box-dark-up">
                         <h1 class="mb-0 inline-flex items-center py-[16px] overflow-hidden whitespace-nowrap text-ellipsis text-[18px] font-semibold text-dark dark:text-title-dark capitalize">
@@ -101,6 +101,53 @@
                      </div>
                   </div>
                </div>
+               <div class="col-span-12 xl:col-span-6">
+                  <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
+                     <div class="px-[25px] text-dark dark:text-title-dark font-medium text-[17px] flex flex-wrap items-center justify-between max-sm:flex-col max-sm:h-auto border-b border-regular dark:border-box-dark-up">
+                        <h1 class="mb-0 inline-flex items-center py-[16px] overflow-hidden whitespace-nowrap text-ellipsis text-[18px] font-semibold text-dark dark:text-title-dark capitalize">
+                           Tambah Video
+                        </h1>
+                     </div>
+                     <div class="p-[25px]">
+                     <form action="{{ route(Auth::user()->role . '.video.preview') }}" method="POST">
+                        @csrf
+                        <div class="pb-4">
+                           <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">URL Video</label>
+                           <div class="flex flex-col flex-1 md:flex-row">
+                              <input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="url" placeholder="https://www.youtube.com" required>
+                           </div>
+                        </div>
+                        <div class="flex items-center gap-[15px] mt-[14px]">
+                           <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear">Periksa Video</button>
+                        </div>
+                     </form>
+                     @if(isset($postVideo))
+                        <!-- Preview Section -->
+                        <div class="col-span-12 xl:col-span-4 md:col-span-6 mt-5">
+                            <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
+                                <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$postVideo}}" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <figcaption>
+                                    <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
+                                        <span class="inline-block text-light dark:text-subtitle-dark text-15">{{ now() }}</span>
+                                    </div>
+                                    {{--<h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
+                                        <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" target="_blank" href="{{ $url }}">{{ $title }}</a>
+                                    </h2>--}}
+                                    <form action="{{ route(Auth::user()->role . '.video.store') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="title" value="Video Youtube {{$postVideo}}">
+                                        <input type="hidden" name="url" value="https://www.youtube.com/embed/{{$postVideo}}">
+                                        <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear mt-4">Save</button>
+                                    </form>
+                                </figcaption>
+                            </figure>
+                        </div>
+                     @endif
+                  </div>
+               </div>
+            </div>
             </div>
 
          </div>

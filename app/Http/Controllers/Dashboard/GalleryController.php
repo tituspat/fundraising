@@ -117,4 +117,49 @@ class GalleryController extends Controller
     {
         //
     }
+
+    /**
+     * preview vid.
+     */
+    public function vidPreview(Request $request)
+    {
+        //
+
+        $request->validate([
+            'url' => 'required|url',
+        ]);
+
+        $youtubeUrl = $request->input('url');
+
+        // Use regular expression to extract the video code
+        if (preg_match('/[?&]v=([a-zA-Z0-9_-]+)/', $youtubeUrl, $matches)) {
+            $videoCode = $matches[1];
+        } else {
+            $videoCode = ''; // If no video code is found, set it to an empty string
+        }
+
+        $postVideo = $videoCode;
+
+        return view('pages.dashboard.form-gallery',compact('postVideo'));
+    }
+
+    /**
+     * store vid.
+     */
+    public function vidStore(Request $request)
+    {
+        //
+
+        $request->validate([
+            'url' => 'required|url',
+            'title' => 'required|url',
+        ]);
+
+        Gallery::create([
+            'url' => $request->input('url'),
+            'title' => $request->input('title'),
+        ]);
+
+        return redirect()->route(Auth::user()->role . '.gallery')->with('success', 'Berita berhasil disimpan');
+    }
 }

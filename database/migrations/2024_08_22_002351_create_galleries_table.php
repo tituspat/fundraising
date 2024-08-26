@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id(); // id column
-            $table->string('title'); // title column
+            $table->string('title')->nullable(); // title column
             $table->text('description')->nullable(); // description column, nullable
             $table->boolean('is_expired')->default(false); // is_expired column, boolean
             $table->boolean('is_previewed')->default(false); // is_previewed column, boolean
