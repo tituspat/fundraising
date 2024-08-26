@@ -31,7 +31,6 @@ class UsersController extends Controller
         ]);
     }
 
-
     /**
      * Show the form for update user resource.
      */
@@ -45,7 +44,7 @@ class UsersController extends Controller
 		    'role' => $request->role,
 		    'updated_at' => now()
 	    ]);
-	        
+
             // kembalikan halaman
             return redirect()->back();
     }
@@ -56,7 +55,7 @@ class UsersController extends Controller
         DB::table('users')->where('id', $id)->delete();
 
 
-        //redirect to 
+        //redirect to
         return redirect()->back()->with('success', 'Data Berhasil Dihapus!');
     }
 
