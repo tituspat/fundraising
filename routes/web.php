@@ -80,6 +80,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/berita/tambah', [NewsCrawlerController::class, 'create'])->name('berita.create');
       Route::post('/berita/preview', [NewsCrawlerController::class, 'preview'])->name('berita.preview');
       Route::post('/berita/store', [NewsCrawlerController::class, 'store'])->name('berita.store');
+      Route::get('/berita/tampilkan/{id}', [NewsCrawlerController::class, 'tampilkan'])->name('berita.tampilkan');
+      Route::get('/berita/sembunyikan/{id}', [NewsCrawlerController::class, 'sembunyikan'])->name('berita.sembunyikan');
       Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimoni');
       Route::post('/testimoni/store', [TestimonialController::class, 'store'])->name('testimoni.store');
       Route::get('/testimoni/edit', [TestimonialController::class, 'edit'])->name('testimoni.edit');

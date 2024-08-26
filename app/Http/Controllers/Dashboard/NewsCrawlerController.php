@@ -69,9 +69,32 @@ class NewsCrawlerController extends Controller
             'thumbnail' => $request->input('thumbnail'),
             'url' => $request->input('url'),
             'is_expired' => false,
-            'is_previewed' => true,
+            'is_previewed' => false,
         ]);
 
         return redirect()->route(Auth::user()->role . '.berita')->with('success', 'Berita berhasil disimpan');
     }
+
+    public function tampilkan($id)
+    {
+        $berita = Berita::find($id);
+
+        if (!$berita) {
+            return redirect()->route(Auth::user()->role . '.berita')->with('error', 'Berita tidak ditemukan');
+        }
+
+        $berita->is_previewed = 1;
+        $berita->save();
+
+        return redirect()->route(Auth::user()->role . '.berita')->with('success', 'Berita berhasil ditampilkan');
+    }
+    public function sembunyikan($id)
+{
+    $berita = Berita::findOrFail($id);
+    $berita->is_previewed = 0;
+    $berita->save();
+
+    return redirect()->back()->with('success', 'Berita berhasil disembunyikan');
+}
+
 }

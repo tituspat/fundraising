@@ -9,7 +9,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $berita = Berita::all();
+        $berita = Berita::where('is_previewed', 1)->get();
         return view('berita', compact('berita'));
     }
 }

@@ -71,12 +71,8 @@
                                 <p class="mb-4 text-base text-dark dark:text-title-dark">{{ $item->description }}</p>
                                 <!-- Author and Engagement -->
                                 <div class="flex justify-between">
-                                    <!-- Author Information -->
-                                    {{-- <div class="flex items-center gap-x-4">
-                                        <img alt="author" class="rounded-full max-w-[32px]" src="{{ $item->thumbnail }}">
-                                    </div> --}}
                                     <!-- Engagement Metrics -->
-                                    <ul class="flex items-center gap-[8px]">
+                                    {{-- <ul class="flex items-center gap-[8px]">
                                         <!-- Likes -->
                                         <li>
                                             <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
@@ -91,8 +87,24 @@
                                                 <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">20k</span>
                                             </span>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
+                                <!-- Tampilkan Button -->
+                                @if($item->is_previewed == 0)
+    <div class="mt-4">
+        <!-- Tampilkan Button -->
+        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/berita/tampilkan', $item->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
+            Tampilkan
+        </button>
+    </div>
+@else
+    <div class="mt-4">
+        <!-- Sembunyikan Button -->
+        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/berita/sembunyikan', $item->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
+            Sembunyikan
+        </button>
+    </div>
+@endif
                             </figcaption>
                         </figure>
                     </div>
