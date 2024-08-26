@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('programs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->longText('description');
+            $table->text('description');
+            $table->longText('gambar');
             $table->bigInteger('profile_calon_id')->default(1);
             $table->timestamps();
         });

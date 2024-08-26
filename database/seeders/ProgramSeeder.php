@@ -17,18 +17,22 @@ class ProgramSeeder extends Seeder
     {
         DB::table('programs')->insert([
             'title' => 'PENINGKATAN PRODUKSI BERAS MERAH',
+            'gambar' => 'img/program/program-beras.jpg',
             'description' => 'Tanaman padi merah adalah padi lokal Kabupaten Tabanan, Provinsi Bali. Tanaman ini tumbuh baik di kawasan dengan ketinggian tempat > 500 mdpl, seperti di Kecamatan Penebel. Saat ini di Kecamatan Penebel terdapat areal tanam padi merah sekitar 227 ha.',
         ]);
         DB::table('programs')->insert([
             'title' => 'PETERNAKAN SAPI',
+            'gambar' => 'img/program/program-peternakan2.jpg',
             'description' => 'Untuk menunjang ketersediaan pupuk organik, populasi sapi perah di kawasan pengembangan padi merah ditambah sekitar 200 ekor sapi Bali, yang dikelola oleh 10 kelomok ternak (20 ekor per kelompok ternak).',
         ]);
         DB::table('programs')->insert([
             'title' => 'KELAPA KOPYOR GENJAH EXOTIC',
+            'gambar' => 'img/program/program-kelapa.jpg',
             'description' => 'Budi daya kelapa kopyor dengan teknologi & inovasi genetika akan meningkatkan produktifitas buah kopyor mendekati 100% kopyor',
         ]);
         DB::table('programs')->insert([
             'title' => 'PEMBUATAN PAKAN TERNAK SAPI & PUPUK ORGANIK',
+            'gambar' => 'img/program/program-pupuk.jpg',
             'description' => 'Melalui Permentan no.70/Permentan/SR.140/10/2011, telah ditetapkan standar pupuk organik. Untuk bisa menghasilkan pupuk organik sesuai standar, maka pembuatan pupuk organiknya mengikuti cara pembuatan pupuk organik yang benar.',
         ]);
         DB::table('users')->insert([

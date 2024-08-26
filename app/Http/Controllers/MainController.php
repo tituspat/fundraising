@@ -16,13 +16,12 @@ class MainController extends Controller
     public function index()
     {
         // mengambil data dari table program
-    	$programUtama = DB::table('programs')->where('id',  1)->get();
-    	$program = DB::table('programs')->where('id', '>', 1)->get();
+    	$programs = DB::table('programs')->where('profile_calon_id', '=', 1)->get();
 
         // mengambil data dari table testimonial
     	$testimonial = DB::table('testimonials')->get();
 
-        return view('index', ['program' => $program, 'programUtama'=>$programUtama, 'testimonials' => $testimonial ]);
+        return view('index', ['programs'=>$programs, 'testimonials' => $testimonial ]);
     }
 
     /**
