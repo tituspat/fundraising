@@ -19,12 +19,13 @@ class TestimonialController extends Controller
 
     public function index()
     {
-        $testimonials = Testimonial::with('user')->get();
+        $testimonials = Testimonial::with('user')->where('is_previewed', 1)->get();
         $userTestimonial = Testimonial::where('user_id', Auth::id())->first();
         $isEditing = false;
 
         return view('testimoni', compact('testimonials', 'userTestimonial', 'isEditing'));
     }
+
 
     public function edit()
     {

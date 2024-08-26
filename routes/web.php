@@ -19,6 +19,8 @@ use App\Http\Controllers\Dashboard\UsersController;
 use App\Http\Controllers\Dashboard\BlogController;
 use App\Http\Controllers\Dashboard\ProfileCalonController;
 use App\Http\Controllers\Dashboard\NewsCrawlerController;
+use App\Http\Controllers\Dashboard\ManageTestimoniController;
+use App\Http\Controllers\Dashboard\ManageFAQController;
 use App\Http\Controllers\FaqController;
 
 /*
@@ -78,6 +80,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/testimoni/store', [TestimonialController::class, 'store'])->name('testimoni.store');
       Route::get('/testimoni/edit', [TestimonialController::class, 'edit'])->name('testimoni.edit');
       Route::put('/testimoni/upadate/{id}', [TestimonialController::class, 'update'])->name('testimoni.update');
+      Route::get('/testimonials', [ManageTestimoniController::class, 'index'])->name('testimoni.management');
+      Route::post('/testimonials/previewed/{id}', [ManageTestimoniController::class, 'updatePreviewStatus'])->name('testimoni.preview');
+      Route::post('/testimonials/unpreviewed/{id}', [ManageTestimoniController::class, 'updateUnpreviewStatus'])->name('testimoni.unpreview');
+      Route::get('/faqs', [ManageFAQController::class, 'index'])->name('faqs');
+      Route::get('/faqs/delete/{id}', [ManageFAQController::class, 'destroy'])->name('faqs.delete');
+      Route::put('/faqs/update', [ManageFAQController::class, 'update'])->name('faqs.update');
+      Route::post('/faqs/add', [ManageFAQController::class, 'store'])->name('faqs.add');
+
 
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
 

@@ -153,7 +153,7 @@
                                              </select>
                                           </div>
                                        </div>
-                                                   
+
 
                                        <!--Modal footer-->
                                        <div class="flex flex-wrap items-center justify-end flex-shrink-0 gap-2 p-4 border-t-2 border-b border-opacity-100 rounded-b-md border-regular dark:border-box-dark-up">
@@ -172,9 +172,9 @@
                         <button type="button" class="flex items-center px-[14px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px]" data-te-toggle="modal" data-te-target="#addModal" data-te-ripple-init data-te-ripple-color="light">
                            <i class="uil uil-plus"></i>
                            <span class="m-0">Add User</span>
-                        </button>   
+                        </button>
                      </div>
-                     
+
                      <div class="flex items-center flex-wrap justify-between gap-x-[30px] gap-y-[10px] max-lg:flex-col max-lg:justify-center">
                         <div class="flex items-center max-md:flex-wrap max-sm:justify-center gap-[10px]">
                            <div class="inline-flex items-center">
@@ -275,7 +275,7 @@
 
 
                                                    </div>
-                                                   
+
 
                                                    <!--Modal footer-->
                                                    <div class="flex flex-wrap items-center justify-end flex-shrink-0 gap-2 p-4 border-t-2 border-b border-opacity-100 rounded-b-md border-regular dark:border-box-dark-up">
@@ -298,7 +298,7 @@
                            </tbody>
                         </table>
                      </div>
-                     
+
                   </div>
                </div>
             </div>
