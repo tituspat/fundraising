@@ -39,6 +39,9 @@ use App\Http\Controllers\FaqController;
 Route::get('/blog', function () {
   return view('blog');
 });
+Route::get('/foto', function () {
+  return view('foto');
+});
 
 Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
