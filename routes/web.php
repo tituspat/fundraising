@@ -22,6 +22,7 @@ use App\Http\Controllers\Dashboard\NewsCrawlerController;
 use App\Http\Controllers\Dashboard\ManageTestimoniController;
 use App\Http\Controllers\Dashboard\ManageFAQController;
 use App\Http\Controllers\Dashboard\ManageQuestionController;
+use App\Http\Controllers\Dashboard\ProgramController;
 use App\Http\Controllers\FaqController;
 
 /*
@@ -100,7 +101,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/question', [ManageQuestionController::class, 'index'])->name('question');
 
 
+      Route::get('/program', [ProgramController::class, 'index'])->name('program.index');
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
+      Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
+      Route::get('/blog/{id}/detail', [BlogController::class, 'show'])->name('blog.show');
     });
 
     // mod

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Blog;
+use App\Models\Program;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class ProgramController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,10 @@ class BlogController extends Controller
     public function index()
     {
         //
-        $blogs = Blog::all();
 
-        return view('pages.dashboard.blog', compact('blogs'));
+        $programs = Program::all();
+
+        return view('pages.dashboard.program',  compact('programs'));
     }
 
     /**
@@ -25,8 +26,6 @@ class BlogController extends Controller
     public function create()
     {
         //
-
-        return view('pages.dashboard.form-blog');
     }
 
     /**
@@ -35,18 +34,6 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         //
-        $validated = $request->validate([
-            'title' => 'required|string',
-            'content' => 'required',
-        ]);
-    
-        // Save to database
-        Blog::create([
-            'title' => $validated['title'],
-            'content' => $validated['content'],
-        ]);
-    
-        return view('pages.dashboard.blog')->with('success', 'Content saved successfully!');
     }
 
     /**
@@ -55,9 +42,6 @@ class BlogController extends Controller
     public function show(string $id)
     {
         //
-        $blog = Blog::findOrFail($id);
-        return view('pages.dashboard.blog-detail',  compact('blog'));
-
     }
 
     /**

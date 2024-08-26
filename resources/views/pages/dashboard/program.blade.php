@@ -1,6 +1,5 @@
 @extends('layouts.dashboard.app')
 
-
 @section('content')
       <!-- Main Content -->
       <main class="bg-normalBG dark:bg-main-dark">
@@ -12,7 +11,7 @@
                   <!-- Breadcrumb Section -->
                   <div class="leading-[1.8571428571] flex flex-wrap sm:justify-between justify-center items-center ssm:mb-[33px] mb-[18px] max-sm:flex-col gap-x-[15px] gap-y-[5px]">
                      <!-- Title -->
-                     <h4 class="capitalize text-[20px] text-dark dark:text-title-dark font-semibold">blog</h4>
+                     <h4 class="capitalize text-[20px] text-dark dark:text-title-dark font-semibold">program</h4>
                      <!-- Breadcrumb Navigation -->
                      <div class="flex flex-wrap justify-center">
                         <nav>
@@ -30,7 +29,7 @@
 
                               <!-- Child (Current Page) -->
                               <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]" aria-current="page">
-                                 <span class="text-[14px] font-normal leading-[20px] flex items-center capitalize text-light dark:text-subtitle-dark">blog</span>
+                                 <span class="text-[14px] font-normal leading-[20px] flex items-center capitalize text-light dark:text-subtitle-dark">program</span>
                               </li>
                            </ol>
                         </nav>
@@ -46,23 +45,23 @@
                         
                </div>
                   
-               <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/blog/tambah') }}'" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
+               <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/program/tambah') }}'" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
                   <i class="uil uil-plus"></i>
-                  <span class="m-0">Buat Blog</span>
+                  <span class="m-0">Tambah Program</span>
                </button>
             </div>
 
             <div class="grid grid-cols-12 md:gap-x-[25px] gap-y-[25px]">
 
-               @foreach($blogs as $blog)
-               <div class="col-span-12 xl:col-span-4 md:col-span-6">
+                @foreach($programs as $program)
+                <div class="col-span-12 xl:col-span-4 md:col-span-6">
 
-                  <!-- Blog Post -->
+                  <!-- Program Post -->
                   <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
-                        <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/1.png') }}">
+                        <!-- Program Image -->
+                        <img alt="hexadash Program" style="width: 460px; height: 220px" class="w-full rounded-10" src="{{ asset($program->gambar) }}">
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">
@@ -71,63 +70,61 @@
 
 
 
-                           <span class="inline-block text-light dark:text-subtitle-dark text-15">{{$blog->created_at}}</span>
+                           {{-- <span class="inline-block text-light dark:text-subtitle-dark text-15">{{ $program->created_at->format('d M Y') }}</span> --}}
 
 
 
                         </div>
-                        <!-- Blog Title -->
+                        <!-- Program Title -->
                         <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
-                           <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="/{{Auth::user()->role}}/blog/{{$blog->id}}/detail">{{$blog->title}}</a>
+                           <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="/{{Auth::user()->role}}/program/{{$program->id}}/detail">{{$program->title}}</a>
                         </h2>
-                        <!-- Blog Excerpt -->
-                        {{-- <p class="mb-4 text-base text-dark dark:text-title-dark">{{$blog->content}}</p> --}}
+                        <!-- Program Excerpt -->
+                        <p class="mb-4 text-base text-dark dark:text-title-dark">{{$program->description}}</p>
                         <!-- Author and Engagement -->
-                        {{--<div class="flex justify-between">
-                           <!-- Author Information -->
-                           <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t1.jpg') }}">
-                              <span class="text-light dark:text-subtitle-dark text-15">Machel Bold</span>
-                           </div>
-                           <!-- Engagement Metrics -->
-                           <ul class="flex items-center gap-[8px]">
-                              <!-- Likes -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-heart group-hover:text-danger"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">15k</span>
-                                 </span>
-                              </li>
-                              <!-- Views -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-file-info-alt group-hover:text-info"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">20k</span>
-                                 </span>
-                              </li>
-                           </ul>
-                        </div>--}}
-                     </figcaption>
-                  </figure>
+                        <div class="flex justify-between">
+                            <!-- Author Information -->
+                            {{--<div class="flex items-center gap-x-4">
+                                <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t1.jpg') }}">
+                                <span class="text-light dark:text-subtitle-dark text-15">Machel Bold</span>
+                            </div>--}}
+                            <!-- Engagement Metrics -->
+                            <ul class="flex items-center gap-[8px]">
+                                <!-- Likes -->
+                                {{--<li>
+                                    <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
+                                        <i class="uil uil-heart group-hover:text-danger"></i>
+                                        <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">15k</span>
+                                    </span>
+                                </li>--}}
+                                <!-- Views -->
+                                {{--<li>
+                                    <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
+                                        <i class="uil uil-file-info-alt group-hover:text-info"></i>
+                                        <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">20k</span>
+                                    </span>
+                                </li>--}}
+                            </ul>
+                        </div>
+                    </figcaption>
+                    </figure>
 
-               </div>
-               @endforeach
+                </div>
+                @endforeach
 
-               
-            </div>
+                </div>
 
          </div>
 
          <!-- Footer -->
          @include('layouts.dashboard.footer')
          <!-- end: Footer -->
-      </main>
+      
       <!-- End: Main Content -->
+
    <!-- End: Wrapping Content -->
 
    <!-- Customizing option -->
 
    <!-- End: Customizing option -->
-
-   
-   @endsection
+@endsection
