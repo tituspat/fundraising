@@ -57,11 +57,11 @@
                         </li>--}}
 
                         <li>
-                            <a href="#">Testimoni</a>
+                            <a href="/testimoni">Testimoni</a>
                         </li>
 
                         <li>
-                            <a href="#">FAQ</a>
+                            <a href="/faqs">FAQ</a>
                         </li>
                         <li
                             class="relative hidden items-center before:absolute before:top-1/2 before:h-[30px] before:w-[2px] before:-translate-y-1/2 before:bg-gray/30 ltr:pl-9 ltr:before:-left-[2px] rtl:pr-9 rtl:before:-right-[2px] lg:inline-flex"

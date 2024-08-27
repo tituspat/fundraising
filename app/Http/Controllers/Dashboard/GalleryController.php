@@ -187,9 +187,11 @@ class GalleryController extends Controller
 
         $request->validate([
             'url' => 'required|url',
+            'title' => 'required|string',
         ]);
 
         $youtubeUrl = $request->input('url');
+        $title = $request->input('title');
 
         // Use regular expression to extract the video code
         if (preg_match('/[?&]v=([a-zA-Z0-9_-]+)/', $youtubeUrl, $matches)) {
@@ -200,7 +202,7 @@ class GalleryController extends Controller
 
         $postVideo = $videoCode;
 
-        return view('pages.dashboard.form-gallery', compact('postVideo'));
+        return view('pages.dashboard.form-gallery', compact('postVideo', 'title'));
     }
 
     /**

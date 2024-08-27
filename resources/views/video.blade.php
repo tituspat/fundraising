@@ -28,20 +28,33 @@
                 <div class="container">
                     <div class="grid gap-x-[30px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
                         @foreach ($videos as $item)
-                            <div data-aos="fade-up" data-aos-duration="1000">
-                                <div
-                                    class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                                    <a href="{{ $item->url }}"
-                                        class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
-                                    <img src="{{ Storage::URL ('/' . $item->url) }}" alt="{{ $item->title }}"
-                                        class="h-52 w-full rounded-t-3xl object-cover" />
-                                    <div class="p-5 text-sm font-bold">
-                                        <h6 class="font-extrabold text-secondary dark:text-secondary">{{ $item->title }}
-                                        </h6>
-                                        {{-- <p class="line-clamp-4">{{ $item->description }}</p> --}}
+                            @php
+                                // More comprehensive regex to handle different YouTube URL formats
+                                preg_match('/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]+)/', $item->url, $matches);
+                                $videoId = $matches[1] ?? null;
+
+                                // Generate the thumbnail URL if video ID is extracted
+                                $thumbnailUrl = $videoId ? "https://img.youtube.com/vi/$videoId/hqdefault.jpg" : null;
+                            @endphp
+
+                            @if($thumbnailUrl)
+                                <div data-aos="fade-up" data-aos-duration="1000">
+                                    <div
+                                        class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
+                                        <a href="{{ $item->url }}"
+                                            class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
+                                        <img src="{{ $thumbnailUrl }}" alt="{{ $item->title }}"
+                                            class="h-52 w-full rounded-t-3xl object-cover" />
+                                        <div class="p-5 text-sm font-bold">
+                                            <h6 class="font-extrabold text-secondary dark:text-secondary">{{ $item->title }}
+                                            </h6>
+                                            {{-- <p class="line-clamp-4">{{ $item->description }}</p> --}}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @else
+                                <p>Failed to generate thumbnail for {{ $item->title }}.</p>
+                            @endif
                         @endforeach
                     </div>
                 </div>
