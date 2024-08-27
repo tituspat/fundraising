@@ -48,9 +48,6 @@ Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
 Route::post('questions', [QuestionController::class, 'store'])->name('questions.store');
 
-Route::get('/blog/details', function () {
-  return view('blog-details');
-});
 
 Route::controller(MainController::class)->group(function () {
     // view
@@ -80,6 +77,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/gallery/{id}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
       Route::post('/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
       Route::post('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
+      Route::get('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
       Route::post('/video/store', [GalleryController::class, 'vidStore'])->name('video.store');
       Route::get('/berita', [NewsCrawlerController::class, 'index'])->name('berita');
       Route::get('/berita/tambah', [NewsCrawlerController::class, 'create'])->name('berita.create');

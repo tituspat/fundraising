@@ -140,7 +140,7 @@ class GalleryController extends Controller
 
         $postVideo = $videoCode;
 
-        return view('pages.dashboard.form-gallery',compact('postVideo'));
+        return view('pages.dashboard.form-gallery', compact('postVideo'));
     }
 
     /**
@@ -152,11 +152,13 @@ class GalleryController extends Controller
 
         $request->validate([
             'url' => 'required|url',
-            'title' => 'required|url',
+            'title' => 'required',
+            'media' => 'required',
         ]);
 
         Gallery::create([
             'url' => $request->input('url'),
+            'media' => $request->input('media'),
             'title' => $request->input('title'),
         ]);
 

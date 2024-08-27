@@ -21,9 +21,9 @@
                     </div>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        {{-- <li>
+                        {{--<li>
                             <a href="#">Profile</a>
-                        </li>
+                        </li>--}}
                         <li class="group relative">
                             <a href="javascript:;">
                                 Feeds
@@ -40,21 +40,21 @@
                                 </div>
                             </a>
                             <div class="submenu">
-                                <a href="crypto.html">Foto</a>
-                                <a href="modern-saas.html">Video</a>
-                                <a href="real-estate.html">Blog</a>
+                                <a href="/foto">Foto</a>
+                                <a href="/video">Video</a>
+                                <a href="/blog">Blog</a>
                             </div>
                         </li>
 
                         <li>
-                            <a href="#">Program</a>
+                            <a href="/program">Program</a>
                         </li>
                         <li>
-                            <a href="#">Berita</a>
+                            <a href="/berita">Berita</a>
                         </li>
-                        <li>
+                        {{--<li>
                             <a href="#">Dukungan</a>
-                        </li>
+                        </li>--}}
 
                         <li>
                             <a href="#">Testimoni</a>
@@ -62,7 +62,7 @@
 
                         <li>
                             <a href="#">FAQ</a>
-                        </li>--}}
+                        </li>
                         <li
                             class="relative hidden items-center before:absolute before:top-1/2 before:h-[30px] before:w-[2px] before:-translate-y-1/2 before:bg-gray/30 ltr:pl-9 ltr:before:-left-[2px] rtl:pr-9 rtl:before:-right-[2px] lg:inline-flex"
                         >

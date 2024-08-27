@@ -138,6 +138,7 @@
                                     <form action="{{ route(Auth::user()->role . '.video.store') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="title" value="Video Youtube {{$postVideo}}">
+                                        <input type="hidden" name="media" value="Video">
                                         <input type="hidden" name="url" value="https://www.youtube.com/embed/{{$postVideo}}">
                                         <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear mt-4">Save</button>
                                     </form>

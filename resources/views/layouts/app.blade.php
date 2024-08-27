@@ -12,7 +12,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}" />
 
 
     </head>
@@ -37,6 +37,6 @@
 
 
         <script src="{{ asset('js/custom.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('assets/js/app.js') }}"></script>
     </body>
 </html>
