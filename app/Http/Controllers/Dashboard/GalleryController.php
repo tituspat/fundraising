@@ -21,7 +21,7 @@ class GalleryController extends Controller
 
 
     $photos = $galleries->filter(function ($gallery) {
-        return $gallery->media === 'foto';
+        return $gallery->media === 'photo';
     });
 
     $videos = $galleries->filter(function ($gallery) {
@@ -38,7 +38,7 @@ class GalleryController extends Controller
 
 
     $photos = $galleries->filter(function ($gallery) {
-        return $gallery->media === 'foto';
+        return $gallery->media === 'photo';
     });
 
     return view('foto', compact('photos', 'galleries'));
