@@ -58,7 +58,7 @@
 
 						<div class="col-span-12 mb-[30px] my-4">
 							<div class="editor-container editor-container_classic-editor" id="editor-container">
-								<div class="editor-container__editor"><textarea name="content" id="editor"></textarea></div>
+								<div class="editor-container__editor"><textarea name="content" id="editor">...</textarea></div>
 							</div>
 						</div>
 
