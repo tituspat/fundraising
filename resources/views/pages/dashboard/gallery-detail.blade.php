@@ -107,7 +107,11 @@
                         @else
                         <div class="mb-[25px]">
                             <div class="max-h-[450px] rounded-10">
+                                @if($gallery->media=='foto')
                                 <img src="{{ Storage::url($gallery->url) }}" style="width:970px; height:450px" alt="gallery-details" class="object-cover w-full h-full">
+                                @elseif($gallery->media=='video')
+                                <iframe src="{{ $gallery->url }}" style="height:450px" class="object-cover w-full h-full" title="{{$gallery->title}}"></iframe>
+                                @endif
                                 <!-- Display the gallery thumbnail image -->
                             </div>
                             <div class="px-24 max-3xl:px-14 max-2xl:px-[30px] max-xl:px-0">

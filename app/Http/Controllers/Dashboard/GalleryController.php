@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Component\DomCrawler\Crawler;
+
 
 class GalleryController extends Controller
 {
@@ -164,7 +167,7 @@ class GalleryController extends Controller
         'title' => $request->title,
         'description' => $request->description,
         'url' => $imagePath
-    ]);
+        ]);
 
         return redirect(Auth::user()->role. '/gallery')
                          ->with('success', 'Gallery created successfully.');
@@ -183,15 +186,29 @@ class GalleryController extends Controller
      */
     public function vidPreview(Request $request)
     {
-        //
-
+        
         $request->validate([
             'url' => 'required|url',
-            'title' => 'required|string',
         ]);
 
-        $youtubeUrl = $request->input('url');
-        $title = $request->input('title');
+        $url = $request->input('url'); // URL video YouTube
+
+        // Membuat HTTP client untuk mengambil konten video
+        $client = HttpClient::create();
+        $response = $client->request('GET', $url);
+        $html = $response->getContent();
+
+        // Membuat DomCrawler untuk memproses HTML
+        $crawler = new Crawler($html);
+
+        // Mengambil metadata video
+        $title = $crawler->filterXPath('//meta[@property="og:title"]')->attr('content');
+        $description = $crawler->filterXPath('//meta[@property="og:description"]')->attr('content');
+        $thumbnail = $crawler->filterXPath('//meta[@property="og:image"]')->attr('content');
+        $url = $crawler->filterXPath('//meta[@property="og:url"]')->attr('content');
+        $siteName = $crawler->filterXPath('//meta[@property="og:site_name"]')->attr('content');
+        
+        $youtubeUrl = $url;
 
         // Use regular expression to extract the video code
         if (preg_match('/[?&]v=([a-zA-Z0-9_-]+)/', $youtubeUrl, $matches)) {
@@ -202,7 +219,7 @@ class GalleryController extends Controller
 
         $postVideo = $videoCode;
 
-        return view('pages.dashboard.form-gallery', compact('postVideo', 'title'));
+        return view('pages.dashboard.form-gallery', compact('postVideo', 'title', 'description', 'thumbnail', 'siteName'));
     }
 
     /**
@@ -216,14 +233,17 @@ class GalleryController extends Controller
             'url' => 'required|url',
             'title' => 'required',
             'media' => 'required',
+            'thumbnail' => 'required',
         ]);
-
+        // dd($request->all());
         Gallery::create([
             'url' => $request->input('url'),
             'media' => $request->input('media'),
+            'thumbnail' => $request->input('thumbnail'),
             'title' => $request->input('title'),
         ]);
 
-        return redirect()->route(Auth::user()->role . '.gallery')->with('success', 'Berita berhasil disimpan');
+        
+        // return redirect()->route(Auth::user()->role . '.gallery')->with('success', 'Berita berhasil disimpan');
     }
 }

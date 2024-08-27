@@ -119,18 +119,12 @@
                                     <input type="text" id="urlVideo" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="url" placeholder="https://www.youtube.com" required>
                                 </div>
                             </div>
-                            <div class="pb-4 mt-4">
-                                <label for="titleVideo" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Title Video</label>
-                                <div class="flex flex-col flex-1 md:flex-row">
-                                    <input type="text" id="titleVideo" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="Enter video title" required>
-                                </div>
-                            </div>
                             <div class="flex items-center gap-[15px] mt-[14px]">
                                 <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear">Periksa Video</button>
                             </div>
                         </form>
 
-                        @if(isset($postVideo))
+                        @if(isset($postVideo, $title, $description, $thumbnail, $siteName))
                             <!-- Preview Section -->
                             <div class="col-span-12 xl:col-span-4 md:col-span-6 mt-5">
                                 <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
@@ -144,8 +138,14 @@
                                         <form action="{{ route(Auth::user()->role . '.video.store') }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="media" value="video">
-                                            <input type="hidden" name="title" value="{{ request('title') }}">
+                                            <input type="hidden" name="thumbnail" value="{{$thumbnail}}">
                                             <input type="hidden" name="url" value="https://www.youtube.com/embed/{{$postVideo}}">
+                                            <div class="pb-4">
+                                                <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Video</label>
+                                                <div class="flex flex-col flex-1 md:flex-row">
+                                                    <input type="text" id="nameVertical" class=" rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" value="{{$title}}" readonly>
+                                                </div>
+                                            </div>
                                             <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear mt-4">Save</button>
                                         </form>
                                     </figcaption>

@@ -68,13 +68,7 @@
                      <figcaption class="">
                         <!-- Date -->
                         <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
-
-
-
                            <span class="inline-block text-light dark:text-subtitle-dark text-15">{{$blog->created_at}}</span>
-
-
-
                         </div>
                         <!-- Blog Title -->
                         <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">

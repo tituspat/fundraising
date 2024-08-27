@@ -61,19 +61,18 @@
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Gallery Image -->
+                         @if($gallery->media== "foto")
                         <img alt="hexadash Gallery" style="width: 460px; height: 220px" class="w-full rounded-10" src="{{ Storage::url($gallery->url) }}">
+                        
+                        @elseif($gallery->media=="video")
+                        <img alt="hexadash Gallery" style="width: 460px; height: 220px" class="w-full rounded-10" src="{{ $gallery->thumbnail }}">
+                        @endif
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">
                         <!-- Date -->
                         <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
-
-
-
                            <span class="inline-block text-light dark:text-subtitle-dark text-15">{{ $gallery->created_at->format('d M Y') }}</span>
-
-
-
                         </div>
                         <!-- Gallery Title -->
                         <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">

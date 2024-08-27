@@ -20,6 +20,7 @@ class Gallery extends Model
         'is_expired',
         'is_previewed',
         'media',
+        'thumbnail',
         'url',
     ];
 }
