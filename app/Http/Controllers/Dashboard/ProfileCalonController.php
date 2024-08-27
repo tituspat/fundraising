@@ -53,54 +53,87 @@ class ProfileCalonController extends Controller
         //
     }
 
+    // public function update(Request $request)
+    // {
+    //     // Validate the input data
+    //     $request->validate([
+    //         'nama_calon' => 'required|string|max:255',
+    //         'visi' => 'required|string',
+    //         'misi' => 'required|string',
+    //         'profile' => 'required|string',
+    //         'foto_calon' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+    //     ]);
+
+    //     // Find the calon record by ID
+    //     $calon = ProfileCalon::findOrFail($request->id);
+
+
+
+    //     // // Handle file upload if a new file is provided
+    //     // if ($request->hasFile('foto_calon')) {
+    //     //     // Delete old file if it exists
+    //     //     if ($calon->foto_calon && Storage::exists('img/' . $calon->foto_calon)) {
+    //     //         Storage::delete('img/' . $calon->foto_calon);
+    //     //     }
+
+    //     //     // Store new file
+    //     //     $file = $request->file('foto_calon');
+    //     //     $filename = time() . '.' . $file->getClientOriginalExtension();
+    //     //     $file->storeAs('img', $filename);
+
+    //     //     // Update file name in the database
+    //     //     $calon->foto_calon = $filename;
+    //     // }
+
+    //     // Handle the image upload
+    //     $imagePath = $request->file('foto_calon')->store('calon_images', 'public');
+
+    //     // Update the calon record
+    //     $calon->nama_calon = $request->input('nama_calon');
+    //     $calon->visi = $request->input('visi');
+    //     $calon->misi = $request->input('misi');
+    //     $calon->profile = $request->input('profile');
+    //     $calon->foto_calon = $imagePath;
+
+    //     // Save changes to the database
+    //     // $calon->save();
+
+    //     // Redirect with success message
+    //     return redirect()->back()->with('success', 'Profile calon berhasil diperbarui.');
+    // }
+
     public function update(Request $request)
-    {
-        // Validate the input data
-        $request->validate([
-            'nama_calon' => 'required|string|max:255',
-            'visi' => 'required|string',
-            'misi' => 'required|string',
-            'profile' => 'required|string',
-            'foto_calon' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-        ]);
+{
+    $request->validate([
+        'nama_calon' => 'required|string|max:255',
+        'visi' => 'required|string',
+        'misi' => 'required|string',
+        'profile' => 'required|string',
+        'foto_calon' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+    ]);
 
-        // Find the calon record by ID
-        $calon = ProfileCalon::findOrFail($request->id);
+    $calon = ProfileCalon::findOrFail($request->id);
 
-        
+    if ($request->hasFile('foto_calon')) {
+        if ($calon->foto_calon && Storage::exists('public/' . $calon->foto_calon)) {
+            Storage::delete('public/' . $calon->foto_calon);
+        }
 
-        // // Handle file upload if a new file is provided
-        // if ($request->hasFile('foto_calon')) {
-        //     // Delete old file if it exists
-        //     if ($calon->foto_calon && Storage::exists('img/' . $calon->foto_calon)) {
-        //         Storage::delete('img/' . $calon->foto_calon);
-        //     }
 
-        //     // Store new file
-        //     $file = $request->file('foto_calon');
-        //     $filename = time() . '.' . $file->getClientOriginalExtension();
-        //     $file->storeAs('img', $filename);
-
-        //     // Update file name in the database
-        //     $calon->foto_calon = $filename;
-        // }
-        
-        // Handle the image upload
         $imagePath = $request->file('foto_calon')->store('calon_images', 'public');
-
-        // Update the calon record
-        $calon->nama_calon = $request->input('nama_calon');
-        $calon->visi = $request->input('visi');
-        $calon->misi = $request->input('misi');
-        $calon->profile = $request->input('profile');
         $calon->foto_calon = $imagePath;
-
-        // Save changes to the database
-        // $calon->save();
-
-        // Redirect with success message
-        return redirect()->back()->with('success', 'Profile calon berhasil diperbarui.');
     }
+
+    $calon->nama_calon = $request->input('nama_calon');
+    $calon->visi = $request->input('visi');
+    $calon->misi = $request->input('misi');
+    $calon->profile = $request->input('profile');
+
+    $calon->save();
+
+    return redirect()->back()->with('success', 'Profile calon berhasil diperbarui.');
+}
+
 
 
     /**

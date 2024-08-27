@@ -17,7 +17,7 @@
                     <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
                         <div class="p-[25px]">
                             <div class="mb-4">
-                                <img id="previewImage" src="{{ Storage::URL('img/' . $calon->foto_calon) }}" alt="Calon Photo" class="w-full rounded-4" style="display: {{ $calon->foto_calon ? 'block' : 'none' }}">
+                                <img id="previewImage" src="{{ Storage::URL('/' . $calon->foto_calon) }}" alt="Calon Photo" class="w-full rounded-4" style="display: {{ $calon->foto_calon ? 'block' : 'none' }}">
                             </div>
 
                             <div class="mt-4">
@@ -38,7 +38,7 @@
                                 </div>
                             @endif
 
-                            
+
                                 <div class="pb-4">
                                     <input name="id" value="{{$calon->id}}" hidden>
 
@@ -66,7 +66,7 @@
                                         <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear">Update Profile</button>
                                     </div>
                                 </div>
-                            
+
                         </div>
                     </div>
                 </div>
