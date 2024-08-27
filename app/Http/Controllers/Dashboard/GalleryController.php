@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
- 
+
 
 class GalleryController extends Controller
 {
@@ -16,10 +16,45 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
-        $galleries = Gallery::all();
 
-        return view('pages.dashboard.gallery',  compact('galleries'));
+    $galleries = Gallery::all();
+
+
+    $photos = $galleries->filter(function ($gallery) {
+        return $gallery->media === 'photo';
+    });
+
+    $videos = $galleries->filter(function ($gallery) {
+        return $gallery->media === 'video';
+    });
+
+    return view('pages.dashboard.gallery', compact('photos', 'videos', 'galleries'));
+    }
+
+    public function showPhoto()
+    {
+
+    $galleries = Gallery::all();
+
+
+    $photos = $galleries->filter(function ($gallery) {
+        return $gallery->media === 'photo';
+    });
+
+    return view('foto', compact('photos', 'galleries'));
+    }
+
+    public function showVideo()
+    {
+
+    $galleries = Gallery::all();
+
+
+    $videos = $galleries->filter(function ($gallery) {
+        return $gallery->media === 'video';
+    });
+
+    return view('video', compact('videos', 'galleries'));
     }
 
     /**
@@ -35,28 +70,53 @@ class GalleryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // public function store(Request $request)
+    // {
+    //     //
+
+    //     $request->validate([
+    //         'title' => 'required|string|max:255',
+    //         'description' => 'nullable|string',
+    //         'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+    //     ]);
+
+    //     // Handle the image upload
+    //     $imagePath = $request->file('image')->store('gallery_images', 'public');
+
+    //     // Store the gallery information in the database
+    //     Gallery::create([
+    //         'title' => $request->title,
+    //         'description' => $request->description,
+    //         'url' => $imagePath,
+    //     ]);
+
+    //     return redirect(Auth::user()->role. '/gallery')->with('success', 'Gallery created successfully.');
+    // }
+
     public function store(Request $request)
-    {
-        //
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'nullable|string',
+        'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'url' => 'nullable|url',
+    ]);
 
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-        ]);
+    $mediaType = $request->hasFile('image') ? 'photo' : 'video';
 
-        // Handle the image upload
-        $imagePath = $request->file('image')->store('gallery_images', 'public');
+    $imagePath = $request->hasFile('image') ? $request->file('image')->store('gallery_images', 'public') : null;
+    $videoUrl = $request->input('url');
 
-        // Store the gallery information in the database
-        Gallery::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'url' => $imagePath,
-        ]);
+    Gallery::create([
+        'title' => $request->title,
+        'description' => $request->description,
+        'url' => $mediaType === 'photo' ? $imagePath : $videoUrl,
+        'media' => $mediaType,
+    ]);
 
-        return redirect(Auth::user()->role. '/gallery')->with('success', 'Gallery created successfully.');
-    }
+    return redirect(Auth::user()->role. '/gallery')->with('success', 'Gallery created successfully.');
+}
+
 
     /**
      * Display the specified resource.
@@ -93,19 +153,19 @@ class GalleryController extends Controller
         //     'description' => 'nullable|string',
         //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         // ]);
-        
+
         $fileToDelete = 'file.txt'; // Tentukan file yang ingin dihapus
 
         // Handle the image upload
         $imagePath = $request->file('image')->store('gallery_images', 'public');
-    
+
         // Update the other gallery information
         $gallery->update([
         'title' => $request->title,
         'description' => $request->description,
         'url' => $imagePath
     ]);
-    
+
         return redirect(Auth::user()->role. '/gallery')
                          ->with('success', 'Gallery created successfully.');
     }

@@ -51,6 +51,7 @@
                      <div class="p-[25px]">
                         <form action="{{ route(Auth::user()->role . '.gallery.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="media" value="foto">
                             <!-- Dropzone-style Image Input with Preview -->
                             <div class="p-[25px] mb-4">
                                 <div class="flex items-center justify-center w-full">
@@ -63,7 +64,7 @@
                                         <input id="dropzone-file" type="file" name="image" class="hidden" accept="image/*" onchange="previewImage(event)" required />
                                     </label>
                                 </div>
-                
+
                                 <!-- Image Preview -->
                                 <div id="image-preview" class="mt-4 hidden flex items-center border rounded-md px-4 py-2 bg-gray-50">
                                     <!-- Image Thumbnail -->
@@ -92,7 +93,8 @@
                                  <input type="text" id="emailVertical" class="w-full rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark  focus:ring-primary focus:border-primary" name="description" placeholder="Survey bersama-sama" required>
                               </div>
                            </div>
-                           
+
+
                            <div class="flex items-center gap-[15px] mt-[14px]">
                               <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery') }}'">Cancel</button>
                               <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">save</button>
@@ -137,6 +139,7 @@
                                     </h2>--}}
                                     <form action="{{ route(Auth::user()->role . '.video.store') }}" method="POST">
                                         @csrf
+                                        <input type="hidden" name="media" value="video">
                                         <input type="hidden" name="title" value="Video Youtube {{$postVideo}}">
                                         <input type="hidden" name="media" value="Video">
                                         <input type="hidden" name="url" value="https://www.youtube.com/embed/{{$postVideo}}">
@@ -156,7 +159,7 @@
          <!-- Footer -->
          @include('layouts.dashboard.footer')
          <!-- end: Footer -->
-      </main>     
+      </main>
     <!-- End: Main Content -->
 
     <!-- End: Wrapping Content -->
@@ -166,12 +169,12 @@
     function previewImage(event) {
         const reader = new FileReader();
         const file = event.target.files[0];
-        
+
         reader.onload = function() {
             const preview = document.getElementById('preview');
             const fileName = document.getElementById('file-name');
             const fileSize = document.getElementById('file-size');
-            
+
             preview.src = reader.result;
             fileName.textContent = file.name;
             fileSize.textContent = `${(file.size / 1024).toFixed(2)} KB`;
