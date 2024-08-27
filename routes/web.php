@@ -9,6 +9,8 @@ use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\PublicProgramController;
+use App\Http\Controllers\PublicBlogController;
 
 
 
@@ -37,18 +39,16 @@ use App\Http\Controllers\FaqController;
 */
 // comment
 
-Route::get('/blog', function () {
-  return view('blog');
-});
-Route::get('/foto', function () {
-  return view('foto');
-});
 
 Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
 Route::post('questions', [QuestionController::class, 'store'])->name('questions.store');
 Route::get('/foto', [GalleryController::class, 'showPhoto'])->name('foto.index');
 Route::get('/video', [GalleryController::class, 'showVideo'])->name('video.index');
+Route::get('/program', [PublicProgramController::class, 'index'])->name('program.index');
+Route::get('/program/{id}', [PublicProgramController::class, 'show'])->name('program.show');
+Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{id}', [PublicBlogController::class, 'show'])->name('blog.show');
 
 
 Route::controller(MainController::class)->group(function () {

@@ -6,13 +6,18 @@ use App\Models\Program;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProgramController extends Controller
+class PublicProgramController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        
+        //
+        $programs = Program::all();
+
+        return view('program-detail', compact('programs'));
         
     }
 
@@ -35,9 +40,12 @@ class ProgramController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Program $program)
+    public function show(Program $id)
     {
         //
+        $program = Program::findOrFail($id);
+
+        return view('program-detail', compact('program'));
     }
 
     /**

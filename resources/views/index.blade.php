@@ -589,7 +589,7 @@
                                             {{--<h4 class="py-4 text-sm text-black dark:text-white line-clamp-2 overflow-hidden">
                                                 {{$program->description}}
                                             </h4>--}}
-                                            <a href="javascript:"
+                                            <a href="/program/{{$program->id}}"
                                                 class="group flex items-center gap-4 font-semibold transition hover:text-secondary">
                                                 <span>Baca Selengkapnya</span>
                                                 <span class="transition-all group-hover:pl-2">

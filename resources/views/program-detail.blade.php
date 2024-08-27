@@ -1,7 +1,6 @@
 @include('layouts.app-2')
 
 @section('content')
-        <!-- screen loader -->
         <div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1209,75 +1208,4 @@
                 </div>
             </footer>
         </div>
-
-        <!-- Return to Top -->
-        <button type="button" id="scrollToTopBtn" class="fixed bottom-5 z-10 hidden animate-bounce ltr:right-5 rtl:left-5" onclick="scrollToTop()">
-            <div
-                class="group flex h-14 w-14 items-center justify-center rounded-full border border-black/20 bg-black text-white transition duration-500 hover:bg-secondary dark:bg-primary dark:hover:bg-secondary"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="h-6 w-6 transition group-hover:text-black"
-                >
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                </svg>
-            </div>
-        </button>
-
-        <!-- Swiper Slider JS -->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <!-- AOS Animation JS -->
-        <script src="assets/js/aos.js"></script>
-        <!-- Custom Js -->
-        <script src="assets/js/custom.js"></script>
-
-        <script>
-            // Offices Location Slider
-            var swiper = new Swiper('.ofc-slider', {
-                slidesPerView: 'auto',
-                loop: true,
-                spaceBetween: 30,
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                navigation: {
-                    nextEl: '.ofc-slider-button-next',
-                    prevEl: '.ofc-slider-button-prev',
-                },
-            });
-
-            // Project Slider
-            var swiper = new Swiper('.project-slider', {
-                loop: true,
-                slidesPerView: 'auto',
-                spaceBetween: 30,
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
-                },
-                navigation: {
-                    nextEl: '.project-slider-button-next',
-                    prevEl: '.project-slider-button-prev',
-                },
-                breakpoints: {
-                    600: {
-                        slidesPerView: 2,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                    },
-                    1000: {
-                        slidesPerView: 4,
-                    },
-                    1200: {
-                        slidesPerView: 5,
-                    },
-                },
-            });
-        </script>
 @endsection

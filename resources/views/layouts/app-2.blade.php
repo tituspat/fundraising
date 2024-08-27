@@ -20,7 +20,7 @@
 
 
 </head>
-<body>
+<body class="overflow-x-hidden">
 
     @yield('content')
 
