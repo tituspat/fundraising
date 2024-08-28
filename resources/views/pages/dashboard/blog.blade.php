@@ -62,7 +62,7 @@
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/1.png') }}">
+                        <img alt="hexadash Blog" class="w-full h-auto rounded-10 object-contain" style="height: 220px" src="{{ asset($blog->thumbnail) }}">
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">

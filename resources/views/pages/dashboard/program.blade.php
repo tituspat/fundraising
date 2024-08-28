@@ -67,20 +67,14 @@
                      <figcaption class="">
                         <!-- Date -->
                         <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
-
-
-
                            {{-- <span class="inline-block text-light dark:text-subtitle-dark text-15">{{ $program->created_at->format('d M Y') }}</span> --}}
-
-
-
                         </div>
                         <!-- Program Title -->
                         <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
                            <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="/{{Auth::user()->role}}/program/{{$program->id}}/detail">{{$program->title}}</a>
                         </h2>
                         <!-- Program Excerpt -->
-                        <p class="mb-4 text-base text-dark dark:text-title-dark">{{$program->description}}</p>
+                        <p class="mb-4 text-base text-dark dark:text-title-dark">{!! $program->description !!}</p>
                         <!-- Author and Engagement -->
                         <div class="flex justify-between">
                             <!-- Author Information -->

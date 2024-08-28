@@ -40,9 +40,9 @@
                                 </div>
                             </a>
                             <div class="submenu">
-                                <a href="/foto">Foto</a>
-                                <a href="/video">Video</a>
-                                <a href="/blog">Blog</a>
+                                <a href="/foto"  style="text-align: center;">Foto</a>
+                                <a href="/video" style="text-align: center;">Video</a>
+                                <a href="/blog"  style="text-align: center;">Blog</a>
                             </div>
                         </li>
 

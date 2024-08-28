@@ -99,12 +99,22 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::put('/faqs/update', [ManageFAQController::class, 'update'])->name('faqs.update');
       Route::post('/faqs/add', [ManageFAQController::class, 'store'])->name('faqs.add');
       Route::get('/question', [ManageQuestionController::class, 'index'])->name('question');
-
-
+      // program
       Route::get('/program', [ProgramController::class, 'index'])->name('program.index');
+      Route::get('/program/tambah', [ProgramController::class, 'create'])->name('program.create');
+      Route::post('/program/store', [ProgramController::class, 'store'])->name('program.store');
+      Route::get('/program/{id}/detail', [ProgramController::class, 'show'])->name('program.show');
+      Route::get('/program/{id}/edit', [ProgramController::class, 'edit'])->name('program.edit');
+      Route::post('/program/{id}/update', [ProgramController::class, 'update'])->name('program.update');
+      Route::get('/program/{id}/delete', [ProgramController::class, 'destroy'])->name('program.destroy');
+      // blog
+      Route::get('/blog', [BlogController::class, 'index'])->name('blog');
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
       Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
       Route::get('/blog/{id}/detail', [BlogController::class, 'show'])->name('blog.show');
+      Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+      Route::post('/blog/{id}/update', [BlogController::class, 'update'])->name('blog.update');
+      Route::get('/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blog.delete');
     });
 
     // mod
