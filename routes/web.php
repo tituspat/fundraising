@@ -105,6 +105,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
       Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
       Route::get('/blog/{id}/detail', [BlogController::class, 'show'])->name('blog.show');
+      Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+      Route::post('/blog/{id}/update', [BlogController::class, 'update'])->name('blog.update');
+      Route::get('/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blog.delete');
     });
 
     // mod

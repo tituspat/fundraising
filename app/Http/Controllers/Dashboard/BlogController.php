@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Symfony\Component\DomCrawler\Crawler;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
@@ -25,8 +29,9 @@ class BlogController extends Controller
     public function create()
     {
         //
+        $isEditing = false;
 
-        return view('pages.dashboard.form-blog');
+        return view('pages.dashboard.form-blog', compact('isEditing'));
     }
 
     /**
@@ -38,15 +43,57 @@ class BlogController extends Controller
         $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required',
+            'creator' => 'required',
         ]);
     
+        $content = $request->input('content'); // Ambil konten dari request
+        
+        // Crawler untuk menelusuri konten HTML
+        $crawler = new Crawler($content);
+
+        // Temukan semua elemen gambar (img) yang memiliki atribut src dengan base64
+        $crawler->filter('img')->each(function (Crawler $node) use (&$content) {
+            $src = $node->attr('src');
+
+            // Jika src adalah base64
+            if (preg_match('/^data:image\/(\w+);base64,/', $src, $type)) {
+                // Decode base64
+                $imageData = base64_decode(substr($src, strpos($src, ',') + 1));
+                $type = strtolower($type[1]); // jpg, png, gif, etc.
+
+                // Buat nama file unik
+                $fileName = Str::random(10) . '.' . $type;
+
+                // Simpan gambar ke storage
+                $filePath = 'public/blog_images/' . $fileName;
+                Storage::put($filePath, $imageData);
+
+                // Ganti base64 src di konten dengan URL gambar yang disimpan
+                $content = str_replace($src, Storage::url($filePath), $content);
+            }
+        });
+
+        // Gunakan DomCrawler untuk mengekstrak gambar pertama
+        $crawler = new Crawler($content);
+            // Check if the image exists
+        if ($crawler->filter('img')->count() > 0) {
+            // If image exists, get the first image's src
+            $thumbnail = $crawler->filter('img')->first()->attr('src');
+        } else {
+            // If no image found, use a default image route
+        $thumbnail = asset('path/to/default/image.png');
+        }
+
+
         // Save to database
         Blog::create([
             'title' => $validated['title'],
-            'content' => $validated['content'],
+            'content' => $content,
+            'thumbnail' => $thumbnail,
+            'created_by' => $validated['creator'],
         ]);
     
-        return view('pages.dashboard.blog')->with('success', 'Content saved successfully!');
+        return Redirect(Auth::user()->role. '/blog')->with('success', 'Content saved successfully!');
     }
 
     /**
@@ -66,6 +113,11 @@ class BlogController extends Controller
     public function edit(string $id)
     {
         //
+        $blog = Blog::findOrFail($id);
+
+        $isEditing = true;
+
+        return view('pages.dashboard.form-blog', compact('isEditing', 'blog'));
     }
 
     /**
@@ -73,7 +125,60 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+        
+        // Ambil blog berdasarkan ID
+        $blog = Blog::findOrFail($id);
+
+        // Ambil konten baru dari request
+        $content = $request->input('content');
+
+        // Crawler untuk menelusuri konten HTML
+        $crawler = new Crawler($content);
+
+        // Temukan semua elemen gambar (img) yang memiliki atribut src dengan base64
+        $crawler->filter('img')->each(function (Crawler $node) use (&$content) {
+            $src = $node->attr('src');
+
+            // Jika src adalah base64
+            if (preg_match('/^data:image\/(\w+);base64,/', $src, $type)) {
+                // Decode base64
+                $imageData = base64_decode(substr($src, strpos($src, ',') + 1));
+                $type = strtolower($type[1]); // jpg, png, gif, etc.
+
+                // Buat nama file unik
+                $fileName = Str::random(10) . '.' . $type;
+
+                // Simpan gambar ke storage
+                $filePath = 'public/blog_images/' . $fileName;
+                Storage::put($filePath, $imageData);
+
+                // Ganti base64 src di konten dengan URL gambar yang disimpan
+                $content = str_replace($src, Storage::url($filePath), $content);
+            }
+        });
+
+        // Gunakan DomCrawler untuk mengekstrak gambar pertama
+        $crawler = new Crawler($content);
+            // Check if the image exists
+        if ($crawler->filter('img')->count() > 0) {
+            // If image exists, get the first image's src
+        $thumbnail = $crawler->filter('img')->first()->attr('src');
+        } else {
+            // If no image found, use a default image route
+        $thumbnail = asset('path/to/default/image.png');
+        }
+
+
+        // Update the other gallery information
+        $blog->update([
+            'title' => $request->title,
+            'content' => $content,
+            
+            ]);
+    
+            return redirect(Auth::user()->role. '/gallery')
+                             ->with('success', 'Gallery created successfully.');
     }
 
     /**
@@ -81,6 +186,11 @@ class BlogController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        
+        //get user by ID
+        Blog::findOrFail($id)->delete();
+
+        //redirect to
+        return redirect(Auth::user()->role. '/gallery')->with('success', 'Data Berhasil Dihapus!');
     }
 }

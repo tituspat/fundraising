@@ -15,7 +15,7 @@
                   	<!-- Breadcrumb Section -->
                   	<div class="leading-[1.8571428571] flex flex-wrap sm:justify-between justify-center items-center ssm:mb-[33px] mb-[18px] max-sm:flex-col gap-x-[15px] gap-y-[5px]">
                      	<!-- Title -->
-                     	<h4 class="capitalize text-[20px] text-dark dark:text-title-dark font-semibold">Blog</h4>
+                     	<h4 class="capitalize text-[20px] text-dark dark:text-title-dark font-semibold">Program</h4>
                      	<!-- Breadcrumb Navigation -->
                      	<div class="flex flex-wrap justify-center">
                         	<nav>
@@ -43,34 +43,8 @@
                	</div>
             </div>
 			<!-- Left side: Image and upload button -->
-			@if(!$isEditing)
-			<!-- form new start -->
-			<form action="{{ route(Auth::user()->role . '.blog.store') }}" method="POST" enctype="multipart/form-data">
-			@csrf
-			<input type="hidden" id="creatorVertical" name="creator" value="{{Auth::user()->name}}" required>
-			<div class="col-span-12 md:col-span-4">
-                <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
-                    <div class="p-[25px]">
-						<div class="my-4">
-							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Blog</label>
-							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="Judul Blog" required>
-                        </div>
-						<div class="col-span-12 mb-[30px] my-4">
-							<div class="editor-container editor-container_classic-editor" id="editor-container">
-								<div class="editor-container__editor"><textarea name="content" id="editor">...</textarea></div>
-							</div>
-						</div>
-						<div class="flex items-center gap-[15px] mt-[14px]">
-                              <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/program') }}'">Cancel</button>
-                              <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">save</button>
-                        </div>
-                    </div>
-                </div>
-				
-            </div>
-			</form>
-			@elseif($isEditing)
-			<form action="{{ route(Auth::user()->role . '.blog.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
+			<!-- form start -->
+			<form action="{{ route(Auth::user()->role . '.program.store') }}" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="col-span-12 md:col-span-4">
                 <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
@@ -78,13 +52,13 @@
                         
 
 						<div class="my-4">
-							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Blog</label>
-							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="Judul Blog" value="{{$blog->title}}" required>
+							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Program</label>
+							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="Judul Program" required>
                         </div>
 
 						<div class="col-span-12 mb-[30px] my-4">
 							<div class="editor-container editor-container_classic-editor" id="editor-container">
-								<div class="editor-container__editor"><textarea name="content" id="editor">{{$blog->content}}</textarea></div>
+								<div class="editor-container__editor"><textarea name="content" id="editor">...</textarea></div>
 							</div>
 						</div>
 
@@ -98,7 +72,6 @@
 				
             </div>
 			</form>
-			@endif
             
          
 		<!-- form end -->
@@ -114,53 +87,41 @@
 
     <!-- Customizing option -->
     <script>
-	    function previewImage(event) {
-	        const reader = new FileReader();
-	        const file = event.target.files[0];
-		
-	        reader.onload = function() {
-	            const preview = document.getElementById('preview');
-	            const fileName = document.getElementById('file-name');
-	            const fileSize = document.getElementById('file-size');
-			
-	            preview.src = reader.result;
-	            fileName.textContent = file.name;
-	            fileSize.textContent = `${(file.size / 1024).toFixed(2)} KB`;
+    function previewImage(event) {
+        const reader = new FileReader();
+        const file = event.target.files[0];
+        
+        reader.onload = function() {
+            const preview = document.getElementById('preview');
+            const fileName = document.getElementById('file-name');
+            const fileSize = document.getElementById('file-size');
+            
+            preview.src = reader.result;
+            fileName.textContent = file.name;
+            fileSize.textContent = `${(file.size / 1024).toFixed(2)} KB`;
 
-	            document.getElementById('image-preview').classList.remove('hidden');
-	        }
+            document.getElementById('image-preview').classList.remove('hidden');
+        }
 
-	        reader.readAsDataURL(file);
-	    }
+        reader.readAsDataURL(file);
+    }
 
-	    function removePreview() {
-	        const input = document.getElementById('dropzone-file');
-	        input.value = '';
-	        document.getElementById('image-preview').classList.add('hidden');
-	    }
-	</script>
+    function removePreview() {
+        const input = document.getElementById('dropzone-file');
+        input.value = '';
+        document.getElementById('image-preview').classList.add('hidden');
+    }
+</script>
 
-	<script type="importmap">
+		<script type="importmap">
 		{
 			"imports": {
 				"ckeditor5": "https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.js",
 				"ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/43.0.0/"
 			}
 		}
-	</script>
-	<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            ClassicEditor
-                .create(document.querySelector('#editor'))
-                .then(editor => {
-                    console.log('Editor was initialized', editor);
-                })
-                .catch(error => {
-                    console.error('There was a problem initializing the editor.', error);
-                });
-        });
-    </script>
-	<script type="module" src="{{asset('assets/vendor/ckeditor5.js')}}"></script>
+		</script>
+		<script type="module" src="{{asset('assets/vendor/ckeditor5.js')}}"></script>
     <!-- End: Customizing option -->
 
 

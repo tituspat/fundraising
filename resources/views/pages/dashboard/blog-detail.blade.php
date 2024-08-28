@@ -45,18 +45,23 @@
                <div class="inline-flex items-center">
 
                </div>
-
-               <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
-                  <i class="uil uil-pen"></i>
-                  <span class="m-0">Edit</span>
-               </button>
+                <div class="flex flex-row gap-2">
+                    <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="window.location='{{ URL::to(Auth::user()->role . '/blog/'.$blog->id.'/edit') }}'">
+                        <i class="uil uil-pen"></i>
+                        <span class="m-0">Edit</span>
+                    </button>
+                    <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="window.location='{{ URL::to(Auth::user()->role . '/blog/'.$blog->id.'/delete') }}'">
+                        <!-- <i class="uil uil-cross"></i> -->
+                        <span class="m-0">Delete</span>
+                    </button>
+                </div>
             </div>
             <div class="grid grid-cols-12 gap-[25px]">
                <div class="col-span-12 2xl:col-start-3 2xl:col-span-8">
                   <div class="bg-transparent 3xl:px-[30px] pb-5 max-xl:pb-0">
                         <div class="mb-[25px]">
                             <div class="max-h-[450px] rounded-10">
-                                "{{--<img src="{{ Storage::url($blog->url) }}" style="width:970px; height:450px" alt="blog-details" class="object-cover w-full h-full">--}}
+                                {{--<img src="{{ Storage::url($blog->url) }}" style="width:970px; height:450px" alt="blog-details" class="object-cover w-full h-full">--}}
                                 <!-- Display the blog thumbnail image -->
                             </div>
                             <div class="px-24 max-3xl:px-14 max-2xl:px-[30px] max-xl:px-0">
@@ -67,7 +72,7 @@
                                 <ul class="flex flex-wrap items-center mb-11 max-lg:mb-8 max-md:mb-5">
                                     <li class="relative flex items-center gap-x-2.5 m-1 text-light dark:text-subtitle-dark text-15">
                                         {{--<img src="{{ asset('vendor/hexadash/assets/images/avatars/t1.jpg') }}" alt="hexadash blog author" class="min-w-[50px] w-[50px] rounded-full">--}}
-                                        {{--<span class="inline-block text-base font-semibold text-dark dark:text-title-dark">Charli Day</span>--}}
+                                        <span class="inline-block text-base font-semibold text-dark dark:text-title-dark">{{$blog->created_by}}</span>
                                         <!-- Display the author's name and avatar -->
                                     </li>
                                     <li class="relative m-1 ps-2.5 text-light dark:text-subtitle-dark text-15 before:absolute before:h-1 before:w-1 before:start-0 before:top-1/2 before:-translate-y-1/2 before:bg-light before:rounded-full">{{$blog->created_at->format('d M Y')}}</li>
@@ -78,7 +83,7 @@
                                     {{--<li class="relative m-1 ps-2.5 text-light dark:text-subtitle-dark text-15 before:absolute before:h-1 before:w-1 before:start-0 before:top-1/2 before:-translate-y-1/2 before:bg-light before:rounded-full">6 mins read</li>--}}
                                     <!-- Display the reading time -->
                                 </ul>
-                                <div class="content">
+                                <div class="content border ">
                                     {!! $blog->content !!}
                                 </div>
                             </ul>
@@ -121,7 +126,7 @@
                             </div>--}}
                             <!-- Display author information -->
 
-                            <div id="sticky-social" class="fixed top-0 ms-[820px] text-center translate-y-40 invisible opacity-0 [&.show]:visible [&.show]:opacity-100 transition-opacity duration-2000 ease-in-out">
+                            {{--<div id="sticky-social" class="fixed top-0 ms-[820px] text-center translate-y-40 invisible opacity-0 [&.show]:visible [&.show]:opacity-100 transition-opacity duration-2000 ease-in-out">
                                 <span class="text-base font-semibold text-breadcrumbs dark:text-title-dark">Share</span>
                                 <ul>
                                     <li class="my-2.5">
@@ -145,7 +150,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                              </div>
+                            </div>--}}
                         </div>
                      </div>
                   </div>
