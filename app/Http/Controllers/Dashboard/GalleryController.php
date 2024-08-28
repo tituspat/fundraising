@@ -20,44 +20,44 @@ class GalleryController extends Controller
     public function index()
     {
 
-    $galleries = Gallery::all();
+        $galleries = Gallery::all();
 
 
-    $photos = $galleries->filter(function ($gallery) {
-        return $gallery->media === 'photo';
-    });
+        $photos = $galleries->filter(function ($gallery) {
+            return $gallery->media === 'photo';
+        });
 
-    $videos = $galleries->filter(function ($gallery) {
-        return $gallery->media === 'video';
-    });
+        $videos = $galleries->filter(function ($gallery) {
+            return $gallery->media === 'video';
+        });
 
-    return view('pages.dashboard.gallery', compact('photos', 'videos', 'galleries'));
+        return view('pages.dashboard.gallery', compact('photos', 'videos', 'galleries'));
     }
 
     public function showPhoto()
     {
 
-    $galleries = Gallery::all();
-
-
-    $photos = $galleries->filter(function ($gallery) {
-        return $gallery->media === 'photo';
-    });
-
-    return view('foto', compact('photos', 'galleries'));
-    }
-
-    public function showVideo()
-    {
-
-    $galleries = Gallery::all();
-
-
-    $videos = $galleries->filter(function ($gallery) {
-        return $gallery->media === 'video';
-    });
-
-    return view('video', compact('videos', 'galleries'));
+        $galleries = Gallery::all();
+        
+        
+        $photos = $galleries->filter(function ($gallery) {
+            return $gallery->media === 'photo';
+        });
+    
+        return view('foto', compact('photos', 'galleries'));
+        }
+    
+        public function showVideo()
+        {
+        
+        $galleries = Gallery::all();
+        
+        
+        $videos = $galleries->filter(function ($gallery) {
+            return $gallery->media === 'video';
+        });
+    
+        return view('video', compact('videos', 'galleries'));
     }
 
     /**

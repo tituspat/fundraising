@@ -114,9 +114,7 @@ class BlogController extends Controller
     {
         //
         $blog = Blog::findOrFail($id);
-
         $isEditing = true;
-
         return view('pages.dashboard.form-blog', compact('isEditing', 'blog'));
     }
 
@@ -170,15 +168,15 @@ class BlogController extends Controller
         }
 
 
-        // Update the other gallery information
+        // Update the other blog information
         $blog->update([
             'title' => $request->title,
             'content' => $content,
             
             ]);
     
-            return redirect(Auth::user()->role. '/gallery')
-                             ->with('success', 'Gallery created successfully.');
+            return redirect(Auth::user()->role. '/blog')
+                             ->with('success', 'Blog created successfully.');
     }
 
     /**
@@ -191,6 +189,6 @@ class BlogController extends Controller
         Blog::findOrFail($id)->delete();
 
         //redirect to
-        return redirect(Auth::user()->role. '/gallery')->with('success', 'Data Berhasil Dihapus!');
+        return redirect(Auth::user()->role. '/blog')->with('success', 'Data Berhasil Dihapus!');
     }
 }
