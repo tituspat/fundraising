@@ -12,7 +12,7 @@
                   <!-- Breadcrumb Section -->
                   <div class="leading-[1.8571428571] flex flex-wrap sm:justify-between justify-center items-center ssm:mb-[33px] mb-[18px] max-sm:flex-col gap-x-[15px] gap-y-[5px]">
                      <!-- Title -->
-                     <h4 class="capitalize text-[20px] text-dark dark:text-title-dark font-semibold">Testimoni Managemen</h4>
+                     <h4 class="capitalize text-[20px] text-dark dark:text-title-dark font-semibold">Manajemen Testimoni</h4>
                      <!-- Breadcrumb Navigation -->
                      <div class="flex flex-wrap justify-center">
                         <nav>
@@ -24,13 +24,13 @@
                               </li>
                               <!-- Middle (Conditional) -->
 
-                              <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]">
+                              {{-- <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]">
                                  <span class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 transition duration-300 capitalize">Pages</span>
-                              </li>
+                              </li> --}}
 
                               <!-- Child (Current Page) -->
                               <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]" aria-current="page">
-                                 <span class="text-[14px] font-normal leading-[20px] flex items-center capitalize text-light dark:text-subtitle-dark">Testimoni Management</span>
+                                 <span class="text-[14px] font-normal leading-[20px] flex items-center capitalize text-light dark:text-subtitle-dark">Manajemen Testimoni</span>
                               </li>
                            </ol>
                         </nav>
@@ -83,7 +83,7 @@
                <div class="col-span-12">
                   <div class="bg-white dark:bg-box-dark-up m-0 p-0 text-theme-gray dark:text-subtitle-dark text-[15px] rounded-10 relative mb-[25px] w-full py-[30px] px-[25px] flex flex-col gap-x-[15px] lg:gap-y-[25px] gap-y-[15px]">
                      <div class="text-dark dark:text-title-dark font-medium text-[17px] flex items-center justify-between max-sm:flex-col max-sm:gap-[15px]">
-                        <h4 class="mb-0 text-[20px] leading-6 font-medium text-dark dark:text-title-dark">All Testimoni
+                        <h4 class="mb-0 text-[20px] leading-6 font-medium text-dark dark:text-title-dark">Semua Testimoni
                         </h4>
                      </div>
 
@@ -112,14 +112,17 @@
                                     Nama Pendukung</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
                                     Testimoni</th>
-                                 <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0 max-w-sm overflow-hidden">
-                                    Status</th>
+                                 {{-- <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0 max-w-sm overflow-hidden">
+                                    Status</th> --}}
                                  <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
                                     Role</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-[25px] py-[17px] text-end text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden rounded-e-[10px] sticky top-0">
                                     Tampilkan</th>
                               </tr>
                            </thead>
+                           @php
+use Illuminate\Support\Str;
+@endphp
                            <tbody>
                             @foreach($testimonials as $t)
                             <tr class="group">
@@ -136,10 +139,10 @@
                                   </div>
                                </td>
                                <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                  {{$t->testimonial}}
-                               </td>
-                               <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                  {{$t->is_previewed}}</td>
+                                {{ Str::limit($t->testimonial, 25, '...') }}
+                            </td>
+                               {{-- <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
+                                  {{$t->is_previewed}}</td> --}}
                                <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
                                   {{$t->user->role}}</td>
                                <td class="ps-[20px] pe-[25px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">

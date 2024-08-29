@@ -41,32 +41,43 @@
       <!-- Main content container with responsive design -->
       <div class="h-[calc(var(--vh,1vh)_*_100)] w-full overflow-y-auto scrollbar">
 
-         <!-- Login form container -->
+         <!-- Sign-up form container -->
          <div class="flex flex-col justify-center w-full max-w-[516px] px-[30px] mx-auto my-[150px]">
             <a href="index.html" class="text-center">
                <!-- Logo for the light theme -->
-               <!-- <img src="{{ asset('vendor/hexadash/images/logos/logo-dark.png') }}" alt="image" class="inline dark:hidden"> -->
+               <img src="images/logos/logo-dark.png" alt="image" class="inline dark:hidden">
                <!-- Logo for the dark theme -->
-               <!-- <img src="{{ asset('vendor/hexadash/images/logos/logo-white.png') }}" alt="image" class="hidden dark:inline"> -->
+               <img src="images/logos/logo-white.png" alt="image" class="hidden dark:inline">
             </a>
 
-            <!-- Login form background -->
+            <!-- Sign-up form background -->
             <div class="rounded-6 mt-[25px] shadow-regular dark:shadow-xl bg-white dark:bg-[#111726]">
                <div class="p-[25px] text-center border-b border-regular dark:border-white/[.05] top">
-                  <!-- Heading for the login form -->
-                  <h2 class="text-18 font-semibold leading-[1] mb-0 text-dark dark:text-title-dark">Login</h2>
+                  <!-- Heading for the sign-up form -->
+                  <h2 class="text-18 font-semibold leading-[1] mb-0 text-dark dark:text-title-dark title">Sign up HexaDash</h2>
                </div>
 
-               <!-- Login form inputs and elements -->
+               <!-- Sign-up form inputs and elements -->
                <div class="py-[30px] px-[40px]">
-                  <form id="admin-form" method="POST" action="{{ route('login') }}">
-                     @csrf
+                  <form id="admin-form">
+
+                     <!-- Name input -->
+                     <div class="mb-6">
+                        <label for="name" class="text-[14px] w-full leading-[1.4285714286] font-medium text-dark dark:text-gray-300 mb-[8px] capitalize inline-block">Name</label>
+                        <input type="name" id="name" class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary" placeholder="name" autocomplete="off" required>
+                     </div>
+
+                     <!-- Username input -->
+                     <div class="mb-6">
+                        <label for="username" class="text-[14px] w-full leading-[1.4285714286] font-medium text-dark dark:text-gray-300 mb-[8px] capitalize inline-block">Username</label>
+                        <input type="username" id="username" class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary" placeholder="username" autocomplete="off" required>
+                     </div>
 
                      <!-- Email Address input -->
                      <div class="mb-6">
-                        <label for="email-username" class="text-[14px] w-full leading-[1.4285714286] font-medium text-dark dark:text-gray-300 mb-[8px] capitalize inline-block">Email
+                        <label for="email" class="text-[14px] w-full leading-[1.4285714286] font-medium text-dark dark:text-gray-300 mb-[8px] capitalize inline-block">Email
                            Address</label>
-                        <input type="email" name="email" id="email-username" class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary" placeholder="name@example.com" autocomplete="off" required>
+                        <input type="email" id="email" class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary" placeholder="name@example.com" autocomplete="off" required>
                      </div>
 
                      <!-- Password input -->
@@ -76,35 +87,40 @@
                         <div class="relative w-full">
                            <div class="absolute inset-y-0 end-0 flex items-center px-[15px]">
                               <input class="hidden js-password-toggle" id="toggle" type="checkbox">
-                              <label class=" rounded cursor-pointer text-light text-[15px] js-password-label dark:text-subtitle-dark" for="toggle"><i class="uil uil-eye-slash"></i></label>
+                              <label class=" rounded cursor-pointer text-light text-[15px] js-password-label dark:text-subtitle-dark" for="toggle">
+                                 <i class="uil uil-eye-slash"></i>
+                              </label>
                            </div>
-                           <input class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary js-password" id="password" type="password" name="password" autocomplete="off" placeholder="Password">
+                           <input class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary js-password" id="password" type="password" placeholder="Password">
                         </div>
                      </div>
 
-                     <!-- Remember me and forgot password options -->
+                     <!-- Terms and Conditions checkbox -->
                      <div class="flex items-center sm:justify-between justify-center max-sm:flex-wrap capitalize mb-[19px] mt-[23px] gap-[15px]">
                         <div class="flex">
                            <div class="flex items-center h-5">
-                              <input id="remember" type="checkbox" value="" class="relative ltr:float-left rtl:float-right me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-1 border-solid border-normal outline-none before:pointer-events-none before:absolute before:h-[10px] before:w-[0.5px] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:mt-0 checked:after:ms-[5px] checked:after:block checked:after:h-[10px] checked:after:w-[5px] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] dark:border-box-dark-up dark:checked:border-primary dark:checked:bg-primary after:top-[2px]" required>
+                              <input id="hs-default-checkbox" type="checkbox" value="" class="relative ltr:float-left rtl:float-right me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-1 border-solid border-normal outline-none before:pointer-events-none before:absolute before:h-[10px] before:w-[0.5px] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:mt-0 checked:after:ms-[5px] checked:after:block checked:after:h-[10px] checked:after:w-[5px] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] dark:border-box-dark-up dark:checked:border-primary dark:checked:bg-primary after:top-[2px]" required>
                            </div>
-                           <label for="remember" class="text-sm text-gray-500 ms-1 dark:text-gray-400">Keep me logged in</label>
+                           <label for="hs-default-checkbox" class="text-sm text-gray-500 ms-1 dark:text-gray-400">
+                              <span class="checkbox-text text-[13px] leading-[1.6923076923] font-normal text-light dark:text-subtitle-dark cursor-pointer">Creating an account means you’re okay
+                                 with our <a href="#" class="text-primary">Terms of
+                                    Service</a> and <a href="#" class="text-primary">Privacy
+                                    Policy</a>
+                                 my preference</span></label>
                         </div>
-                        <a class="text-13 text-primary hover:text-dark dark:hover:text-title-dark" href="reset.html">Forgot
-                           password?</a>
                      </div>
 
-                     <!-- Submit button for the login form -->
-                     <button type="submit" class="inline-flex items-center justify-center w-full h-[48px] text-14 rounded-6 font-medium bg-primary text-white cursor-pointer hover:bg-primary-hbr border-primary transition duration-300">Submit</button>
+                     <!-- Submit button for the sign-up form -->
+                     <button type="submit" class="inline-flex items-center justify-center w-full h-[48px] text-14 rounded-6 font-medium bg-primary text-white cursor-pointer hover:bg-primary-hbr border-primary transition duration-300" value="submit">Submit</button>
                   </form>
 
                   <!-- Separator line -->
                   <div class="relative mt-[25px] text-center text-13 text-regular dark:text-white/[87] before:content-[''] before:absolute before:w-full ltr:before:left-0 rtl:before:right-0 before:top-[50%] before:translate-y-[-50%] before:z-[1] before:h-[1px] before:bg-normal before:dark:bg-box-dark-up">
-                     <!-- <span class="font-medium px-[15px] inline-block relative z-[2] bg-white dark:bg-[#111625] text-body dark:text-subtitle-dark capitalize">or</span> -->
+                     <span class="font-medium px-[15px] inline-block relative z-[2] bg-white dark:bg-[#111625] text-body dark:text-subtitle-dark capitalize">or</span>
                   </div>
 
                   <!-- Social media login buttons -->
-                  {{--<div class="mt-[30px] d-flex align-items-center justify-content-center">
+                  <div class="mt-[30px] d-flex align-items-center justify-content-center">
                      <ul class="flex flex-wrap justify-center gap-x-[20px] gap-y-[10px]">
                         <li>
                            <button class="bg-google/10 cursor-pointer dark:bg-google duration-300 flex h-[48px] hover:bg-google/20 items-center justify-center rounded-6 text-google dark:text-title-dark transition w-[48px]">
@@ -117,23 +133,23 @@
                            </button>
                         </li>
                         <li>
-                           <button class="bg-twitter/10 dark:border-box-dark-up dark:border-1 cursor-pointer dark:bg-twitter duration-300 flex h-[48px] hover:bg-twitter/20 items-center justify-center rounded-6 text-twitter dark:text-title-dark transition w-[48px]">
-                              <img class="svg" src="{{ asset('vendor/hexadash/images/svg/x-twitter.svg') }}" alt="twitter">
+                           <button class="bg-twitter/10 cursor-pointer dark:bg-twitter dark:border-box-dark-up dark:border-1 duration-300 flex h-[48px] hover:bg-twitter/20 items-center justify-center rounded-6 text-twitter dark:text-title-dark transition w-[48px]">
+                              <img class="svg" src="images/svg/x-twitter.svg" alt="twitter">
                            </button>
                         </li>
                         <li>
-                           <button class="bg-github/10 dark:border-box-dark-up dark:border-1 cursor-pointer dark:bg-github duration-300 flex h-[48px] hover:bg-github/20 items-center justify-center rounded-6 text-github dark:text-title-dark transition w-[48px]">
+                           <button class="bg-github/10 cursor-pointer dark:bg-github duration-300 flex h-[48px] hover:bg-github/20 items-center justify-center rounded-6 text-github dark:text-title-dark transition w-[48px]">
                               <i class="text-current uil uil-github text-22"></i>
                            </button>
                         </li>
                      </ul>
-                  </div>--}}
+                  </div>
                </div>
 
-               <!-- Footer with signup link -->
+               <!-- Footer with login link -->
                <div class="text-center p-[25px] rounded-b-6 bg-deepBG dark:bg-gray-600">
-                  <p class="text-[14px] font-medium text-body dark:text-title-dark inline-flex items-center gap-[6px] mb-0">
-                     Don't have an account? <a class="transition duration-300 text-primary hover:text-dark dark:text-dark dark:hover:text-subtitle-dark" href="sign-up.html">Sign up</a>
+                  <p class="text-[14px] font-medium text-body dark:text-title-dark inline-flex items-center gap-[6px] mb-0 capitalize">
+                     Already have an account? <a class="transition duration-300 text-primary hover:text-dark dark:text-dark dark:hover:text-subtitle-dark" href="log-in.html">Log in</a>
                   </p>
                </div>
             </div>
@@ -158,8 +174,8 @@
    </div>
 
 
-   <!-- inject:js-->
-   <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/apexcharts.min.js') }}"></script>
+    <!-- inject:js-->
+    <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/apexcharts.min.js') }}"></script>
    <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/datepicker-full.min.js') }}"></script>
    <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/fslightbox.js') }}"></script>
    <script src="{{ asset('vendor/hexadash/assets/vendor_assets/js/index.global.min.js') }}"></script>

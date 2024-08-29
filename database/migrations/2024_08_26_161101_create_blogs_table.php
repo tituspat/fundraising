@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title')->nullable(); // title column
             $table->longText('content')->nullable(); // description column, nullable
             $table->string('category')->nullable(); // description column, nullable
+            $table->string('thumbnail')->nullable(); // description column, nullable
+            $table->string('created_by'); // 
             $table->timestamps();
         });
     }

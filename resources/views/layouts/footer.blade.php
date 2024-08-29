@@ -2,10 +2,10 @@
     <div class="container">
         <div class="grid gap-y-10 gap-x-4 py-14 sm:grid-cols-3 lg:grid-cols-5 lg:py-[100px]">
             <div class="relative">
-                <img src="{{ asset('img/logo-sahabat.png') }}" alt="plurk" class="h-7" />
+                <!-- <img src="{{ asset('img/logo-sahabat.png') }}" alt="plurk" class="h-7" /> -->
                 <ul class="mt-12 flex items-center gap-8">
                     <li>
-                        <a href="javascript:">
+                        <!-- <a href="javascript:">
                             <svg
                                 width="10"
                                 height="20"
@@ -19,10 +19,10 @@
                                     fill="currentColor"
                                 />
                             </svg>
-                        </a>
+                        </a> -->
                     </li>
                     <li>
-                        <a href="javascript:">
+                        <!-- <a href="javascript:">
                             <svg
                                 width="23"
                                 height="18"
@@ -36,10 +36,10 @@
                                     fill="currentColor"
                                 />
                             </svg>
-                        </a>
+                        </a> -->
                     </li>
                     <li>
-                        <a href="javascript:">
+                        <!-- <a href="javascript:">
                             <svg
                                 width="23"
                                 height="22"
@@ -62,7 +62,7 @@
                                 />
                                 <circle cx="17.7975" cy="5.08737" r="0.732875" fill="currentColor" />
                             </svg>
-                        </a>
+                        </a> -->
                     </li>
                 </ul>
                 <img src="{{ asset('vendor/plurk/images/footer-shape.png') }}" alt="footer-shape" class="absolute bottom-0 right-0 sm:left-0" />
@@ -116,24 +116,23 @@
             <div>
                 <ul class="flex flex-col gap-3 font-bold">
                     <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Information</li>
-                    <li>164 Brighton Ave, Tabanan, Bali, Indonesia - 02134</li>
+                    <li>Tabanan, Bali, Indonesia - 82115</li>
                     <li>
-                        <a href="tel:+(617) 254-2333" class="inline-block transition hover:scale-110 hover:text-secondary">(+62) 812-3456-7890</a>
+                        <!-- <a href="tel:+(617) 254-2333" class="inline-block transition hover:scale-110 hover:text-secondary">(+62) 812-3456-7890</a> -->
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-<!--
+
     <div class="bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] py-5 dark:border-t-2 dark:border-white/5 dark:bg-none">
         <div class="container">
             <div class="flex flex-col items-center justify-between text-center font-bold dark:text-white md:flex-row">
                 <div>
-                    Copyright© <span class="curr-year">2022</span>
-                    <a href="javascript:" class="text-primary transition hover:text-secondary">Plurk Technologies Pvt. Ltd.</a>
+                    Copyright© <span class="curr-year">2024</span>
+                    <a href="javascript:" class="text-primary transition hover:text-secondary">Sahabat Tabanan</a>
                 </div>
-                <div>Need help? Visit the <a href="contact-us.html" class="text-secondary transition hover:text-primary">Contact Us</a></div>
+                <!-- <div>Need help? Visit the <a href="contact-us.html" class="text-secondary transition hover:text-primary">Contact Us</a></div> -->
             </div>
         </div>
     </div>
--->

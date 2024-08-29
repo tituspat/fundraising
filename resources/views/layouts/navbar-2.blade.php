@@ -26,7 +26,7 @@
                         </li>--}}
                         <li class="group relative">
                             <a href="javascript:;">
-                                Feeds
+                                Galeri
                                 <div class="group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -40,9 +40,9 @@
                                 </div>
                             </a>
                             <div class="submenu">
-                                <a href="/foto">Foto</a>
-                                <a href="/video">Video</a>
-                                <a href="/blog">Blog</a>
+                                <a href="/foto"  style="text-align: center;">Foto</a>
+                                <a href="/video" style="text-align: center;">Video</a>
+                                <a href="/blog"  style="text-align: center;">Blog</a>
                             </div>
                         </li>
 
@@ -78,9 +78,9 @@
                     </li>
                     @else
                     <li>
-                        <a class="transition duration-500 hover:bg-secondary text-white font-bold py-2 px-4 rounded" href="/login">
+                        {{--<a class="transition duration-500 hover:bg-secondary text-white font-bold py-2 px-4 rounded" href="/login">
                             Login
-                        </a>
+                        </a>--}}
                     </li>
                     @endif
 

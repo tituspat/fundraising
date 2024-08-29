@@ -73,6 +73,8 @@
    <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/main.js') }}"></script>
    <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/svgMapData.js') }}"></script>
    <!-- endinject-->
+
+
 </body>
 
 </html>
