@@ -40,7 +40,7 @@
                                 <p class="my-8 text-lg lg:w-[90%]">
                                     Mari majukan Tabanan agar lebih baik dan sejahtera.
                                 </p>
-                                <a href="about-us.html" class="btn mx-auto mt-2 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">read more</a>
+                                {{--<a href="about-us.html" class="btn mx-auto mt-2 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">read more</a>--}}
                             </div>
                             <div
                                 class="bottom-0 mx-auto w-auto ltr:right-0 rtl:left-0 md:w-[540px] lg:absolute xl:w-[650px]"
@@ -103,7 +103,7 @@
                 <div class="container">
                     <div class="heading text-center">
                         <!-- <h6>Company Facts</h6> -->
-                        <h4>Kenali Lebih Dekat</h4>
+                        <h4>Salam Kenal</h4>
                     </div>
                     <div class="grid items-center gap-y-16 gap-x-8 lg:grid-cols-2">
                         <div class="relative">
@@ -381,14 +381,14 @@
                                             </h4>
                                             <a href="/program/{{$program->id}}"
                                                 class="group flex items-center gap-4 font-semibold transition hover:text-secondary">
-                                                <span>Baca Selengkapnya</span>
-                                                <span class="transition-all group-hover:pl-2">
+                                                <!-- <span>Baca Selengkapnya</span> -->
+                                                <!-- <span class="transition-all group-hover:pl-2">
                                                     <svg width="18" height="12" viewBox="0 0 18 12"
                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M12 6.75H0V5.25H12V0L18 6L12 12V6.75Z"
                                                             fill="currentColor" />
                                                     </svg>
-                                                </span>
+                                                </span> -->
                                             </a>
                                         </div>
                                         {{-- <div class="flex items-center gap-3 md:gap-7">
@@ -893,11 +893,11 @@
                         <div class="py-5">
                             <div class="text-center md:ltr:text-left md:rtl:text-right lg:w-3/4">
                                 <div class="mb-10">
-                                    <h6 class="mb-4 text-lg font-extrabold uppercase text-secondary"><span class="text-primary">/</span> get started</h6>
+                                    <!-- <h6 class="mb-4 text-lg font-extrabold uppercase text-secondary"><span class="text-primary">/</span> get started</h6> -->
                                     <h2 class="text-3xl font-black leading-tight text-white md:text-[40px]">Dukung Kami Untuk Wujudkan Mimpi SAHABAT Tabanan</h2>
                                 </div>
                                 <div class="mt-8">
-                                    <a href="#contact-us" class="bg-secondary py-3 px-5 font-bold text-white transition hover:bg-primary">Contact Us</a>
+                                    <a href="#contact-us" class="bg-secondary py-3 px-5 font-bold text-white transition hover:bg-primary">Hubungi Kami</a>
                                 </div>
                             </div>
                         </div>

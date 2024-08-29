@@ -90,6 +90,7 @@ class BlogController extends Controller
             'title' => $validated['title'],
             'content' => $content,
             'thumbnail' => $thumbnail,
+            'category' => "blog",
             'created_by' => $validated['creator'],
         ]);
     
@@ -172,7 +173,9 @@ class BlogController extends Controller
         $blog->update([
             'title' => $request->title,
             'content' => $content,
-            
+            'thumbnail' => $thumbnail,
+            'category' => "blog",
+            'created_by' => $validated['creator'],
             ]);
     
             return redirect(Auth::user()->role. '/blog')

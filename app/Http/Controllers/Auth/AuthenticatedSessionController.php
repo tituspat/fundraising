@@ -58,7 +58,7 @@ class AuthenticatedSessionController extends Controller
         }else{
             $url = "/dashboard";  
         }
-
+        
         return redirect()->intended($url);
     }
 

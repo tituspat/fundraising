@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Program;
+use App\Models\Blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +18,7 @@ class ProgramController extends Controller
     public function index()
     {
         //
-        $programs = Program::all();
+        $programs = Blog::all();
         return view('pages.dashboard.program',  compact('programs'));
     }
 
@@ -78,10 +78,11 @@ class ProgramController extends Controller
 
 
         // Save to database
-        Program::create([
+        Blog::create([
             'title' => $validated['title'],
-            'description' => $content,
-            'gambar' => $imagePath,
+            'content' => $content,
+            'thumbnail' => $imagePath,
+            'category' => "Program",
             'profile_calon_id' => "1",
         ]);
     
@@ -94,7 +95,7 @@ class ProgramController extends Controller
     public function show(string $id)
     {
         //
-        $program = Program::findOrFail($id);
+        $program = Blog::findOrFail($id);
         return view('pages.dashboard.program-detail',  compact('program'));
 
     }
@@ -105,7 +106,7 @@ class ProgramController extends Controller
     public function edit(string $id)
     {
         //
-        $program = Program::findOrFail($id);
+        $program = Blog::findOrFail($id);
         $isEditing = true;
 
         return view('pages.dashboard.form-program', compact('isEditing', 'program'));
@@ -117,7 +118,7 @@ class ProgramController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $program = Program::findOrFaill($id);
+        $program = Blog::findOrFaill($id);
 
         $validated = $request->validate([
             'title' => 'required|string',
@@ -157,10 +158,11 @@ class ProgramController extends Controller
 
 
         // Save to database
-        Program::create([
+        Blog::create([
             'title' => $validated['title'],
-            'description' => $content,
-            'gambar' => $imagePath,
+            'content' => $content,
+            'thumbnail' => $imagePath,
+            'category' => "category",
             'profile_calon_id' => "1",
         ]);
     
@@ -174,7 +176,7 @@ class ProgramController extends Controller
     {
         //
         //get program by ID
-        Program::findOrFail($id)->delete();
+        Blog::findOrFail($id)->delete();
         //redirect to
         return redirect(Auth::user()->role. '/program')->with('success', 'Data Berhasil Dihapus!');
     }

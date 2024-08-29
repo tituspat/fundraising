@@ -74,8 +74,8 @@
             </div>
             <div>
                 <ul class="flex flex-col gap-3 font-bold">
-                    <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Quick Menu</li>
-                    <li><a href="/" class="inline-block transition hover:scale-110 hover:text-secondary">Home</a></li>
+                    <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Daftar Menu</li>
+                    <li><a href="/" class="inline-block transition hover:scale-110 hover:text-secondary">Beranda</a></li>
                     {{--<li><a href="#" class="inline-block transition hover:scale-110 hover:text-secondary">Profile</a></li>
                     <li><a href="#" class="inline-block transition hover:scale-110 hover:text-secondary">Media</a></li>
                     <li><a href="#" class="inline-block transition hover:scale-110 hover:text-secondary">FAQ</a></li>--}}
@@ -115,7 +115,7 @@
             </div>
             <div>
                 <ul class="flex flex-col gap-3 font-bold">
-                    <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Information</li>
+                    <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Informasi</li>
                     <li>Tabanan, Bali, Indonesia - 82115</li>
                     <li>
                         <!-- <a href="tel:+(617) 254-2333" class="inline-block transition hover:scale-110 hover:text-secondary">(+62) 812-3456-7890</a> -->
