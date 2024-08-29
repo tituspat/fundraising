@@ -13,14 +13,47 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    // public function index()
+    // {
+    //     // Mengambil data dari table users
+    //     $users = User::all();
+    //     $admincount = User::where('role', 'admin')->count();
+    //     $modcount = User::where('role', 'mod')->count();
+    //     $mediacount = User::where('role', 'media')->count();
+    //     $membercount = User::where('role', 'member')->count();
+
+    //     return view('pages.dashboard.users-datatable', [
+    //         'users' => $users,
+    //         'admincount' => $admincount,
+    //         'modcount' => $modcount,
+    //         'mediacount' => $mediacount,
+    //         'membercount' => $membercount,
+    //     ]);
+    // }
+
+    public function index(Request $request)
     {
-        // Mengambil data dari table users
-        $users = User::all();
+        $search = $request->input('search');
+        $roleFilter = $request->input('role_filter');
+
+        $query = User::query();
+
+        if ($search) {
+            $query->where('name', 'like', "%{$search}%");
+        }
+
+        if ($roleFilter) {
+            $query->where('role', $roleFilter);
+        }
+
+        $users = $query->get();
+
         $admincount = User::where('role', 'admin')->count();
         $modcount = User::where('role', 'mod')->count();
         $mediacount = User::where('role', 'media')->count();
         $membercount = User::where('role', 'member')->count();
+
+        $roles = Role::all();
 
         return view('pages.dashboard.users-datatable', [
             'users' => $users,
@@ -28,8 +61,12 @@ class UsersController extends Controller
             'modcount' => $modcount,
             'mediacount' => $mediacount,
             'membercount' => $membercount,
+            'roles' => $roles,
+            'search' => $search,
+            'roleFilter' => $roleFilter
         ]);
     }
+
 
     /**
      * Show the form for updating the user resource.
