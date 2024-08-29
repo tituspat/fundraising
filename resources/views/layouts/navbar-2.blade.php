@@ -78,9 +78,9 @@
                     </li>
                     @else
                     <li>
-                        <a class="transition duration-500 hover:bg-secondary text-white font-bold py-2 px-4 rounded" href="/login">
+                        {{--<a class="transition duration-500 hover:bg-secondary text-white font-bold py-2 px-4 rounded" href="/login">
                             Login
-                        </a>
+                        </a>--}}
                     </li>
                     @endif
 
