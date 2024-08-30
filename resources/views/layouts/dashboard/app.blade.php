@@ -10,6 +10,9 @@
    <meta name="keywords" content="hexadash, web development, UI components">
    <meta name="author" content="dashboardmarket.com">
    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
    <!-- Title -->
    <title>Dashboard</title>
 
@@ -21,6 +24,8 @@
    <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/quill.snow.css') }}">
    <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/svgMap.min.css') }}">
    <link rel="stylesheet" href="{{ asset('vendor/hexadash/assets/vendor_assets/css/tailwind.css')}}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
    <!-- endinject -->
 
    <!-- Fonts -->
@@ -73,6 +78,28 @@
    <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/main.js') }}"></script>
    <script src="{{ asset('vendor/hexadash/assets/theme_assets/js/svgMapData.js') }}"></script>
    <!-- endinject-->
+
+   <script>
+    function showTestimonialModal(testimonial, previewUrl, unpreviewUrl, isPreviewed) {
+       document.getElementById('testimonialDetail').innerText = testimonial;
+
+       if (isPreviewed) {
+          document.getElementById('previewForm').style.display = 'none';
+          document.getElementById('unpreviewForm').style.display = 'block';
+          document.getElementById('unpreviewForm').action = unpreviewUrl;
+       } else {
+          document.getElementById('unpreviewForm').style.display = 'none';
+          document.getElementById('previewForm').style.display = 'block';
+          document.getElementById('previewForm').action = previewUrl;
+       }
+
+       document.getElementById('testimonialModal').classList.remove('hidden');
+    }
+
+    document.getElementById('closeModal').addEventListener('click', function() {
+       document.getElementById('testimonialModal').classList.add('hidden');
+    });
+ </script>
 
 
 </body>
