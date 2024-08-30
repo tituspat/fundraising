@@ -45,11 +45,16 @@
                <div class="inline-flex items-center">
 
                </div>
-
-               <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
-                  <i class="uil uil-pen"></i>
-                  <span class="m-0">Edit</span>
-               </button>
+                <div class="flex flex-row gap-2">
+                    <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
+                        <i class="uil uil-pen"></i>
+                        <span class="m-0">Edit</span>
+                    </button>
+                    <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery/'.$gallery->id.'/delete/') }}'">
+                        <!-- <i class="uil uil-cross"></i> -->
+                        <span class="m-0">Delete</span>
+                    </button>
+                </div>
             </div>
             <div class="grid grid-cols-12 gap-[25px]">
                <div class="col-span-12 2xl:col-start-3 2xl:col-span-8">

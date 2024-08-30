@@ -15,7 +15,7 @@ class PublicBlogController extends Controller
     {
         //
 
-        $blogs = Blog::all();
+        $blogs = Blog::where('category', "=", "blog")->where("is_previewed", "=", true)->get();
         return view('blog', compact('blogs'));
     }
 

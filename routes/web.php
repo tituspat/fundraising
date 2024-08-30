@@ -44,7 +44,9 @@ Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
 Route::post('questions', [QuestionController::class, 'store'])->name('questions.store');
 Route::get('/foto', [GalleryController::class, 'showPhoto'])->name('foto.index');
+// Route::get('/foto/{id}', [GalleryController::class, 'showPhoto'])->name('foto.index');
 Route::get('/video', [GalleryController::class, 'showVideo'])->name('video.index');
+Route::get('/video/{id}', [GalleryController::class, 'showVideo'])->name('video.index');
 Route::get('/program', [PublicProgramController::class, 'index'])->name('program.index');
 Route::get('/program/{id}', [PublicProgramController::class, 'show'])->name('program.show');
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
@@ -79,6 +81,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
       Route::get('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
       Route::post('/video/store', [GalleryController::class, 'vidStore'])->name('video.store');
+      Route::get('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('gallery.delete');
+      Route::get('/gallery/visibility/{id}', [GalleryController::class, 'toggleVisibility'])->name('gallery.toggleVisibility');
       // berita
       Route::get('/berita', [NewsCrawlerController::class, 'index'])->name('berita');
       Route::get('/berita/tambah', [NewsCrawlerController::class, 'create'])->name('berita.create');
@@ -86,6 +90,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/berita/store', [NewsCrawlerController::class, 'store'])->name('berita.store');
       Route::get('/berita/tampilkan/{id}', [NewsCrawlerController::class, 'tampilkan'])->name('berita.tampilkan');
       Route::get('/berita/sembunyikan/{id}', [NewsCrawlerController::class, 'sembunyikan'])->name('berita.sembunyikan');
+      // testimoni
       Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimoni');
       Route::post('/testimoni/store', [TestimonialController::class, 'store'])->name('testimoni.store');
       Route::get('/testimoni/edit', [TestimonialController::class, 'edit'])->name('testimoni.edit');

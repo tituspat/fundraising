@@ -168,7 +168,8 @@ class GalleryController extends Controller
         $gallery->update([
         'title' => $request->title,
         'description' => $request->description,
-        'url' => $imagePath
+        'url' => 'storage/' .$imagePath,
+        'thumbnail' => 'storage/' .$imagePath
         ]);
 
         return redirect(Auth::user()->role. '/gallery')
@@ -181,6 +182,13 @@ class GalleryController extends Controller
     public function destroy(string $id)
     {
         //
+        
+        //get user by ID
+        Gallery::findOrFail($id)->delete();
+
+        //redirect to
+        return redirect(Auth::user()->role. '/gallery')->with('success', 'Data Berhasil Dihapus!');
+
     }
 
     /**
@@ -247,5 +255,21 @@ class GalleryController extends Controller
 
         
         return redirect()->route(Auth::user()->role . '.gallery')->with('success', 'Berita berhasil disimpan');
+    }
+
+        /**
+     * Remove the specified resource from storage.
+     */
+    public function toggleVisibility(string $id)
+    {
+        
+        //get user by ID
+        $gallery = Gallery::findOrFail($id);
+
+        $gallery->is_previewed = !$gallery->is_previewed;
+        $gallery->save();
+
+        //redirect to
+        return redirect()->back()->with('success', 'changed');
     }
 }

@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Photo;
+use App\Models\Gallery;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PhotoController extends Controller
+class PublicPhotoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('foto', []);
+        $galleries = Gallery::where('media', '=', 'photo')->where('is_previewed', '=', true);
+
+        return view('foto', compact('galleries'));
     }
 
     /**
