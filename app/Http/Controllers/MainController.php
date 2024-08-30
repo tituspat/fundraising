@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProfileCalon;
+use App\Models\Misi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -16,23 +18,20 @@ class MainController extends Controller
     public function index()
     {
         // Mengambil data calon
-        $calon = DB::table('profile_calons')->first();
-
-        // Pisahkan misi menjadi array berdasarkan tanda ";"
-        $misiArray = explode(';', $calon->misi);
+        $calon = ProfileCalon::get()->first();
+        $misis = misi::all();
 
         // mengambil data dari table program
-    	$programs = DB::table('programs')->where('profile_calon_id', '=', 1)->get();
+    	$blogs = DB::table('blogs')->where('category', '=', "program")->get();
 
         // mengambil data dari table testimonial
     	$testimonial = DB::table('testimonials')->get();
 
         return view('index', [
-            'programs' => $programs,
+            'blogs' => $blogs,
             'testimonials' => $testimonial,
             'nama_calon' => $calon->nama_calon,
-            'visi' => $calon->visi,
-            'misi' => $misiArray,
+            'misis' => $misis,
             'profile' => $calon->profile,
             'foto_calon' => $calon->foto_calon,
         ]);

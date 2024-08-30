@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('programs', function (Blueprint $table) {
+        Schema::create('misis', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->longText('gambar');
-            $table->bigInteger('profile_calon_id')->default(1);
+            $table->text('icon');
+            $table->string('head_misi');
+            $table->string('body_misi');
+            // $table->string('icon_misi');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('programs');
+        Schema::dropIfExists('misis');
     }
 };

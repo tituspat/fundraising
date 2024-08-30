@@ -18,7 +18,7 @@ class BlogController extends Controller
     public function index()
     {
         //
-        $blogs = Blog::all();
+        $blogs = Blog::where('category', '=', 'blog')->get();
 
         return view('pages.dashboard.blog', compact('blogs'));
     }
@@ -175,8 +175,11 @@ class BlogController extends Controller
             'content' => $content,
             'thumbnail' => $thumbnail,
             'category' => "blog",
-            'created_by' => $validated['creator'],
+            // 'created_by' => $request->creator,
             ]);
+        // Atur is_previewed menjadi false
+        $blog->is_previewed = false;
+        $blog->save();
     
             return redirect(Auth::user()->role. '/blog')
                              ->with('success', 'Blog created successfully.');
@@ -194,4 +197,22 @@ class BlogController extends Controller
         //redirect to
         return redirect(Auth::user()->role. '/blog')->with('success', 'Data Berhasil Dihapus!');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function toggleVisibility(string $id)
+    {
+        
+        //get user by ID
+        $blog = Blog::findOrFail($id);
+
+        $blog->is_previewed = !$blog->is_previewed;
+        $blog->save();
+
+        //redirect to
+        return redirect()->back()->with('success', 'changed');
+    }
+
+    
 }

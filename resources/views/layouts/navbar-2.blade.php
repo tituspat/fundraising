@@ -21,10 +21,10 @@
                     </div>
                     <ul>
                         <li><a href="/">Beranda</a></li>
-                        {{--<li>
+                        <li>
                             <a href="#">Profile</a>
-                        </li>--}}
-                        {{--<li class="group relative">
+                        </li>
+                        <li class="group relative">
                             <a href="javascript:;">
                                 Galeri
                                 <div class="group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
@@ -44,25 +44,22 @@
                                 <a href="/video" style="text-align: center;">Video</a>
                                 <a href="/blog"  style="text-align: center;">Blog</a>
                             </div>
-                        </li>--}}
+                        </li>
 
-                        <!-- <li>
+                        <li>
                             <a href="/program">Program</a>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <a href="/berita">Berita</a>
-                        </li> -->
-                        {{--<li>
-                            <a href="#">Dukungan</a>
-                        </li>--}}
-
-                        <!-- <li>
+                        </li>
+                        
+                        <li>
                             <a href="/testimoni">Testimoni</a>
-                        </li> -->
+                        </li>
 
-                        <!-- <li>
+                        <li>
                             <a href="/faqs">FAQ</a>
-                        </li> -->
+                        </li>
                         <li
                             class="relative hidden items-center before:absolute before:top-1/2 before:h-[30px] before:w-[2px] before:-translate-y-1/2 before:bg-gray/30 ltr:pl-9 ltr:before:-left-[2px] rtl:pr-9 rtl:before:-right-[2px] lg:inline-flex"
                         >

@@ -108,12 +108,14 @@ class GalleryController extends Controller
     $mediaType = $request->hasFile('image') ? 'photo' : 'video';
 
     $imagePath = $request->hasFile('image') ? $request->file('image')->store('gallery_images', 'public') : null;
+    $imagePath = "storage/" . $imagePath;
     $videoUrl = $request->input('url');
 
     Gallery::create([
         'title' => $request->title,
         'description' => $request->description,
         'url' => $mediaType === 'photo' ? $imagePath : $videoUrl,
+        'thumbnail' => $mediaType === 'photo' ? $imagePath : $videoUrl,
         'media' => $mediaType,
     ]);
 
@@ -244,6 +246,6 @@ class GalleryController extends Controller
         ]);
 
         
-        // return redirect()->route(Auth::user()->role . '.gallery')->with('success', 'Berita berhasil disimpan');
+        return redirect()->route(Auth::user()->role . '.gallery')->with('success', 'Berita berhasil disimpan');
     }
 }

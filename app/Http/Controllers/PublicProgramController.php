@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Program;
+use App\Models\Blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,9 +15,9 @@ class PublicProgramController extends Controller
     {
         
         //
-        $programs = Program::all();
+        $program = Blog::where('category', '=', 'program');
 
-        return view('program-detail', compact('programs'));
+        return view('program-detail', compact('program'));
         
     }
 
@@ -40,10 +40,10 @@ class PublicProgramController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Program $id)
+    public function show(Blog $id)
     {
         //
-        $program = Program::findOrFail($id);
+        $program = Blog::findOrFail($id);
 
         return view('program-detail', compact('program'));
     }

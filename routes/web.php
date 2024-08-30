@@ -67,11 +67,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/users', [UsersController::class, 'index'])->name('users');
       Route::get('/users/delete/{id}', [UsersController::class, 'destroy'])->name('users.delete');
       Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');
-      Route::post('/users/add', [UsersController::class, 'store'])->name('users.add');
-      Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-      Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
       Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('profile-calon');
       Route::put('/profile-calon/update', [ProfileCalonController::class, 'update'])->name('calon.update');
+      // gallery
       Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
       Route::get('/gallery/tambah', [GalleryController::class, 'create'])->name('gallery.create');
       Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
@@ -81,6 +79,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
       Route::get('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
       Route::post('/video/store', [GalleryController::class, 'vidStore'])->name('video.store');
+      // berita
       Route::get('/berita', [NewsCrawlerController::class, 'index'])->name('berita');
       Route::get('/berita/tambah', [NewsCrawlerController::class, 'create'])->name('berita.create');
       Route::post('/berita/preview', [NewsCrawlerController::class, 'preview'])->name('berita.preview');
@@ -115,6 +114,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
       Route::post('/blog/{id}/update', [BlogController::class, 'update'])->name('blog.update');
       Route::get('/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blog.delete');
+      Route::get('/blog/visibility/{id}', [BlogController::class, 'toggleVisibility'])->name('blog.toggleVisibility');
     });
 
     // mod

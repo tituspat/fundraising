@@ -104,11 +104,11 @@
                               <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery') }}'">Cancel</button>
                               <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">save</button>
                            </div>
-                        @else
+                    @else
                         <div class="mb-[25px]">
                             <div class="max-h-[450px] rounded-10">
-                                @if($gallery->media=='foto')
-                                <img src="{{ Storage::url($gallery->url) }}" style="width:970px; height:450px" alt="gallery-details" class="object-cover w-full h-full">
+                                @if($gallery->media=='photo')
+                                <img src="{{ asset($gallery->url) }}" style="width:970px; height:450px" alt="gallery-details" class="object-cover w-full h-full">
                                 @elseif($gallery->media=='video')
                                 <iframe src="{{ $gallery->url }}" style="height:450px" class="object-cover w-full h-full" title="{{$gallery->title}}"></iframe>
                                 @endif
@@ -202,7 +202,7 @@
                                 </ul>
                               </div>
                         </div>
-                        @endif
+                    @endif
                      </div>
                   </div>
                </div>

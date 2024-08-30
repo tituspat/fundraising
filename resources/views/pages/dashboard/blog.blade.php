@@ -58,7 +58,7 @@
                <div class="col-span-12 xl:col-span-4 md:col-span-6">
 
                   <!-- Blog Post -->
-                  <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
+                  <figure style="background-color: {{ $blog->is_previewed ? '#ffffff' : '#FBC02D' }}" class="p-6 mb-0 group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Blog Image -->
@@ -77,14 +77,14 @@
                         <!-- Blog Excerpt -->
                         {{-- <p class="mb-4 text-base text-dark dark:text-title-dark">{{$blog->content}}</p> --}}
                         <!-- Author and Engagement -->
-                        {{--<div class="flex justify-between">
+                        <div class="flex justify-between">
                            <!-- Author Information -->
                            <div class="flex items-center gap-x-4">
                               <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t1.jpg') }}">
                               <span class="text-light dark:text-subtitle-dark text-15">Machel Bold</span>
                            </div>
                            <!-- Engagement Metrics -->
-                           <ul class="flex items-center gap-[8px]">
+                           {{--<ul class="flex items-center gap-[8px]">
                               <!-- Likes -->
                               <li>
                                  <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
@@ -99,8 +99,15 @@
                                     <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">20k</span>
                                  </span>
                               </li>
-                           </ul>
-                        </div>--}}
+                           </ul>--}}
+                        </div>
+                        
+                        <div class="mt-4">
+                        <!-- Tampilkan Button -->
+                        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/blog/visibility', $blog->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
+                           {{ $blog->is_previewed ? 'Sembunyikan' : 'Tampilkan' }}
+                        </button>
+                     </div>
                      </figcaption>
                   </figure>
 

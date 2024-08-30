@@ -17,6 +17,7 @@ return new class extends Migration
             $table->longText('content')->nullable(); // description column, nullable
             $table->string('category')->nullable(); // description column, nullable
             $table->string('thumbnail')->nullable(); // description column, nullable
+            $table->boolean('is_previewed')->default(false); // description column, nullable
             $table->string('created_by'); // 
             $table->timestamps();
         });

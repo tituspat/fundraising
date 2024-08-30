@@ -83,7 +83,7 @@
                                     {{--<li class="relative m-1 ps-2.5 text-light dark:text-subtitle-dark text-15 before:absolute before:h-1 before:w-1 before:start-0 before:top-1/2 before:-translate-y-1/2 before:bg-light before:rounded-full">6 mins read</li>--}}
                                     <!-- Display the reading time -->
                                 </ul>
-                                <div class="content">
+                                <div class="content bg-white p-6 rounded-10">
                                     {!! $blog->content !!}
                                 </div>
                             </ul>
