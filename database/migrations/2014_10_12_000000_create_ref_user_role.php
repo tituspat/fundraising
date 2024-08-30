@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('programs', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->longText('description');
-            $table->timestamps();
+        Schema::create('ref_user_roles', function (Blueprint $table) {
+            $table->id(); // Kolom ID sebagai primary key
+            $table->string('role')->unique(); // Kolom role yang unik
+            $table->timestamps(); // Kolom created_at dan updated_at
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('programs');
+        Schema::dropIfExists('ref_user_roles');
     }
 };

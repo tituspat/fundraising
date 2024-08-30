@@ -20,13 +20,13 @@
                         </button>
                     </div>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        {{-- <li>
+                        <li><a href="/">Beranda</a></li>
+                        <!-- <li>
                             <a href="#">Profile</a>
                         </li>
                         <li class="group relative">
                             <a href="javascript:;">
-                                Feeds
+                                Galeri
                                 <div class="group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -40,29 +40,26 @@
                                 </div>
                             </a>
                             <div class="submenu">
-                                <a href="crypto.html">Foto</a>
-                                <a href="modern-saas.html">Video</a>
-                                <a href="real-estate.html">Blog</a>
+                                <a href="/foto"  style="text-align: center;">Foto</a>
+                                <a href="/video" style="text-align: center;">Video</a>
+                                <a href="/blog"  style="text-align: center;">Blog</a>
                             </div>
                         </li>
 
                         <li>
-                            <a href="#">Program</a>
+                            <a href="/program">Program</a>
                         </li>
                         <li>
-                            <a href="#">Berita</a>
+                            <a href="/berita">Berita</a>
                         </li>
+                        
                         <li>
-                            <a href="#">Dukungan</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Testimoni</a>
+                            <a href="/testimoni">Testimoni</a>
                         </li>
 
                         <li>
-                            <a href="#">FAQ</a>
-                        </li>--}}
+                            <a href="/faqs">FAQ</a>
+                        </li> -->
                         <li
                             class="relative hidden items-center before:absolute before:top-1/2 before:h-[30px] before:w-[2px] before:-translate-y-1/2 before:bg-gray/30 ltr:pl-9 ltr:before:-left-[2px] rtl:pr-9 rtl:before:-right-[2px] lg:inline-flex"
                         >
@@ -70,7 +67,7 @@
                     </ul>
                 </div>
                 <ul class="flex items-center gap-5 ltr:pr-5 rtl:pl-5 ltr:lg:pl-5 ltr:lg:pr-0 rtl:lg:pr-5 rtl:lg:pl-0">
-                    {{--@if(Auth::check())
+                    @if(Auth::check())
                     <li>
                         <a class="transition duration-500 hover:bg-secondary text-white font-bold py-2 px-4 rounded" href="/{{ Auth::user()->role }}/dashboard">
                             Dashboard
@@ -78,11 +75,11 @@
                     </li>
                     @else
                     <li>
-                        <a class="transition duration-500 hover:bg-secondary text-white font-bold py-2 px-4 rounded" href="/login">
+                        {{--<a class="transition duration-500 hover:bg-secondary text-white font-bold py-2 px-4 rounded" href="/login">
                             Login
-                        </a>
+                        </a>--}}
                     </li>
-                    @endif--}}
+                    @endif
 
                     <li>
                         <button

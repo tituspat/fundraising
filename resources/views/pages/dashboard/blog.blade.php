@@ -46,7 +46,7 @@
                         
                </div>
                   
-               <button type="button" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
+               <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/blog/tambah') }}'" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
                   <i class="uil uil-plus"></i>
                   <span class="m-0">Buat Blog</span>
                </button>
@@ -54,34 +54,28 @@
 
             <div class="grid grid-cols-12 md:gap-x-[25px] gap-y-[25px]">
 
-
+               @foreach($blogs as $blog)
                <div class="col-span-12 xl:col-span-4 md:col-span-6">
 
                   <!-- Blog Post -->
-                  <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
+                  <figure style="background-color: {{ $blog->is_previewed ? '#ffffff' : '#FBC02D' }}" class="p-6 mb-0 group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/1.png') }}">
+                        <img alt="hexadash Blog" class="w-full h-auto rounded-10 object-contain" style="height: 220px" src="{{ asset($blog->thumbnail) }}">
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">
                         <!-- Date -->
                         <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
-
-
-
-                           <span class="inline-block text-light dark:text-subtitle-dark text-15">15 March 2023</span>
-
-
-
+                           <span class="inline-block text-light dark:text-subtitle-dark text-15">{{$blog->created_at}}</span>
                         </div>
                         <!-- Blog Title -->
                         <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
-                           <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="blog-details.html">Multiple Dashboard Design Idea</a>
+                           <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="/{{Auth::user()->role}}/blog/{{$blog->id}}/detail">{{$blog->title}}</a>
                         </h2>
                         <!-- Blog Excerpt -->
-                        <p class="mb-4 text-base text-dark dark:text-title-dark">There are many variations of passages of majority have suffered alteration in some form</p>
+                        {{-- <p class="mb-4 text-base text-dark dark:text-title-dark">{{$blog->content}}</p> --}}
                         <!-- Author and Engagement -->
                         <div class="flex justify-between">
                            <!-- Author Information -->
@@ -90,7 +84,7 @@
                               <span class="text-light dark:text-subtitle-dark text-15">Machel Bold</span>
                            </div>
                            <!-- Engagement Metrics -->
-                           <ul class="flex items-center gap-[8px]">
+                           {{--<ul class="flex items-center gap-[8px]">
                               <!-- Likes -->
                               <li>
                                  <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
@@ -105,298 +99,22 @@
                                     <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">20k</span>
                                  </span>
                               </li>
-                           </ul>
+                           </ul>--}}
                         </div>
-                     </figcaption>
-                  </figure>
-
-               </div>
-
-               <div class="col-span-12 xl:col-span-4 md:col-span-6">
-
-                  <!-- Blog Post -->
-                  <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
-                     <!-- Image Container -->
-                     <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
-                        <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/2.png') }}">
+                        
+                        <div class="mt-4">
+                        <!-- Tampilkan Button -->
+                        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/blog/visibility', $blog->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
+                           {{ $blog->is_previewed ? 'Sembunyikan' : 'Tampilkan' }}
+                        </button>
                      </div>
-                     <!-- Caption and Metadata -->
-                     <figcaption class="">
-                        <!-- Date -->
-                        <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
-
-
-
-                           <span class="inline-block text-light dark:text-subtitle-dark text-15">20 March 2023</span>
-
-
-
-                        </div>
-                        <!-- Blog Title -->
-                        <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
-                           <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="blog-details.html">Creating Stunning User Interfaces</a>
-                        </h2>
-                        <!-- Blog Excerpt -->
-                        <p class="mb-4 text-base text-dark dark:text-title-dark">A guide to creating responsive web designs using CSS and media queries.</p>
-                        <!-- Author and Engagement -->
-                        <div class="flex justify-between">
-                           <!-- Author Information -->
-                           <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t2.jpg') }}">
-                              <span class="text-light dark:text-subtitle-dark text-15">John Doe</span>
-                           </div>
-                           <!-- Engagement Metrics -->
-                           <ul class="flex items-center gap-[8px]">
-                              <!-- Likes -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-heart group-hover:text-danger"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">12k</span>
-                                 </span>
-                              </li>
-                              <!-- Views -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-file-info-alt group-hover:text-info"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">18k</span>
-                                 </span>
-                              </li>
-                           </ul>
-                        </div>
                      </figcaption>
                   </figure>
 
                </div>
+               @endforeach
 
-               <div class="col-span-12 xl:col-span-4 md:col-span-6">
-
-                  <!-- Blog Post -->
-                  <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
-                     <!-- Image Container -->
-                     <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
-                        <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/3.png') }}">
-                     </div>
-                     <!-- Caption and Metadata -->
-                     <figcaption class="">
-                        <!-- Date -->
-                        <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
-
-
-
-                           <span class="inline-block text-light dark:text-subtitle-dark text-15">25 March 2023</span>
-
-
-
-                        </div>
-                        <!-- Blog Title -->
-                        <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
-                           <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="blog-details.html">Responsive Web Design Techniques</a>
-                        </h2>
-                        <!-- Blog Excerpt -->
-                        <p class="mb-4 text-base text-dark dark:text-title-dark">A guide to creating responsive web designs using CSS and media queries.</p>
-                        <!-- Author and Engagement -->
-                        <div class="flex justify-between">
-                           <!-- Author Information -->
-                           <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t3.jpg') }}">
-                              <span class="text-light dark:text-subtitle-dark text-15">Jane Smith</span>
-                           </div>
-                           <!-- Engagement Metrics -->
-                           <ul class="flex items-center gap-[8px]">
-                              <!-- Likes -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-heart group-hover:text-danger"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">8k</span>
-                                 </span>
-                              </li>
-                              <!-- Views -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-file-info-alt group-hover:text-info"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">15k</span>
-                                 </span>
-                              </li>
-                           </ul>
-                        </div>
-                     </figcaption>
-                  </figure>
-
-               </div>
-
-               <div class="col-span-12 xl:col-span-4 md:col-span-6">
-
-                  <!-- Blog Post -->
-                  <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
-                     <!-- Image Container -->
-                     <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
-                        <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/1.png') }}">
-                     </div>
-                     <!-- Caption and Metadata -->
-                     <figcaption class="">
-                        <!-- Date -->
-                        <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
-
-
-
-                           <span class="inline-block text-light dark:text-subtitle-dark text-15">30 March 2023</span>
-
-
-
-                        </div>
-                        <!-- Blog Title -->
-                        <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
-                           <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="blog-details.html">Building Cross-Platform Mobile Apps</a>
-                        </h2>
-                        <!-- Blog Excerpt -->
-                        <p class="mb-4 text-base text-dark dark:text-title-dark">Learn how to develop mobile apps that work on both iOS and Android platforms.</p>
-                        <!-- Author and Engagement -->
-                        <div class="flex justify-between">
-                           <!-- Author Information -->
-                           <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t4.jpg') }}">
-                              <span class="text-light dark:text-subtitle-dark text-15">Sarah Johnson</span>
-                           </div>
-                           <!-- Engagement Metrics -->
-                           <ul class="flex items-center gap-[8px]">
-                              <!-- Likes -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-heart group-hover:text-danger"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">10k</span>
-                                 </span>
-                              </li>
-                              <!-- Views -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-file-info-alt group-hover:text-info"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">17k</span>
-                                 </span>
-                              </li>
-                           </ul>
-                        </div>
-                     </figcaption>
-                  </figure>
-
-               </div>
-
-               <div class="col-span-12 xl:col-span-4 md:col-span-6">
-
-                  <!-- Blog Post -->
-                  <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
-                     <!-- Image Container -->
-                     <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
-                        <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/2.png') }}">
-                     </div>
-                     <!-- Caption and Metadata -->
-                     <figcaption class="">
-                        <!-- Date -->
-                        <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
-
-
-
-                           <span class="inline-block text-light dark:text-subtitle-dark text-15">5 April 2023</span>
-
-
-
-                        </div>
-                        <!-- Blog Title -->
-                        <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
-                           <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="blog-details.html">Exploring the Latest Web Design Trends</a>
-                        </h2>
-                        <!-- Blog Excerpt -->
-                        <p class="mb-4 text-base text-dark dark:text-title-dark">Stay up-to-date with the latest trends in web design and user experience.</p>
-                        <!-- Author and Engagement -->
-                        <div class="flex justify-between">
-                           <!-- Author Information -->
-                           <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t5.png') }}">
-                              <span class="text-light dark:text-subtitle-dark text-15">David Brown</span>
-                           </div>
-                           <!-- Engagement Metrics -->
-                           <ul class="flex items-center gap-[8px]">
-                              <!-- Likes -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-heart group-hover:text-danger"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">14k</span>
-                                 </span>
-                              </li>
-                              <!-- Views -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-file-info-alt group-hover:text-info"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">22k</span>
-                                 </span>
-                              </li>
-                           </ul>
-                        </div>
-                     </figcaption>
-                  </figure>
-
-               </div>
-
-               <div class="col-span-12 xl:col-span-4 md:col-span-6">
-
-                  <!-- Blog Post -->
-                  <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
-                     <!-- Image Container -->
-                     <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
-                        <!-- Blog Image -->
-                        <img alt="hexadash Blog" class="w-full rounded-10" src="{{ asset('vendor/hexadash/images/blogs/3.png') }}">
-                     </div>
-                     <!-- Caption and Metadata -->
-                     <figcaption class="">
-                        <!-- Date -->
-                        <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
-
-
-
-                           <span class="inline-block text-light dark:text-subtitle-dark text-15">10 April 2023</span>
-
-
-
-                        </div>
-                        <!-- Blog Title -->
-                        <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
-                           <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="blog-details.html">Effective Programming Tips for Beginners</a>
-                        </h2>
-                        <!-- Blog Excerpt -->
-                        <p class="mb-4 text-base text-dark dark:text-title-dark">Get valuable tips to kickstart your programming journey as a beginner.</p>
-                        <!-- Author and Engagement -->
-                        <div class="flex justify-between">
-                           <!-- Author Information -->
-                           <div class="flex items-center gap-x-4">
-                              <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t6.png') }}">
-                              <span class="text-light dark:text-subtitle-dark text-15">Alex Turner</span>
-                           </div>
-                           <!-- Engagement Metrics -->
-                           <ul class="flex items-center gap-[8px]">
-                              <!-- Likes -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-heart group-hover:text-danger"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">9k</span>
-                                 </span>
-                              </li>
-                              <!-- Views -->
-                              <li>
-                                 <span class="flex items-center leading-none gap-x-1 text-light dark:text-subtitle-dark text-13 group">
-                                    <i class="uil uil-file-info-alt group-hover:text-info"></i>
-                                    <span class="flex items-center leading-none text-light dark:text-subtitle-dark text-13">16k</span>
-                                 </span>
-                              </li>
-                           </ul>
-                        </div>
-                     </figcaption>
-                  </figure>
-
-               </div>
-
+               
             </div>
 
          </div>

@@ -21,9 +21,28 @@ class AuthenticatedSessionController extends Controller
     }
 
     /**
+     * Display the login view.
+     */
+    public function create_timses(): View
+    {
+        return view('auth.login');
+    }
+
+    /**
      * Handle an incoming authentication request.
      */
     public function store(LoginRequest $request): RedirectResponse
+    {
+        $request->authenticate();
+
+        $request->session()->regenerate();
+
+        $url = "/dashboard";
+
+        return redirect()->intended($url);
+    }
+
+    public function store_timses(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
 
@@ -39,7 +58,7 @@ class AuthenticatedSessionController extends Controller
         }else{
             $url = "/dashboard";  
         }
-
+        
         return redirect()->intended($url);
     }
 

@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turut berkontribusi mewujudkan Tabanan yang sejahtera bersama SAHABAT Tabanan.">
+    <meta property="og:title" content="I Gede Putu Atma Giri | Sahabat Tabanan">
+    <meta property="og:description" content="Turut berkontribusi mewujudkan Tabanan yang sejahtera bersama SAHABAT Tabanan.">
     <title>Sahabat Tabanan</title>
     <!-- Favicon -->
     <link rel="icon" type="icon" href="{{asset('img/logo-sahabat-tabanan.png')}}" />
@@ -20,7 +23,7 @@
 
 
 </head>
-<body>
+<body class="overflow-x-hidden">
 
     @yield('content')
 
@@ -41,7 +44,7 @@
             </svg>
         </div>
     </button>
-    
+
     <!-- Swiper Slider JS -->
     <script src="{{ asset('vendor/plurk/js/swiper-bundle.min.js') }}"></script>
     <!-- Counter Js -->

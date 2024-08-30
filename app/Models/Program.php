@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Program extends Model
 {
     use HasFactory;
+
+       /**
+     * fillable
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title',
+        'gambar',
+        'description',
+    ];
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }

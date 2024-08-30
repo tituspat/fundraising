@@ -13,9 +13,22 @@ class ProfileCalonController extends Controller
      */
     public function index()
     {
-        //
-    }
+        // Ambil data calon dari database (misalkan hanya ada satu calon)
+        $calon = ProfileCalon::first();
 
+        // Pisahkan misi menjadi array berdasarkan tanda ";"
+        $misiArray = explode(';', $calon->misi);
+
+        // Kirim data ke view
+        return view('calon.profile', [
+            'nama_calon' => $calon->nama_calon,
+            'visi' => $calon->visi,
+            'misi' => $misiArray,
+            'profile' => $calon->profile,
+            'created_at' => $calon->created_at,
+            'updated_at' => $calon->updated_at,
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      */

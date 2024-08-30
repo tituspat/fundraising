@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProfileCalon;
+use App\Models\Misi;
+use App\Models\Berita;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,14 +18,28 @@ class MainController extends Controller
      */
     public function index()
     {
+        // Mengambil data calon
+        $calon = ProfileCalon::get()->first();
+        $misis = Misi::all();
+        $beritas = Berita::latest()->take(3)->get();
+
         // mengambil data dari table program
-    	$programUtama = DB::table('programs')->where('id',  1)->get();
-    	$program = DB::table('programs')->where('id', '>', 1)->get();
+    	$blogs = DB::table('blogs')->where('category', '=', "program")->get();
 
         // mengambil data dari table testimonial
     	$testimonial = DB::table('testimonials')->get();
 
-        return view('index', ['program' => $program, 'programUtama'=>$programUtama, 'testimonials' => $testimonial ]);
+        return view('index', [
+            'blogs' => $blogs,
+            'beritas' => $beritas,
+            'testimonials' => $testimonial,
+            'nama_calon' => $calon->nama_calon,
+            'misis' => $misis,
+            'profile' => $calon->profile,
+            'foto_calon' => $calon->foto_calon,
+        ]);
+
+        // return view('index', ['programs'=>$programs, 'testimonials' => $testimonial ]);
     }
 
     /**

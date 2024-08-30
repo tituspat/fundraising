@@ -17,9 +17,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['admin', 'mod', 'media', 'member'])->default('member');
+            $table->unsignedBigInteger('role_id')->nullable()->default('4');
+            $table->string('role')->default('member');
             $table->rememberToken();
             $table->timestamps();
+
+
+            $table->foreign('role_id')->references('id')->on('ref_user_roles')->onDelete('set null');
         });
     }
 
@@ -28,6 +32,12 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['role_id']);
+            $table->dropColumn('role_id');
+
+        });
+
         Schema::dropIfExists('users');
     }
 };
