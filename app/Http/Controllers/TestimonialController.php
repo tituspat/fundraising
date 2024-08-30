@@ -29,7 +29,7 @@ class TestimonialController extends Controller
 
     public function edit()
     {
-        $testimonials = Testimonial::with('user')->get();
+        $testimonials = Testimonial::with('user')->where('is_previewed', 1)->get();
         $userTestimonial = Testimonial::where('user_id', Auth::id())->first();
         $isEditing = true;
 

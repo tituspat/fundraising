@@ -32,40 +32,45 @@ class UsersController extends Controller
     // }
 
     public function index(Request $request)
-    {
-        $search = $request->input('search');
-        $roleFilter = $request->input('role_filter');
+{
+    $search = $request->input('search');
+    $roleFilter = $request->input('role_filter');
 
-        $query = User::query();
+    $query = User::query();
 
-        if ($search) {
-            $query->where('name', 'like', "%{$search}%");
-        }
-
-        if ($roleFilter) {
-            $query->where('role', $roleFilter);
-        }
-
-        $users = $query->get();
-
-        $admincount = User::where('role', 'admin')->count();
-        $modcount = User::where('role', 'mod')->count();
-        $mediacount = User::where('role', 'media')->count();
-        $membercount = User::where('role', 'member')->count();
-
-        $roles = Role::all();
-
-        return view('pages.dashboard.users-datatable', [
-            'users' => $users,
-            'admincount' => $admincount,
-            'modcount' => $modcount,
-            'mediacount' => $mediacount,
-            'membercount' => $membercount,
-            'roles' => $roles,
-            'search' => $search,
-            'roleFilter' => $roleFilter
-        ]);
+    // Filter by name if search parameter is provided
+    if ($search) {
+        $query->where('name', 'like', "%{$search}%");
     }
+
+    // Filter by role if role_filter parameter is provided
+    if ($roleFilter) {
+        $query->where('role', $roleFilter);
+    }
+
+    $users = $query->get();
+
+    // Get count for each role
+    $admincount = User::where('role', 'admin')->count();
+    $modcount = User::where('role', 'mod')->count();
+    $mediacount = User::where('role', 'media')->count();
+    $membercount = User::where('role', 'member')->count();
+
+    // Get all roles for filtering
+    $roles = Role::all();
+
+    return view('pages.dashboard.users-datatable', [
+        'users' => $users,
+        'admincount' => $admincount,
+        'modcount' => $modcount,
+        'mediacount' => $mediacount,
+        'membercount' => $membercount,
+        'roles' => $roles,
+        'search' => $search,
+        'roleFilter' => $roleFilter
+    ]);
+}
+
 
 
     /**

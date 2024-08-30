@@ -22,10 +22,10 @@
                                     <i class="uil uil-estate text-light dark:text-white/50 me-[8px] text-[16px] group-hover:text-current"></i>Dashboard</a>
                               </li>
                               <!-- Middle (Conditional) -->
-
+{{--
                               <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]">
                                  <span class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 transition duration-300 capitalize">Pages</span>
-                              </li>
+                              </li> --}}
 
                               <!-- Child (Current Page) -->
                               <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]" aria-current="page">
@@ -61,8 +61,9 @@
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Gallery Image -->
-                        @if($gallery->media== "photo")
-                        <img alt="hexadash Gallery" style="width: 460px; height: 220px" class="w-full rounded-10" src="{{ asset( $gallery->url ) }}">
+                         @if($gallery->media== "foto")
+                        <img alt="hexadash Gallery" style="width: 460px; height: 220px" class="w-full rounded-10" src="{{ Storage::url($gallery->url) }}">
+
                         @elseif($gallery->media=="video")
                         <img alt="hexadash Gallery" style="width: 460px; height: 220px" class="w-full rounded-10" src="{{ $gallery->thumbnail }}">
                         @endif

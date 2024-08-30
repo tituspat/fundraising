@@ -21,7 +21,7 @@
                             </div>
 
                             <div class="mt-4">
-                                <label for="photoVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Upload Photo</label>
+                                <label for="photoVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Upload Foto Calon</label>
                                 <input type="file" id="photoVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="foto_calon" onchange="previewFile()">
                             </div>
                         </div>
