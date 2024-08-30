@@ -126,6 +126,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     //   Route::get('/users', ModUsersController::class)->name('');
     });
 
+    // member
+    Route::name('member.')
+    ->prefix('member')
+    // ->middleware(['permission:member'])
+    ->group(function () {
+      Route::get('/dashboard', [DashboardController::class, 'index'])->name('');
+    });
+
     // media
     Route::name('media.')
     ->prefix('media')
