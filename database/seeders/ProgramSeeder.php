@@ -43,14 +43,13 @@ class ProgramSeeder extends Seeder
             'created_by' => 'admin',
             'content' => '<p>Melalui Permentan no.70/Permentan/SR.140/10/2011, telah ditetapkan standar pupuk organik. Untuk bisa menghasilkan pupuk organik sesuai standar, maka pembuatan pupuk organiknya mengikuti cara pembuatan pupuk organik yang benar.</p>',
         ]);
-        // DB::table('users')->insert([
-        //     'name' => 'admin',
-        //     'email' => 'admin@gmail.com',
-        //     'email_verified_at' => now(),
-        //     'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        //     'role' => 'admin',
-        //     'remember_token' => Str::random(10),
-        // ]);
+        DB::table('beritas')->insert([
+            'title' => 'Kapolsek Tanggulangin Hadiri Tanam Pohon Sukun, di Sub Kogartap III/0816 Sidoarjo',
+            'description' => 'SIDOARJO — Sub Kogartap III Kodim 0816 Sidoarjo telah memulai serempak penanaman 2000 pohon sukun secara simbolis sesuai instruksi Kaskogartap',
+            'thumbnail' => 'https://gelorajatim.com/wp-content/uploads/2024/08/IMG-20240830-WA0036.jpg',
+            'url' => 'https://gelorajatim.com/kapolsek-tanggulangin-hadiri-tanam-pohon-sukun-di-sub-kogartap-iii-0816-sidoarjo/', // password
+            'is_previewed' => true,
+        ]);
 
     }
 }

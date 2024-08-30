@@ -1503,10 +1503,9 @@
                 },
             });
 
-                        // Stories Slider
-
-                        var storySwiper = new Swiper('.Stories-slider', {
-                loop: true,
+                // Stories Slider
+                var storySwiper = new Swiper('.Stories-slider', {
+                loop: false,
                 slidesPerView: 3,
                 spaceBetween: 30,
                 speed: 1000,
