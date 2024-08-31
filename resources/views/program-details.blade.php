@@ -1,7 +1,7 @@
 @extends('layouts.app-2')
 
 
-@section('description', '{{$program->meta_desc}}')
+@section('description', $program->meta_desc)
 
 @section('content')
     <div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]">
@@ -33,7 +33,7 @@
                         {{-- </p> --}}
                     </div>
                     <div class="grid gap-[30px] sm:grid-cols-2">
-                        <img src="{{ asset('/'.$program->thumbnail) }}" alt="{{ $program->title }}" class="rounded-[32px]" data-aos="fade-up" data-aos-duration="1000" />
+                        <img src="{{ asset($program->thumbnail) }}" alt="{{ $program->title }}" class="rounded-[32px]" data-aos="fade-up" data-aos-duration="1000" />
                     </div>
                 </div>
             </section>

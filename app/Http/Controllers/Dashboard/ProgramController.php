@@ -30,7 +30,7 @@ class ProgramController extends Controller
         //
         $isEditing = false;
 
-        return view('pages.dashboard.form-program', compact('isEditing'));
+        return view('pages.dashboard.form-program', compact('$isEditing'));
     }
 
     /**
@@ -44,15 +44,13 @@ class ProgramController extends Controller
             'title' => 'required|string',
             'content' => 'required',
             'image' => 'required',
-            'created_by' => 'required',
-            'meta_desc' => 'required',
         ]);
-    
+
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
         $imagePath = '/storage/' . $imagePath;
 
         $content = $validated['content']; // Ambil konten dari request
-        
+
         // Crawler untuk menelusuri konten HTML
         $crawler = new Crawler($content);
 
@@ -85,11 +83,9 @@ class ProgramController extends Controller
             'content' => $content,
             'thumbnail' => $imagePath,
             'category' => "Program",
-            'created_by' => $validated['created_by'],
-            'meta_desc' => $validated['meta_desc'],
             'profile_calon_id' => "1",
         ]);
-    
+
         return Redirect(Auth::user()->role. '/program')->with('success', 'Content saved successfully!');
     }
 
@@ -122,20 +118,19 @@ class ProgramController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $program = Blog::findOrFaill($id);
+        $program = Blog::findOrFail($id);
 
         $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required',
-            'image' => 'required',
-            'meta_desc' => 'required',
+            // 'image' => 'required',
         ]);
-    
+
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
         $imagePath = '/storage/' . $imagePath;
 
         $content = $validated['content']; // Ambil konten dari request
-        
+
         // Crawler untuk menelusuri konten HTML
         $crawler = new Crawler($content);
 
@@ -160,19 +155,21 @@ class ProgramController extends Controller
                 $content = str_replace($src, Storage::url($filePath), $content);
             }
         });
-
-
-        // Save to database
-        Blog::create([
-            'title' => $validated['title'],
-            'meta_desc' => $validated['meta_desc'],
+        // Update the other blog information
+        $program->update([
+            'title' => $request->title,
+            'meta_desc' => $request->meta_desc,
             'content' => $content,
             'thumbnail' => $imagePath,
-            'category' => "category",
-            'profile_calon_id' => "1",
-        ]);
-    
-        return Redirect(Auth::user()->role. '/program')->with('success', 'Content saved successfully!');
+            'category' => "program",
+            // 'created_by' => $request->creator,
+            ]);
+        // Atur is_previewed menjadi false
+        $program->is_previewed = false;
+        $program->save();
+
+            return redirect(Auth::user()->role. '/program')
+                             ->with('success', 'Program updated successfully.');
     }
 
     /**

@@ -21,5 +21,6 @@ class Blog extends Model
         'thumbnail',
         'is_previewed',
         'created_by',
+        'meta_desc',
     ];
 }
