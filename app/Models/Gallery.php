@@ -15,7 +15,6 @@ class Gallery extends Model
     protected $table = "galleries";
     protected $dates = ['deleted_at'];
     
-
     /**
      * The attributes that are mass assignable.
      *
