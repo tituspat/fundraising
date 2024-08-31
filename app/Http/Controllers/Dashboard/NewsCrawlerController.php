@@ -75,7 +75,7 @@ class NewsCrawlerController extends Controller
         return redirect()->route(Auth::user()->role . '.news')->with('success', 'Berita berhasil disimpan');
     }
 
-    public function tampilkan($id)
+    public function show($id)
     {
         $news = News::find($id);
 
@@ -88,7 +88,7 @@ class NewsCrawlerController extends Controller
 
         return redirect()->route(Auth::user()->role . '.news')->with('success', 'Berita berhasil ditampilkan');
     }
-    public function sembunyikan($id)
+    public function hide($id)
 {
     $news = News::findOrFail($id);
     $news->is_previewed = 0;
