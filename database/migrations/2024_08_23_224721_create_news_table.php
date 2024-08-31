@@ -21,6 +21,7 @@ class CreateNewsTable extends Migration
             $table->string('url')->unique();
             $table->boolean('is_expired')->default(false);
             $table->boolean('is_previewed')->default(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

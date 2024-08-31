@@ -30,7 +30,7 @@ class ProgramController extends Controller
         //
         $isEditing = false;
 
-        return view('pages.dashboard.form-program', compact('$isEditing'));
+        return view('pages.dashboard.form-program', compact('isEditing'));
     }
 
     /**

@@ -9,8 +9,8 @@
     <!-- <meta name="description" content="Turut berkontribusi mewujudkan Tabanan yang sejahtera bersama SAHABAT Tabanan.">
     <meta property="og:title" content="I Gede Putu Atma Giri | Sahabat Tabanan">
     <meta property="og:description"
-        content="Turut berkontribusi mewujudkan Tabanan yang sejahtera bersama SAHABAT Tabanan.">
-    <title>Sahabat Tabanan</title>
+        content="Turut berkontribusi mewujudkan Tabanan yang sejahtera bersama SAHABAT Tabanan."> -->
+    <title>Sahabat Tabanan</title> 
     <!-- Favicon -->
     <link rel="icon" type="icon" href="{{ asset('img/logo-sahabat-tabanan.png') }}" />
     <!-- Fonts -->

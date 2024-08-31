@@ -20,6 +20,7 @@ class CreateQuestionsTable extends Migration
             $table->text('question');
             $table->string('origin');
             $table->string('phone_number');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

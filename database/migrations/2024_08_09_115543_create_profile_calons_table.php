@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('visi');
             $table->text('more_visi');
             $table->text('profile');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
