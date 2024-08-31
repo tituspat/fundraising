@@ -4,11 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProfileCalon extends Model
 {
     use HasFactory;
 
+    use SoftDeletes;
+ 
+    protected $table = "profile_calons";
+    protected $dates = ['deleted_at'];
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -20,4 +26,9 @@ class ProfileCalon extends Model
         'misi',
         'profile',
     ];
+
+    public function misi()
+    {
+        return $this->hasMany(Misi::class);
+    }
 }

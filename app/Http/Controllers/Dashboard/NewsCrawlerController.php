@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Berita;
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpClient\HttpClient;
@@ -13,13 +13,13 @@ class NewsCrawlerController extends Controller
 {
     public function index()
     {
-        $berita = Berita::all();
-        return view('pages.dashboard.berita', compact('berita'));
+        $news = News::all();
+        return view('pages.dashboard.news', compact('news'));
     }
 
     public function create()
     {
-        return view('pages.dashboard.form-berita');
+        return view('pages.dashboard.form-news');
     }
 
     public function preview(Request $request)
@@ -31,9 +31,9 @@ class NewsCrawlerController extends Controller
         $url = $request->input('url');
 
         // Check if the URL already exists in the database
-        $existingBerita = Berita::where('url', $url)->first();
+        $existingNews = News::where('url', $url)->first();
 
-        if ($existingBerita) {
+        if ($existingNews) {
             // Return to the form with an error message if URL already exists
             return redirect()->back()->withErrors(['url' => 'Berita dengan URL ini sudah ada di database.']);
         }
@@ -50,7 +50,7 @@ class NewsCrawlerController extends Controller
         $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content') ?? 'No image';
 
         // Return the view with the crawled data
-        return view('pages.dashboard.form-berita', compact('title', 'description', 'thumbnail', 'url'));
+        return view('pages.dashboard.form-news', compact('title', 'description', 'thumbnail', 'url'));
     }
 
 
@@ -63,7 +63,7 @@ class NewsCrawlerController extends Controller
             'thumbnail' => 'required',
         ]);
 
-        Berita::create([
+        News::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'thumbnail' => $request->input('thumbnail'),
@@ -72,29 +72,42 @@ class NewsCrawlerController extends Controller
             'is_previewed' => false,
         ]);
 
-        return redirect()->route(Auth::user()->role . '.berita')->with('success', 'Berita berhasil disimpan');
+        return redirect()->route(Auth::user()->role . '.news')->with('success', 'Berita berhasil disimpan');
     }
 
-    public function tampilkan($id)
+    public function show($id)
     {
-        $berita = Berita::find($id);
+        $news = News::find($id);
 
-        if (!$berita) {
-            return redirect()->route(Auth::user()->role . '.berita')->with('error', 'Berita tidak ditemukan');
+        if (!$news) {
+            return redirect()->route(Auth::user()->role . '.news')->with('error', 'Berita tidak ditemukan');
         }
 
-        $berita->is_previewed = 1;
-        $berita->save();
+        $news->is_previewed = 1;
+        $news->save();
 
-        return redirect()->route(Auth::user()->role . '.berita')->with('success', 'Berita berhasil ditampilkan');
+        return redirect()->route(Auth::user()->role . '.news')->with('success', 'Berita berhasil ditampilkan');
     }
-    public function sembunyikan($id)
+    public function hide($id)
 {
-    $berita = Berita::findOrFail($id);
-    $berita->is_previewed = 0;
-    $berita->save();
+    $news = News::findOrFail($id);
+    $news->is_previewed = 0;
+    $news->save();
 
     return redirect()->back()->with('success', 'Berita berhasil disembunyikan');
 }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        
+        //get user by ID
+        News::findOrFail($id)->delete();
+
+        //redirect to
+        return redirect(Auth::user()->role. '/News')->with('success', 'Data Berhasil Dihapus!');
+    }
 
 }

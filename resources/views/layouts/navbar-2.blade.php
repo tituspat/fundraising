@@ -50,9 +50,9 @@
                             <a href="/program">Program</a>
                         </li>
                         <li>
-                            <a href="/berita">Berita</a>
+                            <a href="/news">Berita</a>
                         </li>
-                        
+
                         <li>
                             <a href="/testimoni">Testimoni</a>
                         </li>

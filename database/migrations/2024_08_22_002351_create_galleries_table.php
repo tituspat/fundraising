@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('media')->nullable(); // media column, nullable
             $table->string('thumbnail'); // media column, nullable
             $table->string('url'); // url column, nullable
+            $table->softDeletes();
             $table->timestamps(); // created_at and updated_at columns
         });
     }

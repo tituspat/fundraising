@@ -16,8 +16,8 @@
                     <div class="container">
                         <div class="items-center justify-between py-10 md:flex md:h-[400px] md:py-0">
                             <div class="heading relative mb-0 text-center ltr:md:text-left rtl:md:text-right">
-                                <h6>Foto</h6>
-                                <h4 class="!text-white">Foto tentang Sahabat Tabanan</h4>
+                                <h6>Program</h6>
+                                <h4 class="!text-white">Rencana Kerja Sahabat Tabanan</h4>
                             </div>
                         </div>
                     </div>
@@ -27,22 +27,26 @@
             <section class="bg-gradient-to-t from-white/70 to-transparent py-14 dark:bg-none md:py-[100px]">
                 <div class="container">
                     <div class="grid gap-x-[30px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-                        @foreach ($photos as $item)
+                        @foreach ($program as $item)
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div
                                     class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                                    <a href="{{ $item->url }}"
+                                    <a href="/program/{{$item->id}}"
                                         class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
-                                    <img src="{{ Storage::URL ('/' . $item->url)}} " alt="{{ $item->title }}"
+                                    <img src="{{ $item->thumbnail}} " alt="{{ $item->title }}"
                                         class="h-52 w-full rounded-t-3xl object-cover" />
                                     <div class="p-5 text-sm font-bold">
                                         <h6 class="font-extrabold text-secondary dark:text-secondary">{{ $item->title }}
                                         </h6>
-                                        {{-- <p class="line-clamp-4">{{ $item->description }}</p> --}}
+                                        {{--<p class="line-clamp-4">{{ $item->description }}</p>--}}
                                     </div>
                                 </div>
                             </div>
                         @endforeach
+                    </div>
+                       <!-- Pagination Links -->
+                    <div class="pagination">
+                        {{ $program->links() }}
                     </div>
                 </div>
             </section>

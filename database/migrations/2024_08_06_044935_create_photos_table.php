@@ -17,6 +17,7 @@ return new class extends Migration
             $table->longText('description');
             $table->string('path_image');
             $table->timestamp('created_at')->nullable();
+            $table->softDeletes();
         });
     }
 

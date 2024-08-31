@@ -12,8 +12,8 @@ class ManageQuestionController extends Controller
 
     public function index()
     {
-    	$questioncount = DB::table('questions')->count();
-    	$question = DB::table('questions')->get();
+    	$questioncount = Question::count();
+    	$question = Question::get();
 
         return view('pages.dashboard.question', [
         'question' => $question,

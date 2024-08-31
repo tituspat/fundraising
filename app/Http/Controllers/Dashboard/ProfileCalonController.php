@@ -60,12 +60,21 @@ class ProfileCalonController extends Controller
     $request->validate([
         'nama_calon' => 'required|string|max:255',
         'visi' => 'required|string',
-        'misi' => 'required|string',
         'profile' => 'required|string',
         'foto_calon' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
     ]);
 
     $calon = ProfileCalon::findOrFail($request->id);
+    // $misi = Misi::findOrFail($request->id);
+    
+    // Update existing missions
+    if ($request->has('misi')) {
+        foreach ($request->input('misi') as $misiData) {
+            $misi = Misi::findOrFail($misiData['id']);
+            $misi->update($misiData);
+        }
+    }
+
 
     if ($request->hasFile('foto_calon')) {
         if ($calon->foto_calon && Storage::exists('public/' . $calon->foto_calon)) {
@@ -74,12 +83,11 @@ class ProfileCalonController extends Controller
 
 
         $imagePath = $request->file('foto_calon')->store('calon_images', 'public');
-        $calon->foto_calon = $imagePath;
+        $calon->foto_calon = '/storage/'.$imagePath;
     }
 
     $calon->nama_calon = $request->input('nama_calon');
     $calon->visi = $request->input('visi');
-    $calon->misi = $request->input('misi');
     $calon->profile = $request->input('profile');
 
     $calon->save();

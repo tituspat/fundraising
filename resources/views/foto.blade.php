@@ -31,9 +31,10 @@
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div
                                     class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                                    <a href="{{ $item->url }}"
+                                    <!-- <a href="/foto/{{$item->id}}" -->
+                                    <a href="/foto"
                                         class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
-                                    <img src="{{ Storage::URL ('/' . $item->url)}} " alt="{{ $item->title }}"
+                                    <img src="{{ asset($item->url)}} " alt="{{ $item->title }}"
                                         class="h-52 w-full rounded-t-3xl object-cover" />
                                     <div class="p-5 text-sm font-bold">
                                         <h6 class="font-extrabold text-secondary dark:text-secondary">{{ $item->title }}

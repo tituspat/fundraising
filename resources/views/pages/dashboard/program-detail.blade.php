@@ -61,7 +61,7 @@
                   <div class="bg-transparent 3xl:px-[30px] pb-5 max-xl:pb-0">
                         <div class="mb-[25px]">
                             <div class="max-h-[450px] rounded-10">
-                                {{--<img src="{{ Storage::url($program->url) }}" style="width:970px; height:450px" alt="program-details" class="object-cover w-full h-full">--}}
+                                <img src="{{ asset($program->thumbnail) }}" style="width:970px; height:450px" alt="program-details" class="object-cover w-full h-full">
                                 <!-- Display the program thumbnail image -->
                             </div>
                             <div class="px-24 max-3xl:px-14 max-2xl:px-[30px] max-xl:px-0">

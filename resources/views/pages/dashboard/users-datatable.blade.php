@@ -28,18 +28,17 @@
                                     </li>
                                     <!-- Middle (Conditional) -->
 
-                                    <li
+                                    {{-- <li
                                         class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]">
                                         <span
                                             class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 transition duration-300 capitalize">Pages</span>
-                                    </li>
+                                    </li> --}}
 
                                     <!-- Child (Current Page) -->
                                     <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]"
                                         aria-current="page">
                                         <span
-                                            class="text-[14px] font-normal leading-[20px] flex items-center capitalize text-light dark:text-subtitle-dark">User
-                                            Management</span>
+                                            class="text-[14px] font-normal leading-[20px] flex items-center capitalize text-light dark:text-subtitle-dark">Manajemen Pengguna</span>
                                     </li>
                                 </ol>
                             </nav>
@@ -139,7 +138,7 @@
                 </div>
                 <div class="col-span-12">
                     <div
-                        class="bg-white dark:bg-box-dark-up m-0 p-0 text-theme-gray dark:text-subtitle-dark text-[15px] rounded-10 relative mb-[25px] w-full py-[30px] px-[25px] flex flex-col gap-x-[15px] lg:gap-y-[25px] gap-y-[15px]">
+                        class="bg-white dark:bg-box-dark-up m-0 p-10 text-theme-gray dark:text-subtitle-dark text-[15px] rounded-10 relative mb-[25px] w-full py-[30px] px-[25px] flex flex-col gap-x-[15px] lg:gap-y-[25px] gap-y-[15px]">
                         <div
                             class="text-dark dark:text-title-dark font-medium text-[17px] flex items-center justify-between max-sm:flex-col max-sm:gap-[15px]">
                             <h4 class="mb-0 text-[20px] leading-6 font-medium text-dark dark:text-title-dark">Semua Pengguna
@@ -268,48 +267,47 @@
                             </div>
                         </div> --}}
 
-                        <form class="flex items-center flex-wrap justify-left gap-x-[30px] gap-y-[10px] max-lg:flex-col max-lg:justify-center" action="{{ route(Auth::user()->role . '.users')}}" method="GET">
-                            <div class="flex items-center flex-wrap justify-between gap-x-[30px] gap-y-[10px] max-lg:flex-col max-lg:justify-center">
-                                <div class="flex items-center max-md:flex-wrap max-sm:justify-center gap-[10px]">
-                                    <div class="inline-flex items-center">
-                                        <span class="me-2 dark:text-subtitle-dark">Nama Pengguna:</span>
-                                        <input type="search" name="search" placeholder="Cari nama" class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark search-close-icon:appearance-none search-close-icon:w-[20px] search-close-icon:h-[23px] search-close-icon:bg-[url(images/svg/x.svg)] search-close-icon:cursor-pointer" autocomplete="off">
-                                    </div>
-                                    <div class="inline-flex items-center">
-                                        <span class="me-2 dark:text-subtitle-dark">Peran</span>
-                                        <select name="role" data-te-select-init data-te-class-select-input="py-[7px] px-[20px] w-full capitalize [&~span]:top-[14px] [&~span]:w-[15px] [&~span]:h-[15px] [&~span]:text-body dark:[&~span]:text-white text-light dark:text-subtitle-dark border-normal dark:border-box-dark-up border-1 rounded-6 dark:bg-box-dark-up outline-none ltr:[&~span]:right-[0.75rem] rtl:[&~span]:left-[0.75rem] rtl:[&~span]:right-auto">
-                                            <option value="all">Semua</option>
-                                            <option value="admin" {{ request('role') == 'admin' ? 'selected' : '' }}>Admin</option>
-                                            <option value="member" {{ request('role') == 'member' ? 'selected' : '' }}>Member</option>
-                                            <option value="mod" {{ request('role') == 'mod' ? 'selected' : '' }}>Modifikasi</option>
-                                            <option value="media" {{ request('role') == 'media' ? 'selected' : '' }}>Media</option>
-                                        </select>
-                                    </div>
+                        <form
+                        class="flex items-center flex-wrap justify-left gap-x-[30px] gap-y-[10px] max-lg:flex-col max-lg:justify-center"
+                        action="{{ route(Auth::user()->role . '.users') }}" method="GET">
+                        <div
+                            class="flex items-center flex-wrap justify-between gap-x-[30px] gap-y-[10px] max-lg:flex-col max-lg:justify-center">
+                            <div class="flex items-center max-md:flex-wrap max-sm:justify-center gap-[10px]">
+                                <div class="inline-flex items-center">
+                                    <span class="me-2 dark:text-subtitle-dark">Nama Pengguna:</span>
+                                    <input type="search" name="search" placeholder="Cari nama"
+                                        class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark search-close-icon:appearance-none search-close-icon:w-[20px] search-close-icon:h-[23px] search-close-icon:bg-[url(images/svg/x.svg)] search-close-icon:cursor-pointer"
+                                        autocomplete="off">
+                                </div>
+                                <div class="inline-flex items-center">
+                                    <span class="me-2 dark:text-subtitle-dark">Peran</span>
+                                    <input type="text" name="role" placeholder="Cari peran"
+                                        class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark"
+                                        value="{{ request('role') }}">
                                 </div>
                             </div>
-                            <button
-    type="submit"
-    style="
-        background-color: #007bff; /* Blue background */
-        color: #fff; /* White text */
-        border: none; /* Remove default border */
-        padding: 10px 20px; /* Add padding */
-        border-radius: 4px; /* Rounded corners */
-        font-size: 16px; /* Adjust font size */
-        cursor: pointer; /* Change cursor to pointer */
-        transition: background-color 0.3s ease; /* Smooth background color transition */
-    "
-    onmouseover="this.style.backgroundColor='#0056b3'"
-    onmouseout="this.style.backgroundColor='#007bff'"
->
-    Filter
-</button>
-                        </form>
+                        </div>
+                        <button type="submit"
+                            style="
+                    background-color: #007bff;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 4px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    "
+                            onmouseover="this.style.backgroundColor='#0056b3'"
+                            onmouseout="this.style.backgroundColor='#007bff'">
+                            Filter
+                        </button>
+                    </form>
 
 
 
                         <div class="max-h-[455px] pb-[15px] scrollbar overflow-y-auto">
-                            <table class="min-w-full text-sm font-light text-left whitespace-nowrap">
+                            <table class="min-w-full px-10 text-sm font-light text-left whitespace-nowrap">
                                 <thead>
                                     <tr class="whitespace-nowrap">
                                         <th
@@ -368,20 +366,20 @@
                                             <td
                                                 class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[10px] text-dark dark:text-title-dark border-none group-hover:bg-transparent rounded-e-[4px]">
                                                 <div
-                                                    class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-end p-0 m-0 gap-[20px]">
+                                                    class="text-light dark:text-subtitle-dark text-[19px]  flex items-center justify-center p-0 m-0 gap-[5px]">
                                                     <!-- Button trigger modal -->
-                                                    <button type="button"
-                                                        style="background-color: #007bff; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.25rem; font-size: 14px; cursor: pointer;"
+                                                    <a href="#exampleModal{{ $u->id }}"
                                                         data-te-toggle="modal"
-                                                        data-te-target="#exampleModal{{ $u->id }}"
-                                                        data-te-ripple-init data-te-ripple-color="light">
-                                                        Edit
-                                                    </button>
+                                                        data-te-ripple-init data-te-ripple-color="light"
+                                                        style="background-color: #007bff; color: white; border: none; padding: 0.5rem; border-radius: 0.25rem; font-size: 14px; cursor: pointer; text-decoration: none;">
+                                                        <i class="fas fa-edit"></i>
+                                                     </a>
+
                                                     <!-- Modal -->
                                                     <form action="users/update" method="post">
                                                         {{ csrf_field() }}
                                                         <div data-te-modal-init
-                                                            class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+                                                            class="fixed left-0 top-0 z-[1055] hidden h-auto w-full overflow-y-auto overflow-x-hidden outline-none"
                                                             id="exampleModal{{ $u->id }}" tabindex="-1"
                                                             aria-labelledby="exampleModalLabel{{ $u->id }}"
                                                             aria-hidden="true">
@@ -414,7 +412,7 @@
                                                                     <!-- Modal body -->
                                                                     <div class="relative flex-auto p-4"
                                                                         data-te-modal-body-ref>
-                                                                        <div class="mb-4">
+                                                                        <div class="">
                                                                             <input type="hidden" name="id"
                                                                                 class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] capitalize py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]"
                                                                                 value="{{ $u->id }}">
@@ -520,8 +518,4 @@
     <!-- Customizing option -->
 
     <!-- End: Customizing option -->
-
-
 @endsection
-
-

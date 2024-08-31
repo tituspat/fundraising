@@ -16,6 +16,7 @@ class CreateTestimonialsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->longText('testimonial');
             $table->boolean('is_previewed')->default(false);
+            $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

@@ -13,12 +13,14 @@ class PublicProgramController extends Controller
      */
     public function index()
     {
-        
-        //
-        $program = Blog::where('category', '=', 'program');
 
-        return view('program-detail', compact('program'));
-        
+        //
+        // $program = Blog::where('category', '=', 'program');
+
+        $program = Blog::where('category', "=", "program")->where("is_previewed", "=", true)->paginate(3);
+
+        return view('program', compact('program'));
+
     }
 
     /**
@@ -40,35 +42,14 @@ class PublicProgramController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Blog $id)
+    public function show(Blog $program)
     {
-        //
-        $program = Blog::findOrFail($id);
+        $program = Blog::findOrFail($program->id);
 
-        return view('program-detail', compact('program'));
-    }
+        $relatedPrograms = Blog::where('category', 'program')
+            ->where('id', '!=', $program->id)
+            ->get();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Program $program)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Program $program)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Program $program)
-    {
-        //
+        return view('program-details', compact('program', 'relatedPrograms'));
     }
 }

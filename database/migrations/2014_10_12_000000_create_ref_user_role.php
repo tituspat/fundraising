@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id(); // Kolom ID sebagai primary key
             $table->string('role')->unique(); // Kolom role yang unik
             $table->timestamps(); // Kolom created_at dan updated_at
+            $table->softDeletes();
         });
     }
 

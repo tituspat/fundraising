@@ -45,11 +45,16 @@
                <div class="inline-flex items-center">
 
                </div>
-
-               <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
-                  <i class="uil uil-pen"></i>
-                  <span class="m-0">Edit</span>
-               </button>
+                <div class="flex flex-row gap-2">
+                    <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
+                        <i class="uil uil-pen"></i>
+                        <span class="m-0">Edit</span>
+                    </button>
+                    <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery/'.$gallery->id.'/delete/') }}'">
+                        <!-- <i class="uil uil-cross"></i> -->
+                        <span class="m-0">Delete</span>
+                    </button>
+                </div>
             </div>
             <div class="grid grid-cols-12 gap-[25px]">
                <div class="col-span-12 2xl:col-start-3 2xl:col-span-8">
@@ -64,7 +69,7 @@
                                     <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-[176px] transition-all duration-300 ease-linear bg-white border-2 border-gray-300 border-dashed rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-box-dark-up dark:border-box-dark-up dark:hover:border-gray-500 dark:hover:bg-gray-600">
                                         <div class="flex flex-col items-center justify-center py-5">
                                             <p class="text-[15px] text-light font-medium dark:text-subtitle-dark">
-                                                Drop files here to upload
+                                                Unggah Foto
                                             </p>
                                         </div>
                                         <input id="dropzone-file" type="file" name="image" class="hidden" accept="image/*" onchange="previewImage(event)" required />
@@ -101,8 +106,8 @@
                            </div>
 
                            <div class="flex items-center gap-[15px] mt-[14px]">
-                              <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery') }}'">Cancel</button>
-                              <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">save</button>
+                              <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery') }}'">Batal</button>
+                              <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">Simpan</button>
                            </div>
                     @else
                         <div class="mb-[25px]">

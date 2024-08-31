@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\ProfileCalon;
 use App\Models\Misi;
-use App\Models\Berita;
+use App\Models\Testimonial;
+use App\Models\News;
+use App\Models\Blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -21,17 +23,17 @@ class MainController extends Controller
         // Mengambil data calon
         $calon = ProfileCalon::get()->first();
         $misis = Misi::all();
-        $beritas = Berita::latest()->take(3)->get();
+        $news = News::latest()->take(3)->get();
 
         // mengambil data dari table program
-    	$blogs = DB::table('blogs')->where('category', '=', "program")->get();
+    	$blogs = Blog::where('category', '=', "program")->get();
 
         // mengambil data dari table testimonial
-    	$testimonial = DB::table('testimonials')->get();
+    	$testimonial = Testimonial::get();
 
         return view('index', [
             'blogs' => $blogs,
-            'beritas' => $beritas,
+            'news' => $news,
             'testimonials' => $testimonial,
             'nama_calon' => $calon->nama_calon,
             'misis' => $misis,

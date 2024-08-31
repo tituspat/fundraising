@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('icon');
             $table->string('head_misi');
             $table->string('body_misi');
-            // $table->string('icon_misi');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

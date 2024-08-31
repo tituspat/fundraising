@@ -14,8 +14,7 @@ class PublicBlogController extends Controller
     public function index()
     {
         //
-
-        $blogs = Blog::all();
+        $blogs = Blog::where('category', "=", "blog")->where("is_previewed", "=", true)->get();
         return view('blog', compact('blogs'));
     }
 
@@ -40,10 +39,14 @@ class PublicBlogController extends Controller
      */
     public function show(string $id)
     {
-        //
-        $blog = Blog::findOrFail($id);
 
-        return view('blog-details', compact('blog'));
+    $blogs = Blog::findOrFail($id);
+
+    $relatedBlogs = Blog::where('category', 'blog')
+    ->where('id', '!=', $id)
+    ->get();
+
+    return view('blog-details', compact('blogs', 'relatedBlogs'));
     }
 
     /**

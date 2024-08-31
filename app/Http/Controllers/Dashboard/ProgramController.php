@@ -30,7 +30,7 @@ class ProgramController extends Controller
         //
         $isEditing = false;
 
-        return view('pages.dashboard.form-program', compact('$isEditing'));
+        return view('pages.dashboard.form-program', compact('isEditing'));
     }
 
     /**
@@ -45,12 +45,12 @@ class ProgramController extends Controller
             'content' => 'required',
             'image' => 'required',
         ]);
-    
+
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
         $imagePath = '/storage/' . $imagePath;
 
         $content = $validated['content']; // Ambil konten dari request
-        
+
         // Crawler untuk menelusuri konten HTML
         $crawler = new Crawler($content);
 
@@ -85,7 +85,7 @@ class ProgramController extends Controller
             'category' => "Program",
             'profile_calon_id' => "1",
         ]);
-    
+
         return Redirect(Auth::user()->role. '/program')->with('success', 'Content saved successfully!');
     }
 
@@ -118,19 +118,19 @@ class ProgramController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $program = Blog::findOrFaill($id);
+        $program = Blog::findOrFail($id);
 
         $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required',
-            'image' => 'required',
+            // 'image' => 'required',
         ]);
-    
+
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
         $imagePath = '/storage/' . $imagePath;
 
         $content = $validated['content']; // Ambil konten dari request
-        
+
         // Crawler untuk menelusuri konten HTML
         $crawler = new Crawler($content);
 
@@ -155,18 +155,21 @@ class ProgramController extends Controller
                 $content = str_replace($src, Storage::url($filePath), $content);
             }
         });
-
-
-        // Save to database
-        Blog::create([
-            'title' => $validated['title'],
+        // Update the other blog information
+        $program->update([
+            'title' => $request->title,
+            'meta_desc' => $request->meta_desc,
             'content' => $content,
             'thumbnail' => $imagePath,
-            'category' => "category",
-            'profile_calon_id' => "1",
-        ]);
-    
-        return Redirect(Auth::user()->role. '/program')->with('success', 'Content saved successfully!');
+            'category' => "program",
+            // 'created_by' => $request->creator,
+            ]);
+        // Atur is_previewed menjadi false
+        $program->is_previewed = false;
+        $program->save();
+
+            return redirect(Auth::user()->role. '/program')
+                             ->with('success', 'Program updated successfully.');
     }
 
     /**
@@ -179,5 +182,21 @@ class ProgramController extends Controller
         Blog::findOrFail($id)->delete();
         //redirect to
         return redirect(Auth::user()->role. '/program')->with('success', 'Data Berhasil Dihapus!');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function toggleVisibility(string $id)
+    {
+        
+        //get user by ID
+        $blog = Blog::findOrFail($id);
+
+        $blog->is_previewed = !$blog->is_previewed;
+        $blog->save();
+
+        //redirect to
+        return redirect()->back()->with('success', 'changed');
     }
 }
