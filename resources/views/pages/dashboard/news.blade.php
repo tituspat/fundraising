@@ -41,14 +41,14 @@
             <div class="flex items-center ssm:justify-between justify-center max-sm:flex-wrap gap-x-[30px] gap-y-[15px] ssm:mb-[33px] mb-[18px]">
                 <div class="inline-flex items-center">
                 </div>
-                <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/berita/tambah') }}'" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
+                <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/news/tambah') }}'" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
                     <i class="uil uil-plus"></i>
                     <span class="m-0">Buat Berita</span>
                 </button>
             </div>
 
             <div class="grid grid-cols-12 md:gap-x-[25px] gap-y-[25px]">
-                @foreach($berita as $item)
+                @foreach($news as $item)
                     <div class="col-span-12 xl:col-span-4 md:col-span-6">
                         <!-- Blog Post -->
                         <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
@@ -93,14 +93,14 @@
                                 @if($item->is_previewed == 0)
     <div class="mt-4">
         <!-- Tampilkan Button -->
-        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/berita/tampilkan', $item->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
+        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/news/show', $item->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
             Tampilkan
         </button>
     </div>
 @else
     <div class="mt-4">
         <!-- Sembunyikan Button -->
-        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/berita/sembunyikan', $item->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
+        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/news/hide', $item->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
             Sembunyikan
         </button>
     </div>

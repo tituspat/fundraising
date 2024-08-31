@@ -145,7 +145,7 @@
             </div>
 
             {{--<section class="bg-gradient-to-t from-white/50 to-transparent py-5 dark:bg-none md:py-10">
-                <div class="absolute top-0 z-[1] h-full w-full bg-white ltr:left-0 rtl:right-0 dark:bg-black xl:w-[85%] xl:rounded-r-[32px]"></div> 
+                <div class="absolute top-0 z-[1] h-full w-full bg-white ltr:left-0 rtl:right-0 dark:bg-black xl:w-[85%] xl:rounded-r-[32px]"></div>
                     <div class="absolute -top-3 hidden h-full w-full rounded-r-[32px] bg-white/50 ltr:left-3 rtl:right-3 dark:bg-gray-dark xl:inline-block xl:w-[85%]"></div>
                         <div class="absolute hidden h-full w-full rounded-r-[32px] rounded-l-[32px] bg-white/50 ltr:left-3 rtl:right-3 dark:bg-gray-dark xl:inline-block xl:w-[100%]"></div>
                         <div class="flex flex-col px-10 pb-10 justify-center items-center">
@@ -233,7 +233,7 @@
                         <!-- <div>
                             <span>
                                 <svg class="mx-auto h-[42px] w-[42px] sm:mx-0" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.384"></g><g id="SVGRepo_iconCarrier"> <path d="M10.255 4.18806C9.84269 5.17755 8.68655 5.62456 7.71327 5.17535C6.10289 4.4321 4.4321 6.10289 5.17535 7.71327C5.62456 8.68655 5.17755 9.84269 4.18806 10.255C2.63693 10.9013 2.63693 13.0987 4.18806 13.745C5.17755 14.1573 5.62456 15.3135 5.17535 16.2867C4.4321 17.8971 6.10289 19.5679 7.71327 18.8246C8.68655 18.3754 9.84269 18.8224 10.255 19.8119C10.9013 21.3631 13.0987 21.3631 13.745 19.8119C14.1573 18.8224 15.3135 18.3754 16.2867 18.8246C17.8971 19.5679 19.5679 17.8971 18.8246 16.2867C18.3754 15.3135 18.8224 14.1573 19.8119 13.745C21.3631 13.0987 21.3631 10.9013 19.8119 10.255C18.8224 9.84269 18.3754 8.68655 18.8246 7.71327C19.5679 6.10289 17.8971 4.4321 16.2867 5.17535C15.3135 5.62456 14.1573 5.17755 13.745 4.18806C13.0987 2.63693 10.9013 2.63693 10.255 4.18806Z" stroke="#d32f2f" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="#d32f2f" stroke-width="1.32"></path> </g></svg>
-                                
+
                             </span>
                             <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">Sarana dan Prasarana Umum</h5>
                             <p class="mt-2.5 text-[15px] font-semibold">
@@ -243,7 +243,7 @@
                         <!-- <div>
                             <span>
                                 <svg fill="#d32f2f" class="mx-auto h-[42px] w-[42px] sm:mx-0" viewBox="0 0 24.00 24.00" xmlns="http://www.w3.org/2000/svg" stroke="#d32f2f" stroke-width="0.00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M22,3H19V2a1,1,0,0,0-1-1H6A1,1,0,0,0,5,2V3H2A1,1,0,0,0,1,4V6a4.994,4.994,0,0,0,4.276,4.927A7.009,7.009,0,0,0,11,15.92V18H7a1,1,0,0,0-.949.684l-1,3A1,1,0,0,0,6,23H18a1,1,0,0,0,.948-1.316l-1-3A1,1,0,0,0,17,18H13V15.92a7.009,7.009,0,0,0,5.724-4.993A4.994,4.994,0,0,0,23,6V4A1,1,0,0,0,22,3ZM5,8.829A3.006,3.006,0,0,1,3,6V5H5ZM16.279,20l.333,1H7.387l.334-1ZM17,9A5,5,0,0,1,7,9V3H17Zm4-3a3.006,3.006,0,0,1-2,2.829V5h2ZM10.667,8.667,9,7.292,11,7l1-2,1,2,2,.292L13.333,8.667,13.854,11,12,9.667,10.146,11Z"></path></g></svg>
-                            
+
                             </span>
                             <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">Prestasi Masyarakat</h5>
                             <p class="mt-2.5 text-[15px] font-semibold">
@@ -367,7 +367,7 @@
                                             </h4>
                                             <!-- <a href="/program/{{$blog->id}}"
                                                 class="group flex items-center gap-4 font-semibold transition hover:text-secondary">
-                                                <span>Baca Selengkapnya</span> 
+                                                <span>Baca Selengkapnya</span>
                                                  <span class="transition-all group-hover:pl-2">
                                                     <svg width="18" height="12" viewBox="0 0 18 12"
                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1275,14 +1275,14 @@
                             <div class="swiper Stories-slider">
                                 <div class="swiper-wrapper">
                                     <!-- content -->
-                                     @foreach($beritas as $berita)
+                                     @foreach($news as $news)
                                     <div class="swiper-slide">
                                         <div class="relative h-[346px] overflow-hidden rounded-[10px]">
                                             <div class="absolute inset-0 bg-black/30"></div>
-                                            <img src="{{$berita->thumbnail}}" class="h-full w-full object-cover" alt="" /></a>
+                                            <img src="{{$news->thumbnail}}" class="h-full w-full object-cover" alt="" /></a>
                                             <div class="absolute bottom-5 ltr:left-5 rtl:right-5">
                                                 <!-- <p class="inline-block rounded bg-primary py-1 px-2.5 text-[12px] font-extrabold text-white">FASHION</p> -->
-                                                <h5 class="mt-3 text-xl font-extrabold text-white"><a href="{{$berita->url}}" target="_blank">{{$berita->title}}</a></h5>
+                                                <h5 class="mt-3 text-xl font-extrabold text-white"><a href="{{$news->url}}" target="_blank">{{$news->title}}</a></h5>
                                                 <div class="mt-[14px] flex gap-4">
                                                     <div class="flex items-center gap-3">
                                                         <!-- <img src="assets/images/blog/shaun.png" class="w-9" alt="" />
@@ -1306,7 +1306,7 @@
                                                                 />
                                                             </svg>
                                                         </span>
-                                                        <p class="text-[13px] font-semibold text-white">{{$berita->created_at}}</p>
+                                                        <p class="text-[13px] font-semibold text-white">{{$news->created_at}}</p>
                                                     </div>
                                                 </div>
                                             </div>

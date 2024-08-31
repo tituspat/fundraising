@@ -18,7 +18,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route(Auth::user()->role . '.berita.preview') }}" method="POST">
+                        <form action="{{ route(Auth::user()->role . '.news.preview') }}" method="POST">
                             @csrf
                             <div class="pb-4">
                                 <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">URL Berita</label>
@@ -46,7 +46,7 @@
                                         <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" target="_blank" href="{{ $url }}">{{ $title }}</a>
                                     </h2>
                                     <p class="mb-4 text-base text-dark dark:text-title-dark">{{ $description }}</p>
-                                    <form action="{{ route(Auth::user()->role . '.berita.store') }}" method="POST">
+                                    <form action="{{ route(Auth::user()->role . '.news.store') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="title" value="{{ $title }}">
                                         <input type="hidden" name="description" value="{{ $description }}">

@@ -27,7 +27,7 @@
             <section class="bg-gradient-to-t from-white/70 to-transparent py-14 dark:bg-none md:py-[100px]">
                 <div class="container">
                     <div class="grid gap-x-[30px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-                        @foreach ($berita as $item)
+                        @foreach ($news as $item)
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 <div
                                     class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">

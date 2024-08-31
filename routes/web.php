@@ -41,7 +41,7 @@ use App\Http\Controllers\FaqController;
 
 
 Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
-Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::post('questions', [QuestionController::class, 'store'])->name('questions.store');
 Route::get('/foto', [GalleryController::class, 'showPhoto'])->name('foto.index');
 // Route::get('/foto/{id}', [GalleryController::class, 'showPhoto'])->name('foto.index');
@@ -84,12 +84,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('gallery.delete');
       Route::get('/gallery/visibility/{id}', [GalleryController::class, 'toggleVisibility'])->name('gallery.toggleVisibility');
       // berita
-      Route::get('/berita', [NewsCrawlerController::class, 'index'])->name('berita');
-      Route::get('/berita/tambah', [NewsCrawlerController::class, 'create'])->name('berita.create');
-      Route::post('/berita/preview', [NewsCrawlerController::class, 'preview'])->name('berita.preview');
-      Route::post('/berita/store', [NewsCrawlerController::class, 'store'])->name('berita.store');
-      Route::get('/berita/tampilkan/{id}', [NewsCrawlerController::class, 'tampilkan'])->name('berita.tampilkan');
-      Route::get('/berita/sembunyikan/{id}', [NewsCrawlerController::class, 'sembunyikan'])->name('berita.sembunyikan');
+      Route::get('/news', [NewsCrawlerController::class, 'index'])->name('news');
+      Route::get('/news/tambah', [NewsCrawlerController::class, 'create'])->name('news.create');
+      Route::post('/news/preview', [NewsCrawlerController::class, 'preview'])->name('news.preview');
+      Route::post('/news/store', [NewsCrawlerController::class, 'store'])->name('news.store');
+      Route::get('/news/tampilkan/{id}', [NewsCrawlerController::class, 'tampilkan'])->name('news.tampilkan');
+      Route::get('/news/sembunyikan/{id}', [NewsCrawlerController::class, 'sembunyikan'])->name('news.sembunyikan');
       // testimoni
       Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimoni');
       Route::post('/testimoni/store', [TestimonialController::class, 'store'])->name('testimoni.store');
@@ -153,10 +153,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/gallery/{id}/detail', [GalleryController::class, 'show'])->name('gallery.detail');
       Route::get('/gallery/{id}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
       Route::post('/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
-      Route::get('/berita', [NewsCrawlerController::class, 'index'])->name('berita');
-      Route::get('/berita/tambah', [NewsCrawlerController::class, 'create'])->name('berita.create');
-      Route::post('/berita/preview', [NewsCrawlerController::class, 'preview'])->name('berita.preview');
-      Route::post('/berita/store', [NewsCrawlerController::class, 'store'])->name('berita.store');
+      Route::get('/news', [NewsCrawlerController::class, 'index'])->name('news');
+      Route::get('/news/tambah', [NewsCrawlerController::class, 'create'])->name('news.create');
+      Route::post('/news/preview', [NewsCrawlerController::class, 'preview'])->name('news.preview');
+      Route::post('/news/store', [NewsCrawlerController::class, 'store'])->name('news.store');
     });
 });
 
