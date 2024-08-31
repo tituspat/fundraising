@@ -61,12 +61,12 @@
 							</div>
 						</div>
 						<div class="flex items-center gap-[15px] mt-[14px]">
-                              <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/program') }}'">Cancel</button>
-                              <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">save</button>
+                              <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/program') }}'">Batal</button>
+                              <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">Simpan</button>
                         </div>
                     </div>
                 </div>
-				
+
             </div>
 			</form>
 			@elseif($isEditing)
@@ -75,7 +75,7 @@
 			<div class="col-span-12 md:col-span-4">
                 <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
                     <div class="p-[25px]">
-                        
+
 
 						<div class="my-4">
 							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Blog</label>
@@ -89,18 +89,18 @@
 						</div>
 
 						<div class="flex items-center gap-[15px] mt-[14px]">
-                              <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/program') }}'">Cancel</button>
-                              <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">save</button>
+                              <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/program') }}'">Batal</button>
+                              <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">Simpan</button>
                         </div>
-            		
+
                     </div>
                 </div>
-				
+
             </div>
 			</form>
 			@endif
-            
-         
+
+
 		<!-- form end -->
 		</div>
 
@@ -117,12 +117,12 @@
 	    function previewImage(event) {
 	        const reader = new FileReader();
 	        const file = event.target.files[0];
-		
+
 	        reader.onload = function() {
 	            const preview = document.getElementById('preview');
 	            const fileName = document.getElementById('file-name');
 	            const fileSize = document.getElementById('file-size');
-			
+
 	            preview.src = reader.result;
 	            fileName.textContent = file.name;
 	            fileSize.textContent = `${(file.size / 1024).toFixed(2)} KB`;

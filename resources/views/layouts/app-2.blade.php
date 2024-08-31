@@ -53,6 +53,51 @@
     <script src="{{ asset('vendor/plurk/js/aos.js') }}"></script>
     <!-- Custom Js -->
     <script src="{{ asset('vendor/plurk/js/custom.js') }}"></script>
+    <script>
+        // Offices Location Slider
+        var swiper = new Swiper('.ofc-slider', {
+            slidesPerView: 'auto',
+            loop: true,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.ofc-slider-button-next',
+                prevEl: '.ofc-slider-button-prev',
+            },
+        });
+
+        // Project Slider
+        var swiper = new Swiper('.project-slider', {
+            loop: true,
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.project-slider-button-next',
+                prevEl: '.project-slider-button-prev',
+            },
+            breakpoints: {
+                600: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1000: {
+                    slidesPerView: 4,
+                },
+                1200: {
+                    slidesPerView: 5,
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>
