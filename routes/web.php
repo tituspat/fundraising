@@ -48,7 +48,7 @@ Route::get('/foto', [GalleryController::class, 'showPhoto'])->name('foto.index')
 Route::get('/video', [GalleryController::class, 'showVideo'])->name('video.index');
 Route::get('/video/{id}', [GalleryController::class, 'showVideo'])->name('video.index');
 Route::get('/program', [PublicProgramController::class, 'index'])->name('program.index');
-Route::get('/program/{id}', [PublicProgramController::class, 'show'])->name('program.show');
+Route::get('/program/{program}', [PublicProgramController::class, 'show'])->name('program.show');
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{id}', [PublicBlogController::class, 'show'])->name('blog.show');
 
