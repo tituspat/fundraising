@@ -13,7 +13,7 @@ class Misi extends Model
     
     use SoftDeletes;
  
-    protected $table = "Misis";
+    protected $table = "misis";
     protected $dates = ['deleted_at'];
 
     
