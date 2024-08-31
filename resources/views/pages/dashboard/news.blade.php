@@ -90,21 +90,26 @@
                                     </ul> --}}
                                 </div>
                                 <!-- Tampilkan Button -->
-                                @if($item->is_previewed == 0)
-    <div class="mt-4">
-        <!-- Tampilkan Button -->
-        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/news/show', $item->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
-            Tampilkan
-        </button>
-    </div>
-@else
-    <div class="mt-4">
-        <!-- Sembunyikan Button -->
-        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/news/hide', $item->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
-            Sembunyikan
-        </button>
-    </div>
-@endif
+                                <div class="mt-4">
+                                    @if($item->is_previewed == 0)
+                                
+                                    <!-- Tampilkan Button -->
+                                    <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/news/show', $item->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
+                                        Tampilkan
+                                    </button>
+                                
+                                    @else
+                                    <!-- Sembunyikan Button -->
+                                    <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/news/hide', $item->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
+                                        Sembunyikan
+                                    </button>
+                                
+                                    @endif
+                                    <button type="button" id="editBtn" class="flex mt-2 items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="window.location='{{ URL::to(Auth::user()->role . '/news/delete/'.$item->id) }}'">
+                                        <!-- <i class="uil uil-cross"></i> -->
+                                        <span class="m-0">Delete</span>
+                                    </button>
+                                </div>
                             </figcaption>
                         </figure>
                     </div>

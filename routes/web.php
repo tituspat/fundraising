@@ -90,6 +90,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/news/store', [NewsCrawlerController::class, 'store'])->name('news.store');
       Route::get('/news/show/{id}', [NewsCrawlerController::class, 'show'])->name('news.tampilkan');
       Route::get('/news/hide/{id}', [NewsCrawlerController::class, 'hide'])->name('news.sembunyikan');
+      Route::get('/news/delete/{id}', [NewsCrawlerController::class, 'destroy'])->name('news.destroy');
       // testimoni
       Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimoni');
       Route::post('/testimoni/store', [TestimonialController::class, 'store'])->name('testimoni.store');
