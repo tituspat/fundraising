@@ -14,7 +14,6 @@ class PublicBlogController extends Controller
     public function index()
     {
         //
-
         $blogs = Blog::where('category', "=", "blog")->where("is_previewed", "=", true)->get();
         return view('blog', compact('blogs'));
     }

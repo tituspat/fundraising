@@ -1,5 +1,10 @@
 @extends('layouts.app-2')
 
+@section('description', '{{$blogs->meta_desc}}')
+{{--@section('keywords', 'sharing, sharing photo, photo,')
+@section('robots', 'index, follow')
+@section('revisit-after', 'content="3 days')--}}
+
 @section('content')
     <div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]">
         <!-- loader content -->

@@ -44,6 +44,7 @@ class BlogController extends Controller
             'title' => 'required|string',
             'content' => 'required',
             'creator' => 'required',
+            'meta_desc' => 'required',
         ]);
     
         $content = $request->input('content'); // Ambil konten dari request
@@ -92,6 +93,7 @@ class BlogController extends Controller
             'thumbnail' => $thumbnail,
             'category' => "blog",
             'created_by' => $validated['creator'],
+            'meta_desc' => $validated['meta_desc'],
         ]);
     
         return Redirect(Auth::user()->role. '/blog')->with('success', 'Content saved successfully!');
@@ -172,6 +174,7 @@ class BlogController extends Controller
         // Update the other blog information
         $blog->update([
             'title' => $request->title,
+            'meta_desc' => $request->meta_desc,
             'content' => $content,
             'thumbnail' => $thumbnail,
             'category' => "blog",

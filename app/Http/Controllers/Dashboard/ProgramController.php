@@ -45,6 +45,7 @@ class ProgramController extends Controller
             'content' => 'required',
             'image' => 'required',
             'created_by' => 'required',
+            'meta_desc' => 'required',
         ]);
     
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
@@ -85,6 +86,7 @@ class ProgramController extends Controller
             'thumbnail' => $imagePath,
             'category' => "Program",
             'created_by' => $validated['created_by'],
+            'meta_desc' => $validated['meta_desc'],
             'profile_calon_id' => "1",
         ]);
     
@@ -126,6 +128,7 @@ class ProgramController extends Controller
             'title' => 'required|string',
             'content' => 'required',
             'image' => 'required',
+            'meta_desc' => 'required',
         ]);
     
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
@@ -162,6 +165,7 @@ class ProgramController extends Controller
         // Save to database
         Blog::create([
             'title' => $validated['title'],
+            'meta_desc' => $validated['meta_desc'],
             'content' => $content,
             'thumbnail' => $imagePath,
             'category' => "category",

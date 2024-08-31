@@ -1,5 +1,8 @@
 @extends('layouts.app-2')
 
+
+@section('description', '{{$program->meta_desc}}')
+
 @section('content')
     <div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]">
         <!-- loader content -->
