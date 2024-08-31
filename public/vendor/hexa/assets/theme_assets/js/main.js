@@ -168,28 +168,28 @@ function togglePasswordVisibility() {
 };
 
 /* Redirect index page */
-// function redirectIndexPage(selector) {
-//   const form = document.getElementById(selector);
-//   if (form) {
-//     form.addEventListener('submit', function (e) {
-//       e.preventDefault();
-//       if (validateForm()) {
-//         window.location.href = 't1msuks3s';
-//       }
-//     });
+function redirectIndexPage(selector) {
+  const form = document.getElementById(selector);
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (validateForm()) {
+        window.location.href = 'index.html';
+      }
+    });
 
-//     function validateForm() {
-//       const passwordField = document.getElementById('password');
-//       if (
-//         (passwordField.value.trim() === '')
-//       ) {
-//         alert('Password is required.');
-//         return false;
-//       }
-//       return true;
-//     }
-//   }
-// };
+    function validateForm() {
+      const passwordField = document.getElementById('password');
+      if (
+        (passwordField.value.trim() === '')
+      ) {
+        alert('Password is required.');
+        return false;
+      }
+      return true;
+    }
+  }
+};
 
 /* Current Year */
 function displayCurrentYear(selector) {

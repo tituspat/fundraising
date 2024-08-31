@@ -25,6 +25,7 @@ use App\Http\Controllers\Dashboard\ManageTestimoniController;
 use App\Http\Controllers\Dashboard\ManageFAQController;
 use App\Http\Controllers\Dashboard\ManageQuestionController;
 use App\Http\Controllers\Dashboard\ProgramController;
+use App\Http\Controllers\Dashboard\ContentController;
 use App\Http\Controllers\FAQController;
 
 /*
@@ -66,6 +67,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // ->middleware(['permission:admin'])
     ->group(function () {
       Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+      Route::get('/content', [ContentController::class, 'index'])->name('content');
       Route::get('/users', [UsersController::class, 'index'])->name('users');
       Route::get('/users/delete/{id}', [UsersController::class, 'destroy'])->name('users.delete');
       Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');

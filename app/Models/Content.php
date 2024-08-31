@@ -8,10 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     use HasFactory;
-    use SoftDeletes;
  
     protected $table = "contents";
-    protected $dates = ['deleted_at'];
 
         /**
      * fillable

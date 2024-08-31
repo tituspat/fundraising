@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\Content;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,9 @@ class ContentController extends Controller
     public function index()
     {
         //
+        $Content = Content::all();
+        
+        return view('pages.dashboard.content-management', ['content' => $Content ]);
     }
 
     /**

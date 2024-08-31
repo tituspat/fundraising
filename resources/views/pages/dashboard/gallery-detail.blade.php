@@ -126,7 +126,7 @@
                                  <!-- Display the gallery post title -->
                                 <ul class="flex flex-wrap items-center mb-11 max-lg:mb-8 max-md:mb-5">
                                     <li class="relative flex items-center gap-x-2.5 m-1 text-light dark:text-subtitle-dark text-15">
-                                        {{--<img src="{{ asset('vendor/hexadash/assets/images/avatars/t1.jpg') }}" alt="hexadash gallery author" class="min-w-[50px] w-[50px] rounded-full">--}}
+                                        {{--<img src="{{ asset('vendor/hexa/assets/images/avatars/t1.jpg') }}" alt="hexadash gallery author" class="min-w-[50px] w-[50px] rounded-full">--}}
                                         {{--<span class="inline-block text-base font-semibold text-dark dark:text-title-dark">Charli Day</span>--}}
                                         <!-- Display the author's name and avatar -->
                                     </li>
@@ -153,7 +153,7 @@
                                 </li>
                                 <li class="m-1">
                                     <a href="#" class="group inline-flex items-center justify-center gap-x-1 bg-white dark:bg-box-dark-down dark:hover:bg-twitter hover:bg-twitter min-h-[34px] px-3.5 text-twitter dark:text-subtitle-dark hover:text-white dark:hover:text-title-dark text-15 border border-regular dark:border-box-dark-up rounded-md transition duration-0 hover:duration-150">
-                                        <img class="svg" src="{{ asset('vendor/hexadash/assets/images/svg/x-twitter.svg') }}" alt="twitter">
+                                        <img class="svg" src="{{ asset('vendor/hexa/assets/images/svg/x-twitter.svg') }}" alt="twitter">
                                         <span>Tweet</span>
                                     </a>
                                 </li>
@@ -172,7 +172,7 @@
                             </ul>--}}
                             <!-- Display social sharing buttons -->
                             {{--<div class="flex items-start gap-5 mt-12 bg-white rounded-lg max-sm:flex-col dark:bg-box-dark-up p-9 shadow-custom dark:shadow-none">
-                                <div><img src="{{ asset('vendor/hexadash/assets/images/avatars/t1.jpg') }}" alt="hexadash Blog" class="max-w-[70px] rounded-full"></div>
+                                <div><img src="{{ asset('vendor/hexa/assets/images/avatars/t1.jpg') }}" alt="hexadash Blog" class="max-w-[70px] rounded-full"></div>
                                 <div>
                                     <span class="text-body dark:text-subtitle-dark text-15">Written By</span>
                                     <span class="block text-lg font-semibold text-dark dark:text-title-dark">Charli Day</span>
@@ -191,7 +191,7 @@
                                     </li>
                                     <li class="my-2.5">
                                         <a href="#" class="flex items-center justify-center bg-white rounded-full dark:bg-box-dark-down w-[50px] h-[50px] shadow dark:shadow-[0_5px_20px_rgba(1,4,19,.60)] hover:bg-twitter text-twitter dark:text-title-dark hover:text-white transition duration-300">
-                                            <img class="svg" src="{{ asset('vendor/hexadash/assets/images/svg/x-twitter.svg') }}" alt="twitter">
+                                            <img class="svg" src="{{ asset('vendor/hexa/assets/images/svg/x-twitter.svg') }}" alt="twitter">
                                         </a>
                                     </li>
                                     <li class="my-2.5">

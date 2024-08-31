@@ -162,7 +162,7 @@
                                                 class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
                                                 <div class="flex items-center">
                                                     {{-- <div class="me-2.5 w-[34px] h-[34px]">
-                                        <!-- <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexadash/images/avatars/t1.jpg') }}" alt="John Doe"> -->
+                                        <!-- <img class="min-w-[34px] h-[34px] rounded-full" src="{{ asset('vendor/hexa/images/avatars/t1.jpg') }}" alt="John Doe"> -->
                                      </div> --}}
                                                     <span
                                                         class="font-medium capitalize text-dark dark:text-title-dark text-15">
