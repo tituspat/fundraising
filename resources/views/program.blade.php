@@ -44,6 +44,10 @@
                             </div>
                         @endforeach
                     </div>
+                       <!-- Pagination Links -->
+                    <div class="pagination">
+                        {{ $program->links() }}
+                    </div>
                 </div>
             </section>
         </div>

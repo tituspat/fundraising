@@ -16,6 +16,7 @@ class Misi extends Model
     protected $table = "Misis";
     protected $dates = ['deleted_at'];
 
+    
 
     /**
      * fillable
@@ -26,5 +27,10 @@ class Misi extends Model
         'head_misi',
         'body_misi',
     ];
+
+    public function profileCalon()
+    {
+        return $this->belongsTo(ProfileCalon::class);
+    }
 
 }

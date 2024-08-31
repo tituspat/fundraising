@@ -17,7 +17,7 @@ class PublicProgramController extends Controller
         //
         // $program = Blog::where('category', '=', 'program');
 
-        $program = Blog::where('category', "=", "program")->where("is_previewed", "=", true)->get();
+        $program = Blog::where('category', "=", "program")->where("is_previewed", "=", true)->paginate(3);
 
         return view('program', compact('program'));
 

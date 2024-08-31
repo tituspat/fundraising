@@ -15,8 +15,8 @@ class ManageTestimoniController extends Controller
     public function index()
     {
         $testimonials = Testimonial::with('user')->get();
-    	$testimoni = DB::table('testimonials')->count();
-    	$testimonipreviewed = DB::table('testimonials')->where('is_previewed', '1')->count();
+    	$testimoni = Testimonial::count();
+    	$testimonipreviewed = Testimonial::where('is_previewed', '1')->count();
 
         return view('pages.dashboard.testimoni', [
         'testimoni' => $testimoni,

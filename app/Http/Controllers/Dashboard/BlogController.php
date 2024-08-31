@@ -96,7 +96,7 @@ class BlogController extends Controller
             'meta_desc' => $validated['meta_desc'],
         ]);
     
-        return Redirect(Auth::user()->role. '/blog')->with('success', 'Content saved successfully!');
+        return redirect(Auth::user()->role. '/blog')->with('success', 'Content saved successfully!');
     }
 
     /**
@@ -173,7 +173,7 @@ class BlogController extends Controller
 
         // Update the other blog information
         $blog->update([
-            'title' => $request->title,
+            'title' => $request->tiRtle,
             'meta_desc' => $request->meta_desc,
             'content' => $content,
             'thumbnail' => $thumbnail,

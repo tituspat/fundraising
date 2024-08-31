@@ -260,7 +260,7 @@
                                                     </form>
 
                                                     <a href="faqs/delete/{{ $f->id }}"
-                                                        class="cursor-pointer remove-task-wrapper uil uil-times hover:text-danger"></a>
+                                                        class="cursor-pointer remove-task-wrapper uil uil-times text-danger"></a>
                                                 </div>
                                             </td>
                                         </tr>

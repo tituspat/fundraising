@@ -183,4 +183,20 @@ class ProgramController extends Controller
         //redirect to
         return redirect(Auth::user()->role. '/program')->with('success', 'Data Berhasil Dihapus!');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function toggleVisibility(string $id)
+    {
+        
+        //get user by ID
+        $blog = Blog::findOrFail($id);
+
+        $blog->is_previewed = !$blog->is_previewed;
+        $blog->save();
+
+        //redirect to
+        return redirect()->back()->with('success', 'changed');
+    }
 }

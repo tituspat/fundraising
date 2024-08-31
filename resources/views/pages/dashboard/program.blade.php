@@ -100,6 +100,12 @@
                                 </li>--}}
                             </ul>
                         </div>
+                        <div class="mt-4">
+                        <!-- Tampilkan Button -->
+                        <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/program/visibility', $program->id) }}'" class="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">
+                           {{ $program->is_previewed ? 'Sembunyikan' : 'Tampilkan' }}
+                        </button>
+                     </div>
                     </figcaption>
                     </figure>
 

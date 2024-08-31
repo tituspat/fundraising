@@ -26,4 +26,9 @@ class ProfileCalon extends Model
         'misi',
         'profile',
     ];
+
+    public function misi()
+    {
+        return $this->hasMany(Misi::class);
+    }
 }

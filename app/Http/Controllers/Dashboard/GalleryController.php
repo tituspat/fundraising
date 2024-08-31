@@ -108,7 +108,7 @@ class GalleryController extends Controller
     $mediaType = $request->hasFile('image') ? 'photo' : 'video';
 
     $imagePath = $request->hasFile('image') ? $request->file('image')->store('gallery_images', 'public') : null;
-    $imagePath = "storage/" . $imagePath;
+    $imagePath = "/storage/" . $imagePath;
     $videoUrl = $request->input('url');
 
     Gallery::create([
@@ -168,8 +168,8 @@ class GalleryController extends Controller
         $gallery->update([
         'title' => $request->title,
         'description' => $request->description,
-        'url' => 'storage/' .$imagePath,
-        'thumbnail' => 'storage/' .$imagePath
+        'url' => '/storage/' .$imagePath,
+        'thumbnail' => '/storage/' .$imagePath
         ]);
 
         return redirect(Auth::user()->role. '/gallery')
