@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Faq;
+use App\Models\FAQ;
 use Illuminate\Support\Facades\DB;
 
 
@@ -14,7 +14,7 @@ class ManageFAQController extends Controller
 
     public function index()
     {
-    	$faqs = Faq::get();
+    	$faqs = FAQ::get();
 
         return view('pages.dashboard.faqs', [
         'faqs' => $faqs,
@@ -35,7 +35,7 @@ class ManageFAQController extends Controller
 
     try {
         // Update the FAQ entry
-        Faq::where('id', $validatedData['id'])->update([
+        FAQ::where('id', $validatedData['id'])->update([
             'question' => $validatedData['question'],
             'answer' => $validatedData['answer'],
             'updated_at' => now()
@@ -50,7 +50,7 @@ class ManageFAQController extends Controller
     public function destroy($id)
     {
         //get user by ID
-        Faq::where('id', $id)->delete();
+        FAQ::where('id', $id)->delete();
 
 
         //redirect to
@@ -64,7 +64,7 @@ class ManageFAQController extends Controller
     public function store(Request $request)
     {
         // insert data ke table pegawai
-	    Faq::insert([
+	    FAQ::insert([
 	    	'question' => $request->question,
 	    	'answer' => $request->answer,
 	    	'created_at' => now(),
