@@ -25,7 +25,7 @@ use App\Http\Controllers\Dashboard\ManageTestimoniController;
 use App\Http\Controllers\Dashboard\ManageFAQController;
 use App\Http\Controllers\Dashboard\ManageQuestionController;
 use App\Http\Controllers\Dashboard\ProgramController;
-use App\Http\Controllers\FaqController;
+use App\Http\Controllers\FAQController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ use App\Http\Controllers\FaqController;
 // comment
 
 
-Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
+Route::get('/faqs', [FAQController::class, 'index'])->name('faqs.index');
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::post('questions', [QuestionController::class, 'store'])->name('questions.store');
 Route::get('/foto', [GalleryController::class, 'showPhoto'])->name('foto.index');
