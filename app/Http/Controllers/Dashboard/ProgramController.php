@@ -30,7 +30,7 @@ class ProgramController extends Controller
         //
         $isEditing = false;
 
-        return view('pages.dashboard.form-program', compact('$isEditing'));
+        return view('pages.dashboard.form-program', compact('isEditing'));
     }
 
     /**
@@ -44,6 +44,7 @@ class ProgramController extends Controller
             'title' => 'required|string',
             'content' => 'required',
             'image' => 'required',
+            'created_by' => 'required',
         ]);
     
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
@@ -83,6 +84,7 @@ class ProgramController extends Controller
             'content' => $content,
             'thumbnail' => $imagePath,
             'category' => "Program",
+            'created_by' => $validated['created_by'],
             'profile_calon_id' => "1",
         ]);
     

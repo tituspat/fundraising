@@ -77,7 +77,7 @@
                                     </button>
                                 </div>
                             </div>
-
+                        <input type="hidden" name="created_by" value="{{ Auth::user()->name }}">
 						<div class="my-4">
 							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Program</label>
 							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="Judul Program" required>

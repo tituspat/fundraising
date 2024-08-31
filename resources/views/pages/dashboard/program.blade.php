@@ -61,7 +61,7 @@
                      <!-- Image Container -->
                      <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
                         <!-- Program Image -->
-                        <img alt="hexadash Program" style="width: 460px; height: 220px" class="w-full rounded-10" src="{{ asset($program->gambar) }}">
+                        <img alt="hexadash Program" style="width: 460px; height: 220px" class="w-full rounded-10" src="{{ asset($program->thumbnail) }}">
                      </div>
                      <!-- Caption and Metadata -->
                      <figcaption class="">
