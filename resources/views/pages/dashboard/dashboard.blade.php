@@ -732,7 +732,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/1.png') }}" alt="Samsung Galaxy S8 256GB"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/1.png') }}" alt="Samsung Galaxy S8 256GB"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">Samsung
                                                 Galaxy S8 256GB</span>
                                           </div>
@@ -747,7 +747,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/2.png') }}" alt="Half Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Half
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/2.png') }}" alt="Half Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Half
                                                 Sleeve Shirt</span>
                                           </div>
                                        </td>
@@ -761,7 +761,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/3.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/3.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -775,7 +775,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/5.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/5.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -789,7 +789,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">15"
                                                 MackBook Pro</span>
                                           </div>
@@ -822,7 +822,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/1.png') }}" alt="Samsung Note 10 256GB"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Samsung
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/1.png') }}" alt="Samsung Note 10 256GB"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Samsung
                                                 Note
                                                 10 256GB</span>
                                           </div>
@@ -837,7 +837,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/2.png') }}" alt="Full Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Full
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/2.png') }}" alt="Full Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Full
                                                 Sleeve
                                                 Shirt</span>
                                           </div>
@@ -852,7 +852,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/3.png') }}" alt="Nike Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Nike
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/3.png') }}" alt="Nike Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Nike
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -866,7 +866,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/5.png') }}" alt="Bata Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Bata
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/5.png') }}" alt="Bata Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Bata
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -880,7 +880,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">15"
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">15"
                                                 MackBook
                                                 Pro</span>
                                           </div>
@@ -913,7 +913,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/1.png') }}" alt="Samsung Galaxy Premio 256GB">
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/1.png') }}" alt="Samsung Galaxy Premio 256GB">
                                              </div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Samsung
                                                 Galaxy Premio 256GB</span>
                                           </div>
@@ -928,7 +928,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/2.png') }}" alt="Half Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Half
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/2.png') }}" alt="Half Sleeve Shirt"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Half
                                                 Sleeve Shirt</span>
                                           </div>
                                        </td>
@@ -942,7 +942,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/3.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/3.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -956,7 +956,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/5.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/5.png') }}" alt="Marco Shoes"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Marco
                                                 Shoes</span>
                                           </div>
                                        </td>
@@ -970,7 +970,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/electronics/4.png') }}" alt="15&quot; MackBook Pro"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">15"
                                                 MackBook Pro</span>
                                           </div>
@@ -1038,7 +1038,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1054,7 +1054,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1070,7 +1070,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
@@ -1087,7 +1087,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1103,7 +1103,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1139,7 +1139,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1155,7 +1155,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1171,7 +1171,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
@@ -1188,7 +1188,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1204,7 +1204,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1241,7 +1241,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/chrome.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1257,7 +1257,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/firefox.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1273,7 +1273,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/internet-explorer.png') }}" alt="Google Chrome"></div>
                                              <span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
@@ -1290,7 +1290,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/opera.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>
@@ -1306,7 +1306,7 @@
                                     <tr class="group">
                                        <td class="ps-0 pe-4 py-2.5 text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                           <div class="flex items-center">
-                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexadash/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
+                                             <div class="me-2.5 w-[34px] h-[34px]"><img class="min-w-[34px] h-[34px] rounded-4" src="{{ asset('vendor/hexa/images/browser/safari.png') }}" alt="Google Chrome"></div><span class="font-medium capitalize text-dark dark:text-title-dark text-15">Google
                                                 Chrome</span>
                                           </div>
                                        </td>

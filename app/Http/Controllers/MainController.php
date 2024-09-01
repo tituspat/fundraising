@@ -7,6 +7,7 @@ use App\Models\Misi;
 use App\Models\Testimonial;
 use App\Models\News;
 use App\Models\Blog;
+use App\Models\Content;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,7 @@ class MainController extends Controller
         $calon = ProfileCalon::get()->first();
         $misis = Misi::all();
         $news = News::latest()->take(3)->get();
+        $content = Content::first();
 
         // mengambil data dari table program
     	$blogs = Blog::where('category', '=', "program")->get();
@@ -37,8 +39,9 @@ class MainController extends Controller
             'testimonials' => $testimonial,
             'nama_calon' => $calon->nama_calon,
             'misis' => $misis,
-            'profile' => $calon->profile,
+            'profile' => $calon,
             'foto_calon' => $calon->foto_calon,
+            'content' => $content,
         ]);
 
         // return view('index', ['programs'=>$programs, 'testimonials' => $testimonial ]);

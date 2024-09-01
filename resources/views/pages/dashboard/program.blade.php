@@ -79,7 +79,7 @@
                         <div class="flex justify-between">
                             <!-- Author Information -->
                             {{--<div class="flex items-center gap-x-4">
-                                <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexadash/images/avatars/t1.jpg') }}">
+                                <img alt="author" class="rounded-full max-w-[32px]" src="{{ asset('vendor/hexa/images/avatars/t1.jpg') }}">
                                 <span class="text-light dark:text-subtitle-dark text-15">Machel Bold</span>
                             </div>--}}
                             <!-- Engagement Metrics -->

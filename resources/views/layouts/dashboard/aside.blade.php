@@ -3,8 +3,8 @@
          <a href="/{{Auth::user()->role}}/dashboard" class="block text-center">
             <div class="logo-full">
                <!-- logo -->
-               <!-- <img class="ps-[27px] dark:hidden" src="{{ asset('vendor/hexadash/images/logos/logo-dark.png') }}" alt="Logo">
-               <img class="ps-[27px] hidden dark:block" src="{{ asset('vendor/hexadash/images/logos/logo-white.png') }}" alt="Logo"> -->
+               <!-- <img class="ps-[27px] dark:hidden" src="{{ asset('vendor/hexa/images/logos/logo-dark.png') }}" alt="Logo">
+               <img class="ps-[27px] hidden dark:block" src="{{ asset('vendor/hexa/images/logos/logo-white.png') }}" alt="Logo"> -->
             </div>
             <div class="hidden logo-fold">
                <img class="p-[27px] max-w-[80px]" src="{{ asset('img/logo-sahabat.png') }}" alt="Logo">
