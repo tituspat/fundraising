@@ -26,6 +26,8 @@ class NewsCrawlerController extends Controller
     {
         $request->validate([
             'url' => 'required|url',
+        ],[
+            'url' => 'harap isi link video youtube',
         ]);
 
         $url = $request->input('url');

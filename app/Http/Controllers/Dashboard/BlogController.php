@@ -45,6 +45,10 @@ class BlogController extends Controller
             'content' => 'required',
             'creator' => 'required',
             'meta_desc' => 'required',
+        ],[
+            'title.required' => 'Nama harus diisi.',
+            'content.required' => 'Content harus diisi.',
+            'meta.required' => 'SEO harus diisi.',
         ]);
 
         $content = $request->input('content'); // Ambil konten dari request
@@ -127,8 +131,18 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
-
-
+        //
+        $validated = $request->validate([
+            'title' => 'required|string',
+            'content' => 'required',
+            'creator' => 'required',
+            'meta_desc' => 'required',
+        ],[
+            'title.required' => 'Nama harus diisi.',
+            'content.required' => 'Content harus diisi.',
+            'meta.required' => 'SEO harus diisi.',
+        ]);
+        
         // Ambil blog berdasarkan ID
         $blog = Blog::findOrFail($id);
 

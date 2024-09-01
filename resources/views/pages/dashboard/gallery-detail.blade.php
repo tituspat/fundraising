@@ -46,10 +46,12 @@
 
                </div>
                 <div class="flex flex-row gap-2">
+                    @if($gallery->media=='photo')
                     <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
                         <i class="uil uil-pen"></i>
                         <span class="m-0">Edit</span>
                     </button>
+                    @endif
                     <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery/'.$gallery->id.'/delete/') }}'">
                         <!-- <i class="uil uil-cross"></i> -->
                         <span class="m-0">Delete</span>
@@ -72,7 +74,7 @@
                                                 Unggah Foto
                                             </p>
                                         </div>
-                                        <input id="dropzone-file" type="file" name="image" class="hidden" accept="image/*" onchange="previewImage(event)" required />
+                                        <input id="dropzone-file" type="file" name="image" class="hidden" accept="image/*" value="{{$gallery->thumbnail}}" onchange="previewImage(event)" required />
                                     </label>
                                 </div>
 
@@ -95,13 +97,19 @@
                            <div class="pb-4">
                               <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Nama Kegiatan</label>
                               <div class="flex flex-col flex-1 md:flex-row">
-                                 <input type="text" id="nameVertical" class=" rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="{{$gallery->title}}" required>
+                                <input type="text" id="nameVertical" class=" rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="{{$gallery->title}}" value="{{$gallery->title}}" required>
+                                @error('title')
+        						    <span class="text-danger">{{ $message }}</span>
+    						    @enderror
                               </div>
                            </div>
                            <div class="pb-4">
                               <label for="emailVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Deskripsi Singkat</label>
                               <div class="flex flex-col flex-1 md:flex-row">
-                                 <textarea  id="emailVertical" class="w-full rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark  focus:ring-primary focus:border-primary" name="description" placeholder="{{$gallery->description}}" required></textarea>
+                                 <textarea  id="emailVertical" class="w-full rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark  focus:ring-primary focus:border-primary" name="description" placeholder="{{$gallery->description}}" required>{{$gallery->description}}</textarea>
+                                 @error('description')
+        						    <span class="text-danger">{{ $message }}</span>
+    						    @enderror
                               </div>
                            </div>
 

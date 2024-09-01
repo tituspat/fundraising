@@ -62,6 +62,11 @@ class ProfileCalonController extends Controller
         'visi' => 'required|string',
         'profile' => 'required|string',
         'foto_calon' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+    ],[
+        'nama_calon' => 'nama harus diisi',
+        'visi' => 'visi harus diisi',
+        'profile' => 'profile calon harus diisi',
+        // 'foto_calon' => 'password harus diisi',
     ]);
 
     $calon = ProfileCalon::findOrFail($request->id);

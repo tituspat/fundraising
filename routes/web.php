@@ -11,6 +11,7 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\PublicProgramController;
 use App\Http\Controllers\PublicBlogController;
+use App\Http\Controllers\ContactController;
 
 
 

@@ -70,32 +70,6 @@ class GalleryController extends Controller
         return view('pages.dashboard.form-gallery');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    // public function store(Request $request)
-    // {
-    //     //
-
-    //     $request->validate([
-    //         'title' => 'required|string|max:255',
-    //         'description' => 'nullable|string',
-    //         'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-    //     ]);
-
-    //     // Handle the image upload
-    //     $imagePath = $request->file('image')->store('gallery_images', 'public');
-
-    //     // Store the gallery information in the database
-    //     Gallery::create([
-    //         'title' => $request->title,
-    //         'description' => $request->description,
-    //         'url' => $imagePath,
-    //     ]);
-
-    //     return redirect(Auth::user()->role. '/gallery')->with('success', 'Gallery created successfully.');
-    // }
-
     public function store(Request $request)
 {
     $request->validate([
@@ -103,6 +77,11 @@ class GalleryController extends Controller
         'description' => 'nullable|string',
         'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         'url' => 'nullable|url',
+    ],[
+        'title' => 'title harus diisi',
+        'description' => 'description harus terisi',
+        'image' => 'image harus tersedia',
+        'url' => 'url harus tersedia',
     ]);
 
     $mediaType = $request->hasFile('image') ? 'photo' : 'video';
@@ -245,6 +224,7 @@ class GalleryController extends Controller
             'media' => 'required',
             'thumbnail' => 'required',
         ]);
+        
         // dd($request->all());
         Gallery::create([
             'url' => $request->input('url'),

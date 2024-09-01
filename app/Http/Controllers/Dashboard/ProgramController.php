@@ -44,6 +44,9 @@ class ProgramController extends Controller
             'title' => 'required|string',
             'content' => 'required',
             'image' => 'required',
+        ],[
+            'title' => 'Judul harus diisi',
+            'content' => 'Konten harus diisi',
         ]);
 
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
@@ -124,7 +127,6 @@ class ProgramController extends Controller
         $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required',
-            // 'image' => 'required',
         ]);
 
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;

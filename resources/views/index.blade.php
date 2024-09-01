@@ -937,7 +937,7 @@
                             <img src="{{ asset('vendor/plurk/images/form-img.png') }}" alt="form-img" class="mx-auto"
                                 data-aos="fade-right" data-aos-duration="1000" />
                         </div>
-                        <form action="{{ route('questions.store') }}" method="POST"
+                        <form action="/questions" method="POST"
                             class="rounded-3xl bg-white px-4 py-12 dark:bg-[#101626] lg:w-2/3 lg:px-8">
                             @csrf
                             <div class="grid gap-10 sm:grid-cols-2">
@@ -983,13 +983,18 @@
                             </div>
                             <div class="mt-10 text-center ltr:lg:text-right rtl:lg:text-left">
                                 <button type="submit"
-                                    class="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary">
+                                disabled class="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary">
                                     Kirim
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
+                @if (session('success'))
+                <div>
+                    {{ session('success') }}
+                </div>
+                @endif
             </section>
 
             @include('layouts.footer')

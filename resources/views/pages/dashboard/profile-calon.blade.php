@@ -42,14 +42,23 @@
                                     <div class="mb-4">
                                         <label for="nameVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Nama Calon</label>
                                         <input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="nama_calon" value="{{ old('nama_calon', $calon->nama_calon) }}" required>
+                                        @error('nama_calon')
+        						            <span class="text-danger">{{ $message }}</span>
+    						            @enderror                                        
                                     </div>
                                     <div class="mb-4">
                                         <label for="visiVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Visi</label>
                                         <textarea id="visiVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="visi" required>{{ old('visi', $calon->visi) }}</textarea>
+                                        @error('visi')
+        						            <span class="text-danger">{{ $message }}</span>
+    						            @enderror            
                                     </div>
                                     <div class="mb-4">
                                         <label for="visiVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Teks Deskripsi Visi</label>
                                         <textarea id="visiVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="desc_visi" required>{{ $calon->more_visi }}</textarea>
+                                        @error('more_visi')
+        						            <span class="text-danger">{{ $message }}</span>
+    						            @enderror            
                                     </div>
                                     
                                     
@@ -64,11 +73,17 @@
                                                     <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark border-1 border-regular dark:border-box-dark-up text-[15px] rounded-10">
                                                         <div class="py-[10px] px-[20px] text-dark dark:text-title-dark font-medium text-[17px] border-b border-regular dark:border-box-dark-up flex items-center justify-between gap-[15px]">
                                                         <input type="text" id="head_misi_{{$misi->id}}" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="misi[{{$misi->id}}][head_misi]" value="{{ $misi->head_misi }}" required>
+                                                        @error('head_misi_' . $misi->id)
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
                                                         <input type="hidden" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="misi[{{$misi->id}}][id]" value="{{ $misi->id }}" required>
                                                         </div>
                                                         <div class="p-[20px]">
                                                             <p class="text-14 mb-[8px] text-dark dark:text-title-dark font-normal">
                                                                 <textarea type="text" id="body_misi_{{$misi->id}}" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="misi[{{$misi->id}}][body_misi]" required>{{ $misi->body_misi }}</textarea>
+                                                                @error('body_misi_' . $misi->id)
+        						                                    <span class="text-danger">{{ $message }}</span>
+    						                                    @enderror            
                                                             </p>
                                                         </div>
                                                     </div>
@@ -81,6 +96,9 @@
                                     <div class="mb-4">
                                         <label for="profileVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Profile</label>
                                         <textarea id="profileVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="profile" style="min-height: 250px; height: fit-content;" required>{{ old('profile', $calon->profile) }}</textarea>
+                                        @error('profile')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
 
                                     <div class="flex items-center gap-[15px] mt-[14px]">

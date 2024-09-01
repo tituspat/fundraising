@@ -53,16 +53,25 @@
                     <div class="p-[25px]">
 						<div class="my-4">
 							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Blog</label>
-							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="Judul Blog" required>
+							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="Judul Blog">
+							@error('title')
+        						<span class="text-danger">{{ $message }}</span>
+    						@enderror
                         </div>
 						<div class="col-span-12 mb-[30px] my-4">
 							<div class="editor-container editor-container_classic-editor" id="editor-container">
-								<div class="editor-container__editor"><textarea name="content" id="editor">...</textarea></div>
+								<div class="editor-container__editor"><textarea name="content" id="editor"></textarea></div>
 							</div>
+							@error('content')
+        						<span class="text-danger">{{ $message }}</span>
+    						@enderror
 						</div>
 						<div class="my-4">
 							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Deksripsi SEO</label>
 							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="meta_desc" placeholder="Judul Blog" required>
+							@error('meta_desc')
+        						<span class="text-danger">{{ $message }}</span>
+    						@enderror
                         </div>
 						<div class="flex items-center gap-[15px] mt-[14px]">
                               <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/program') }}'">Batal</button>
@@ -79,22 +88,29 @@
 			<div class="col-span-12 md:col-span-4">
                 <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
                     <div class="p-[25px]">
-
-
 						<div class="my-4">
 							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Blog</label>
 							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="Judul Blog" value="{{$blog->title}}" required>
+							@error('title')
+        						<span class="text-danger">{{ $message }}</span>
+    						@enderror
                         </div>
 
 						<div class="col-span-12 mb-[30px] my-4">
 							<div class="editor-container editor-container_classic-editor" id="editor-container">
 								<div class="editor-container__editor"><textarea name="content" id="editor">{{$blog->content}}</textarea></div>
 							</div>
+							@error('content')
+        						<span class="text-danger">{{ $message }}</span>
+    						@enderror
 						</div>
 
 						<div class="my-4">
 							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">SEO Deskripsi</label>
 							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="meta_desc" placeholder="Deskripsi SEO" required>
+							@error('meta_desc')
+        						<span class="text-danger">{{ $message }}</span>
+    						@enderror
                         </div>
 
 						<div class="flex items-center gap-[15px] mt-[14px]">
