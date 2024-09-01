@@ -69,7 +69,7 @@
                                     @method('PUT')
                                     <div class="form-group">
                                         <input type="text" name="testimonial" value="{{ $userTestimonial->testimonial }}"
-                                            class="w-full bg-secondary/10 py-6 pl-7 pr-32 text-left placeholder:font-bold placeholder:text-black focus-within:outline-none"
+                                            class="w-full bg-secondary/10 py-6 pl-7 pr-32 text-left placeholder:font-bold overflow-hidden placeholder:text-black focus-within:outline-none"
                                             required />
                                     </div>
                                     <button type="submit"

@@ -86,7 +86,7 @@ class BlogController extends Controller
             $thumbnail = $crawler->filter('img')->first()->attr('src');
         } else {
             // If no image found, use a default image route
-        $thumbnail = asset('path/to/default/image.png');
+        $thumbnail = asset('img/blog/139717.jpg');
         }
 
 
