@@ -105,6 +105,10 @@
         const acc = new Accordion('.accordion-container');
         acc.open(0);
     </script>
+
+
+
+
 </body>
 
 </html>

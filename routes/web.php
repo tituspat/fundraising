@@ -54,6 +54,8 @@ Route::get('/program', [PublicProgramController::class, 'index'])->name('program
 Route::get('/program/{program}', [PublicProgramController::class, 'show'])->name('program.show');
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{id}', [PublicBlogController::class, 'show'])->name('blog.show');
+Route::get('/program/{id}/vote-progress', [CommentController::class, 'showVoteProgress']);
+
 
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
@@ -74,7 +76,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/content', [ContentController::class, 'index'])->name('content');
       Route::post('/content/update', [ContentController::class, 'update'])->name('content.update');
       Route::get('/users', [UsersController::class, 'index'])->name('users');
-      Route::post('/users/add', [UsersController::class, 'store'])->name('users');
+      Route::post('/users/add', [UsersController::class, 'store'])->name('users.add');
       Route::get('/users/delete/{id}', [UsersController::class, 'destroy'])->name('users.delete');
       Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');
       Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('profile-calon');
@@ -133,6 +135,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
       Route::post('/comments/{comment}/edit', [CommentController::class, 'update'])->name('comments.update');
       Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+      Route::post('/comments/vote', [CommentController::class, 'vote'])->name('comments.vote');
+
+
 
 
     });

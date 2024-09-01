@@ -8,6 +8,26 @@ use App\Models\Comment;
 
 class CommentController extends Controller
 {
+    public function vote(Request $request)
+    {
+
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'blog_id' => 'required|exists:blogs,id',
+        ]);
+
+        $comments = Comment::where('user_id', $request->user_id)
+            ->where('blog_id', $request->blog_id)
+            ->get();
+
+        foreach ($comments as $comment) {
+            $comment->update(['is_voted' => true]);
+        }
+
+        return redirect()->back()->with('success', 'Comments voted successfully!');
+    }
+
+
     public function store(Request $request)
     {
         $request->validate([
@@ -52,8 +72,6 @@ class CommentController extends Controller
 
         return redirect()->back()->with('success', 'Comment deleted successfully.');
     }
-
-
 
 
 }

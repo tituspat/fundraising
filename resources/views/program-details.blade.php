@@ -42,6 +42,7 @@
 
 
 
+
             <div class="mt-10 pb-14 md:pb-20">
                 <h3 class="text-xl font-extrabold text-black dark:text-white sm:text-2xl">Komentar</h3>
 
@@ -118,6 +119,34 @@
                     <p class="mt-6 text-gray-700 dark:text-gray-200">Silakan<a href="{{ route('login') }}"
                             class="text-blue-500">Masuk</a> terlebih dahulu untuk menambahkan komentar</p>
                 @endauth
+
+                <div class="pb-10 md:pb-16">
+                    <h3 class="mb-7 text-xl font-extrabold text-black dark:text-white sm:text-2xl">Berikan Dukungan</h3>
+                    <p
+                        class="relative font-semibold leading-[30px] before:absolute before:top-0 before:h-full before:w-1 before:rounded before:bg-primary ltr:pl-6 ltr:before:left-0 rtl:pr-6 rtl:before:right-0 md:text-lg"
+                    >
+                        Beri dukungan terhadap program Sahabat Tabanan yaitu Program {{ $program->title }}, dengan klik tombol vote di bawah ini. </p>
+
+                </div>
+                @auth
+                @php
+                    $hasVoted = $program->comments()->where('user_id', auth()->user()->id)->where('is_voted', true)->exists();
+                @endphp
+
+                @if($hasVoted)
+                    <p class="mt-4 text-green-500">Anda sudah vote program ini</p>
+                @else
+                    <form action="{{ route(Auth::user()->role . '.comments.vote') }}" method="POST" class="mt-4">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                        <input type="hidden" name="blog_id" value="{{ $program->id }}">
+                        <button type="submit" class="btn bg-blue-500 px-4 py-2 text-white rounded-lg">Berikan Vote</button>
+                    </form>
+                @endif
+            @endauth
+
+
+
             </div>
         </div>
     </section>
@@ -177,4 +206,5 @@
             </section>
         </div>
     </div>
+
 @endsection
