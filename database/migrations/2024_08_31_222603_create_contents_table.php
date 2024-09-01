@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->String('jumbotron_title');
             $table->String('jumbotron_img');
-            $table->String('Jumbotron_subtitle');
+            $table->String('jumbotron_subtitle');
             $table->String('profile_title');
             $table->String('program_title');
             $table->String('support_text');

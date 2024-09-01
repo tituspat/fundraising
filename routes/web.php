@@ -68,6 +68,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->group(function () {
       Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
       Route::get('/content', [ContentController::class, 'index'])->name('content');
+      Route::post('/content/update', [ContentController::class, 'update'])->name('content.update');
       Route::get('/users', [UsersController::class, 'index'])->name('users');
       Route::get('/users/delete/{id}', [UsersController::class, 'destroy'])->name('users.delete');
       Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');

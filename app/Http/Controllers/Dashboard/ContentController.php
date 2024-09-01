@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Content;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContentController extends Controller
 {
@@ -14,9 +15,9 @@ class ContentController extends Controller
     public function index()
     {
         //
-        $Content = Content::all();
-        
-        return view('pages.dashboard.content-management', ['content' => $Content ]);
+        $content = Content::first();
+
+        return view('pages.dashboard.content-management', ['content' => $content ]);
     }
 
     /**
@@ -54,9 +55,22 @@ class ContentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
         //
+        $content = Content::findOrFail($request->id);
+
+        // Update the other blog information
+        $content->update([
+            'jumbotron_title'=>$request->jumbotron_title, 
+            'jumbotron_subtitle'=>$request->jumbotron_subtitle, 
+            'profile_title'=>$request->profile_title, 
+            'program_title'=>$request->program_title, 
+            'support_text'=>$request->support_text, 
+            'email_title'=>$request->email_title, 
+        ]);
+
+        return redirect(Auth::user()->role. '/content');
     }
 
     /**

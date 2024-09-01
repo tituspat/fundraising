@@ -173,7 +173,7 @@ class BlogController extends Controller
 
         // Update the other blog information
         $blog->update([
-            'title' => $request->tiRtle,
+            'title' => $request->title,
             'meta_desc' => $request->meta_desc,
             'content' => $content,
             'thumbnail' => $thumbnail,

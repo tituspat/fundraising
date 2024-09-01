@@ -23,7 +23,7 @@
    <link rel="stylesheet" href="{{ asset('vendor/hexa/assets/vendor_assets/css/quill.snow.css') }}">
    <link rel="stylesheet" href="{{ asset('vendor/hexa/assets/vendor_assets/css/svgMap.min.css') }}">
    
-   <link rel="stylesheet" href="{{ asset('vendor/hexa/assets/vendor_assets/css/tailwind.css')}}">
+   <link rel="stylesheet" href="{{ asset('vendor/hexa/tailwind.css')}}">
    <!-- endinject -->
 
    <!-- Fonts -->
