@@ -43,11 +43,13 @@
 
 
 
-            <div class="mt-10 pb-14 md:pb-20">
+            <div class="mt-10 pb-5 md:pb-11">
                 <h3 class="text-xl font-extrabold text-black dark:text-white sm:text-2xl">Komentar</h3>
 
                 @foreach ($program->comments as $comment)
+                @if(!is_null($comment->comment))
                 <div class="mt-6 bg-white p-4 shadow rounded-lg dark:bg-gray-800">
+
                     <div class="flex items-center justify-between">
                         <div>
                             <div class="text-base font-medium text-black dark:text-white">{{ $comment->user->name }}</div>
@@ -82,9 +84,11 @@
 
                         @endif
                     </div>
+
                     <div class="mt-4">
                         <p class="text-gray-700 dark:text-gray-200">{{ $comment->comment }}</p>
                     </div>
+
 
                     <!-- Edit Comment Form -->
                     <div id="edit-comment-{{ $comment->id }}" class="mt-4 bg-gray-100 p-4 rounded-lg dark:bg-gray-900" style="display:none;">
@@ -97,17 +101,20 @@
                             </div>
                         </form>
                     </div>
+                    @endif
                 </div>
+
             @endforeach
 
 
 
 
+
                 @auth
-                    <form action="{{ route('comments.store') }}" method="POST" class="mt-6">
+                    <form action="{{ route('comments.store') }}" method="POST" class="">
                         @csrf
                         <input type="hidden" name="blog_id" value="{{ $program->id }}">
-                        <div class="mb-4">
+                        <div class="mb-4 mt-4">
                             <textarea name="comment" rows="4" class="w-full p-4 border rounded-lg dark:bg-gray-800 dark:text-gray-200"
                                 placeholder="Tambahkan Komentar Anda..."></textarea>
                         </div>

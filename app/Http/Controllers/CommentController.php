@@ -9,23 +9,33 @@ use App\Models\Comment;
 class CommentController extends Controller
 {
     public function vote(Request $request)
-    {
+{
+    $request->validate([
+        'user_id' => 'required|exists:users,id',
+        'blog_id' => 'required|exists:blogs,id',
+    ]);
 
-        $request->validate([
-            'user_id' => 'required|exists:users,id',
-            'blog_id' => 'required|exists:blogs,id',
+    $comments = Comment::where('user_id', $request->user_id)
+        ->where('blog_id', $request->blog_id)
+        ->get();
+
+    if ($comments->isEmpty()) {
+
+        Comment::create([
+            'user_id' => $request->user_id,
+            'blog_id' => $request->blog_id,
+            'is_voted' => true,
         ]);
-
-        $comments = Comment::where('user_id', $request->user_id)
-            ->where('blog_id', $request->blog_id)
-            ->get();
+    } else {
 
         foreach ($comments as $comment) {
             $comment->update(['is_voted' => true]);
         }
-
-        return redirect()->back()->with('success', 'Comments voted successfully!');
     }
+
+    return redirect()->back()->with('success', 'Comments voted successfully!');
+}
+
 
 
     public function store(Request $request)
