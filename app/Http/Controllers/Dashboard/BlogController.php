@@ -46,9 +46,9 @@ class BlogController extends Controller
             'creator' => 'required',
             'meta_desc' => 'required',
         ]);
-    
+
         $content = $request->input('content'); // Ambil konten dari request
-        
+
         // Crawler untuk menelusuri konten HTML
         $crawler = new Crawler($content);
 
@@ -91,11 +91,12 @@ class BlogController extends Controller
             'title' => $validated['title'],
             'content' => $content,
             'thumbnail' => $thumbnail,
-            'category' => "blog",
             'created_by' => $validated['creator'],
+            'category' => "blog",
+            'category_id' => "1",
             'meta_desc' => $validated['meta_desc'],
         ]);
-    
+
         return redirect(Auth::user()->role. '/blog')->with('success', 'Content saved successfully!');
     }
 
@@ -126,8 +127,8 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
-        
+
+
         // Ambil blog berdasarkan ID
         $blog = Blog::findOrFail($id);
 
@@ -178,12 +179,13 @@ class BlogController extends Controller
             'content' => $content,
             'thumbnail' => $thumbnail,
             'category' => "blog",
+            'category_id' => '1',
             // 'created_by' => $request->creator,
             ]);
         // Atur is_previewed menjadi false
         $blog->is_previewed = false;
         $blog->save();
-    
+
             return redirect(Auth::user()->role. '/blog')
                              ->with('success', 'Blog created successfully.');
     }
@@ -193,7 +195,7 @@ class BlogController extends Controller
      */
     public function destroy(string $id)
     {
-        
+
         //get user by ID
         Blog::findOrFail($id)->delete();
 
@@ -206,7 +208,7 @@ class BlogController extends Controller
      */
     public function toggleVisibility(string $id)
     {
-        
+
         //get user by ID
         $blog = Blog::findOrFail($id);
 
@@ -217,5 +219,5 @@ class BlogController extends Controller
         return redirect()->back()->with('success', 'changed');
     }
 
-    
+
 }

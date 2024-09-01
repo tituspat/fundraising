@@ -15,9 +15,15 @@ class ProgramSeeder extends Seeder
      */
     public function run(): void
     {
+
+        $blogCategory = DB::table('ref_blog_categories')->where('category', 'blog')->value('id');
+        $programCategory = DB::table('ref_blog_categories')->where('category', 'program')->value('id');
+
+
         DB::table('blogs')->insert([
             'title' => 'PENINGKATAN PRODUKSI BERAS MERAH',
             'thumbnail' => 'img/program/program-beras.jpg',
+            'category_id' => $programCategory,
             'category' => 'program',
             'created_by' => 'admin',
             'is_previewed' => true,
@@ -26,6 +32,7 @@ class ProgramSeeder extends Seeder
         DB::table('blogs')->insert([
             'title' => 'PETERNAKAN SAPI',
             'thumbnail' => 'img/program/program-peternakan2.jpg',
+            'category_id' => $programCategory,
             'category' => 'program',
             'created_by' => 'admin',
             'is_previewed' => true,
@@ -34,6 +41,7 @@ class ProgramSeeder extends Seeder
         DB::table('blogs')->insert([
             'title' => 'KELAPA KOPYOR GENJAH EXOTIC',
             'thumbnail' => 'img/program/program-kelapa.jpg',
+            'category_id' => $programCategory,
             'category' => 'program',
             'created_by' => 'admin',
             'is_previewed' => true,
@@ -42,6 +50,7 @@ class ProgramSeeder extends Seeder
         DB::table('blogs')->insert([
             'title' => 'PEMBUATAN PAKAN TERNAK SAPI & PUPUK ORGANIK',
             'thumbnail' => 'img/program/program-pupuk.jpg',
+            'category_id' => $programCategory,
             'category' => 'program',
             'created_by' => 'admin',
             'is_previewed' => true,

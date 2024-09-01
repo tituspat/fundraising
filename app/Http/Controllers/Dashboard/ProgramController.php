@@ -82,7 +82,8 @@ class ProgramController extends Controller
             'title' => $validated['title'],
             'content' => $content,
             'thumbnail' => $imagePath,
-            'category' => "Program",
+            'category' => "program",
+            'category_id' => "2",
             'profile_calon_id' => "1",
         ]);
 
@@ -162,6 +163,7 @@ class ProgramController extends Controller
             'content' => $content,
             'thumbnail' => $imagePath,
             'category' => "program",
+            'category_id' => "2",
             // 'created_by' => $request->creator,
             ]);
         // Atur is_previewed menjadi false
@@ -189,7 +191,7 @@ class ProgramController extends Controller
      */
     public function toggleVisibility(string $id)
     {
-        
+
         //get user by ID
         $blog = Blog::findOrFail($id);
 

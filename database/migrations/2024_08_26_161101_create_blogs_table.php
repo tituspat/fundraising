@@ -15,13 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable(); // title column
             $table->longText('content')->nullable(); // description column, nullable
+            $table->unsignedBigInteger('category_id')->nullable()->default(1);
             $table->string('category')->nullable(); // description column, nullable
             $table->string('thumbnail')->nullable(); // description column, nullable
             $table->boolean('is_previewed')->default(false); // description column, nullable
             $table->string('meta_desc')->nullable(); // description column, nullable
-            $table->string('created_by'); // 
+            $table->string('created_by'); //
             $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('ref_blog_categories')->onDelete('set null');
         });
     }
 
