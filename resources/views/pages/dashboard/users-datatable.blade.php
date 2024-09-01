@@ -209,12 +209,12 @@
                                                 </div>
                                                 <div class="mb-4">
                                                     <label for="user-role" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Peran</label>
-                                                    <select class="py-[11px] px-[20px] w-full capitalize [&~span]:top-[15px] [&~span]:w-[15px] [&~span]:h-[15px] [&~span]:text-body dark:[&~span]:text-white dark:text-subtitle-dark border-regular dark:border-box-dark-up border-1 rounded-6 dark:bg-box-dark-up outline-none mb-[20px] ltr:[&~span]:right-[0.75rem] rtl:[&~span]:left-[0.75rem] rtl:[&~span]:right-auto" data-te-class-notch-leading="!border-0 !shadow-none group-data-[te-input-focused]:shadow-none group-data-[te-input-focused]:border-none" data-te-class-notch-middle="!border-0 !shadow-none !outline-none" data-te-class-notch-trailing="!border-0 !shadow-none !outline-none" id="user-role" name="role" >
+                                                    
+                                                    <select id="user-role" name="role" data-te-select-init data-te-class-select-input="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] capitalize py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" data-te-class-notch-leading="!border-0 !shadow-none group-data-[te-input-focused]:shadow-none group-data-[te-input-focused]:border-none" data-te-class-notch-middle="!border-0 !shadow-none !outline-none" data-te-class-notch-trailing="!border-0 !shadow-none !outline-none">
                                                         <option value="mod">Moderator</option>
                                                         <option value="media">Media</option>
                                                         <option value="member">Member</option>
                                                     </select>
-                                                    
                                                 </div>
                                             </div>
 
