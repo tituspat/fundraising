@@ -11,7 +11,6 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\PublicProgramController;
 use App\Http\Controllers\PublicBlogController;
-use App\Http\Controllers\ContactController;
 
 
 
@@ -44,7 +43,7 @@ use App\Http\Controllers\FAQController;
 
 Route::get('/faqs', [FAQController::class, 'index'])->name('faqs.index');
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
-Route::post('questions', [QuestionController::class, 'store'])->name('questions.store');
+Route::post('/questions', [QuestionController::class, 'store'])->name('questions.store');
 Route::get('/foto', [GalleryController::class, 'showPhoto'])->name('foto.index');
 // Route::get('/foto/{id}', [GalleryController::class, 'showPhoto'])->name('foto.index');
 Route::get('/video', [GalleryController::class, 'showVideo'])->name('video.index');
@@ -71,6 +70,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/content', [ContentController::class, 'index'])->name('content');
       Route::post('/content/update', [ContentController::class, 'update'])->name('content.update');
       Route::get('/users', [UsersController::class, 'index'])->name('users');
+      Route::post('/users/add', [UsersController::class, 'store'])->name('users');
       Route::get('/users/delete/{id}', [UsersController::class, 'destroy'])->name('users.delete');
       Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');
       Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('profile-calon');
@@ -116,7 +116,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/program/{id}/edit', [ProgramController::class, 'edit'])->name('program.edit');
       Route::post('/program/{id}/update', [ProgramController::class, 'update'])->name('program.update');
       Route::get('/program/{id}/delete', [ProgramController::class, 'destroy'])->name('program.destroy');
-      Route::get('/program/visibility/{id}', [ProgramController::class, 'toggleVisibility'])->name('program.visibility');
+      Route::get('/program/{id}/visibility', [ProgramController::class, 'toggleVisibility'])->name('program.destroy');
       // blog
       Route::get('/blog', [BlogController::class, 'index'])->name('blog');
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');

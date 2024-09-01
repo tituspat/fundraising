@@ -114,7 +114,7 @@ class UsersController extends Controller
             'name' => 'nama harus diisi',
             'email' => 'email harus diisi',
             'password' => 'password harus diisi',
-            'role' => 'tentukan role'
+            'role' => 'tentukan role'   
         ]);
 
         // Buat atau dapatkan role_id berdasarkan nama role
