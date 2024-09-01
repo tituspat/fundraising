@@ -84,6 +84,8 @@
                                     Pertanyaan</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
                                     Asal Daerah</th>
+                                    <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
+                                        Tanggal Dibuat</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-[25px] py-[17px] text-end text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden rounded-e-[10px] sticky top-0">
                                     Nomor HP</th>
                               </tr>
@@ -110,6 +112,9 @@
                                 {{$q->origin}}
                              </td>
                              <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
+                                {{$q->created_at}}
+                             </td>
+                             <td class="ps-[20px] py-[12px] font-normal last:text-center capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
                                 {{$q->phone_number}}
                              </td>
                                 </div>
