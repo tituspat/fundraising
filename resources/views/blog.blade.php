@@ -38,12 +38,17 @@
                                     <div class="p-5 text-sm font-bold">
                                         <h6 class="font-extrabold text-secondary dark:text-secondary">{{ $item->title }}
                                         </h6>
-                                        {{--<p class="line-clamp-4">{{ $item->description }}</p>--}} 
+                                        {{--<p class="line-clamp-4">{{ $item->description }}</p>--}}
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
+
+                    <div class="pagination mt-10">
+                        {{ $blogs->links() }}
+                    </div>
+
                 </div>
             </section>
         </div>

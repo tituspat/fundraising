@@ -18,15 +18,18 @@ class UsersController extends Controller
 
     $query = User::query();
 
+    if ($roleFilter) {
+        $query->where('role', 'like', "%{$roleFilter}%");
+        // $query->where('role', $roleFilter);
+    }
+
     // Filter by name if search parameter is provided
     if ($search) {
         $query->where('name', 'like', "%{$search}%");
     }
 
     // Filter by role if role_filter parameter is provided
-    if ($roleFilter) {
-        $query->where('role', $roleFilter);
-    }
+
 
     $users = $query->get();
 

@@ -11,6 +11,8 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\PublicProgramController;
 use App\Http\Controllers\PublicBlogController;
+use App\Http\Controllers\CommentController;
+
 
 
 
@@ -52,6 +54,8 @@ Route::get('/program', [PublicProgramController::class, 'index'])->name('program
 Route::get('/program/{program}', [PublicProgramController::class, 'show'])->name('program.show');
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{id}', [PublicBlogController::class, 'show'])->name('blog.show');
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 
 Route::controller(MainController::class)->group(function () {
@@ -126,6 +130,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/blog/{id}/update', [BlogController::class, 'update'])->name('blog.update');
       Route::get('/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blog.delete');
       Route::get('/blog/visibility/{id}', [BlogController::class, 'toggleVisibility'])->name('blog.toggleVisibility');
+      Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+      Route::post('/comments/{comment}/edit', [CommentController::class, 'update'])->name('comments.update');
+      Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+
+
     });
 
     // mod

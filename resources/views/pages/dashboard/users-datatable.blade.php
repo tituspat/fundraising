@@ -286,13 +286,13 @@
                                     <span class="me-2 dark:text-subtitle-dark">Nama Pengguna:</span>
                                     <input type="search" name="search" placeholder="Cari nama"
                                         class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark search-close-icon:appearance-none search-close-icon:w-[20px] search-close-icon:h-[23px] search-close-icon:bg-[url(images/svg/x.svg)] search-close-icon:cursor-pointer"
-                                        autocomplete="off">
+                                        autocomplete="on">
                                 </div>
                                 <div class="inline-flex items-center">
-                                    <span class="me-2 dark:text-subtitle-dark">Peran</span>
-                                    <input type="text" name="role" placeholder="Cari peran"
-                                        class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark"
-                                        value="{{ request('role') }}">
+                                    <span class="me-2 dark:text-subtitle-dark">Peran:</span>
+                                    <input type="search" name="roleFilter"  placeholder="Cari peran"
+                                        class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark search-close-icon:appearance-none search-close-icon:w-[20px] search-close-icon:h-[23px] search-close-icon:bg-[url(images/svg/x.svg)] search-close-icon:cursor-pointer"
+                                        autocomplete="off">
                                 </div>
                             </div>
                         </div>
