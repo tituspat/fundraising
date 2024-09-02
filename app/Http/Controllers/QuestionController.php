@@ -22,17 +22,17 @@ class QuestionController extends Controller
         ]);
 
         
-        $adminEmail = 'tituspat0112@gmail.com'; // Ganti dengan email admin yang sesungguhnya
+        // $adminEmail = 'tituspat0112@gmail.com'; // Ganti dengan email admin yang sesungguhnya
 
-        Mail::send([], [], function ($message) use ($validatedData, $adminEmail) {
-            $message->to($adminEmail)
-                ->subject('Pesan Baru dari Form Contact Us')
-                ->text('Nama: ' . $validatedData['name'] . "\n"
-                    . 'Email: ' . $validatedData['email'] . "\n"
-                    . 'No Telp: ' . $validatedData['phone_number'] . "\n"
-                    . 'Asal: ' . $validatedData['origin'] . "\n"
-                    . 'Pesan: ' . $validatedData['question']);
-        });
+        // Mail::send([], [], function ($message) use ($validatedData, $adminEmail) {
+        //     $message->to($adminEmail)
+        //         ->subject('Pesan Baru dari Form Contact Us')
+        //         ->text('Nama: ' . $validatedData['name'] . "\n"
+        //             . 'Email: ' . $validatedData['email'] . "\n"
+        //             . 'No Telp: ' . $validatedData['phone_number'] . "\n"
+        //             . 'Asal: ' . $validatedData['origin'] . "\n"
+        //             . 'Pesan: ' . $validatedData['question']);
+        // });
 
         // Simpan data ke database
         Question::create($validated);

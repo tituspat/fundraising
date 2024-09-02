@@ -129,9 +129,12 @@ class ProgramController extends Controller
             'content' => 'required',
         ]);
 
-        $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
-        $imagePath = '/storage/' . $imagePath;
-
+        if($request->hasFile('image')){
+            $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
+            $imagePath = '/storage/' . $imagePath;
+        } else {
+            $imagePath = $program->thumbnail;
+        }
         $content = $validated['content']; // Ambil konten dari request
 
         // Crawler untuk menelusuri konten HTML

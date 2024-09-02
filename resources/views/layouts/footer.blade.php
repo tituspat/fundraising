@@ -76,29 +76,29 @@
                 <ul class="flex flex-col gap-3 font-bold">
                     <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Daftar Menu</li>
                     <li><a href="/" class="inline-block transition hover:scale-110 hover:text-secondary">Beranda</a></li>
-                    {{--<li><a href="#" class="inline-block transition hover:scale-110 hover:text-secondary">Profile</a></li>
-                    <li><a href="#" class="inline-block transition hover:scale-110 hover:text-secondary">Media</a></li>
-                    <li><a href="#" class="inline-block transition hover:scale-110 hover:text-secondary">FAQ</a></li>--}}
-                    <!-- <li><a href="#" class="inline-block transition hover:scale-110 hover:text-secondary">About Us</a></li>
-                    <li><a href="#" class="inline-block transition hover:scale-110 hover:text-secondary">Career</a></li> -->
+                    <!-- <li><a href="#" class="inline-block transition hover:scale-110 hover:text-secondary">Profile</a></li> -->
+                    <li><a href="/program" class="inline-block transition hover:scale-110 hover:text-secondary">Program</a></li>
+                    <li><a href="/testimoni" class="inline-block transition hover:scale-110 hover:text-secondary">Testimoni</a></li>
+                    <li><a href="/faqs" class="inline-block transition hover:scale-110 hover:text-secondary">FAQ</a></li>
+                    <!-- <li><a href="#" class="inline-block transition hover:scale-110 hover:text-secondary">Career</a></li> -->
                 </ul>
             </div>
             <div>
-                <!-- <ul class="flex flex-col gap-3 font-bold">
-                    <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Services</li>
+                <ul class="flex flex-col gap-3 font-bold">
+                    <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Terbaru</li>
                     <li>
-                        <a href="services-detail.html" class="inline-block transition hover:scale-110 hover:text-secondary">UI/UX Design</a>
+                        <a href="/berita" class="inline-block transition hover:scale-110 hover:text-secondary">Berita</a>
                     </li>
                     <li>
-                        <a href="services-detail.html" class="inline-block transition hover:scale-110 hover:text-secondary">Web Development</a>
+                        <a href="/foto" class="inline-block transition hover:scale-110 hover:text-secondary">Foto</a>
                     </li>
                     <li>
-                        <a href="services-detail.html" class="inline-block transition hover:scale-110 hover:text-secondary">Digital Marketing</a>
+                        <a href="/video" class="inline-block transition hover:scale-110 hover:text-secondary">Video</a>
                     </li>
                     <li>
-                        <a href="services-detail.html" class="inline-block transition hover:scale-110 hover:text-secondary">App Development</a>
+                        <a href="/blog" class="inline-block transition hover:scale-110 hover:text-secondary">Blog</a>
                     </li>
-                </ul> -->
+                </ul>
             </div>
             <div>
                 <!-- <ul class="flex flex-col gap-3 font-bold">

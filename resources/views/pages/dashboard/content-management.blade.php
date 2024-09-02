@@ -95,6 +95,14 @@
         						        <span class="text-danger">{{ $message }}</span>
     						        @enderror
                                  </div>
+
+                                 <div class="mb-6">
+                                    <label for="footer_address" class="block mb-2 text-sm font-medium text-gray-900 capitalize dark:text-title-dark">Alamat pada catatan kaki</label>
+                                    <input type="text" id="footer_address" name="footer_address" class="w-full rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark focus:ring-primary focus:border-primary" placeholder="{{$content->footer_address}}" value="{{$content->footer_address}}" required>
+                                    @error('footer_address')
+        						        <span class="text-danger">{{ $message }}</span>
+    						        @enderror
+                                 </div>
                                  
                                  <button type="submit" class="min-w-[180px] h-[50px] text-white bg-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto px-5 text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init data-te-ripple-color="light">Perbarui</button>
                               </form>

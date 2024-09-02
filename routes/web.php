@@ -122,7 +122,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/program/{id}/edit', [ProgramController::class, 'edit'])->name('program.edit');
       Route::post('/program/{id}/update', [ProgramController::class, 'update'])->name('program.update');
       Route::get('/program/{id}/delete', [ProgramController::class, 'destroy'])->name('program.destroy');
-      Route::get('/program/{id}/visibility', [ProgramController::class, 'toggleVisibility'])->name('program.destroy');
+      Route::get('/program/visibility/{id}', [ProgramController::class, 'toggleVisibility'])->name('program.destroy');
       // blog
       Route::get('/blog', [BlogController::class, 'index'])->name('blog');
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');

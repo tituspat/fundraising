@@ -50,9 +50,9 @@
                         <i class="uil uil-pen"></i>
                         <span class="m-0">Edit</span>
                     </button>
-                    <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="window.location='{{ URL::to(Auth::user()->role . '/blog/'.$blog->id.'/delete') }}'">
+                    <button type="button" id="deleteBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" style="background-color:#bb2124" onclick="if(confirm('Yakin ingin menghapus blog ini?')){window.location='{{ URL::to(Auth::user()->role . '/blog/'.$blog->id.'/delete') }}'}" >
                         <!-- <i class="uil uil-cross"></i> -->
-                        <span class="m-0">Delete</span>
+                        <span class="m-0">Hapus</span>
                     </button>
                 </div>
             </div>

@@ -17,7 +17,7 @@
                     <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
                         <div class="p-[25px]">
                             <div class="mb-4">
-                                <img id="previewImage" src="{{ asset($calon->foto_calon) }}" alt="Calon Photo" class="w-full rounded-4" style="display: {{ $calon->foto_calon ? 'block' : 'none' }}">
+                                <img id="previewImage" src="{{ asset($calon->foto_calon) }}" alt="Calon Photo" class="mx-auto rounded-4" style="display: {{ $calon->foto_calon ? 'block' : 'none' }}">
                             </div>
 
                             <div class="mt-4">
@@ -25,6 +25,17 @@
                                 <input type="file" id="photoVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="foto_calon" onchange="previewFile()">
                             </div>
                         </div>
+                        
+                        <!-- <div class="p-[25px]">
+                            <div class="mb-4">
+                                <img id="previewImage" src="{{ asset($calon->foto_calon) }}" alt="Calon Photo" class="mx-auto rounded-4" style="display: {{ $calon->foto_calon ? 'block' : 'none' }}">
+                            </div>
+
+                            <div class="mt-4">
+                                <label for="photoVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Upload Foto Calon</label>
+                                <input type="file" id="photoVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="foto_calon" onchange="previewFile()">
+                            </div>
+                        </div> -->
                     </div>
                 </div>
 

@@ -983,7 +983,7 @@
                             </div>
                             <div class="mt-10 text-center ltr:lg:text-right rtl:lg:text-left">
                                 <button type="submit"
-                                disabled class="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary">
+                                 class="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary">
                                     Kirim
                                 </button>
                             </div>

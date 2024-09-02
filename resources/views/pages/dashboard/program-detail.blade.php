@@ -50,9 +50,9 @@
                         <i class="uil uil-pen"></i>
                         <span class="m-0">Edit</span>
                     </button>
-                    <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="window.location='{{ URL::to(Auth::user()->role . '/program/'.$program->id.'/delete') }}'">
+                    <button type="button" id="editBtn" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="if(confirm('Yakin ingin menghapus?')){window.location='{{ URL::to(Auth::user()->role . '/program/'.$program->id.'/delete') }}'}" style="background-color: #bb2124;">
                         <!-- <i class="uil uil-cross"></i> -->
-                        <span class="m-0">Delete</span>
+                        <span class="m-0">Hapus</span>
                     </button>
                 </div>
             </div>
@@ -83,8 +83,8 @@
                                     {{--<li class="relative m-1 ps-2.5 text-light dark:text-subtitle-dark text-15 before:absolute before:h-1 before:w-1 before:start-0 before:top-1/2 before:-translate-y-1/2 before:bg-light before:rounded-full">6 mins read</li>--}}
                                     <!-- Display the reading time -->
                                 </ul>
-                                <div class="content border ">
-                                    {!! $program->description !!}
+                                <div class="content border">
+                                    {!! $program->content !!}
                                 </div>
                             </ul>
 

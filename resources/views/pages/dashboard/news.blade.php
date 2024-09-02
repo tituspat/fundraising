@@ -65,7 +65,7 @@
                                 </div>
                                 <!-- Blog Title -->
                                 <h2 class="mt-4 mb-3 text-xl font-semibold capitalize">
-                                    <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="{{ $item->url }}">{{ $item->title }}</a>
+                                    <a class="text-dark hover:text-primary dark:text-title-dark dark:hover:text-primary" href="{{ $item->url }}" target="_blank">{{ $item->title }}</a>
                                 </h2>
                                 <!-- Blog Excerpt -->
                                 <p class="mb-4 text-base text-dark dark:text-title-dark">{{ $item->description }}</p>
@@ -105,9 +105,9 @@
                                     </button>
                                 
                                     @endif
-                                    <button type="button" id="editBtn" class="flex mt-2 items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="window.location='{{ URL::to(Auth::user()->role . '/news/delete/'.$item->id) }}'">
+                                    <button type="button" id="editBtn" class="flex mt-2 items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]" onclick="if(confirm('Yakin ingin menghapus?')){window.location='{{ URL::to(Auth::user()->role . '/news/delete/'.$item->id) }}'}" style="background-color: #bb2124;">
                                         <!-- <i class="uil uil-cross"></i> -->
-                                        <span class="m-0">Delete</span>
+                                        <span class="m-0">Hapus</span>
                                     </button>
                                 </div>
                             </figcaption>
