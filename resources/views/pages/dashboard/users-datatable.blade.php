@@ -86,7 +86,7 @@
                                         {{ $modcount }}
                                     </span>
                                 </h4>
-                                <span class="font-normal text-body dark:text-white/60 text-15">Modifikasi</span>
+                                <span class="font-normal text-body dark:text-white/60 text-15">Moderator</span>
                             </div>
                         </div>
                     </div>
@@ -266,7 +266,7 @@
                                         data-te-class-notch-trailing="!border-0 !shadow-none !outline-none">
                                         <option value="member">Member</option>
                                         <option value="media">Media</option>
-                                        <option value="mod">Modifikasi</option>
+                                        <option value="mod">Moderator</option>
                                     </select>
                                 </div>
                             </div>
@@ -461,7 +461,7 @@
                                                                                 data-te-class-notch-trailing="!border-0 !shadow-none !outline-none">
                                                                                 <option value="mod"
                                                                                     {{ $u->role == 'mod' ? 'selected' : '' }}>
-                                                                                    Modifikasi</option>
+                                                                                    Moderator</option>
                                                                                 <option value="media"
                                                                                     {{ $u->role == 'media' ? 'selected' : '' }}>
                                                                                     Media</option>

@@ -59,8 +59,12 @@
 
                <!-- Login form inputs and elements -->
                <div class="py-[30px] px-[40px]">
-                  <form id="admin-form" method="POST" action="{{ route('login') }}">
-                     @csrf
+                  @if($status==="public")
+                  <form id="admin-form" method="POST" action="/login">
+                  @elseif($status==="timses")
+                  <form id="admin-form" method="POST" action="/login/t1msus3s">
+                  @endif
+                  @csrf
 
                      <!-- Email Address input -->
                      <div class="mb-6">
