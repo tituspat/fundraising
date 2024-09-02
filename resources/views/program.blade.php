@@ -45,7 +45,7 @@
                         @endforeach
                     </div>
                        <!-- Pagination Links -->
-                    <div class="pagination">
+                    <div class="pagination mt-10">
                         {{ $program->links() }}
                     </div>
                 </div>

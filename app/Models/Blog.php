@@ -12,11 +12,11 @@ class Blog extends Model
     use HasFactory;
 
     use SoftDeletes;
- 
+
     protected $table = "blogs";
     protected $dates = ['deleted_at'];
-    
-    
+
+
     /**
      * fillable
      *
@@ -31,4 +31,10 @@ class Blog extends Model
         'created_by',
         'meta_desc',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

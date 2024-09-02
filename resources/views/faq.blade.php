@@ -40,7 +40,7 @@
                         </div>
                         <div class="accordion-container mx-auto lg:w-[730px]">
                             @foreach ($faqs as $faq)
-                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
+                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent overflow-hidden">
                                 <h2 class="ac-header">
                                     <button
                                     type="button"
@@ -70,9 +70,11 @@
                                 </div>
                             @endforeach
                         </div>
+
                     </div>
 
             </section>
+
 
             <!-- Additional Sections Here -->
 

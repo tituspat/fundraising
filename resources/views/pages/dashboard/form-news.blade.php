@@ -24,6 +24,9 @@
                                 <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">URL Berita</label>
                                 <div class="flex flex-col flex-1 md:flex-row">
                                     <input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="url" placeholder="https://example.com/news-page" required>
+                                    @error('url')
+        						        <span class="text-danger">{{ $message }}</span>
+    						        @enderror
                                 </div>
                             </div>
                             <div class="flex items-center gap-[15px] mt-[14px]">

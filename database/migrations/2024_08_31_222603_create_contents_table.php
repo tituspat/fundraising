@@ -20,6 +20,8 @@ return new class extends Migration
             $table->String('program_title');
             $table->String('support_text');
             $table->String('email_title');
+            $table->String('footer_address');
+            // $table->String('footer_address');
             $table->timestamps();
         });
     }

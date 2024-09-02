@@ -58,36 +58,6 @@
     {{-- <script src="assets/js/accordion.min.js"></script> --}}
 
 
-    {{-- <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const acc = new Accordion('.accordion-container', {
-        duration: 300, // Durasi animasi
-        open: 0 // Indeks panel yang dibuka secara default
-    });
-
-    document.querySelectorAll('.ac-trigger').forEach(trigger => {
-        trigger.addEventListener('click', function() {
-            const panel = this.nextElementSibling;
-            const text = panel.querySelector('.ac-text');
-            const isOpen = panel.classList.contains('open');
-
-            // Menutup semua panel dan menyembunyikan teks
-            document.querySelectorAll('.ac-panel').forEach(p => {
-                p.classList.remove('open');
-                p.querySelector('.ac-text').style.visibility = 'hidden';
-            });
-
-            // Jika panel saat ini tidak terbuka, buka dan tampilkan teks
-            if (!isOpen) {
-                panel.classList.add('open');
-                text.style.visibility = 'visible';
-            }
-        });
-    });
-});
-
-    </script> --}}
-
     <script>
         // Offices Location Slider
         var swiper = new Swiper('.ofc-slider', {
@@ -132,7 +102,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
             },
         });
+        const acc = new Accordion('.accordion-container');
+        acc.open(0);
     </script>
+
+
+
+
 </body>
 
 </html>

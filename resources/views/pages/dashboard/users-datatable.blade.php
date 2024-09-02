@@ -86,7 +86,7 @@
                                         {{ $modcount }}
                                     </span>
                                 </h4>
-                                <span class="font-normal text-body dark:text-white/60 text-15">Modifikasi</span>
+                                <span class="font-normal text-body dark:text-white/60 text-15">Moderator</span>
                             </div>
                         </div>
                     </div>
@@ -182,6 +182,9 @@
                                                     <input type="text" id="user-name" name="name"
                                                         class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]"
                                                         placeholder="Nama" autocomplete="name">
+                                                        @error('name')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
                                                 </div>
                                                 <div class="mb-4">
                                                     <label for="user-password"
@@ -189,6 +192,9 @@
                                                     <input type="password" id="user-password" name="password"
                                                         class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]"
                                                         placeholder="Password" autocomplete="password">
+                                                        @error('password')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
                                                 </div>
                                                 <div class="mb-4">
                                                     <label for="user-email"
@@ -197,16 +203,15 @@
                                                     <input type="email" id="user-email" name="email"
                                                         class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]"
                                                         placeholder="Alamat email" autocomplete="email">
+                                                        @error('email')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
                                                 </div>
                                                 <div class="mb-4">
-                                                    <label for="user-role"
-                                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300">Peran</label>
-                                                    <select id="user-role" name="role" data-te-select-init
-                                                        data-te-class-select-input="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] capitalize py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]"
-                                                        data-te-class-notch-leading="!border-0 !shadow-none group-data-[te-input-focused]:shadow-none group-data-[te-input-focused]:border-none"
-                                                        data-te-class-notch-middle="!border-0 !shadow-none !outline-none"
-                                                        data-te-class-notch-trailing="!border-0 !shadow-none !outline-none">
-                                                        <option value="mod">Modifi</option>
+                                                    <label for="user-role" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Peran</label>
+                                                    
+                                                    <select id="user-role" name="role" data-te-select-init data-te-class-select-input="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] capitalize py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]" data-te-class-notch-leading="!border-0 !shadow-none group-data-[te-input-focused]:shadow-none group-data-[te-input-focused]:border-none" data-te-class-notch-middle="!border-0 !shadow-none !outline-none" data-te-class-notch-trailing="!border-0 !shadow-none !outline-none">
+                                                        <option value="mod">Moderator</option>
                                                         <option value="media">Media</option>
                                                         <option value="member">Member</option>
                                                     </select>
@@ -261,7 +266,7 @@
                                         data-te-class-notch-trailing="!border-0 !shadow-none !outline-none">
                                         <option value="member">Member</option>
                                         <option value="media">Media</option>
-                                        <option value="mod">Modifikasi</option>
+                                        <option value="mod">Moderator</option>
                                     </select>
                                 </div>
                             </div>
@@ -277,13 +282,13 @@
                                     <span class="me-2 dark:text-subtitle-dark">Nama Pengguna:</span>
                                     <input type="search" name="search" placeholder="Cari nama"
                                         class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark search-close-icon:appearance-none search-close-icon:w-[20px] search-close-icon:h-[23px] search-close-icon:bg-[url(images/svg/x.svg)] search-close-icon:cursor-pointer"
-                                        autocomplete="off">
+                                        autocomplete="on">
                                 </div>
                                 <div class="inline-flex items-center">
-                                    <span class="me-2 dark:text-subtitle-dark">Peran</span>
-                                    <input type="text" name="role" placeholder="Cari peran"
-                                        class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark"
-                                        value="{{ request('role') }}">
+                                    <span class="me-2 dark:text-subtitle-dark">Peran:</span>
+                                    <input type="search" name="roleFilter"  placeholder="Cari peran"
+                                        class="h-10 px-[20px] text-body dark:text-subtitle-dark bg-white dark:bg-box-dark-up border-normal border-1 dark:border-box-dark-up rounded-6 outline-none placeholder:text-gray dark:placeholder:text-subtitle-dark search-close-icon:appearance-none search-close-icon:w-[20px] search-close-icon:h-[23px] search-close-icon:bg-[url(images/svg/x.svg)] search-close-icon:cursor-pointer"
+                                        autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -456,7 +461,7 @@
                                                                                 data-te-class-notch-trailing="!border-0 !shadow-none !outline-none">
                                                                                 <option value="mod"
                                                                                     {{ $u->role == 'mod' ? 'selected' : '' }}>
-                                                                                    Modifikasi</option>
+                                                                                    Moderator</option>
                                                                                 <option value="media"
                                                                                     {{ $u->role == 'media' ? 'selected' : '' }}>
                                                                                     Media</option>

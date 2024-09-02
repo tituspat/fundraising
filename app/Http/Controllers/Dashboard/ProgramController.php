@@ -44,6 +44,9 @@ class ProgramController extends Controller
             'title' => 'required|string',
             'content' => 'required',
             'image' => 'required',
+        ],[
+            'title' => 'Judul harus diisi',
+            'content' => 'Konten harus diisi',
         ]);
 
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
@@ -82,7 +85,8 @@ class ProgramController extends Controller
             'title' => $validated['title'],
             'content' => $content,
             'thumbnail' => $imagePath,
-            'category' => "Program",
+            'category' => "program",
+            'category_id' => "2",
             'profile_calon_id' => "1",
         ]);
 
@@ -123,12 +127,14 @@ class ProgramController extends Controller
         $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required',
-            // 'image' => 'required',
         ]);
 
-        $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
-        $imagePath = '/storage/' . $imagePath;
-
+        if($request->hasFile('image')){
+            $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
+            $imagePath = '/storage/' . $imagePath;
+        } else {
+            $imagePath = $program->thumbnail;
+        }
         $content = $validated['content']; // Ambil konten dari request
 
         // Crawler untuk menelusuri konten HTML
@@ -162,6 +168,7 @@ class ProgramController extends Controller
             'content' => $content,
             'thumbnail' => $imagePath,
             'category' => "program",
+            'category_id' => "2",
             // 'created_by' => $request->creator,
             ]);
         // Atur is_previewed menjadi false
@@ -189,7 +196,7 @@ class ProgramController extends Controller
      */
     public function toggleVisibility(string $id)
     {
-        
+
         //get user by ID
         $blog = Blog::findOrFail($id);
 

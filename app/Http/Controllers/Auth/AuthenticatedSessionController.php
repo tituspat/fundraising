@@ -17,7 +17,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('auth.login');
+        $status = "public";
+
+        return view('auth.login', compact('status'));
     }
 
     /**
@@ -25,7 +27,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function create_timses(): View
     {
-        return view('auth.login');
+        $status = "timses";
+        return view('auth.login', compact('status'));
     }
 
     /**

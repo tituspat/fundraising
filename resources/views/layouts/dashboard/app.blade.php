@@ -10,8 +10,8 @@
    <meta name="keywords" content="hexadash, web development, UI components">
    <meta name="author" content="dashboardmarket.com">
    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
 
    <!-- Title -->
    <title>Dashboard</title>

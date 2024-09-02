@@ -35,7 +35,7 @@
                         <div class="relative bg-[url(../images/world-map.png)] bg-cover bg-top bg-no-repeat pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36">
                             <div class="relative z-[1] text-center text-white lg:w-3/5 ltr:lg:text-left rtl:lg:text-right xl:w-1/2">
                                 <h2 class="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
-                                    Halo,<span class="italic text-primary"></span> <span class="italic text-secondary">Sahabat</span> Tabanan
+                                    {{$headContent[0] ?? ''}}<span class="italic text-secondary"> {{$headContent[1]}}</span> {{$headContent[2]}} <span class="italic text-primary">{{$headContent[3]}}</span> 
                                 </h2>
                                 <p class="my-8 text-lg lg:w-[90%]">
                                     {{$content->jumbotron_subtitle}}
@@ -937,7 +937,7 @@
                             <img src="{{ asset('vendor/plurk/images/form-img.png') }}" alt="form-img" class="mx-auto"
                                 data-aos="fade-right" data-aos-duration="1000" />
                         </div>
-                        <form action="{{ route('questions.store') }}" method="POST"
+                        <form action="/questions" method="POST"
                             class="rounded-3xl bg-white px-4 py-12 dark:bg-[#101626] lg:w-2/3 lg:px-8">
                             @csrf
                             <div class="grid gap-10 sm:grid-cols-2">
@@ -983,13 +983,18 @@
                             </div>
                             <div class="mt-10 text-center ltr:lg:text-right rtl:lg:text-left">
                                 <button type="submit"
-                                    class="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary">
+                                 class="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary">
                                     Kirim
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
+                @if (session('success'))
+                <div>
+                    {{ session('success') }}
+                </div>
+                @endif
             </section>
 
             @include('layouts.footer')

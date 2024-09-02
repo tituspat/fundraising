@@ -10,26 +10,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    // public function index()
-    // {
-    //     // Mengambil data dari table users
-    //     $users = User::all();
-    //     $admincount = User::where('role', 'admin')->count();
-    //     $modcount = User::where('role', 'mod')->count();
-    //     $mediacount = User::where('role', 'media')->count();
-    //     $membercount = User::where('role', 'member')->count();
-
-    //     return view('pages.dashboard.users-datatable', [
-    //         'users' => $users,
-    //         'admincount' => $admincount,
-    //         'modcount' => $modcount,
-    //         'mediacount' => $mediacount,
-    //         'membercount' => $membercount,
-    //     ]);
-    // }
 
     public function index(Request $request)
 {
@@ -38,15 +18,18 @@ class UsersController extends Controller
 
     $query = User::query();
 
+    if ($roleFilter) {
+        $query->where('role', 'like', "%{$roleFilter}%");
+        // $query->where('role', $roleFilter);
+    }
+
     // Filter by name if search parameter is provided
     if ($search) {
         $query->where('name', 'like', "%{$search}%");
     }
 
     // Filter by role if role_filter parameter is provided
-    if ($roleFilter) {
-        $query->where('role', $roleFilter);
-    }
+
 
     $users = $query->get();
 
@@ -85,6 +68,12 @@ class UsersController extends Controller
             'email' => 'required|email',
             'password' => 'nullable|string|min:8',
             'role' => 'required|string'
+        ],[
+            'id' => 'user tidak valid',
+            'name' => 'nama harus diisi',
+            'email' => 'email harus diisi',
+            'password' => 'password harus diisi',
+            'role' => 'tentukan role'
         ]);
 
         // Cari role_id berdasarkan nama role
@@ -124,6 +113,11 @@ class UsersController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8',
             'role' => 'required|string'
+        ],[
+            'name' => 'nama harus diisi',
+            'email' => 'email harus diisi',
+            'password' => 'password harus diisi',
+            'role' => 'tentukan role'   
         ]);
 
         // Buat atau dapatkan role_id berdasarkan nama role

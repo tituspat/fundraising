@@ -22,6 +22,7 @@ class ContentSeeder extends Seeder
             'program_title' => 'Rencana Kerja Sahabat Tabanan',
             'support_text' => 'Dukung Kami Untuk Wujudkan Mimpi SAHABAT Tabanan',
             'email_title'  => 'Kirimkan pertanyaan Anda di sini.',
+            'footer_address'  => 'Tabanan, Bali, Indonesia - 82115',
         ]);
 
     }

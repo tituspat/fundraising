@@ -27,6 +27,10 @@ class MainController extends Controller
         $news = News::latest()->take(3)->get();
         $content = Content::first();
 
+        
+        $headContent = $content->jumbotron_title;
+        $headContent = array_pad(explode(' ', $headContent), 4, '');
+
         // mengambil data dari table program
     	$blogs = Blog::where('category', '=', "program")->get();
 
@@ -40,11 +44,11 @@ class MainController extends Controller
             'nama_calon' => $calon->nama_calon,
             'misis' => $misis,
             'profile' => $calon,
+            'headContent' => $headContent,
             'foto_calon' => $calon->foto_calon,
             'content' => $content,
         ]);
 
-        // return view('index', ['programs'=>$programs, 'testimonials' => $testimonial ]);
     }
 
     /**

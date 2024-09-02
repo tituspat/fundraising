@@ -58,6 +58,22 @@ class ContentController extends Controller
     public function update(Request $request)
     {
         //
+        $validated = $request->validate([
+            'jumbotron_title' => 'required|string',
+            'jumbotron_subtitle' => 'required|string',
+            'profile_title' => 'required|string',
+            'program_title' => 'required|string',
+            'support_text' => 'required|string',
+            'email_title' => 'required|string',
+        ],[
+            'jumbotron_title' => 'bagian ini harus diisi',
+            'jumbotron_subtitle' => 'bagian ini harus diisi',
+            'profile_title' => 'bagian ini harus diisi',
+            'program_title' => 'bagian ini harus diisi',
+            'support_text' => 'bagian ini harus diisi',
+            'email_title' => 'bagian ini harus diisi',
+        ]);
+        
         $content = Content::findOrFail($request->id);
 
         // Update the other blog information

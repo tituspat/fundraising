@@ -19,7 +19,7 @@ class CreateQuestionsTable extends Migration
             $table->string('email');
             $table->text('question');
             $table->string('origin');
-            $table->string('phone_number');
+            $table->BigInteger('phone_number');
             $table->softDeletes();
             $table->timestamps();
         });

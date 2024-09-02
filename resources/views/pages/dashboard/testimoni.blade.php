@@ -153,7 +153,8 @@
                                 @endphp
                                 <tbody>
                                     @foreach ($testimonials as $t)
-                                        <tr class="group">
+                                        
+                                        <tr class="group" style="background-color: {{ $t->is_previewed ? '#FBC02D' : '#FFFFFF' }}">
                                             <td
                                                 class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                                 {{ $t->id }}

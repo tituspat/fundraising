@@ -23,9 +23,9 @@
                               </li>
                               <!-- Middle (Conditional) -->
 
-                              <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]">
+                              {{-- <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]">
                                  <span class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 transition duration-300 capitalize">Pages</span>
-                              </li>
+                              </li> --}}
 
                               <!-- Child (Current Page) -->
                               <li class="inline-flex items-center before:content-[''] before:w-1 before:h-1 before:ltr:float-left rtl:float-right before:bg-light-extra before:me-[7px] before:pe-0 before:rounded-[50%]" aria-current="page">
@@ -36,15 +36,15 @@
                      </div>
                   </div>
 
-                  
+
                </div>
             </div>
 
             <div class="flex items-center ssm:justify-between justify-center max-sm:flex-wrap gap-x-[30px] gap-y-[15px] ssm:mb-[33px] mb-[18px]">
                <div class="inline-flex items-center">
-                        
+
                </div>
-                  
+
                <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/program/tambah') }}'" class="flex items-center px-[20px] text-sm text-white rounded-md font-semibold bg-primary border-primary h-10 gap-[6px] transition-[0.3s]">
                   <i class="uil uil-plus"></i>
                   <span class="m-0">Tambah Program</span>
@@ -119,7 +119,7 @@
          <!-- Footer -->
          @include('layouts.dashboard.footer')
          <!-- end: Footer -->
-      
+
       <!-- End: Main Content -->
 
    <!-- End: Wrapping Content -->

@@ -84,38 +84,43 @@
                                     Pertanyaan</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
                                     Asal Daerah</th>
+                                    <th class="bg-regularBG dark:bg-box-dark-up px-4 py-[17px] text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden sticky top-0">
+                                        Tanggal Dibuat</th>
                                  <th class="bg-regularBG dark:bg-box-dark-up px-[25px] py-[17px] text-end text-dark dark:text-title-dark text-[16px] font-medium border-none before:hidden rounded-e-[10px] sticky top-0">
                                     Nomor HP</th>
                               </tr>
                            </thead>
                            <tbody>
                             @foreach($question as $q)
-                            <tr class="group">
-                               <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
-                                  {{$q->id}}
-                               </td>
-                               <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                  <div class="flex items-center">
-                                     <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
-                                        {{ $q->name }}</span>
-                                  </div>
-                               </td>
-                               <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                  {{$q->email}}
-                               </td>
-                               <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
+                           <tr class="group">
+                              <td class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
+                                 {{$q->id}}
+                              </td>
+                              <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
+                                 <div class="flex items-center">
+                                    <span class="font-medium capitalize text-dark dark:text-title-dark text-15">
+                                       {{ $q->name }}</span>
+                                 </div>
+                              </td>
+                              <td class="ps-[20px] py-[12px] font-normal last:text-end text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
+                                 <a href="mailto:{{$q->email}}" target="_blank">{{$q->email}}</a>
+                              </td>
+                              <td  class="ps-[20px] py-[12px] font-normal last:text-end text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
                                 {{$q->question}}
-                             </td>
-                             <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                {{$q->origin}}
-                             </td>
-                             <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
-                                {{$q->phone_number}}
-                             </td>
-                                </div>
-
-
-                               </td>
+                              </td>
+                              <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
+                                 {{$q->origin}}
+                              </td>
+                              <td class="ps-[20px] py-[12px] font-normal last:text-end capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
+                                 {{$q->created_at}}
+                              </td>
+                              <td class="ps-[20px] py-[12px] font-normal last:text-center capitalize text-[14px] text-dark dark:text-title-dark border-none group-hover:bg-transparent">
+                                 <a href="https://wa.me/62{{$q->phone_number}}" target="_blank">0{{$q->phone_number}}</a>
+                              </td>
+                                 </div>
+                        
+                        
+                                </td>
                             </tr>
                             @endforeach
                          </tbody>

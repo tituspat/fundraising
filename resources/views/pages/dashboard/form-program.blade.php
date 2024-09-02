@@ -81,17 +81,26 @@
 						<div class="my-4">
 							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Program</label>
 							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="Judul Program" required>
+                            @error('title')
+        						<span class="text-danger">{{ $message }}</span>
+    					    @enderror
                         </div>
 
 						<div class="col-span-12 mb-[30px] my-4">
 							<div class="editor-container editor-container_classic-editor" id="editor-container">
-								<div class="editor-container__editor"><textarea name="content" id="editor">...</textarea></div>
+								<div class="editor-container__editor"><textarea name="content" id="editor"></textarea></div>
 							</div>
+                            @error('content')
+        				        <span class="text-danger">{{ $message }}</span>
+    					    @enderror
 						</div>
 
                         <div class="my-4">
 							<label for="titleVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">SEO Deskripsi</label>
 							<input type="text" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="meta_desc" placeholder="Deskripsi SEO" required>
+                            @error('meta_desc')
+        						<span class="text-danger">{{ $message }}</span>
+    						@enderror
                         </div>
 
 						<div class="flex items-center gap-[15px] mt-[14px]">
