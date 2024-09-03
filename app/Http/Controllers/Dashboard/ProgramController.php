@@ -170,12 +170,8 @@ class ProgramController extends Controller
             'thumbnail' => $imagePath,
             'category' => "program",
             'category_id' => "2",
-<<<<<<< Updated upstream
             'is_previewed' => false,
             // 'created_by' => $request->creator,
-=======
-            // 'created_by' => Auth::user()->name,
->>>>>>> Stashed changes
             ]);
         // Atur is_previewed menjadi false
         $program->is_previewed = false;
