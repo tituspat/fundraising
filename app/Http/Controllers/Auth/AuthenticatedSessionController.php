@@ -40,7 +40,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        $url = "/dashboard";
+        $url = "/member/dashboard";
 
         return redirect()->intended($url);
     }
@@ -59,7 +59,7 @@ class AuthenticatedSessionController extends Controller
         }elseif($request->user()->role === "media"){
             $url = "/media/dashboard";
         }else{
-            $url = "/dashboard";  
+            $url = "/member/dashboard";  
         }
         
         return redirect()->intended($url);
