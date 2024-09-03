@@ -36,10 +36,10 @@
                         {!! $blogs->content !!}
                         {{-- </p> --}}
                     </div>
-                    <div class="grid gap-[30px] sm:grid-cols-2">
+                    {{-- <div class="grid gap-[30px] sm:grid-cols-2">
                         <img src="{{ asset('storage/' . $blogs->thumbnail) }}" alt="{{ $blogs->title }}"
                             class="rounded-[32px]" data-aos="fade-up" data-aos-duration="1000" />
-                    </div>
+                    </div> --}}
 
 
 
