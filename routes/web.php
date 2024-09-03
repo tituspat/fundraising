@@ -81,6 +81,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');
       Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('profile-calon');
       Route::put('/profile-calon/update', [ProfileCalonController::class, 'update'])->name('calon.update');
+      Route::get('/misi/{id}/delete', [ProfileCalonController::class, 'misiDelete'])->name('misi.delete');
+      Route::get('/misi/add', [ProfileCalonController::class, 'misiStore'])->name('misi.store');
       // gallery
       Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
       Route::get('/gallery/tambah', [GalleryController::class, 'create'])->name('gallery.create');
@@ -136,10 +138,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/comments/{comment}/edit', [CommentController::class, 'update'])->name('comments.update');
       Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
       Route::post('/comments/vote', [CommentController::class, 'vote'])->name('comments.vote');
-
-
-
-
     });
 
     // mod
@@ -157,6 +155,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // ->middleware(['permission:member'])
     ->group(function () {
       Route::get('/dashboard', [DashboardController::class, 'index'])->name('');
+      Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimoni');
+      Route::post('/testimoni/store', [TestimonialController::class, 'store'])->name('testimoni.store');
+      Route::get('/testimoni/edit', [TestimonialController::class, 'edit'])->name('testimoni.edit');
+      Route::put('/testimoni/upadate/{id}', [TestimonialController::class, 'update'])->name('testimoni.update');
+      Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+      Route::post('/comments/{comment}/edit', [CommentController::class, 'update'])->name('comments.update');
+      Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+      Route::post('/comments/vote', [CommentController::class, 'vote'])->name('comments.vote');
     });
 
     // media

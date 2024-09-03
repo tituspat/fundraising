@@ -36,10 +36,10 @@
                         {!! $blogs->content !!}
                         {{-- </p> --}}
                     </div>
-                    <div class="grid gap-[30px] sm:grid-cols-2">
+                    {{-- <div class="grid gap-[30px] sm:grid-cols-2">
                         <img src="{{ asset('storage/' . $blogs->thumbnail) }}" alt="{{ $blogs->title }}"
                             class="rounded-[32px]" data-aos="fade-up" data-aos-duration="1000" />
-                    </div>
+                    </div> --}}
 
 
 
@@ -118,7 +118,7 @@
                     </form>
                 @else
                     <p class="mt-6 text-gray-700 dark:text-gray-200">Silakan<a href="{{ route('login') }}"
-                            class="text-blue-500">Masuk</a> terlebih dahulu untuk menambahkan komentar</p>
+                            class="text-blue-500"> Log In</a> terlebih dahulu untuk menambahkan komentar</p>
                 @endauth
             </div>
         </div>

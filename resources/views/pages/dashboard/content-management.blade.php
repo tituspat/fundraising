@@ -41,7 +41,7 @@
                </div>
             </div>
             <div class="grid grid-cols-12 gap-[25px]">
-               <div class="col-span-12 xl:col-span-6">
+               <div class="col-span-12 xl:col-start-4 xl:col-span-6">
                   <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
                      <div class="px-[25px] text-dark dark:text-title-dark font-medium text-[17px] flex flex-wrap items-center justify-between max-sm:flex-col max-sm:h-auto border-b border-regular dark:border-box-dark-up">
                         <h1 class="mb-0 inline-flex items-center py-[16px] overflow-hidden whitespace-nowrap text-ellipsis text-[18px] font-semibold text-dark dark:text-title-dark capitalize">
@@ -49,9 +49,19 @@
                      </div>
                      <div class="p-[25px]">
                         <div class="grid grid-cols-12">
-                           <div class="col-span-12 xl:col-span-8">
+                           <div class="col-span-12">
                               <form action="{{ route(Auth::user()->role . '.content.update') }}" method="POST" enctype="multipart/form-data">
                               @csrf
+                              <div class="mb-6">
+                                    <div class="mb-4">
+                                       <img id="previewImage2" src="{{ asset($content->logo) }}" alt="Image 2" class="w-1/2 mx-auto rounded-4" style="display: {{ $content->jumbotron_img ? 'block' : 'none' }}">
+                                    </div>
+                                    <!-- Input for the first image -->
+                                    <div class="mt-4">
+                                       <label for="image2" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Masukan Foto </label>
+                                       <input type="file" id="image2" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="logo" onchange="previewFile('image2', 'previewImage2')">
+                                    </div>
+                                 </div>
                                  <div class="mb-6">
                                     <input type="hidden" id="id" value="{{$content->id}}" name="id" required>
                                     <label for="jumbotron_title" class="block mb-2 text-sm font-medium text-gray-900 capitalize dark:text-title-dark">Section 1 Judul</label>
@@ -67,6 +77,19 @@
         						        <span class="text-danger">{{ $message }}</span>
     						        @enderror
                                  </div>
+
+                                 <div class="mb-6">
+                                    <div class="mb-4">
+                                       <img id="previewImage1" src="{{ asset($content->jumbotron_img) }}" alt="Image 1" class="w-1/2 mx-auto rounded-4" style="display: {{ $content->jumbotron_img ? 'block' : 'none' }}">
+                                    </div>
+                                    <!-- Input for the first image -->
+                                    <div class="mt-4">
+                                       <label for="image1" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Masukan Foto </label>
+                                       <input type="file" id="image1" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="image1" onchange="previewFile('image1', 'previewImage1')">
+                                    </div>
+                                 </div>
+                                 
+
                                  <div class="mb-6">
                                     <label for="profile_title" class="block mb-2 text-sm font-medium text-gray-900 capitalize dark:text-title-dark">Section Profile Judul</label>
                                     <input type="text" id="profile_title" name="profile_title" class="w-full rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark focus:ring-primary focus:border-primary" placeholder="{{$content->profile_title}}" value="{{$content->profile_title}}" required>
@@ -134,5 +157,26 @@
          </footer>
          <!-- end: Footer -->
       </main>
+
+
+      <script>
+      function previewFile(inputId, previewId) {
+         var file = document.getElementById(inputId).files[0];
+         var reader = new FileReader();
+         var preview = document.getElementById(previewId);
+      
+         reader.onloadend = function() {
+            preview.src = reader.result;
+            preview.style.display = 'block';
+         };
+      
+         if (file) {
+            reader.readAsDataURL(file);
+         } else {
+            preview.src = "";
+            preview.style.display = 'none';
+         }
+      }
+      </script>
       <!-- End: Main Content -->
  @endsection

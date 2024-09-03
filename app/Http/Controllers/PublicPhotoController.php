@@ -14,7 +14,6 @@ class PublicPhotoController extends Controller
     public function index()
     {
         $galleries = Gallery::where('media', '=', 'photo')->where('is_previewed', '=', true);
-
         return view('foto', compact('galleries'));
     }
 

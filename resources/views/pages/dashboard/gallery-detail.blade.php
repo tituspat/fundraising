@@ -66,7 +66,7 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $gallery->id }}"> <br/>
                         <!-- Dropzone-style Image Input with Preview -->
-                        <div class="p-[25px] mb-4">
+                            <div class="p-[25px] mb-4">
                                 <div class="flex items-center justify-center w-full">
                                     <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-[176px] transition-all duration-300 ease-linear bg-white border-2 border-gray-300 border-dashed rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-box-dark-up dark:border-box-dark-up dark:hover:border-gray-500 dark:hover:bg-gray-600">
                                         <div class="flex flex-col items-center justify-center py-5">
@@ -74,7 +74,7 @@
                                                 Unggah Foto
                                             </p>
                                         </div>
-                                        <input id="dropzone-file" type="file" name="image" class="hidden" accept="image/*" value="{{$gallery->thumbnail}}" onchange="previewImage(event)" required />
+                                        <input id="dropzone-file" type="file" name="image" class="hidden" accept="image/*" value="{{$gallery->thumbnail}}" onchange="previewImage(event)" value="{{$gallery->thumbnail}}"/>
                                     </label>
                                 </div>
 
@@ -94,16 +94,16 @@
                                 </div>
                             </div>
 
-                           <div class="pb-4">
-                              <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Nama Kegiatan</label>
-                              <div class="flex flex-col flex-1 md:flex-row">
-                                <input type="text" id="nameVertical" class=" rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="{{$gallery->title}}" value="{{$gallery->title}}" required>
-                                @error('title')
-        						    <span class="text-danger">{{ $message }}</span>
-    						    @enderror
-                              </div>
-                           </div>
-                           <div class="pb-4">
+                            <div class="pb-4">
+                                <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Nama Kegiatan</label>
+                                <div class="flex flex-col flex-1 md:flex-row">
+                                    <input type="text" id="nameVertical" class=" rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" placeholder="{{$gallery->title}}" value="{{$gallery->title}}" required>
+                                    @error('title')
+        						        <span class="text-danger">{{ $message }}</span>
+    						        @enderror
+                                </div>
+                            </div>
+                            <div class="pb-4">
                               <label for="emailVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Deskripsi Singkat</label>
                               <div class="flex flex-col flex-1 md:flex-row">
                                  <textarea  id="emailVertical" class="w-full rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark  focus:ring-primary focus:border-primary" name="description" placeholder="{{$gallery->description}}" required>{{$gallery->description}}</textarea>
@@ -111,12 +111,14 @@
         						    <span class="text-danger">{{ $message }}</span>
     						    @enderror
                               </div>
-                           </div>
+                            </div>
 
-                           <div class="flex items-center gap-[15px] mt-[14px]">
+                            <div class="flex items-center gap-[15px] mt-[14px]">
                               <button type="button" class="px-[30px] h-[44px] text-body dark:text-subtitle-dark bg-regular dark:bg-box-dark-up border-regular dark:border-box-dark-up font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear hover:opacity-60" data-te-ripple-init="" data-te-ripple-color="dark" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery') }}'">Batal</button>
                               <button type="submit" class="px-[30px] h-[44px] text-white bg-primary border-primary hover:bg-primary-hbr font-medium rounded-4 text-sm w-full sm:w-auto text-center inline-flex items-center justify-center capitalize transition-all duration-300 ease-linear" data-te-ripple-init="" data-te-ripple-color="light">Simpan</button>
-                           </div>
+                            </div>
+
+                        </form>
                     @else
                         <div class="mb-[25px]">
                             <div class="max-h-[450px] rounded-10">

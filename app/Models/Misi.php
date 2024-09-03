@@ -24,6 +24,7 @@ class Misi extends Model
      * @var array
      */
     protected $fillable = [
+        'icon',
         'head_misi',
         'body_misi',
     ];

@@ -94,8 +94,8 @@
                            </div>--}}
                            {{--<label for="remember" class="text-sm text-gray-500 ms-1 dark:text-gray-400">Keep me logged in</label>--}}
                         </div>
-                        <a class="text-13 text-primary hover:text-dark dark:hover:text-title-dark" href="reset.html">Forgot
-                           password?</a>
+                        <!-- <a class="text-13 text-primary hover:text-dark dark:hover:text-title-dark" href="reset.html">Forgot
+                           password?</a> -->
                      </div>
 
                      <!-- Submit button for the login form -->
@@ -136,9 +136,9 @@
 
                <!-- Footer with signup link -->
                <div class="text-center p-[25px] rounded-b-6 bg-deepBG dark:bg-gray-600">
-                  <p class="text-[14px] font-medium text-body dark:text-title-dark inline-flex items-center gap-[6px] mb-0">
+                  <!-- <p class="text-[14px] font-medium text-body dark:text-title-dark inline-flex items-center gap-[6px] mb-0">
                      Don't have an account? <a class="transition duration-300 text-primary hover:text-dark dark:text-dark dark:hover:text-subtitle-dark" href="sign-up.html">Sign up</a>
-                  </p>
+                  </p> -->
                </div>
             </div>
          </div>

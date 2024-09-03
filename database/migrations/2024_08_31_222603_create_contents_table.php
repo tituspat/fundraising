@@ -21,7 +21,8 @@ return new class extends Migration
             $table->String('support_text');
             $table->String('email_title');
             $table->String('footer_address');
-            // $table->String('footer_address');
+            $table->string('logo')->nullable();
+            // $table->String('jumb');
             $table->timestamps();
         });
     }

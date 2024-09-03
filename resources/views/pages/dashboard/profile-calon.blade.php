@@ -13,29 +13,18 @@
             @method('PUT')
                 <div class="grid grid-cols-12 gap-[25px] items-start">
                 <!-- Left side: Image and upload button -->
-                <div class="col-span-12 md:col-span-4">
+                <div class="col-span-12">
                     <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark text-[15px] rounded-10 relative">
                         <div class="p-[25px]">
                             <div class="mb-4">
-                                <img id="previewImage" src="{{ asset($calon->foto_calon) }}" alt="Calon Photo" class="mx-auto rounded-4" style="display: {{ $calon->foto_calon ? 'block' : 'none' }}">
+                                <img id="previewImage1" src="{{ asset($calon->foto_calon) }}" alt="Calon Photo" class="mx-auto rounded-4" style="display: {{ $calon->foto_calon ? 'block' : 'none' }}">
                             </div>
 
                             <div class="mt-4">
-                                <label for="photoVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Upload Foto Calon</label>
-                                <input type="file" id="photoVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="foto_calon" onchange="previewFile()">
+                                <label for="image1" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Upload Foto Calon</label>
+                                <input type="file" id="image1" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="foto_calon" onchange="previewFile('image1', 'previewImage1')">
                             </div>
                         </div>
-                        
-                        <!-- <div class="p-[25px]">
-                            <div class="mb-4">
-                                <img id="previewImage" src="{{ asset($calon->foto_calon) }}" alt="Calon Photo" class="mx-auto rounded-4" style="display: {{ $calon->foto_calon ? 'block' : 'none' }}">
-                            </div>
-
-                            <div class="mt-4">
-                                <label for="photoVertical" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Upload Foto Calon</label>
-                                <input type="file" id="photoVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="foto_calon" onchange="previewFile()">
-                            </div>
-                        </div> -->
                     </div>
                 </div>
 
@@ -82,12 +71,15 @@
                                                 @foreach($misis as $misi)
                                                 <div class="col-span-12 lg:col-span-4 sm:col-span-6">
                                                     <div class="bg-white dark:bg-box-dark m-0 p-0 text-body dark:text-subtitle-dark border-1 border-regular dark:border-box-dark-up text-[15px] rounded-10">
+                                                        
                                                         <div class="py-[10px] px-[20px] text-dark dark:text-title-dark font-medium text-[17px] border-b border-regular dark:border-box-dark-up flex items-center justify-between gap-[15px]">
                                                         <input type="text" id="head_misi_{{$misi->id}}" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="misi[{{$misi->id}}][head_misi]" value="{{ $misi->head_misi }}" required>
+                                                        
                                                         @error('head_misi_' . $misi->id)
                                                             <span class="text-danger">{{ $message }}</span>
                                                         @enderror
                                                         <input type="hidden" id="nameVertical" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="misi[{{$misi->id}}][id]" value="{{ $misi->id }}" required>
+                                                        <button disabled type="button" style="background-color:#bb2124 " class="delete-misi text-white px-2 py-1 rounded" onclick="if(confirm('Yakin ingin menghapus misi ini?')){window.location='{{ URL::to(Auth::user()->role . '/misi/'.$misi->id.'/delete') }}'}">Hapus</button>
                                                         </div>
                                                         <div class="p-[20px]">
                                                             <p class="text-14 mb-[8px] text-dark dark:text-title-dark font-normal">
@@ -101,6 +93,9 @@
                                                 </div>
                                                 @endforeach
                                             </div>
+                                        </div>
+                                        <div class="px-[25px] pb-[25px]">
+                                            <button disabled type="button" id="addMisi" class="bg-blue-500 text-white px-4 py-2 rounded" onclick="window.location='{{ URL::to(Auth::user()->role . '/misi/add') }}'">Tambah Misi</button>
                                         </div>
                                     </div>
 
@@ -126,19 +121,20 @@
     </main>
 
     <script>
-        function previewFile() {
-            const file = document.querySelector('#photoVertical').files[0];
-            const preview = document.querySelector('#previewImage');
+        function previewFile(inputId, previewId) {
+            var file = document.getElementById(inputId).files[0];
+            var reader = new FileReader();
+            var preview = document.getElementById(previewId);
 
+            reader.onloadend = function() {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            };
+        
             if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    preview.src = event.target.result;
-                    preview.style.display = 'block';
-                };
                 reader.readAsDataURL(file);
             } else {
-                preview.src = '';
+                preview.src = "";
                 preview.style.display = 'none';
             }
         }
