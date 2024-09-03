@@ -15,7 +15,8 @@ class ContentSeeder extends Seeder
     {
         //
         DB::table('contents')->insert([
-            
+
+            'logo' => '/img/logo-sahabat-tabanan.png',
             'jumbotron_title' => 'Halo, Sahabat Tabanan',
             'jumbotron_img' => '/img/pura.png',
             'jumbotron_subtitle' => 'Mari majukan Tabanan agar lebih baik dan sejahtera.',

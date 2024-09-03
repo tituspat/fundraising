@@ -81,6 +81,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');
       Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('profile-calon');
       Route::put('/profile-calon/update', [ProfileCalonController::class, 'update'])->name('calon.update');
+      Route::get('/misi/{id}/delete', [ProfileCalonController::class, 'misiDelete'])->name('misi.delete');
+      Route::get('/misi/add', [ProfileCalonController::class, 'misiStore'])->name('misi.store');
       // gallery
       Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
       Route::get('/gallery/tambah', [GalleryController::class, 'create'])->name('gallery.create');
@@ -91,7 +93,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
       Route::get('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
       Route::post('/video/store', [GalleryController::class, 'vidStore'])->name('video.store');
-      Route::get('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('gallery.delete');
+      Route::put('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('gallery.delete');
       Route::get('/gallery/visibility/{id}', [GalleryController::class, 'toggleVisibility'])->name('gallery.toggleVisibility');
       // berita
       Route::get('/news', [NewsCrawlerController::class, 'index'])->name('news');

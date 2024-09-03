@@ -12,7 +12,7 @@
         content="Turut berkontribusi mewujudkan Tabanan yang sejahtera bersama SAHABAT Tabanan."> -->
     <title>Sahabat Tabanan</title>
     <!-- Favicon -->
-    <link rel="icon" type="icon" href="{{ asset('img/logo-sahabat-tabanan.png') }}" />
+    <link rel="icon" type="icon" href="{{ asset($logoPath) }}" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800;900&display=swap"
         rel="stylesheet" />

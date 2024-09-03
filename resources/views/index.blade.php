@@ -47,7 +47,7 @@
                                 data-aos="fade-left"
                                 data-aos-duration="1000"
                             >
-                                <img src="{{asset('img/pura.png')}}" alt="home-banner-icon" class="rtl:rotate-y-180" style="scale: 110%; transform: translate(0, -5%);" />
+                                <img src="{{asset($content->jumbotron_img)}}" alt="home-banner-icon" class="rtl:rotate-y-180" style="scale: 110%; transform: translate(0, -5%);" />
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                             <img src="{{ asset('vendor/plurk/images/personal-portfolio/about-block.pn') }}" alt=""
                                 class="absolute top-8 hidden ltr:-left-16 rtl:-right-16 dark:hidden md:block"
                                 data-aos="fade-right" data-aos-duration="1000" />
-                                <img src="{{ asset('img/giri.jpg') }}" alt="" class="h-full w-full object-cover" style="background-color: burlywood" />
+                                <img src="{{ asset($profile->foto_calon) }}" alt="" class="h-full w-full object-cover" style="background-color: burlywood" />
                         </div>
                         <div>
                             <div class="mb-2">

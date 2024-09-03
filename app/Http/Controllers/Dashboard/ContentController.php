@@ -75,6 +75,30 @@ class ContentController extends Controller
         ]);
         
         $content = Content::findOrFail($request->id);
+        
+        if ($request->hasFile('image1')) {
+            // Delete the old image if necessary
+            if ($content->jombotron_img) {
+                Storage::disk('public')->delete($content->jombotron_img);
+            }
+    
+            // Store the new image
+            $image1 = $request->file('image1');
+            $image1Path = $image1->store('landing', 'public');
+            $content->jumbotron_img = '/storage/' .$image1Path;
+        }
+
+        if ($request->hasFile('logo')) {
+            // Delete the old image if necessary
+            if ($content->logo) {
+                Storage::disk('public')->delete($content->jombotron_img);
+            }
+    
+            // Store the new image
+            $image1 = $request->file('image1');
+            $image1Path = $image1->store('logo', 'public');
+            $content->logo = '/storage/' .$image1Path;
+        }
 
         // Update the other blog information
         $content->update([
@@ -84,6 +108,7 @@ class ContentController extends Controller
             'program_title'=>$request->program_title, 
             'support_text'=>$request->support_text, 
             'email_title'=>$request->email_title, 
+            'footer_address'=>$request->footer_address, 
         ]);
 
         return redirect(Auth::user()->role. '/content');

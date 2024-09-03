@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('misis', function (Blueprint $table) {
             $table->id();
-            $table->text('icon');
-            $table->string('head_misi');
-            $table->string('body_misi');
+            $table->text('icon')->nullable();
+            $table->string('head_misi')->nullable();
+            $table->string('body_misi')->nullabale();
             $table->softDeletes();
             $table->timestamps();
         });

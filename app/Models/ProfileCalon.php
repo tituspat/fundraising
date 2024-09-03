@@ -23,7 +23,6 @@ class ProfileCalon extends Model
     protected $fillable = [
         'nama_calon',
         'visi',
-        'misi',
         'profile',
     ];
 
