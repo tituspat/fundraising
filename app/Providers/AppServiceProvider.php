@@ -20,8 +20,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $logoPath = Content::first(); // Ambil setting pertama atau sesuaikan query
-
-        view()->share('logoPath', $logoPath->logo); // Share data ke semua view
+        try {
+            $logoPath = Content::first();
+            if ($logoPath) {
+                view()->share('logoPath', $logoPath->logo);
+            } else {
+                view()->share('logoPath', null);
+            }
+        } catch (\Exception $e) {
+            // Log error atau tangani sesuai kebutuhan
+            view()->share('logoPath', null);
+        }
     }
 }

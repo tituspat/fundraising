@@ -24,11 +24,11 @@ use App\Http\Controllers\Dashboard\BlogController;
 use App\Http\Controllers\Dashboard\ProfileCalonController;
 use App\Http\Controllers\Dashboard\NewsCrawlerController;
 use App\Http\Controllers\Dashboard\ManageTestimoniController;
-use App\Http\Controllers\Dashboard\ManageFAQController;
+use App\Http\Controllers\Dashboard\ManageFaqController;
 use App\Http\Controllers\Dashboard\ManageQuestionController;
 use App\Http\Controllers\Dashboard\ProgramController;
 use App\Http\Controllers\Dashboard\ContentController;
-use App\Http\Controllers\FAQController;
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +43,7 @@ use App\Http\Controllers\FAQController;
 // comment
 
 
-Route::get('/faqs', [FAQController::class, 'index'])->name('faqs.index');
+Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::post('/questions', [QuestionController::class, 'store'])->name('questions.store');
 Route::get('/foto', [GalleryController::class, 'showPhoto'])->name('foto.index');
@@ -111,10 +111,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/testimonials', [ManageTestimoniController::class, 'index'])->name('testimoni.management');
       Route::post('/testimonials/previewed/{id}', [ManageTestimoniController::class, 'updatePreviewStatus'])->name('testimoni.preview');
       Route::post('/testimonials/unpreviewed/{id}', [ManageTestimoniController::class, 'updateUnpreviewStatus'])->name('testimoni.unpreview');
-      Route::get('/faqs', [ManageFAQController::class, 'index'])->name('faqs');
-      Route::get('/faqs/delete/{id}', [ManageFAQController::class, 'destroy'])->name('faqs.delete');
-      Route::put('/faqs/update', [ManageFAQController::class, 'update'])->name('faqs.update');
-      Route::post('/faqs/add', [ManageFAQController::class, 'store'])->name('faqs.add');
+      Route::get('/faqs', [ManageFaqController::class, 'index'])->name('faqs');
+      Route::get('/faqs/delete/{id}', [ManageFaqController::class, 'destroy'])->name('faqs.delete');
+      Route::put('/faqs/update', [ManageFaqController::class, 'update'])->name('faqs.update');
+      Route::post('/faqs/add', [ManageFaqController::class, 'store'])->name('faqs.add');
       Route::get('/question', [ManageQuestionController::class, 'index'])->name('question');
       // program
       Route::get('/program', [ProgramController::class, 'index'])->name('program.index');
