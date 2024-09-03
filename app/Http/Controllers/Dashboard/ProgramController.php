@@ -18,7 +18,7 @@ class ProgramController extends Controller
     public function index()
     {
         //
-        $programs = Blog::all();
+        $programs = Blog::where('category', '=', 'program')->get();
         return view('pages.dashboard.program',  compact('programs'));
     }
 
@@ -88,6 +88,7 @@ class ProgramController extends Controller
             'category' => "program",
             'category_id' => "2",
             'profile_calon_id' => "1",
+            'created_by' => Auth::user()->name,
         ]);
 
         return Redirect(Auth::user()->role. '/program')->with('success', 'Content saved successfully!');
@@ -169,8 +170,12 @@ class ProgramController extends Controller
             'thumbnail' => $imagePath,
             'category' => "program",
             'category_id' => "2",
+<<<<<<< Updated upstream
             'is_previewed' => false,
             // 'created_by' => $request->creator,
+=======
+            // 'created_by' => Auth::user()->name,
+>>>>>>> Stashed changes
             ]);
         // Atur is_previewed menjadi false
         $program->is_previewed = false;

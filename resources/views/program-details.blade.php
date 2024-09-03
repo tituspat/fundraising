@@ -124,7 +124,7 @@
                     </form>
                 @else
                     <p class="mt-6 text-gray-700 dark:text-gray-200">Silakan<a href="{{ route('login') }}"
-                            class="text-blue-500">Masuk</a> terlebih dahulu untuk menambahkan komentar</p>
+                            class="text-blue-500"> Log In</a> terlebih dahulu untuk menambahkan komentar</p>
                 @endauth
 
                 <div class="pb-10 md:pb-16">

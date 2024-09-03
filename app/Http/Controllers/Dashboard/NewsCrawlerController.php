@@ -104,12 +104,12 @@ class NewsCrawlerController extends Controller
      */
     public function destroy(string $id)
     {
-        
+
         //get user by ID
         News::findOrFail($id)->delete();
 
         //redirect to
-        return redirect(Auth::user()->role. '/News')->with('success', 'Data Berhasil Dihapus!');
+        return redirect(Auth::user()->role. '/news')->with('success', 'Data Berhasil Dihapus!');
     }
 
 }

@@ -162,7 +162,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
       Route::post('/comments/{comment}/edit', [CommentController::class, 'update'])->name('comments.update');
       Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
-      Route::post('/comments/vote', [CommentController::class, 'vote'])->name('comments.vote'); 
+      Route::post('/comments/vote', [CommentController::class, 'vote'])->name('comments.vote');
     });
 
     // media
