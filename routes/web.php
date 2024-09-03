@@ -93,7 +93,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
       Route::get('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
       Route::post('/video/store', [GalleryController::class, 'vidStore'])->name('video.store');
-      Route::put('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('gallery.delete');
+      Route::get('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('gallery.delete');
       Route::get('/gallery/visibility/{id}', [GalleryController::class, 'toggleVisibility'])->name('gallery.toggleVisibility');
       // berita
       Route::get('/news', [NewsCrawlerController::class, 'index'])->name('news');
@@ -138,10 +138,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
       Route::post('/comments/{comment}/edit', [CommentController::class, 'update'])->name('comments.update');
       Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
       Route::post('/comments/vote', [CommentController::class, 'vote'])->name('comments.vote');
-
-
-
-
     });
 
     // mod

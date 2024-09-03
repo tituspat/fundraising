@@ -40,22 +40,18 @@ class GalleryController extends Controller
         $galleries = Gallery::all();
         
         
-        $photos = $galleries->filter(function ($gallery) {
-            return $gallery->media === 'photo';
-        });
+        $photos = $galleries->where('media', '=', 'photo')->where('is_previewed', '=', true);
     
         return view('foto', compact('photos', 'galleries'));
-        }
+    }
     
-        public function showVideo()
-        {
+    public function showVideo()
+    {
         
         $galleries = Gallery::all();
         
         
-        $videos = $galleries->filter(function ($gallery) {
-            return $gallery->media === 'video';
-        });
+        $videos = $galleries->where('media', '=', 'video')->where('is_previewed', '=', true);
     
         return view('video', compact('videos', 'galleries'));
     }
@@ -138,17 +134,20 @@ class GalleryController extends Controller
         //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         // ]);
 
-        $fileToDelete = 'file.txt'; // Tentukan file yang ingin dihapus
 
-        // Handle the image upload
-        $imagePath = $request->file('image')->store('gallery_images', 'public');
+        if($request->hasFile('image')){
+            // Store the new image
+            $image1 = $request->file('image');
+            $image1Path = $image1->store('gallery_images', 'public');
+            $gallery->thumbnail = '/storage/' .$image1Path;
+            $gallery->url = '/storage/' .$image1Path;
+        }
 
         // Update the other gallery information
         $gallery->update([
         'title' => $request->title,
         'description' => $request->description,
-        'url' => '/storage/' .$imagePath,
-        'thumbnail' => '/storage/' .$imagePath
+        'is_previewed' => false,
         ]);
 
         return redirect(Auth::user()->role. '/gallery')

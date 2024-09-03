@@ -169,6 +169,7 @@ class ProgramController extends Controller
             'thumbnail' => $imagePath,
             'category' => "program",
             'category_id' => "2",
+            'is_previewed' => false,
             // 'created_by' => $request->creator,
             ]);
         // Atur is_previewed menjadi false
