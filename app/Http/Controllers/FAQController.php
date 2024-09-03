@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FAQ;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
@@ -13,7 +13,7 @@ class FaqController extends Controller
     public function index()
     {
         // Mengambil semua data FAQ
-        $faqs = FAQ::all();
+        $faqs = Faq::all();
 
         // Mengirim data FAQ ke view
         return view('faq', compact('faqs'));

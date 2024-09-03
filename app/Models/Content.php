@@ -18,6 +18,7 @@ class Content extends Model
      */
     protected $fillable = [
         'jumbotron_title',
+        'logo',
         'jumbotron_subtitle',
         'profile_title',
         'program_title',
