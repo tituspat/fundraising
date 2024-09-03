@@ -159,6 +159,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // ->middleware(['permission:member'])
     ->group(function () {
       Route::get('/dashboard', [DashboardController::class, 'index'])->name('');
+      Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimoni');
+      Route::post('/testimoni/store', [TestimonialController::class, 'store'])->name('testimoni.store');
+      Route::get('/testimoni/edit', [TestimonialController::class, 'edit'])->name('testimoni.edit');
+      Route::put('/testimoni/upadate/{id}', [TestimonialController::class, 'update'])->name('testimoni.update');
+      Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+      Route::post('/comments/{comment}/edit', [CommentController::class, 'update'])->name('comments.update');
+      Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+      Route::post('/comments/vote', [CommentController::class, 'vote'])->name('comments.vote'); 
     });
 
     // media
