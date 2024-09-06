@@ -135,14 +135,14 @@ class BlogController extends Controller
         $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required',
-            'creator' => 'required',
+            // 'creator' => 'required',
             'meta_desc' => 'required',
         ],[
             'title.required' => 'Nama harus diisi.',
             'content.required' => 'Content harus diisi.',
             'meta.required' => 'SEO harus diisi.',
         ]);
-        
+
         // Ambil blog berdasarkan ID
         $blog = Blog::findOrFail($id);
 
