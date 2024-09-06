@@ -106,9 +106,11 @@
                         </div>
                         <div class="mt-4">
                            <!-- Tampilkan Button -->
+                           @if(Auth::user()->role === "admin" ||Auth::user()->role === "mod")
                            <button type="button" onclick="window.location='{{ URL::to(Auth::user()->role . '/gallery/visibility', $gallery->id) }}'" class="px-4 py-2 text-sm    text-white bg-blue-500 rounded-md hover:bg-blue-600">
                               {{ $gallery->is_previewed ? 'Sembunyikan' : 'Tampilkan' }}
                            </button>
+                           @endif
                         </div>
                     </figcaption>
                     </figure>
