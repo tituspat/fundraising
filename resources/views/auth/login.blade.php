@@ -60,9 +60,9 @@
                <!-- Login form inputs and elements -->
                <div class="py-[30px] px-[40px]">
                   @if($status==="public")
-                  <form id="admin-form" method="POST" action="/login">
+                  <form id="admin-form" method="POST" action="login">
                   @elseif($status==="timses")
-                  <form id="admin-form" method="POST" action="/login/t1msus3s">
+                  <form id="admin-form" method="POST" action="t1msuks3s">
                   @endif
                   @csrf
 

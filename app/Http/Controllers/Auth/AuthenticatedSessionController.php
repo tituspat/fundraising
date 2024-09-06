@@ -37,29 +37,33 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
-        $request->session()->regenerate();
-
-        $url = "/member/dashboard";
-
+        if($request->user()->role === "member"){
+            $request->session()->regenerate();
+            $url = "/member/dashboard";
+        }else{
+            Auth::guard('web')->logout();
+            $request->session()->invalidate();
+            $url = "/";
+        }
         return redirect()->intended($url);
     }
 
     public function store_timses(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
-        $request->session()->regenerate();
-
-        $url = "";
-        if($request->user()->role === "admin"){
-            $url = "/admin/dashboard";
-        }elseif($request->user()->role === "moderator"){
-            $url = "/mod/dashboard";
-        }elseif($request->user()->role === "media"){
+        
+        if($request->user()->role != "member"){    
+            $request->session()->regenerate();
+            $url = "";
+            if($request->user()->role === "admin"){
+                $url = "/admin/dashboard";
+            }elseif($request->user()->role === "moderator"){
+                $url = "/mod/dashboard";
+            }elseif($request->user()->role === "media"){
             $url = "/media/dashboard";
+            }
         }else{
-            $url = "/member/dashboard";  
+            $url = "/";  
         }
         
         return redirect()->intended($url);

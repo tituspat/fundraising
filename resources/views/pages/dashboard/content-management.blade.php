@@ -58,7 +58,7 @@
                                     </div>
                                     <!-- Input for the first image -->
                                     <div class="mt-4">
-                                       <label for="image2" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Masukan Foto </label>
+                                       <label for="image2" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Upload Logo </label>
                                        <input type="file" id="image2" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="logo" onchange="previewFile('image2', 'previewImage2')">
                                     </div>
                                  </div>
@@ -84,7 +84,7 @@
                                     </div>
                                     <!-- Input for the first image -->
                                     <div class="mt-4">
-                                       <label for="image1" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Masukan Foto </label>
+                                       <label for="image1" class="block text-sm font-medium capitalize text-dark dark:text-title-dark">Foto Header Utama </label>
                                        <input type="file" id="image1" class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="image1" onchange="previewFile('image1', 'previewImage1')">
                                     </div>
                                  </div>

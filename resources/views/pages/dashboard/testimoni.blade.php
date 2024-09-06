@@ -154,7 +154,7 @@
                                 <tbody>
                                     @foreach ($testimonials as $t)
                                         
-                                        <tr class="group" style="background-color: {{ $t->is_previewed ? '#FBC02D' : '#FFFFFF' }}">
+                                        <tr class="group" style="background-color: {{ $t->is_previewed ? '#198754' : '#FFFFFF' }}">
                                             <td
                                                 class="ps-[25px] pe-4 py-[12px] text-start last:text-end text-dark dark:text-title-dark group-hover:bg-transparent text-15 font-medium border-none before:hidden rounded-s-[4px]">
                                                 {{ $t->id }}
@@ -184,7 +184,7 @@
                                                 <div
                                                     class="text-light dark:text-subtitle-dark text-[19px] flex items-center justify-center p-0 m-0 gap-[20px]">
                                                     <button type="button"
-                                                        class="cursor-pointer text-black text-left uil uil-eye hover:text-primary bg-transparent border-none p-0 m-0"
+                                                        class="cursor-pointer text-black text-left uil {{ $t->is_previewed ? 'uil-eye-slash' : 'uil-eye' }} hover:text-primary bg-transparent border-none p-0 m-0" title="{{ $t->is_previewed ? 'Sembunyikan' : 'Tampilkan' }}"
                                                         onclick="showTestimonialModal('{{ $t->testimonial }}', '{{ route(Auth::user()->role . '.testimoni.preview', $t->id) }}', '{{ route(Auth::user()->role . '.testimoni.unpreview', $t->id) }}', {{ $t->is_previewed }})">
                                                     </button>
                                                 </div>
