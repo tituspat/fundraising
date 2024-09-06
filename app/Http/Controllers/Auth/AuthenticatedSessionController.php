@@ -52,7 +52,9 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
         
-        if($request->user()->role != "member"){    
+        if($request->user()->role === "member"){    
+            $url = "/";  
+        }else{
             $request->session()->regenerate();
             $url = "";
             if($request->user()->role === "admin"){
@@ -62,8 +64,6 @@ class AuthenticatedSessionController extends Controller
             }elseif($request->user()->role === "media"){
             $url = "/media/dashboard";
             }
-        }else{
-            $url = "/";  
         }
         
         return redirect()->intended($url);
