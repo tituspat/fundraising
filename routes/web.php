@@ -235,18 +235,31 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // ->middleware(['permission:media'])
     ->group(function () {
       Route::get('/dashboard', [DashboardController::class, 'index'])->name('');
+      // blog
       Route::get('/blog', [BlogController::class, 'index'])->name('blog');
       Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
+      Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
+      Route::get('/blog/{id}/detail', [BlogController::class, 'show'])->name('blog.show');
+      Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+      Route::post('/blog/{id}/update', [BlogController::class, 'update'])->name('blog.update');
+      Route::get('/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blog.delete');
+      // gallery
       Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
       Route::get('/gallery/tambah', [GalleryController::class, 'create'])->name('gallery.create');
       Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
       Route::get('/gallery/{id}/detail', [GalleryController::class, 'show'])->name('gallery.detail');
       Route::get('/gallery/{id}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
       Route::post('/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
+      Route::post('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
+      Route::get('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
+      Route::post('/video/store', [GalleryController::class, 'vidStore'])->name('video.store');
+      Route::get('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('gallery.delete');
+      // news
       Route::get('/news', [NewsCrawlerController::class, 'index'])->name('news');
       Route::get('/news/tambah', [NewsCrawlerController::class, 'create'])->name('news.create');
       Route::post('/news/preview', [NewsCrawlerController::class, 'preview'])->name('news.preview');
       Route::post('/news/store', [NewsCrawlerController::class, 'store'])->name('news.store');
+      Route::get('/news/delete/{id}', [NewsCrawlerController::class, 'destroy'])->name('news.destroy');
     });
 });
 

@@ -64,6 +64,7 @@
                                 {{--<img src="{{ Storage::url($blog->url) }}" style="width:970px; height:450px" alt="blog-details" class="object-cover w-full h-full">--}}
                                 <!-- Display the blog thumbnail image -->
                             </div>
+                            
                             <div class="px-24 max-3xl:px-14 max-2xl:px-[30px] max-xl:px-0">
                                 <h1 class="mt-10 mb-6 font-semibold text-dark dark:text-title-dark text-3xl lg:text-[26px] max-sm:text-2xl leading-10">
                                     {{$blog->title}}
