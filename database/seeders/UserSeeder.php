@@ -24,8 +24,8 @@ class UserSeeder extends Seeder
 
         DB::table('users')->insert([
             [
-                'name' => 'Jack Sparrow',
-                'email' => 'admin@gmail.com',
+                'name' => 'Admin Sahabat Tabanan',
+                'email' => 'tim@atmagiri.com',
                 'email_verified_at' => now(),
                 'password' => bcrypt('timatmagiri831'),
                 'role_id' => $adminRoleId,
@@ -35,8 +35,8 @@ class UserSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Elise Clockwise',
-                'email' => 'media@gmail.com',
+                'name' => 'tim media',
+                'email' => 'mediatim@atmagiri.com',
                 'email_verified_at' => now(),
                 'password' => bcrypt('timatmagiri831'),
                 'role_id' => $mediaRoleId,
@@ -46,8 +46,8 @@ class UserSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Julie Granger',
-                'email' => 'mod@gmail.com',
+                'name' => 'tim mod',
+                'email' => 'modtim@atmagiri.com',
                 'email_verified_at' => now(),
                 'password' => bcrypt('timatmagiri831'),
                 'role_id' => $modRoleId,
@@ -57,8 +57,8 @@ class UserSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'name' => 'John Brown',
-                'email' => 'member@gmail.com',
+                'name' => 'memberexample',
+                'email' => 'membertim@atmagiri.com',
                 'email_verified_at' => now(),
                 'password' => bcrypt('timatmagiri831'),
                 'role_id' => $memberRoleId,
