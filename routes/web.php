@@ -145,8 +145,72 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ->prefix('mod')
     // ->middleware(['permission:mod'])
     ->group(function () {
-      Route::get('/dashboard', [DashboardController::class, 'index'])->name('');
-    //   Route::get('/users', ModUsersController::class)->name('');
+      Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+      Route::get('/content', [ContentController::class, 'index'])->name('content');
+      Route::post('/content/update', [ContentController::class, 'update'])->name('content.update');
+      Route::get('/users', [UsersController::class, 'index'])->name('users');
+      Route::post('/users/add', [UsersController::class, 'store'])->name('users.add');
+      Route::get('/users/delete/{id}', [UsersController::class, 'destroy'])->name('users.delete');
+      Route::post('/users/update', [UsersController::class, 'update'])->name('users.update');
+      Route::get('/profile-calon', [ProfileCalonController::class, 'index'])->name('profile-calon');
+      Route::put('/profile-calon/update', [ProfileCalonController::class, 'update'])->name('calon.update');
+      Route::get('/misi/{id}/delete', [ProfileCalonController::class, 'misiDelete'])->name('misi.delete');
+      Route::get('/misi/add', [ProfileCalonController::class, 'misiStore'])->name('misi.store');
+      // gallery
+      Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+      Route::get('/gallery/tambah', [GalleryController::class, 'create'])->name('gallery.create');
+      Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
+      Route::get('/gallery/{id}/detail', [GalleryController::class, 'show'])->name('gallery.detail');
+      Route::get('/gallery/{id}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
+      Route::post('/gallery/update', [GalleryController::class, 'update'])->name('gallery.update');
+      Route::post('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
+      Route::get('/video/preview', [GalleryController::class, 'vidPreview'])->name('video.preview');
+      Route::post('/video/store', [GalleryController::class, 'vidStore'])->name('video.store');
+      Route::get('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('gallery.delete');
+      Route::get('/gallery/visibility/{id}', [GalleryController::class, 'toggleVisibility'])->name('gallery.toggleVisibility');
+      // berita
+      Route::get('/news', [NewsCrawlerController::class, 'index'])->name('news');
+      Route::get('/news/tambah', [NewsCrawlerController::class, 'create'])->name('news.create');
+      Route::post('/news/preview', [NewsCrawlerController::class, 'preview'])->name('news.preview');
+      Route::post('/news/store', [NewsCrawlerController::class, 'store'])->name('news.store');
+      Route::get('/news/show/{id}', [NewsCrawlerController::class, 'show'])->name('news.tampilkan');
+      Route::get('/news/hide/{id}', [NewsCrawlerController::class, 'hide'])->name('news.sembunyikan');
+      Route::get('/news/delete/{id}', [NewsCrawlerController::class, 'destroy'])->name('news.destroy');
+      // testimoni
+      Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimoni');
+      Route::post('/testimoni/store', [TestimonialController::class, 'store'])->name('testimoni.store');
+      Route::get('/testimoni/edit', [TestimonialController::class, 'edit'])->name('testimoni.edit');
+      Route::put('/testimoni/upadate/{id}', [TestimonialController::class, 'update'])->name('testimoni.update');
+      Route::get('/testimonials', [ManageTestimoniController::class, 'index'])->name('testimoni.management');
+      Route::post('/testimonials/previewed/{id}', [ManageTestimoniController::class, 'updatePreviewStatus'])->name('testimoni.preview');
+      Route::post('/testimonials/unpreviewed/{id}', [ManageTestimoniController::class, 'updateUnpreviewStatus'])->name('testimoni.unpreview');
+      Route::get('/faqs', [ManageFaqController::class, 'index'])->name('faqs');
+      Route::get('/faqs/delete/{id}', [ManageFaqController::class, 'destroy'])->name('faqs.delete');
+      Route::put('/faqs/update', [ManageFaqController::class, 'update'])->name('faqs.update');
+      Route::post('/faqs/add', [ManageFaqController::class, 'store'])->name('faqs.add');
+      Route::get('/question', [ManageQuestionController::class, 'index'])->name('question');
+      // program
+      Route::get('/program', [ProgramController::class, 'index'])->name('program.index');
+      Route::get('/program/tambah', [ProgramController::class, 'create'])->name('program.create');
+      Route::post('/program/store', [ProgramController::class, 'store'])->name('program.store');
+      Route::get('/program/{id}/detail', [ProgramController::class, 'show'])->name('program.show');
+      Route::get('/program/{id}/edit', [ProgramController::class, 'edit'])->name('program.edit');
+      Route::post('/program/{id}/update', [ProgramController::class, 'update'])->name('program.update');
+      Route::get('/program/{id}/delete', [ProgramController::class, 'destroy'])->name('program.destroy');
+      Route::get('/program/visibility/{id}', [ProgramController::class, 'toggleVisibility'])->name('program.destroy');
+      // blog
+      Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+      Route::get('/blog/tambah', [BlogController::class, 'create'])->name('blog.create');
+      Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
+      Route::get('/blog/{id}/detail', [BlogController::class, 'show'])->name('blog.show');
+      Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+      Route::post('/blog/{id}/update', [BlogController::class, 'update'])->name('blog.update');
+      Route::get('/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blog.delete');
+      Route::get('/blog/visibility/{id}', [BlogController::class, 'toggleVisibility'])->name('blog.toggleVisibility');
+      Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+      Route::post('/comments/{comment}/edit', [CommentController::class, 'update'])->name('comments.update');
+      Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+      Route::post('/comments/vote', [CommentController::class, 'vote'])->name('comments.vote');
     });
 
     // member
