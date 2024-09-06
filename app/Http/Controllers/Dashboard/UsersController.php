@@ -66,13 +66,13 @@ class UsersController extends Controller
             'id' => 'required|exists:users,id',
             'name' => 'required|string',
             'email' => 'required|email',
-            'password' => 'nullable|string|min:8',
+            // 'password' => 'nullable|string|min:8',
             'role' => 'required|string'
         ],[
             'id' => 'user tidak valid',
             'name' => 'nama harus diisi',
             'email' => 'email harus diisi',
-            'password' => 'password harus diisi',
+            // 'password' => 'password harus diisi',
             'role' => 'tentukan role'
         ]);
 

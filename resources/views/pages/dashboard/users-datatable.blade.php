@@ -439,7 +439,7 @@
                                                                                 class="rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[19px] py-[12px] min-h-[50px] outline-none placeholder:text-[#747474] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary focus:shadow-[0_5px_20px_rgba(130,49,211,0.1)]"
                                                                                 placeholder="Password"
                                                                                 autocomplete="new-password"
-                                                                                value="{{ $u->password }}">
+                                                                                >
                                                                         </div>
                                                                         <div class="mb-4">
                                                                             <label for="user-email"
@@ -468,6 +468,10 @@
                                                                                 <option value="member"
                                                                                     {{ $u->role == 'member' ? 'selected' : '' }}>
                                                                                     Member</option>
+                                                                                    Media</option>
+                                                                                <option value="admin"
+                                                                                    {{ $u->role == 'admin' ? 'selected' : '' }}>
+                                                                                    Admin</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
