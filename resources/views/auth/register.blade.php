@@ -43,41 +43,41 @@
 
          <!-- Sign-up form container -->
          <div class="flex flex-col justify-center w-full max-w-[516px] px-[30px] mx-auto my-[150px]">
-            <a href="index.html" class="text-center">
+            {{--<a href="index.html" class="text-center">
                <!-- Logo for the light theme -->
                <img src="images/logos/logo-dark.png" alt="image" class="inline dark:hidden">
                <!-- Logo for the dark theme -->
                <img src="images/logos/logo-white.png" alt="image" class="hidden dark:inline">
-            </a>
+            </a>--}}
 
             <!-- Sign-up form background -->
             <div class="rounded-6 mt-[25px] shadow-regular dark:shadow-xl bg-white dark:bg-[#111726]">
                <div class="p-[25px] text-center border-b border-regular dark:border-white/[.05] top">
                   <!-- Heading for the sign-up form -->
-                  <h2 class="text-18 font-semibold leading-[1] mb-0 text-dark dark:text-title-dark title">Sign up HexaDash</h2>
+                  <h2 class="text-18 font-semibold leading-[1] mb-0 text-dark dark:text-title-dark title">Buat Akun</h2>
                </div>
 
                <!-- Sign-up form inputs and elements -->
                <div class="py-[30px] px-[40px]">
-                  <form id="admin-form">
-
+                  <form id="admin-form" method="POST" action="{{ route('register') }}">
+                  @csrf
                      <!-- Name input -->
                      <div class="mb-6">
                         <label for="name" class="text-[14px] w-full leading-[1.4285714286] font-medium text-dark dark:text-gray-300 mb-[8px] capitalize inline-block">Name</label>
-                        <input type="name" id="name" class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary" placeholder="name" autocomplete="off" required>
+                        <input type="name" id="name" name="name" class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary" placeholder="name" autocomplete="off" required>
                      </div>
 
                      <!-- Username input -->
                      {{--<div class="mb-6">
                         <label for="username" class="text-[14px] w-full leading-[1.4285714286] font-medium text-dark dark:text-gray-300 mb-[8px] capitalize inline-block">Username</label>
-                        <input type="username" id="username" class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary" placeholder="username" autocomplete="off" required>
+                        <input type="username" id="username" name="name" class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary" placeholder="username" autocomplete="off" required>
                      </div>--}}
 
                      <!-- Email Address input -->
                      <div class="mb-6">
                         <label for="email" class="text-[14px] w-full leading-[1.4285714286] font-medium text-dark dark:text-gray-300 mb-[8px] capitalize inline-block">Email
                            Address</label>
-                        <input type="email" id="email" class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary" placeholder="name@example.com" autocomplete="off" required>
+                        <input type="email" id="email" name="email" class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary" placeholder="name@example.com" autocomplete="off" required>
                      </div>
 
                      <!-- Password input -->
@@ -91,7 +91,7 @@
                                  <i class="uil uil-eye-slash"></i>
                               </label>
                            </div>
-                           <input class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary js-password" id="password" type="password" placeholder="Password">
+                           <input class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-1 border-regular rounded-4 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] focus:ring-primary focus:border-primary js-password" id="password" type="password" placeholder="Password" name="password">
                         </div>
                      </div>
 
@@ -102,21 +102,17 @@
                               <input id="hs-default-checkbox" type="checkbox" value="" class="relative ltr:float-left rtl:float-right me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-1 border-solid border-normal outline-none before:pointer-events-none before:absolute before:h-[10px] before:w-[0.5px] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:mt-0 checked:after:ms-[5px] checked:after:block checked:after:h-[10px] checked:after:w-[5px] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] dark:border-box-dark-up dark:checked:border-primary dark:checked:bg-primary after:top-[2px]" required>
                            </div>
                            <label for="hs-default-checkbox" class="text-sm text-gray-500 ms-1 dark:text-gray-400">
-                              <span class="checkbox-text text-[13px] leading-[1.6923076923] font-normal text-light dark:text-subtitle-dark cursor-pointer">Creating an account means you’re okay
-                                 with our <a href="#" class="text-primary">Terms of
-                                    Service</a> and <a href="#" class="text-primary">Privacy
-                                    Policy</a>
-                                 my preference</span></label>
+                              <span class="checkbox-text text-[13px] leading-[1.6923076923] font-normal text-light dark:text-subtitle-dark cursor-pointer">Membuat akun, artinya anda setuju dengan <a href="#" class="text-primary">Kebijakan Privasi </a> kami </span></label>
                         </div>
                      </div>
 
                      <!-- Submit button for the sign-up form -->
-                     <button type="submit" class="inline-flex items-center justify-center w-full h-[48px] text-14 rounded-6 font-medium bg-primary text-white cursor-pointer hover:bg-primary-hbr border-primary transition duration-300" value="submit">Submit</button>
+                     <button type="submit" class="inline-flex items-center justify-center w-full h-[48px] text-14 rounded-6 font-medium bg-primary text-white cursor-pointer hover:bg-primary-hbr border-primary transition duration-300">Submit</button>
                   </form>
 
                   <!-- Separator line -->
                   <div class="relative mt-[25px] text-center text-13 text-regular dark:text-white/[87] before:content-[''] before:absolute before:w-full ltr:before:left-0 rtl:before:right-0 before:top-[50%] before:translate-y-[-50%] before:z-[1] before:h-[1px] before:bg-normal before:dark:bg-box-dark-up">
-                     <span class="font-medium px-[15px] inline-block relative z-[2] bg-white dark:bg-[#111625] text-body dark:text-subtitle-dark capitalize">or</span>
+                     <!-- <span class="font-medium px-[15px] inline-block relative z-[2] bg-white dark:bg-[#111625] text-body dark:text-subtitle-dark capitalize">or</span> -->
                   </div>
 
                   <!-- Social media login buttons -->
