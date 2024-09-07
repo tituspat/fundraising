@@ -136,9 +136,12 @@
 
                <!-- Footer with signup link -->
                <div class="text-center p-[25px] rounded-b-6 bg-deepBG dark:bg-gray-600">
-                  <!-- <p class="text-[14px] font-medium text-body dark:text-title-dark inline-flex items-center gap-[6px] mb-0">
-                     Don't have an account? <a class="transition duration-300 text-primary hover:text-dark dark:text-dark dark:hover:text-subtitle-dark" href="sign-up.html">Sign up</a>
-                  </p> -->
+                  @if($status==="public")
+                  <p class="text-[14px] font-medium text-body dark:text-title-dark inline-flex items-center gap-[6px] mb-0">
+                     Belum punya akun? <a class="transition duration-300 text-primary hover:text-dark dark:text-dark dark:hover:text-subtitle-dark" href="/register">Daftar</a>
+                  </p>
+                  @endif
+                  
                </div>
             </div>
          </div>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->unsignedBigInteger('role_id')->nullable()->default('4');
-            $table->string('role')->default('member');
+            $table->string('role')->nullable()->default('member');
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
