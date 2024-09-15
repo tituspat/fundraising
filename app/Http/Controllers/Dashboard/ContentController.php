@@ -78,26 +78,33 @@ class ContentController extends Controller
         
         if ($request->hasFile('image1')) {
             // Delete the old image if necessary
-            if ($content->jombotron_img) {
-                Storage::disk('public')->delete($content->jombotron_img);
-            }
+            // if ($content->jombotron_img) {
+            //     Storage::disk('public')->delete($content->jombotron_img);
+            // }
     
             // Store the new image
             $image1 = $request->file('image1');
-            $image1Path = $image1->store('landing', 'public');
-            $content->jumbotron_img = '/storage/' .$image1Path;
+            $image1Name = time() . '_' . $image1->getClientOriginalName();
+            $image1Path = 'img/content/' . $image1Name;
+            $image1->move(public_path('img/content'), $image1Name);
+            // Update the path in the model
+            $content->jumbotron_img = $image1Path;
         }
 
         if ($request->hasFile('logo')) {
             // Delete the old image if necessary
-            if ($content->logo) {
-                Storage::disk('public')->delete($content->jombotron_img);
-            }
+            // if ($content->logo) {
+            //     Storage::disk('public')->delete($content->jombotron_img);
+            // }
     
             // Store the new image
-            $image1 = $request->file('image1');
-            $image1Path = $image1->store('logo', 'public');
-            $content->logo = '/storage/' .$image1Path;
+            $logo = $request->file('logo');
+            $logoName = time() . '_' . $logo->getClientOriginalName();
+            $logoPath = 'img/logo/' . $logoName;
+            $logo->move(public_path('img/logo'), $logoName);
+
+            // Update the path in the model
+            $content->logo = $logoPath;
         }
 
         // Update the other blog information
