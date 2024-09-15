@@ -49,8 +49,22 @@ class ProgramController extends Controller
             'content' => 'Konten harus diisi',
         ]);
 
-        $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
-        $imagePath = '/storage/' . $imagePath;
+        if ($request->hasFile('image')) {
+            // Get the uploaded file
+            $image = $request->file('image');
+    
+            // Generate a unique file name
+            $imageName = time() . '_' . $image->getClientOriginalName();
+    
+            // Define the destination path
+            $destinationPath = public_path('img/program');
+    
+            // Move the file to the destination path
+            $image->move($destinationPath, $imageName);
+    
+            // Set the relative path for the file
+            $imagePath = 'img/program/' . $imageName;
+        }
 
         $content = $validated['content']; // Ambil konten dari request
 
@@ -70,12 +84,15 @@ class ProgramController extends Controller
                 // Buat nama file unik
                 $fileName = Str::random(10) . '.' . $type;
 
-                // Simpan gambar ke storage
-                $filePath = 'public/program_images/' . $fileName;
-                Storage::put($filePath, $imageData);
+                // Define the destination path
+                $destinationPath = public_path('img/program_images');
 
+                 // Save the image to the destination path
+                $filePath = $destinationPath . '/' . $fileName;
+                file_put_contents($filePath, $imageData);
+                    
                 // Ganti base64 src di konten dengan URL gambar yang disimpan
-                $content = str_replace($src, Storage::url($filePath), $content);
+                $content = str_replace($src, asset('img/program_images/' . $fileName), $content);
             }
         });
 
@@ -131,8 +148,19 @@ class ProgramController extends Controller
         ]);
 
         if($request->hasFile('image')){
-            $imagePath = $request->hasFile('image') ? $request->file('image')->store('program_images', 'public') : null;
-            $imagePath = '/storage/' . $imagePath;
+            $image = $request->file('image');
+
+            // Generate a unique file name
+            $imageName = time() . '_' . $image->getClientOriginalName();
+
+            // Define the destination path
+            $destinationPath = public_path('img/program');
+
+            // Move the file to the destination path
+            $image->move($destinationPath, $imageName);
+
+            // Set the relative path for the file
+            $imagePath = 'img/program/' . $imageName;
         } else {
             $imagePath = $program->thumbnail;
         }
@@ -155,11 +183,11 @@ class ProgramController extends Controller
                 $fileName = Str::random(10) . '.' . $type;
 
                 // Simpan gambar ke storage
-                $filePath = 'public/program_images/' . $fileName;
-                Storage::put($filePath, $imageData);
+                $filePath = public_path('img/blog/' . $fileName);
+                file_put_contents($filePath, $imageData);
 
                 // Ganti base64 src di konten dengan URL gambar yang disimpan
-                $content = str_replace($src, Storage::url($filePath), $content);
+                $content = str_replace($src, url('img/blog/' . $fileName), $content);
             }
         });
         // Update the other blog information

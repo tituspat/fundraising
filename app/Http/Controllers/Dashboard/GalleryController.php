@@ -82,8 +82,24 @@ class GalleryController extends Controller
 
     $mediaType = $request->hasFile('image') ? 'photo' : 'video';
 
-    $imagePath = $request->hasFile('image') ? $request->file('image')->store('gallery_images', 'public') : null;
-    $imagePath = "/storage/" . $imagePath;
+    if ($request->hasFile('image')) {
+        $image = $request->file('image');
+        
+        // Generate a unique file name
+        $imageName = time() . '_' . $image->getClientOriginalName();
+
+        // Define the path to save the file
+        $destinationPath = public_path('img/gallery');
+
+        // Move the file to the public/img/gallery directory
+        $image->move($destinationPath, $imageName);
+
+        // Set the relative path to the file
+        $imagePath = 'img/gallery/' . $imageName;
+    } else {
+        $imagePath = null;
+    }
+
     $videoUrl = $request->input('url');
 
     Gallery::create([
@@ -136,11 +152,24 @@ class GalleryController extends Controller
 
 
         if($request->hasFile('image')){
-            // Store the new image
-            $image1 = $request->file('image');
-            $image1Path = $image1->store('gallery_images', 'public');
-            $gallery->thumbnail = '/storage/' .$image1Path;
-            $gallery->url = '/storage/' .$image1Path;
+
+            // Get the uploaded file
+            $image = $request->file('image');
+             // Generate a unique file name
+            $image1Name = time() . '_' . $image->getClientOriginalName();
+            
+            // Define the destination path
+            $destinationPath = public_path('img/gallery');
+            
+            // Move the file to the destination path
+            $image->move($destinationPath, $image1Name);
+            
+            // Set the relative path for the file
+            $image1Path = 'img/gallery/' . $image1Name;
+            
+            // Update the gallery model with the new image path
+            $gallery->thumbnail = $image1Path;
+            $gallery->url = $image1Path;
         }
 
         // Update the other gallery information

@@ -70,11 +70,11 @@ class BlogController extends Controller
                 $fileName = Str::random(10) . '.' . $type;
 
                 // Simpan gambar ke storage
-                $filePath = 'public/blog_images/' . $fileName;
-                Storage::put($filePath, $imageData);
+                $filePath = public_path('img/blog/' . $fileName);
+                file_put_contents($filePath, $imageData);
 
                 // Ganti base64 src di konten dengan URL gambar yang disimpan
-                $content = str_replace($src, Storage::url($filePath), $content);
+                $content = str_replace($src, url('img/blog/' . $fileName), $content);
             }
         });
 
@@ -166,11 +166,11 @@ class BlogController extends Controller
                 $fileName = Str::random(10) . '.' . $type;
 
                 // Simpan gambar ke storage
-                $filePath = 'public/blog_images/' . $fileName;
-                Storage::put($filePath, $imageData);
+                $filePath = public_path('img/blog/' . $fileName);
+                file_put_contents($filePath, $imageData);
 
                 // Ganti base64 src di konten dengan URL gambar yang disimpan
-                $content = str_replace($src, Storage::url($filePath), $content);
+                $content = str_replace($src, url('img/blog/' . $fileName), $content);
             }
         });
 

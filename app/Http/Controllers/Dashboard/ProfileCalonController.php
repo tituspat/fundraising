@@ -83,13 +83,27 @@ class ProfileCalonController extends Controller
 
 
     if ($request->hasFile('foto_calon')) {
-        if ($calon->foto_calon && Storage::exists('public/' . $calon->foto_calon)) {
-            Storage::delete('public/' . $calon->foto_calon);
-        }
+        // if ($calon->foto_calon && Storage::exists('public/' . $calon->foto_calon)) {
+        //     Storage::delete('public/' . $calon->foto_calon);
+        // }
+        
+        // Get the uploaded file
+        $fotoCalon = $request->file('foto_calon');
 
+        // Generate a unique file name
+        $fotoCalonName = time() . '_' . $fotoCalon->getClientOriginalName();
 
-        $imagePath = $request->file('foto_calon')->store('calon_images', 'public');
-        $calon->foto_calon = '/storage/'.$imagePath;
+        // Define the destination path
+        $destinationPath = public_path('img/profile');
+
+        // Move the file to the destination path
+        $fotoCalon->move($destinationPath, $fotoCalonName);
+
+        // Set the relative path for the file
+        $imagePath = 'img/profile/' . $fotoCalonName;
+
+        // Update the model with the new image path
+        $calon->foto_calon = $imagePath;
     }
 
     $calon->nama_calon = $request->input('nama_calon');
