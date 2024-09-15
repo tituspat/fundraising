@@ -31,5 +31,4 @@ jobs:
           cd /home/${{ secrets.SSH_USERNAME }}/public_html &&
           git pull origin main &&
           composer2 install --no-interaction --prefer-dist --optimize-autoloader &&
-          php artisan storage:link --force &&
           php artisan config:cache"
