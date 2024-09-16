@@ -152,7 +152,7 @@
                                             <div class="pb-4">
                                                 <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Video</label>
                                                 <div class="flex flex-col flex-1 md:flex-row">
-                                                    <input type="text" id="nameVertical" class=" rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" value="{{$title}}" readonly>
+                                                    <input type="text" id="nameVertical" class=" rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" value="{{$title}}">
                                                     @error('title')
         						                        <span class="text-danger">{{ $message }}</span>
     						                        @enderror
