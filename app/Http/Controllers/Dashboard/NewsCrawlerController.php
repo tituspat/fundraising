@@ -47,9 +47,10 @@ class NewsCrawlerController extends Controller
         $crawler = new Crawler($content);
 
         // Extract metadata
-        $title = $crawler->filter('meta[property="og:title"]')->attr('content') ?? 'No title';
-        $description = $crawler->filter('meta[property="og:description"]')->attr('content') ?? 'No description';
-        $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content') ?? 'No image';
+        $title = $crawler->filter('meta[name="title"]')->attr('content') ?? 'No title';
+        $description = $crawler->filter('meta[name="description"]')->attr('content') ?? 'No description';
+        $thumbnail = "no image";
+        // $crawler->filter('meta[property="og:image"]')->attr('content') ?? 'No image';
 
         // Return the view with the crawled data
         return view('pages.dashboard.form-news', compact('title', 'description', 'thumbnail', 'url'));
