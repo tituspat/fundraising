@@ -54,7 +54,7 @@
                         <div class="flex justify-between">
                             <div
                                 class="bg-primary/10 flex h-[58px] text-[30px] items-center justify-center order-2 rounded-2xl text-primary w-[58px]">
-                                <i class="uil uil-ticket"></i>
+                                <i class="uil uil-user"></i>
                             </div>
                             <div>
                                 <h4
@@ -76,7 +76,7 @@
                         <div class="flex justify-between">
                             <div
                                 class="bg-secondary/10 flex h-[58px] text-[30px] items-center justify-center order-2 rounded-2xl text-secondary w-[58px]">
-                                <i class="uil uil-ticket"></i>
+                                <i class="uil uil-user"></i>
                             </div>
                             <div>
                                 <h4
@@ -98,7 +98,7 @@
                         <div class="flex justify-between">
                             <div
                                 class="bg-warning/10 flex h-[58px] text-[30px] items-center justify-center order-2 rounded-2xl text-warning w-[58px]">
-                                <i class="uil uil-ticket"></i>
+                                <i class="uil uil-user"></i>
                             </div>
                             <div>
                                 <h4
@@ -120,7 +120,7 @@
                         <div class="flex justify-between">
                             <div
                                 class="bg-success/10 flex h-[58px] text-[30px] items-center justify-center order-2 rounded-2xl text-success w-[58px]">
-                                <i class="uil uil-ticket"></i>
+                                <i class="uil uil-user"></i>
                             </div>
                             <div>
                                 <h4
