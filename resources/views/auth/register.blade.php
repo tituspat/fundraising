@@ -107,7 +107,7 @@
                      </div>
 
                      <!-- Submit button for the sign-up form -->
-                     <button type="submit" class="inline-flex items-center justify-center w-full h-[48px] text-14 rounded-6 font-medium bg-primary text-white cursor-pointer hover:bg-primary-hbr border-primary transition duration-300">Submit</button>
+                     <button type="submit" class="inline-flex items-center justify-center w-full h-[48px] text-14 rounded-6 font-medium bg-primary text-white cursor-pointer hover:bg-primary-hbr border-primary transition duration-300">Daftar</button>
                   </form>
 
                   <!-- Separator line -->

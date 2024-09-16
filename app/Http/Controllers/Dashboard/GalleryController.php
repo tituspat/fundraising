@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Gallery;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 use Symfony\Component\HttpClient\HttpClient;
+use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
-
 
 class GalleryController extends Controller
 {
@@ -207,27 +208,32 @@ class GalleryController extends Controller
         $request->validate([
             'url' => 'required|url',
         ]);
-
-        $url = $request->input('url'); // URL video YouTube
-
-        // Membuat HTTP client untuk mengambil konten video
-        $client = HttpClient::create();
-        $response = $client->request('GET', $url);
-        $html = $response->getContent();
+        
+        $youtubeUrl = $request->input('url'); // URL video YouTube
+        
+        $client = new Client();
+        $response = $client->request('GET', $youtubeUrl);
+        $html = $response->getBody()->getContents();
 
         // Membuat DomCrawler untuk memproses HTML
         $crawler = new Crawler($html);
 
         // Mengambil metadata video
-        $title = $crawler->filterXPath('//meta[@property="og:title"]')->attr('content');
-        $description = $crawler->filterXPath('//meta[@property="og:description"]')->attr('content');
-        $thumbnail = $crawler->filterXPath('//meta[@property="og:image"]')->attr('content');
-        $url = $crawler->filterXPath('//meta[@property="og:url"]')->attr('content');
-        $siteName = $crawler->filterXPath('//meta[@property="og:site_name"]')->attr('content');
+        // Ambil judul video
+        $title = $crawler->filter('meta[name="title"]')->attr('content');
+
+        // Ambil deskripsi video
+        $description = $crawler->filter('meta[name="description"]')->attr('content');
+
+        // Ambil URL thumbnail
+        $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
+
+        $url = $crawler->filter('meta[property="og:url"]')->attr('content');
+        $siteName = $crawler->filter('meta[property="og:site_name"]')->attr('content');
         
         $youtubeUrl = $url;
 
-        // Use regular expression to extract the video code
+         // Use regular expression to extract the video code
         if (preg_match('/[?&]v=([a-zA-Z0-9_-]+)/', $youtubeUrl, $matches)) {
             $videoCode = $matches[1];
         } else {
@@ -235,7 +241,7 @@ class GalleryController extends Controller
         }
 
         $postVideo = $videoCode;
-
+        
         return view('pages.dashboard.form-gallery', compact('postVideo', 'title', 'description', 'thumbnail', 'siteName'));
     }
 
