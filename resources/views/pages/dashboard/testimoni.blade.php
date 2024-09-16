@@ -183,7 +183,7 @@
                                                 <div
                                                     class="text-light dark:text-subtitle-dark text-[19px] flex items-center justify-center p-0 m-0 gap-[20px]">
                                                     <button type="button"
-                                                        class="cursor-pointer text-black text-left uil {{ $t->is_previewed ? 'uil-eye-slash' : 'uil-eye' }} hover:text-primary bg-transparent border-none p-0 m-0" title="{{ $t->is_previewed ? 'Sembunyikan' : 'Tampilkan' }}"
+                                                        class="cursor-pointer text-black text-left uil {{ $t->is_previewed ? 'uil-eye' : 'uil-eye-slash' }} hover:text-primary bg-transparent border-none p-0 m-0" title="{{ $t->is_previewed ? 'Sembunyikan' : 'Tampilkan' }}"
                                                         onclick="showTestimonialModal('{{ $t->testimonial }}', '{{ route(Auth::user()->role . '.testimoni.preview', $t->id) }}', '{{ route(Auth::user()->role . '.testimoni.unpreview', $t->id) }}', {{ $t->is_previewed }})">
                                                     </button>
                                                 </div>
