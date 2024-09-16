@@ -7,7 +7,7 @@
                <!-- Navigation Items -->
                <li class="xl:hidden xl:[&.flex]:flex" id="topMenu-logo">
                   <div class="flex md:w-[190px] xs:w-[170px] max-xs:w-[100px] max-md:pe-[30px] max-xs:pe-[15px] border-e border-[#edf2f9] dark:border-box-dark-up logo-wrapper items-center h-[71px] dark:bg-box-dark-up">
-                     <a href="index.html" class="block text-center">
+                     <a href="" class="block text-center">
                         <div class="logo-full">
                            <!-- logo -->
                            <img class="md:ps-[15px] dark:hidden" src="{{ asset('img/logo-sahabat.png') }}" alt="Logo">
