@@ -7,7 +7,7 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpClient\HttpClient;
-// use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\DomCrawler\Crawler;
 
 class NewsCrawlerController extends Controller
 {
