@@ -218,18 +218,21 @@ class GalleryController extends Controller
         // Membuat DomCrawler untuk memproses HTML
         $crawler = new Crawler($html);
 
-        // Mengambil metadata video
         // Ambil judul video
-        $title = $crawler->filter('meta[property="og:title"]')->attr('content');
+        $title = $crawler->filter('meta[name="title"]')->attr('content');
 
         // Ambil deskripsi video
-        $description = $crawler->filter('meta[property="og:description"]')->attr('content');
+        $description = $crawler->filter('meta[name="description"]')->attr('content');
 
         // Ambil URL thumbnail
-        $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
+        // $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
+        preg_match('/"thumbnailUrl":\["(.*?)"/', $html, $thumbMatch);
+        $thumbnail = $thumbMatch[1] ?? '';
 
-        $url = $crawler->filter('meta[property="og:url"]')->attr('content');
-        $siteName = $crawler->filter('meta[property="og:site_name"]')->attr('content');
+        // $url = $crawler->filter('meta[property="og:url"]')->attr('content');
+        $url = $youtubeUrl;
+        // $siteName = $crawler->filter('meta[property="og:site_name"]')->attr('content');
+        $siteName = "youtube";
         
         $youtubeUrl = $url;
 
