@@ -129,7 +129,7 @@
         <div class="container">
             <div class="flex flex-col items-center justify-between text-center font-bold dark:text-white md:flex-row">
                 <div>
-                    Copyright© <span class="curr-year">2024</span>
+                    © <span class="curr-year">2024</span>
                     <a href="javascript:" class="text-primary transition hover:text-secondary">Sahabat Tabanan</a>
                 </div>
                 <!-- <div>Need help? Visit the <a href="contact-us.html" class="text-secondary transition hover:text-primary">Contact Us</a></div> -->
