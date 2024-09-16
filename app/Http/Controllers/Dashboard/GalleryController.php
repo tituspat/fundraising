@@ -210,18 +210,6 @@ class GalleryController extends Controller
         
         $url = $request->input('url'); // URL video YouTube
         
-        // Continue with crawling if the URL does not exist
-        $client = HttpClient::create();
-        $response = $client->request('GET', $url);
-        $content = $response->getContent();
-        $crawler = new Crawler($content);
-
-        // Extract metadata
-        $title = $crawler->filter('meta[name="title"]')->attr('content') ?? 'No title';
-        $description = $crawler->filter('meta[name="description"]')->attr('content') ?? 'No description';
-        $thumbnail = "no Image";
-        // $crawler->filter('meta[property="og:image"]')->attr('content') ?? 'No image';
-
         
         $youtubeUrl = $url;
 
@@ -234,6 +222,19 @@ class GalleryController extends Controller
 
         $postVideo = $videoCode;
         $siteName = "youtube";
+
+        // Continue with crawling if the URL does not exist
+        $client = HttpClient::create();
+        $response = $client->request('GET', $url);
+        $content = $response->getContent();
+        $crawler = new Crawler($content);
+
+        // Extract metadata
+        $title = $crawler->filter('meta[name="title"]')->attr('content') ?? 'No title';
+        $description = $crawler->filter('meta[name="description"]')->attr('content') ?? 'No description';
+        $thumbnail = "https://img.youtube.com/vi/" .$postVideo. "/maxresdefault.jpg";
+    
+
 
 
         return view('pages.dashboard.form-gallery', compact('postVideo', 'title', 'description', 'thumbnail', 'siteName'));
