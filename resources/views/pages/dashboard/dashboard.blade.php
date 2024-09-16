@@ -38,9 +38,9 @@
                         </div>
                     </div>
 
-
+    
                     <div class="grid grid-cols-12 gap-[25px]">
-                        <div class="col-span-12 2xl:col-span-3 md:col-span-6">
+                        <!-- <div class="col-span-12 2xl:col-span-3 md:col-span-6">
                             <div bordered="false"
                                 class="px-[25px] py-[39.50px] bg-white dark:bg-white/10 rounded-10 relative text-[15px] text-theme-gray dark:text-white/60 leading-6">
                                 <div class="flex justify-between">
@@ -60,9 +60,43 @@
                                     </div>
                                 </div>
                             </div>
+                        </div> -->
+
+                        <div class="col-span-12 xl:col-span-6 lg:col-span-3 sm:col-span-6">
+                            <div class="p-[25px] bg-white dark:bg-box-dark rounded-10 relative text-[15px] text-body dark:text-subtitle-dark leading-6">
+                               <div class="flex justify-between">
+                                  <div class="bg-warning/10 flex h-[58px] items-center justify-center rounded-2xl text-warning w-[58px] order-2">
+                                     <div class="flex items-center text-warning text-[30px]">
+                                        <i class="uil uil-users-alt"></i>
+                                     </div>
+                                  </div>
+                                  <div>
+                                     <h4 class="mb-0 text-3xl max-lg:text-[26px] max-sm:text-2xl font-semibold leading-normal text-dark dark:text-title-dark">
+                                        <span class="flex items-center countCategories" data-number="{{ $usercount }}">
+
+
+                                           <span class="countNumber">1211</span>
+
+                                           <span>+</span>
+
+                                        </span>
+                                     </h4>
+                                     <span class="font-normal text-body dark:text-subtitle-dark text-15">New Customers</span>
+                                  </div>
+                               </div>
+                               <div class="mt-3">
+                                  <span class="inline-flex items-center w-full py-[12px] bg-normalBG dark:bg-box-dark-up px-2.5 rounded-lg gap-x-[10px] gap-y-[5px] flex-wrap">
+
+                                     <span class="flex font-medium gap-[2px] items-center text-sm text-success">
+                                        <i class="uil uil-arrow-up text-[18px]"></i> {{$userDifference}} </span>
+                                     <span class="text-sm text-light dark:text-subtitle-dark">Since last month</span>
+
+                                  </span>
+                               </div>
+                            </div>
                         </div>
 
-                        <div class="col-span-12 2xl:col-span-3 md:col-span-6">
+                        <!-- <div class="col-span-12 2xl:col-span-3 md:col-span-6">
 
                             <div bordered="false"
                                 class="px-[25px] py-[39.50px] bg-white dark:bg-white/10 rounded-10 relative text-[15px] text-theme-gray dark:text-white/60 leading-6">
@@ -150,8 +184,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
+                        </div> -->
+                    </div>
+                    </br>
+                    <div class="grid grid-cols-12 gap-[25px]">
                         <div class="col-span-12 2xl:col-span-3 md:col-span-6">
                             <div bordered="false"
                                 class="px-[25px] py-[39.50px] bg-white dark:bg-white/10 rounded-10 relative text-[15px] text-theme-gray dark:text-white/60 leading-6">

@@ -10,6 +10,8 @@ use App\Models\Testimonial;
 use App\Models\News;
 use App\Models\Question;
 
+use Carbon\Carbon;
+
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
@@ -25,8 +27,19 @@ class DashboardController extends Controller
         $questioncount = Question::count();
         $newscount = News::count();
         $testimonialcount = Testimonial::count();
-        $programcount = Blog::where('category', 'program')->count();
+        $programcount = Blog::where('category', 'program')->where('is_previewed', true)->count();
         $blogcount = Blog::where('category', 'blog')->count();
+
+        $currentMonthUsers = User::whereMonth('created_at', Carbon::now()->month)
+                        ->whereYear('created_at', Carbon::now()->year)
+                        ->count();
+
+        $previousMonthUsers = User::whereMonth('created_at', Carbon::now()->subMonth()->month)
+                          ->whereYear('created_at', Carbon::now()->subMonth()->year)
+                          ->count();
+
+        // Selisih user baru bulan ini dengan bulan lalu
+        $newUserDifference = $currentMonthUsers - $previousMonthUsers;
 
         return view('pages.dashboard.dashboard', [
             'user' => $user,
@@ -36,6 +49,7 @@ class DashboardController extends Controller
             'testimonialcount' => $testimonialcount,
             'programcount' => $programcount,
             'blogcount' => $blogcount,
+            'userDifference' => $newUserDifference,
         ]);
     }
 
