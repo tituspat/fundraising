@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 use Symfony\Component\HttpClient\HttpClient;
-use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
 class GalleryController extends Controller
@@ -209,55 +208,30 @@ class GalleryController extends Controller
             'url' => 'required|url',
         ]);
         
-        $youtubeUrl = $request->input('url'); // URL video YouTube
+        $url = $request->input('url'); // URL video YouTube
         
-        // $client = new Client();
-        // $response = $client->request('GET', $youtubeUrl);
-        // $html = $response->getBody()->getContents();
+        // Continue with crawling if the URL does not exist
+        $client = HttpClient::create();
+        $response = $client->request('GET', $url);
+        $content = $response->getContent();
+        $crawler = new Crawler($content);
 
-        // // Membuat DomCrawler untuk memproses HTML
-        // $crawler = new Crawler($html);
+        // Extract metadata
+        $title = $crawler->filter('meta[property="og:title"]')->attr('content') ?? 'No title';
+        $description = $crawler->filter('meta[property="og:description"]')->attr('content') ?? 'No description';
+        $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content') ?? 'No image';
 
-        // // Mengambil metadata video
-        // // Ambil judul video
-        // $title = $crawler->filter('meta[name="title"]')->attr('content');
-
-        // // Ambil deskripsi video
-        // $description = $crawler->filter('meta[name="description"]')->attr('content');
-
-        // // Ambil URL thumbnail
-        // $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
-
-        // $url = $crawler->filter('meta[property="og:url"]')->attr('content');
-        // $siteName = $crawler->filter('meta[property="og:site_name"]')->attr('content');
         
-        // $youtubeUrl = $url;
+        $youtubeUrl = $url;
 
          // Use regular expression to extract the video code
-        if (preg_match('/[?&]v=([a-zA-Z0-9_-]+)/', $youtubeUrl, $matches)) {
+        if (preg_match('/[?&]v=([a-zA-Z0-9_-]+)/', $url, $matches)) {
             $videoCode = $matches[1];
         } else {
             $videoCode = ''; // If no video code is found, set it to an empty string
         }
 
         $postVideo = $videoCode;
-        
-        $client = new Client();
-        $response = $client->get($youtubeUrl);
-        $html = (string) $response->getBody();
-
-        // Extract video info from ytInitialPlayerResponse
-        preg_match('/ytInitialPlayerResponse\s*=\s*({.+?});/', $html, $matches);
-        if (empty($matches[1])) {
-            return response()->json(['error' => 'Could not extract video info'], 404);
-        }
-
-        $videoInfo = json_decode($matches[1], true);
-
-        $title = $videoInfo['videoDetails']['title'] ?? null;
-        $description = $videoInfo['videoDetails']['shortDescription'] ?? null;
-        $thumbnail = $videoInfo['videoDetails']['thumbnail']['thumbnails'][0]['url'] ?? null;
-
         $siteName = "youtube";
 
 
