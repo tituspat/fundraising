@@ -145,7 +145,7 @@
                <!-- Footer with login link -->
                <div class="text-center p-[25px] rounded-b-6 bg-deepBG dark:bg-gray-600">
                   <p class="text-[14px] font-medium text-body dark:text-title-dark inline-flex items-center gap-[6px] mb-0 capitalize">
-                     Already have an account? <a class="transition duration-300 text-primary hover:text-dark dark:text-dark dark:hover:text-subtitle-dark" href="log-in.html">Log in</a>
+                     Sudah punya akun? <a class="transition duration-300 text-primary hover:text-dark dark:text-dark dark:hover:text-subtitle-dark" href="/login">Log in</a>
                   </p>
                </div>
             </div>
