@@ -333,16 +333,23 @@
                <button type="button" class="flex xl:hidden items-center text-[22px] text-[#a0a0a0] dark:text-subtitle-dark min-h-[40px]" id="author-dropdown">
                   <i class="uil uil-ellipsis-v text-[18px]"></i>
                </button>
+               
                <ul id="right-ellipsis-trigger" class="xl:flex hidden items-center justify-end flex-auto mb-0 list-none ps-0 sm:gap-x-[25px] max-sm:gap-x-[15px] gap-y-[15px] max-xl:absolute max-xl:z-[1000] max-xl:m-0 max-xl:rounded-lg max-xl:border-none max-xl:bg-white max-xl:bg-clip-padding max-xl:text-left max-xl:shadow-lg max-xl:dark:bg-neutral-700 max-xl:[&.active]:flex max-xl:end-0 max-xl:px-[20px] max-sm:px-[15px] max-xl:py-[10px] max-xl:top-[70px]">
+                  <form method="POST" action="{{ route('logout') }}">
+                     @csrf
+                     <button type="submit" class="flex items-center justify-center text-sm font-medium h-[50px] hover:text-secondary dark:hover:text-subtitle-dark dark:text-title-dark w-full rounded-b-6 gap-[6px]" href="logout">
+                      Keluar 
+                      <i class="uil uil-sign-out-alt"></i></button>
+                  </form>
                   <li>
 
                      <div class="relative" data-te-dropdown-ref>
-                        <button type="button" id="author-dropdown" data-te-dropdown-toggle-ref aria-expanded="false" class="flex items-center me-1.5 text-body dark:text-subtitle-dark text-sm font-medium capitalize rounded-full md:me-0 group whitespace-nowrap">
-                           <span class="sr-only">Open user menu</span>
+                        <!-- <button type="button" id="author-dropdown" data-te-dropdown-toggle-ref aria-expanded="false" class="flex items-center me-1.5 text-body dark:text-subtitle-dark text-sm font-medium capitalize rounded-full md:me-0 group whitespace-nowrap"> -->
+                           <!-- <span class="sr-only">Open user menu</span> -->
                            <!-- <img class="min-w-[32px] w-8 h-8 rounded-full xl:me-2" src="{{ asset('vendor/hexa/images/avatars/thumbs.png') }}" alt="user photo"> -->
-                           <span class="hidden xl:block">{{Auth::user()->name }}</span>
-                           <i class="uil uil-angle-down text-light dark:text-subtitle-dark text-[18px] hidden xl:block"></i>
-                        </button>
+                           <!-- <span class="hidden xl:block">{{Auth::user()->name }}</span> -->
+                           <!-- <i class="uil uil-angle-down text-light dark:text-subtitle-dark text-[18px] hidden xl:block"></i> -->
+                        <!-- </button> -->
 
                         <!-- Dropdown menu -->
                         <div class="absolute z-[1000] ltr:float-left rtl:float-right m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:shadow-boxLargeDark dark:bg-box-dark-down  [&[data-te-dropdown-show]]:block" aria-labelledby="author-dropdown" data-te-dropdown-menu-ref>
@@ -393,7 +400,7 @@
                                        <button class="inline-flex items-center text-light dark:text-subtitle-dark hover:text-primary hover:ps-6 w-full px-2.5 py-3 text-sm transition-[0.3s] gap-[10px]">
                                           <i class="text-[16px] uil uil-bell"></i>
                                           Help
-                                       </button>
+                                       </button>   
                                     </div>
                                  </li> -->
                               </ul>
