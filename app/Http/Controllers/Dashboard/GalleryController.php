@@ -220,10 +220,10 @@ class GalleryController extends Controller
 
         // Mengambil metadata video
         // Ambil judul video
-        $title = $crawler->filter('meta[name="title"]')->attr('content');
+        $title = $crawler->filter('meta[property="og:title"]')->attr('content');
 
         // Ambil deskripsi video
-        $description = $crawler->filter('meta[name="description"]')->attr('content');
+        $description = $crawler->filter('meta[property="og:description"]')->attr('content');
 
         // Ambil URL thumbnail
         $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
