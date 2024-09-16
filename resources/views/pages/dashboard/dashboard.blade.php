@@ -81,7 +81,7 @@
 
                                         </span>
                                      </h4>
-                                     <span class="font-normal text-body dark:text-subtitle-dark text-15">New Customers</span>
+                                     <span class="font-normal text-body dark:text-subtitle-dark text-15">Pendukung</span>
                                   </div>
                                </div>
                                <div class="mt-3">
@@ -89,7 +89,7 @@
 
                                      <span class="flex font-medium gap-[2px] items-center text-sm text-success">
                                         <i class="uil uil-arrow-up text-[18px]"></i> {{$userDifference}} </span>
-                                     <span class="text-sm text-light dark:text-subtitle-dark">Since last month</span>
+                                     <span class="text-sm text-light dark:text-subtitle-dark">Sejak Bulan Lalu</span>
 
                                   </span>
                                </div>
