@@ -339,7 +339,7 @@
                      <div class="relative" data-te-dropdown-ref>
                         <button type="button" id="author-dropdown" data-te-dropdown-toggle-ref aria-expanded="false" class="flex items-center me-1.5 text-body dark:text-subtitle-dark text-sm font-medium capitalize rounded-full md:me-0 group whitespace-nowrap">
                            <span class="sr-only">Open user menu</span>
-                           <img class="min-w-[32px] w-8 h-8 rounded-full xl:me-2" src="{{ asset('vendor/hexa/images/avatars/thumbs.png') }}" alt="user photo">
+                           <!-- <img class="min-w-[32px] w-8 h-8 rounded-full xl:me-2" src="{{ asset('vendor/hexa/images/avatars/thumbs.png') }}" alt="user photo"> -->
                            <span class="hidden xl:block">{{Auth::user()->name }}</span>
                            <i class="uil uil-angle-down text-light dark:text-subtitle-dark text-[18px] hidden xl:block"></i>
                         </button>
