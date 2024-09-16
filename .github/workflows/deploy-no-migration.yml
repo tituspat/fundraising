@@ -29,6 +29,8 @@ jobs:
         run: |
           sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -p 65002 -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@153.92.9.232 "
           cd /home/${{ secrets.SSH_USERNAME }}/public_html &&
+          git fetch origin &&
+          git reset --hard origin/main &&
           git pull origin main &&
           composer2 update --no-interaction --prefer-dist --optimize-autoloader &&
           php artisan config:cache"
