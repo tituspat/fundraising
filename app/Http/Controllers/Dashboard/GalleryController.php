@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 use Symfony\Component\HttpClient\HttpClient;
-// use GuzzleHttp\Client;
+use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
 class GalleryController extends Controller
@@ -211,9 +211,10 @@ class GalleryController extends Controller
         
         $youtubeUrl = $request->input('url'); // URL video YouTube
         
-        $client = HttpClient::create();
+        $client = new Client();
         $response = $client->request('GET', $youtubeUrl);
-        $html = $response->getContent();
+        $html = $response->getBody();
+        $html = (string) $html;
 
 
         // Membuat DomCrawler untuk memproses HTML
