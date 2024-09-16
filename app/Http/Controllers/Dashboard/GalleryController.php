@@ -213,7 +213,7 @@ class GalleryController extends Controller
         
         $client = new Client();
         $response = $client->request('GET', $youtubeUrl);
-        $html = $response->getBody()->getContents();
+        $html =  file_get_contents($youtubeUrl);
 
         // Membuat DomCrawler untuk memproses HTML
         $crawler = new Crawler($html);
@@ -225,14 +225,14 @@ class GalleryController extends Controller
         $description = $crawler->filter('meta[name="description"]')->attr('content');
 
         // Ambil URL thumbnail
-        // $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
-        preg_match('/"thumbnailUrl":\["(.*?)"/', $html, $thumbMatch);
-        $thumbnail = $thumbMatch[1] ?? '';
+        $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
+        // preg_match('/"thumbnailUrl":\["(.*?)"/', $html, $thumbMatch);
+        // $thumbnail = $thumbMatch[1] ?? '';
 
-        // $url = $crawler->filter('meta[property="og:url"]')->attr('content');
-        $url = $youtubeUrl;
-        // $siteName = $crawler->filter('meta[property="og:site_name"]')->attr('content');
-        $siteName = "youtube";
+        $url = $crawler->filter('meta[property="og:url"]')->attr('content');
+        // $url = $youtubeUrl;
+        $siteName = $crawler->filter('meta[property="og:site_name"]')->attr('content');
+        // $siteName = "youtube";
         
         $youtubeUrl = $url;
 
