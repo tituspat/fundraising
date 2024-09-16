@@ -211,32 +211,27 @@ class GalleryController extends Controller
         
         $youtubeUrl = $request->input('url'); // URL video YouTube
         
-        $client = new Client();
-        $response = $client->request('GET', $youtubeUrl);
-        $html = $response->getBody();
-        $html = (string) $html;
+        // $client = new Client();
+        // $response = $client->request('GET', $youtubeUrl);
+        // $html = $response->getBody()->getContents();
 
+        // // Membuat DomCrawler untuk memproses HTML
+        // $crawler = new Crawler($html);
 
-        // Membuat DomCrawler untuk memproses HTML
-        $crawler = new Crawler($html);
+        // // Mengambil metadata video
+        // // Ambil judul video
+        // $title = $crawler->filter('meta[name="title"]')->attr('content');
 
-        // Ambil judul video
-        $title = $crawler->filter('meta[name="title"]')->attr('content');
+        // // Ambil deskripsi video
+        // $description = $crawler->filter('meta[name="description"]')->attr('content');
 
-        // Ambil deskripsi video
-        $description = $crawler->filter('meta[name="description"]')->attr('content');
+        // // Ambil URL thumbnail
+        // $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
 
-        // Ambil URL thumbnail
-        $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
-        // preg_match('/"thumbnailUrl":\["(.*?)"/', $html, $thumbMatch);
-        // $thumbnail = $thumbMatch[1] ?? '';
-
-        $url = $crawler->filter('meta[property="og:url"]')->attr('content');
-        // $url = $youtubeUrl;
-        $siteName = $crawler->filter('meta[property="og:site_name"]')->attr('content');
-        // $siteName = "youtube";
+        // $url = $crawler->filter('meta[property="og:url"]')->attr('content');
+        // $siteName = $crawler->filter('meta[property="og:site_name"]')->attr('content');
         
-        $youtubeUrl = $url;
+        // $youtubeUrl = $url;
 
          // Use regular expression to extract the video code
         if (preg_match('/[?&]v=([a-zA-Z0-9_-]+)/', $youtubeUrl, $matches)) {
@@ -247,6 +242,25 @@ class GalleryController extends Controller
 
         $postVideo = $videoCode;
         
+        $client = new Client();
+        $response = $client->get($youtubeUrl);
+        $html = (string) $response->getBody();
+
+        // Extract video info from ytInitialPlayerResponse
+        preg_match('/ytInitialPlayerResponse\s*=\s*({.+?});/', $html, $matches);
+        if (empty($matches[1])) {
+            return response()->json(['error' => 'Could not extract video info'], 404);
+        }
+
+        $videoInfo = json_decode($matches[1], true);
+
+        $title = $videoInfo['videoDetails']['title'] ?? null;
+        $description = $videoInfo['videoDetails']['shortDescription'] ?? null;
+        $thumbnail = $videoInfo['videoDetails']['thumbnail']['thumbnails'][0]['url'] ?? null;
+
+        $siteName = "youtube";
+
+
         return view('pages.dashboard.form-gallery', compact('postVideo', 'title', 'description', 'thumbnail', 'siteName'));
     }
 
