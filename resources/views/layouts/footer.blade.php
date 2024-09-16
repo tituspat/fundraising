@@ -87,7 +87,7 @@
                 <ul class="flex flex-col gap-3 font-bold">
                     <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Terbaru</li>
                     <li>
-                        <a href="/berita" class="inline-block transition hover:scale-110 hover:text-secondary">Berita</a>
+                        <a href="/news" class="inline-block transition hover:scale-110 hover:text-secondary">Berita</a>
                     </li>
                     <li>
                         <a href="/foto" class="inline-block transition hover:scale-110 hover:text-secondary">Foto</a>
