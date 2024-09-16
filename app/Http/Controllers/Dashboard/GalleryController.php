@@ -213,7 +213,7 @@ class GalleryController extends Controller
         
         $client = new Client();
         $response = $client->request('GET', $youtubeUrl);
-        $html =  file_get_contents($youtubeUrl);
+        $html = $response->getContent();
 
         // Membuat DomCrawler untuk memproses HTML
         $crawler = new Crawler($html);
