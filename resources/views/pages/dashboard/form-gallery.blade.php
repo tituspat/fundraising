@@ -137,8 +137,8 @@
                             <!-- Preview Section -->
                             <div class="col-span-12 xl:col-span-4 md:col-span-6 mt-5">
                                 <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
-                                    <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$postVideo}}" frameborder="0" allowfullscreen></iframe>
+                                    <div class="relative rounded-10 overflow-hidden">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$postVideo}}" frameborder="0"></iframe>
                                     </div>
                                     <figcaption>
                                         <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
