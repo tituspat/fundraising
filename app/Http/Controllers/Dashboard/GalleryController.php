@@ -234,9 +234,6 @@ class GalleryController extends Controller
         $description = $crawler->filter('meta[name="description"]')->attr('content') ?? 'No description';
         $thumbnail = "https://img.youtube.com/vi/" .$postVideo. "/maxresdefault.jpg";
     
-
-
-
         return view('pages.dashboard.form-gallery', compact('postVideo', 'title', 'description', 'thumbnail', 'siteName'));
     }
 
@@ -250,8 +247,11 @@ class GalleryController extends Controller
         $request->validate([
             'url' => 'required|url',
             'title' => 'required',
-            'media' => 'required',
-            'thumbnail' => 'required',
+            // 'media' => 'required',
+            // 'thumbnail' => 'required',
+        ],[
+            'title' => 'title harus diisi',
+            'url' => 'url harus tersedia',
         ]);
         
         // dd($request->all());
