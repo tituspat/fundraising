@@ -181,7 +181,7 @@
                                                         data-te-target="#exampleModal{{ $f->id }}"
                                                         data-te-ripple-init data-te-ripple-color="light"></button>
                                                     <!-- Modal -->
-                                                    <form action="{{ 'faqs/update/' }}" method="POST">
+                                                    <form action="/{{Auth::user()->role}}/faqs/update" method="POST">
                                                         @csrf
                                                         @method('PUT')
 
