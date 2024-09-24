@@ -9909,7 +9909,7 @@ body {
 
 .text-primary {
   --tw-text-opacity: 1;
-  color: rgb(130 49 211 / var(--tw-text-opacity));
+  color: rgb(0 140 84 / var(--tw-text-opacity));
 }
 
 .text-progress {
@@ -9924,7 +9924,7 @@ body {
 
 .text-secondary {
   --tw-text-opacity: 1;
-  color: rgb(88 64 255 / var(--tw-text-opacity));
+  color: rgb(211 47 47 / var(--tw-text-opacity));
 }
 
 .text-subtitle-dark {

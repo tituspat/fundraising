@@ -87,7 +87,7 @@
                 <ul class="flex flex-col gap-3 font-bold">
                     <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Terbaru</li>
                     <li>
-                        <a href="/berita" class="inline-block transition hover:scale-110 hover:text-secondary">Berita</a>
+                        <a href="/news" class="inline-block transition hover:scale-110 hover:text-secondary">Berita</a>
                     </li>
                     <li>
                         <a href="/foto" class="inline-block transition hover:scale-110 hover:text-secondary">Foto</a>
@@ -129,7 +129,7 @@
         <div class="container">
             <div class="flex flex-col items-center justify-between text-center font-bold dark:text-white md:flex-row">
                 <div>
-                    Copyright© <span class="curr-year">2024</span>
+                    © <span class="curr-year">2024</span>
                     <a href="javascript:" class="text-primary transition hover:text-secondary">Sahabat Tabanan</a>
                 </div>
                 <!-- <div>Need help? Visit the <a href="contact-us.html" class="text-secondary transition hover:text-primary">Contact Us</a></div> -->

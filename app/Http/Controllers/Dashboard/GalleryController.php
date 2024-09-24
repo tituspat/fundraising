@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 use Symfony\Component\HttpClient\HttpClient;
-use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
 class GalleryController extends Controller
@@ -209,42 +208,32 @@ class GalleryController extends Controller
             'url' => 'required|url',
         ]);
         
-        $youtubeUrl = $request->input('url'); // URL video YouTube
+        $url = $request->input('url'); // URL video YouTube
         
-        $client = new Client();
-        $response = $client->request('GET', $youtubeUrl);
-        $html = $response->getContent();
-
-        // Membuat DomCrawler untuk memproses HTML
-        $crawler = new Crawler($html);
-
-        // Ambil judul video
-        $title = $crawler->filter('meta[name="title"]')->attr('content');
-
-        // Ambil deskripsi video
-        $description = $crawler->filter('meta[name="description"]')->attr('content');
-
-        // Ambil URL thumbnail
-        $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
-        // preg_match('/"thumbnailUrl":\["(.*?)"/', $html, $thumbMatch);
-        // $thumbnail = $thumbMatch[1] ?? '';
-
-        $url = $crawler->filter('meta[property="og:url"]')->attr('content');
-        // $url = $youtubeUrl;
-        $siteName = $crawler->filter('meta[property="og:site_name"]')->attr('content');
-        // $siteName = "youtube";
         
         $youtubeUrl = $url;
 
          // Use regular expression to extract the video code
-        if (preg_match('/[?&]v=([a-zA-Z0-9_-]+)/', $youtubeUrl, $matches)) {
+        if (preg_match('/[?&]v=([a-zA-Z0-9_-]+)/', $url, $matches)) {
             $videoCode = $matches[1];
         } else {
             $videoCode = ''; // If no video code is found, set it to an empty string
         }
 
         $postVideo = $videoCode;
-        
+        $siteName = "youtube";
+
+        // Continue with crawling if the URL does not exist
+        $client = HttpClient::create();
+        $response = $client->request('GET', $url);
+        $content = $response->getContent();
+        $crawler = new Crawler($content);
+
+        // Extract metadata
+        $title = $crawler->filter('meta[name="title"]')->attr('content') ?? 'No title';
+        $description = $crawler->filter('meta[name="description"]')->attr('content') ?? 'No description';
+        $thumbnail = "https://img.youtube.com/vi/" .$postVideo. "/maxresdefault.jpg";
+    
         return view('pages.dashboard.form-gallery', compact('postVideo', 'title', 'description', 'thumbnail', 'siteName'));
     }
 
@@ -258,8 +247,11 @@ class GalleryController extends Controller
         $request->validate([
             'url' => 'required|url',
             'title' => 'required',
-            'media' => 'required',
-            'thumbnail' => 'required',
+            // 'media' => 'required',
+            // 'thumbnail' => 'required',
+        ],[
+            'title' => 'title harus diisi',
+            'url' => 'url harus tersedia',
         ]);
         
         // dd($request->all());

@@ -20,7 +20,7 @@
                            <ol class="flex flex-wrap p-0 mb-0 list-none gap-[8px] max-sm:justify-center">
                               <!-- Parent Link -->
                               <li class="inline-flex items-center">
-                                 <a class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 hover:text-primary group" href="index.html">
+                                 <a class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 hover:text-primary group" href="">
                                     <i class="uil uil-estate text-light dark:text-white/50 me-[8px] text-[16px] group-hover:text-current"></i>Dashboard</a>
                               </li>
                               <!-- Middle (Conditional) -->
@@ -137,8 +137,8 @@
                             <!-- Preview Section -->
                             <div class="col-span-12 xl:col-span-4 md:col-span-6 mt-5">
                                 <figure class="p-6 mb-0 bg-white group dark:bg-box-dark rounded-10 shadow-regular dark:shadow-none">
-                                    <div class="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full rounded-10 overflow-hidden">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$postVideo}}" frameborder="0" allowfullscreen></iframe>
+                                    <div class="relative rounded-10 overflow-hidden">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$postVideo}}" frameborder="0"></iframe>
                                     </div>
                                     <figcaption>
                                         <div class="flex justify-between items-center flex-wrap mt-2.5 gap-x-[10px] gap-y-[6px] text-14">
@@ -150,9 +150,9 @@
                                             <input type="hidden" name="thumbnail" value="{{$thumbnail}}">
                                             <input type="hidden" name="url" value="https://www.youtube.com/embed/{{$postVideo}}">
                                             <div class="pb-4">
-                                                <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark">Judul Video</label>
+                                                <label for="nameVertical" class="inline-flex items-center w-[178px] mb-2 text-sm font-medium capitalize text-dark dark:text-title-dark" >Judul Video</label>
                                                 <div class="flex flex-col flex-1 md:flex-row">
-                                                    <input type="text" id="nameVertical" class=" rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" value="{{$title}}" readonly>
+                                                    <input type="text" id="nameVertical" class=" rounded-4 border-normal border-1 text-[15px] dark:bg-box-dark-up dark:border-box-dark-up px-[20px] py-[12px] min-h-[50px] outline-none placeholder:text-[#A0A0A0] text-body dark:text-subtitle-dark w-full focus:ring-primary focus:border-primary" name="title" value="{{$title}}" required>
                                                     @error('title')
         						                        <span class="text-danger">{{ $message }}</span>
     						                        @enderror

@@ -21,8 +21,7 @@
                                 <ol class="flex flex-wrap p-0 mb-0 list-none gap-[8px] max-sm:justify-center">
                                     <!-- Parent Link -->
                                     <li class="inline-flex items-center">
-                                        <a class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 hover:text-primary group"
-                                            href="index.html">
+                                        <a class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 hover:text-primary group" href="">
                                             <i
                                                 class="uil uil-estate text-light dark:text-white/50 me-[8px] text-[16px] group-hover:text-current"></i>Dashboard</a>
                                     </li>
@@ -55,7 +54,7 @@
                         <div class="flex justify-between">
                             <div
                                 class="bg-primary/10 flex h-[58px] text-[30px] items-center justify-center order-2 rounded-2xl text-primary w-[58px]">
-                                <i class="uil uil-ticket"></i>
+                                <i class="uil uil-user"></i>
                             </div>
                             <div>
                                 <h4
@@ -77,7 +76,7 @@
                         <div class="flex justify-between">
                             <div
                                 class="bg-secondary/10 flex h-[58px] text-[30px] items-center justify-center order-2 rounded-2xl text-secondary w-[58px]">
-                                <i class="uil uil-ticket"></i>
+                                <i class="uil uil-user"></i>
                             </div>
                             <div>
                                 <h4
@@ -99,7 +98,7 @@
                         <div class="flex justify-between">
                             <div
                                 class="bg-warning/10 flex h-[58px] text-[30px] items-center justify-center order-2 rounded-2xl text-warning w-[58px]">
-                                <i class="uil uil-ticket"></i>
+                                <i class="uil uil-user"></i>
                             </div>
                             <div>
                                 <h4
@@ -121,7 +120,7 @@
                         <div class="flex justify-between">
                             <div
                                 class="bg-success/10 flex h-[58px] text-[30px] items-center justify-center order-2 rounded-2xl text-success w-[58px]">
-                                <i class="uil uil-ticket"></i>
+                                <i class="uil uil-user"></i>
                             </div>
                             <div>
                                 <h4

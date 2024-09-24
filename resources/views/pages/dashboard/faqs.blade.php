@@ -20,8 +20,7 @@
                                 <ol class="flex flex-wrap p-0 mb-0 list-none gap-[8px] max-sm:justify-center">
                                     <!-- Parent Link -->
                                     <li class="inline-flex items-center">
-                                        <a class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 hover:text-primary group"
-                                            href="index.html">
+                                        <a class="text-[14px] font-normal leading-[20px] text-body dark:text-neutral-200 hover:text-primary group" href="">
                                             <i
                                                 class="uil uil-estate text-light dark:text-white/50 me-[8px] text-[16px] group-hover:text-current"></i>Dashboard</a>
                                     </li>
@@ -182,7 +181,7 @@
                                                         data-te-target="#exampleModal{{ $f->id }}"
                                                         data-te-ripple-init data-te-ripple-color="light"></button>
                                                     <!-- Modal -->
-                                                    <form action="{{ 'faqs/update/' }}" method="POST">
+                                                    <form action="/{{Auth::user()->role}}/faqs/update" method="POST">
                                                         @csrf
                                                         @method('PUT')
 

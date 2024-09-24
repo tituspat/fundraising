@@ -43,12 +43,12 @@
 
          <!-- Login form container -->
          <div class="flex flex-col justify-center w-full max-w-[516px] px-[30px] mx-auto my-[150px]">
-            <a href="index.html" class="text-center">
+            {{--<a href="index.html" class="text-center">
                <!-- Logo for the light theme -->
                <!-- <img src="{{ asset('vendor/hexa/images/logos/logo-dark.png') }}" alt="image" class="inline dark:hidden"> -->
                <!-- Logo for the dark theme -->
                <!-- <img src="{{ asset('vendor/hexa/images/logos/logo-white.png') }}" alt="image" class="hidden dark:inline"> -->
-            </a>
+            </a>--}}
 
             <!-- Login form background -->
             <div class="rounded-6 mt-[25px] shadow-regular dark:shadow-xl bg-white dark:bg-[#111726]">
